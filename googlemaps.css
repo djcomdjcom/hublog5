@@ -1,0 +1,101 @@
+
+
+
+/*googlemap*/
+ul#map_tabs {
+}
+ul#map_tabs li a {
+}
+
+#google_map {
+	width:620px;
+}
+
+/*metalist_and_map*/
+#metalist_and_map {
+	height:455px;
+	overflow:hidden;
+	padding-top:10px;
+}
+#maps {
+	overflow:hidden;
+	float: right;
+	margin-bottom:15px;
+}
+/*tab*/	 
+ul#map_tabs {
+}
+
+
+#maps div.gels-form-v3 {
+}
+
+
+
+#googlemap-bukken{
+	margin-top:30px;
+	height:440px;
+}
+#googlemap-bukken .address{
+	margin-bottom:5px;
+}
+
+#googlemap-bukken #maps{
+	background:#F1ECD7;
+}
+
+#googlemap-bukken #google_map{
+	float: right;
+}
+#googlemap-bukken #map-tabs_search{
+	float:left;
+	width:110px;
+	padding:5px 3px;
+	height:390px;
+}
+#googlemap-bukken #map_tabs{
+	width:100%;
+	background:none;
+}
+#googlemap-bukken #map_tabs li{
+	text-align:center;
+	text-indent:0;
+	width:100%;
+	border-top:1px solid #fff;
+	border-left:1px solid #fff;
+	border-right:1px solid #333;
+	border-bottom:1px solid #333;
+	margin-bottom:2px;
+	padding:7px 0 3px;
+	height:20px;
+}
+#googlemap-bukken #map_tabs li a{
+	width: auto;
+	text-indent:0;
+	text-decoration:none;
+	text-shadow:#666 1px 1px 2px;
+	display:inline-block;
+	display:inline;
+	zoom:1;
+	background:none;
+}
+#googlemap-bukken #map_tabs li:hover a,
+#googlemap-bukken #map_tabs li.current a{
+	outline:none;
+}
+
+#googlemap-bukken #map_tabs li:hover,
+#googlemap-bukken #map_tabs li.current{
+	background-position: right center;
+	border-top:1px solid #666;
+	border-left:1px solid #666;
+	border-right:1px solid #fff;
+	border-bottom:1px solid #fff;
+	cursor: pointer;
+}
+
+#googlemap-bukken #maps .gels-form.gels-form-v3{
+	float:right;
+}
+
+

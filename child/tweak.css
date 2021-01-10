@@ -1,0 +1,199 @@
+@charset "utf-8";
+/*ヘッダー*/
+/*問い合わせ系ボタン*/
+#header-sub .header-inquiry a {
+  background: #033373;
+  color: #fff;
+}
+/*サイトタイトル調整*/
+#global-header .sitetitle img.header-image{
+    padding-top: 10px;
+    padding-bottom: 0px;
+}
+
+
+/*Gナビ*/
+@media screen and (min-width: 1000px) {
+  #access { /*Gナビボトム線*/
+    border-bottom: 1px solid #eee;
+  }
+  #access > div > ul > li > a:hover, #access > div > ul > li.current-menu-item > a {
+    /*GナビON時カラー*/
+    border-bottom: 3px solid #f2621d;
+  }
+  #access > div > ul > li > a {
+    /*GナビデOFF時カラー*/
+    border-bottom: 3px solid #fff;
+  }    
+  #access > div > ul li li a{
+    /*Gナビ サブメニューデフォカラー*/
+    background: #efefef;
+    }
+  #access > div > ul li li a:hover {
+    /*Gナビ サブメニューON時カラー*/
+    background: #f9bfa4;
+  }
+}
+
+/*INDEX 共通*/
+/*詳細ボタン*/
+.btn a,
+.entry-content .btn a{
+    background: #4E3328;
+    color: #fff;
+}
+
+/*詳細ボタン（記事）*/
+.posts .post .todetail a[rel="bookmark"],
+.posts .post .todetail[rel="bookmark"]{
+    background: #4E3328;
+    color: #fff;
+}
+
+
+
+/*コンテンツページ*/
+/*タブ色　デフォ*/
+.pagetab li a {
+  background: #f2621d;
+  color: #fff;
+  border: 1px solid #f2621d;
+  border-bottom: 2px solid #f2621d;
+}
+/*タブ色　アクティブ*/
+.pagetab li a:hover, .pagetab li.current-menu-item a {
+  background: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+  border-bottom: 2px solid #f2621d;
+}
+/*矢印色　デフォ*/
+.pagetab li a:before {
+  background: rgba(255, 255, 255, 0.3);
+}
+/*矢印色　アクティブ*/
+.pagetab li a:hover:before, .pagetab li.current-menu-item a:before {
+  background: #f2621d;
+  color: #fff;
+}
+/*タブサイズ*/
+.pagetab ul li {
+  width: 25%;
+  margin: 1px 0;
+  position: relative;
+  letter-spacing: 0;
+  font-size: 0;
+  padding: 0 1px;
+}
+
+/*タブ色　注文住宅*/
+.pagetab .menu-order-container li a {
+  background: #2AB9CF;
+  color: #fff;
+  border: 1px solid #2AB9CF;
+  border-bottom: 2px solid #2AB9CF;
+}
+/*タブ色　アクティブ*/
+.pagetab .menu-order-container li a:hover,
+.pagetab .menu-order-container li.current-menu-item a {
+  background: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+  border-bottom: 2px solid #2AB9CF;
+}
+/*矢印色　デフォ*/
+.pagetab .menu-order-container li a:before {
+  background: rgba(255, 255, 255, 0.3);
+}
+/*矢印色　アクティブ*/
+.pagetab .menu-order-container li a:hover:before,
+.pagetab .menu-order-container li.current-menu-item a:before {
+  background: #2AB9CF;
+  color: #fff;
+}
+/*タブサイズ*/
+.pagetab .menu-order-container ul li {
+  width: 25%;
+  margin: 1px 0;
+  position: relative;
+  letter-spacing: 0;
+  font-size: 0;
+  padding: 0 1px;
+}
+
+
+
+
+/*タブ色　リノベ*/
+.pagetab .menu-renovation-container li a {
+  background: #f2621d;
+  color: #fff;
+  border: 1px solid #f2621d;
+  border-bottom: 2px solid #f2621d;
+}
+/*タブ色　アクティブ*/
+.pagetab .menu-renovation-container li a:hover,
+.pagetab .menu-renovation-container li.current-menu-item a {
+  background: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+  border-bottom: 2px solid #f2621d;
+}
+/*矢印色　デフォ*/
+.pagetab .menu-renovation-container li a:before {
+  background: rgba(255, 255, 255, 0.3);
+}
+/*矢印色　アクティブ*/
+.pagetab .menu-renovation-container li a:hover:before,
+.pagetab .menu-renovation-container li.current-menu-item a:before {
+  background: #f2621d;
+  color: #fff;
+}
+/*タブサイズ*/
+.pagetab .menu-renovation-container ul li {
+  width: 25%;
+  margin: 1px 0;
+  position: relative;
+  letter-spacing: 0;
+  font-size: 0;
+  padding: 0 1px;
+}
+
+
+
+
+/*資料請求*/
+/*背景、文字色*/
+.include-shiryou {
+  background: #dc645e;
+  color: #fff;
+}
+/*ボタン色*/
+.btn.toshiryou a {
+  background: #fff;
+  color: #dc645e;
+}
+/*センターカラム*/
+.include-shiryou .cell02 .inbox {
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+/*フッター*/
+/*背景色、文字色*/
+#footer {
+  background: #182845;
+  color: #fff;
+}
+/*リンクテキスト*/
+#footer a {
+  color: #fff;
+}
+#footer-widget-area #foot_widget-first li a, #side-shopinfo-link > span a, #foot-shopinfo-link > span a {
+  color: #fff;
+}
+/*フッター資料請求ボタン色*/
+#side-foot_shopinfo .to_shiryou a {
+  background: #dc645e;
+  color: #fff;
+}
