@@ -32,25 +32,6 @@
 <?php endif; //favicon.ico ?>
 
 
-<script type="text/javascript">
-    $(function(){
-        $(".globNav-toggle").on("click", function() {
-            $(this).next().slideToggle();
-        });
-    });
-</script>
-
-<script>
-$(document).ready(function(){
-    $("ul.children").hide();
-    $("li.cat-item").hover(function() {
-        $("ul.children",this).slideDown("slow");
-    },
-    function() {
-        $("ul.children",this).slideUp("slow");
-    });
-});
-</script>
 
 
 <?php $print_css = (file_exists(get_stylesheet_directory() . '/print.css')) ? get_stylesheet_directory_uri() . '/print.css' : get_template_directory_uri() . '/print.css';?>
@@ -65,10 +46,11 @@ $(document).ready(function(){
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <!-- jQuery -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+	
+	
 <!-- Bootstrap js -->
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-
 <?php wp_head(); ?>
 
 </head>

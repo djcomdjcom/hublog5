@@ -1,21 +1,21 @@
 <?php
 /**
- * 投稿者一覧表示用テンプレート
- *
- *loop-authors.php
- */
+* 投稿者一覧表示用テンプレート
+*
+*loop-authors.php
+*/
 
 //表示したいユーザーのログイン名を設定
 $authers = array(
+	'samplea',
+    'sampleb',
 	'hublogadmin',
-	'tanaka',
-	'sato',
 );
 
 
 
 foreach ($authers as $auther){
-	$user_info = get_userdatabylogin( $auther );
+$user_info = get_userdatabylogin( $auther );
 
 /*
 以下のURLを参考に、必要な値を表示させる
@@ -26,40 +26,45 @@ foreach ($authers as $auther){
 ・ $user_info->user_url		... ウェブサイト
 ・ $user_info->description	... プロフィール
 その他は以下のURLを参考にする
- http://wpdocs.sourceforge.jp/%E9%96%A2%E6%95%B0%E3%83%AA%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9/get_userdata
+http://wpdocs.sourceforge.jp/%E9%96%A2%E6%95%B0%E3%83%AA%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9/get_userdata
 */
 ?>
-
-
-
-
-<div class="user_info clearfix profile flex50">
-	<div class="clearfix">
-		<span class="w100 thumbnail">
-		<img height="150" width="150" class="photo <?php echo $user_info->nickname; ?>" alt="<?php echo $user_info->post; ?>/<?php echo $user_info->division; ?>/<?php echo $user_info->last_name; ?>&nbsp;<?php echo $user_info->first_name; ?>" src="/wp-content/uploads/userphoto/<?php echo $user_info->id; ?>.jpg">
-
-		</span>
-		<div class="user-meta clearfix">
-			<div class="user_name">
-				<?php 	if  ($user_info->post) :?>
-				<?php echo '<span class="post">',($user_info->post),'</span>' ; ?>
-				<?php endif; ?>
-
-				<?php 	if ( $user_info->division) :?>
-				<?php echo '<span class="division">',($user_info->division),'</span>'; ?>
-				<?php endif; ?>
-
-				<em class="fullname cleartype"><?php echo $user_info->last_name; ?>&nbsp;<?php echo $user_info->first_name; ?></em>
-			</div>
-			<div class="user_description"><?php echo wpautop($user_info->description); ?></div>
-		</div>
-	</div>
-	<?php
-	//if ( current_user_can('manage_options') ) { var_dump($user_info); }
-	?>
+<div class="user_info clearfix profil">
+  <div class="inbox">
+    <figure class="photobox"> <img class="photo <?php echo $user_info->nickname; ?>" alt="<?php echo $user_info->post; ?>/<?php echo $user_info->division; ?>/<?php echo $user_info->last_name; ?>&nbsp;<?php echo $user_info->first_name; ?>" src="/wp-content/uploads/userphoto/<?php echo $user_info->id; ?>.jpg"> </figure>
+    <div class="staff-t">
+      <div class="staff-t1"><?php echo $user_info->post; ?></div>
+      <div class="staff-t2"><?php echo $user_info->division; ?></div>
+      <div class="staff-t3"><?php echo $user_info->last_name; ?>&nbsp;<?php echo $user_info->first_name; ?></div>
+      <div class="staff-t4"><?php echo $user_info->kana; ?></div>
+    </div>
+    <label>
+    <input type="checkbox" name="checkbox">
+    <div class=" staffpopup">
+      <div class="inbox row"> <span class="w100 col-3"> <img  class="photo <?php echo $user_info->nickname; ?>" alt="<?php echo $user_info->post; ?>/<?php echo $user_info->division; ?>/<?php echo $user_info->last_name; ?>&nbsp;<?php echo $user_info->first_name; ?>" src="/wp-content/uploads/userphoto/<?php echo $user_info->id; ?>.jpg"> </span>
+        <div class="userinfo_detail col-9">
+          <div class="user_name">
+            <div class="user_post_division">
+              <?php 	if ( $user_info->post)  :?>
+              <?php echo '<span class="post">',($user_info->post),'</span>' ; ?>
+              <?php endif; ?>
+              <?php if ($user_info->division) :?>
+              <?php echo '<span class="division">',($user_info->division),'</span>'; ?>
+              <?php endif; ?>
+            </div>
+            <em class="fullname cleartype"><?php echo $user_info->last_name; ?>&nbsp;<?php echo $user_info->first_name; ?></em> （<?php echo $user_info->kana; ?>） </div>
+          <?php 	if ( $user_info->credential) :?>
+          <div class="credential">資格： <?php echo ($user_info->credential); ?> </div>
+          <?php endif; ?>
+          <?php 	if ( $user_info->from) :?>
+          <div class="from">出身地： <?php echo ($user_info->from); ?> </div>
+          <?php endif; ?>
+          <div class="user_description"> <?php echo wpautop($user_info->description); ?> </div>
+        </div>
+      </div>
+    </div>
+    </label>
+  </div>
 </div>
-
-
-
 <?php
-}//endforeach
+} //endforeach

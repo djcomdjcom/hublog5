@@ -9,6 +9,8 @@ if ( in_category(array('reform','beforeafter')) ){
 } elseif (in_category('voice')) {
 	$addcontent = 'voice';
 	
+} elseif (is_singular('voice')) {
+	$addcontent = 'voice';
 		
 	
 //} elseif ( in_category( 'example' ) || post_is_in_descendant_category( get_term_by( 'slug', 'example', 'category' ))) {
@@ -33,6 +35,7 @@ $post_id_example = ( post_custom('voice-inc_example'));
 $post_id_voice = ( post_custom('example-inc_voice'));
 
 ?>
+
 <script>
 $(function(){
   $('.rel_lb a[href$=".jpg"],.rel_lb a[href$=".jpeg"],.rel_lb a[href$=".JPG"],.rel_lb a[href$=".JPEG"],.rel_lb a[href$=".png"],.rel_lb a[href$=".PNG"],.rel_lb a[href$=".gif"],.rel_lb a[href$=".GIF"]').attr('rel' ,'lightbox');
@@ -49,7 +52,7 @@ $(function(){
 
 	  <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		
-			<header>
+			<header class="wrapper">
 				<?php if (post_custom('voice-catch')) : ?>
 				
 				<h1 class="entry-title"><span><?php echo (post_custom('voice-catch')) ; ?></span></h1>

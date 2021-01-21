@@ -13,13 +13,13 @@
 	
   <section id="globalheader">
 	  <div class="row wrapper">
-    <div class="sitetitle col-12 col-md-5"><a href="/" ><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/sitetitle.png"></a></div>
+    <div class="sitetitle col-12 col-md-5 align-self-center"><a class="w100 maxw-360 mx-auto mx-md-0" href="/" ><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/sitetitle.png"></a></div>
 	  
 	  
-    <div class="sitelogo col-3 col-md-2"><a href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/favicon.png"></a></div>
+    <div class="sitelogo col-3 col-md-2"><a class="w100" href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/favicon.png"></a></div>
 		  
 		  
-    <div id="header-sub" class="col-md-5 col-9">
+    <div id="header-sub" class="col-md-5 col-9 text-left text-md-right">
       <?php if ( has_nav_menu( 'contact-link' ) ) :?>
       <div class="menu-header_link-container">
         <?php wp_nav_menu( array('theme_location'=>'contact-link', 'fallback_cb'=>'nothing_to_do') ); ?>
@@ -62,13 +62,6 @@
     </div>
 	  </div>
   </section>
-	<div id="top-contact">
-  <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/top-contact.png" class="" usemap="#tc">
-  <map name="tc">
-    <area shape="poly" coords="28,120,28,281,77,299,77,112" href="/document-request/">
-    <area shape="poly" coords="25,322,25,481,77,499,77,306" href="/inquiry/">
-  </map>
-	</div>
 </header>
 <?php if (! is_home() ): ?>
 <nav id="globalnav">

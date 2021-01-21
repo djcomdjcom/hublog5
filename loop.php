@@ -4,7 +4,7 @@
  */
 ?>
 <div id="container" class="index clearfix widecolumn">
-  <div id="content" role="main" <?php body_class( 'clearfix' ); ?>>
+  <div id="content" role="main" <?php body_class( 'clearfix  container-fluid' ); ?>>
     <?php
     if ( !( is_home() ) ):
       $h1_class = '';
@@ -33,54 +33,51 @@
     else :$page_title = wp_title( '', false ) . __( ' の記事一覧' );
     endif;
     ?>
-	  <header class="entry-header">
-    <h1 class="index-title entry-title <?php echo $h1_class; ?>"><span><?php echo $page_title; ?></span></h1>
-	  </header> 
-	  
-	  
+    <header class="entry-header row">
+      <h1 class="index-title entry-title col <?php echo $h1_class; ?>"><span><?php echo $page_title; ?></span></h1>
+    </header>
     <?php endif; //!is_home ?>
     <script>
 $(function(){
-$('.posts .post.style-example').addClass('col-6 col-lg-4 mb-4 pb-4'); 
+$('.posts .post.style-example').addClass('col-6 col-lg-4'); 
 });
 $(function(){
-$('.posts .post.style-voice').addClass('col-6 col-lg-4 mb-4 pb-4'); 
+$('.posts .post.style-voice').addClass('col-6 col-lg-4'); 
 });
 $(function(){
 $('.posts .post.style-reform').addClass('col-12'); 
 });
 </script>
-	  <div class="wrapper">
-    <div <?php body_class( 'posts archive row' ); ?>>
-      <?php
-      if ( !have_posts() ):
-        /* 記事が見つからなかった場合の表示 */
-        ?>
-      <div id="post-0" class="post error404 not-found">
-        <div class="entry-content cleartype" style="font-size:20px; color:#666; font-weight:bold; text-align:center;">
-          <p>&nbsp;</p>
-          <p>申し訳ございません。</p>
-          <p>お探しのページは削除または、アドレスが変更となりました。<br />
-            恐れ入りますが、<br />
-            <a href="<?php site_url(); ?>">トップページ</a><br />
-            よりご希望のメニューをお選びください。 </p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
+    <div class="wrapper">
+      <div <?php body_class( 'posts archive row col' ); ?>>
+        <?php
+        if ( !have_posts() ):
+          /* 記事が見つからなかった場合の表示 */
+          ?>
+        <div id="post-0" class="post error404 not-found">
+          <div class="entry-content cleartype" style="font-size:20px; color:#666; font-weight:bold; text-align:center;">
+            <p>&nbsp;</p>
+            <p>申し訳ございません。</p>
+            <p>お探しのページは削除または、アドレスが変更となりました。<br />
+              恐れ入りますが、<br />
+              <a href="<?php site_url(); ?>">トップページ</a><br />
+              よりご希望のメニューをお選びください。 </p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+          </div>
+          <!-- .entry-content --> 
         </div>
-        <!-- .entry-content --> 
+        <!-- #post-0 -->
+        
+        <?php else : ?>
+        <?php while ( have_posts() ) : the_post(); ?>
+        <?php $looppart = apply_filters('looppart','index'); ?>
+        <?php get_template_part('looppart', $looppart); ?>
+        <?php endwhile; ?>
+        <?php endif; ?>
       </div>
-      <!-- #post-0 -->
-      
-      <?php else : ?>
-      <?php while ( have_posts() ) : the_post(); ?>
-      <?php $looppart = apply_filters('looppart','index'); ?>
-      <?php get_template_part('looppart', $looppart); ?>
-      <?php endwhile; ?>
-      <?php endif; ?>
+      <!--posts archive--> 
     </div>
-    <!--posts archive-->
-	  </div>
-    
     <?php
 
     if ( function_exists( 'postbar' ) ) {

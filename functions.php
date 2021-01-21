@@ -170,8 +170,8 @@ class Theme_Settings{
 		register_nav_menu( 'mobile-nav' , __('mobile-nav') );
 		register_nav_menu( 'about-nav' , __('about-nav') );
 		register_nav_menu( 'order-nav' , __('注文住宅') );
-    register_nav_menu( 'renov-nav' , __('リノベーション') );
-    register_nav_menu( 'reform-nav' , __('リフォーム') );
+		register_nav_menu( 'renov-nav' , __('リノベーション') );
+		register_nav_menu( 'reform-nav' , __('リフォーム') );
 	}
 
 	function hublog_widgets_init_sidebar(){
@@ -252,6 +252,11 @@ class Theme_Settings{
 			$output = 'example';
 		} elseif ( post_is_in_category_slug('reform') ) {
 			$output = 'reform';
+
+		} elseif ( post_is_in_category_slug('event') ) {
+			$output = 'event';
+			
+			
 		} elseif ( post_is_in_category_slug('component') ) {
 			$output = 'component';
 
@@ -272,7 +277,7 @@ class Theme_Settings{
 			
 		} elseif ( is_post_type_archive('voice')) {
 			$output = 'voice';
-		} elseif ( is_tax('voice')) {
+		} elseif ( is_tax('voice_cat')) {
 			$output = 'voice';
 			
 			

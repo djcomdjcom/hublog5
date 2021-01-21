@@ -16,7 +16,7 @@
 	<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( array( 'before' => '施工事例「', 'after' => '」詳細ページへ' ) ); ?>" class="thumbnail">
 		<span class="attachment">
 			<?php if ( function_exists('the_post_image') ) {
-				if ( the_post_image('thumbnail') === false ){
+				if ( the_post_image(array(600, 600)) === false ){
 					?><img src="<?php echo get_template_image('noimage');?>" alt="No Image" /><?php
 				}
 			} ?>
@@ -24,16 +24,16 @@
 	</a>
 	<?php //get_template_part('cat_icon');//カテゴリーアイコン ?>
 	
-	<span class="title card-body">
+	<span class="title">
         
     <?php //if(post_custom('catchcopy')) :?>
     <?php //echo nl2br ( post_custom('catchcopy') ); ?>
         <?php //else :?>
         
     <?php if(post_custom('reform-youbou')) :?>
-	<p class="card-text"><?php echo wpautop(post_custom('reform-youbou')); ?></p>
+	<p class=""><?php echo wpautop(post_custom('reform-youbou')); ?></p>
         <?php else :?>
-		<p class="card-text"><?php the_title(); ?></p>
+		<p class=""><?php the_title(); ?></p>
     <?php endif ;?>
     <?php //endif ;?>
 		

@@ -7,7 +7,7 @@
  *
  */
 ?>
-<article id="post-<?php the_ID(); ?>" class="post clearfix style-event">
+<article id="post-<?php the_ID(); ?>" class="post clearfix style-event  <?php if (in_category('event-closed')) echo 'closed'; ?>">
     <?php if ( is_new( WHATSNEW_TTL ) ) : ?>
     <span class="tmb-icon new">新着</span>
     <?php endif; ?>

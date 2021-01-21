@@ -1,274 +1,428 @@
-<?php
-/**
-/**
-template name: HOME
-* home.php
-* @テーマ名	hublog4
-* @更新日付	2020.02.02
-*
-*/
-get_header();
-?>
-<?php if (current_user_can('administrator')) :?>
-<p class="edit_theme"><a target="_blank" href="/wp-admin/theme-editor.php?file=home.php&theme=<?php echo get_stylesheet('name'); ?>" title="/wp-admin/theme-editor.php?file=addcontent-about.php&theme=<?php echo get_stylesheet('name'); ?>"> トップページを編集 </a> </p>
-<?php endif;?>
-<?php get_template_part('inc', 'eventposts'); ?>
-<div id="container" class="widecolumn">
-<div id="content" class="home clearfix">
-  <header id="home-title" class="home-content">
-    <div class="wrapper">
-      <h1 class="title">
-        <?php bloginfo('name'); ?>
-      </h1>
-    </div>
+<?php get_header(); ?>
+
+<main role="main">
+
+<div id="home-slider">
+		<?php get_template_part('nivoslides'); ?>
+
+</div>
+<div id="wp-carousel">
+SPECIAL CONTENTS
+<?php get_template_part('inc', 'event_bnrs'); ?>
+
+</div>
+
+<?php get_template_part( 'global-navi-menu' ); ?>
+
+
+<!--▼▼▼コンセプト▼▼▼-->
+<section id="home-concept" class="pt-5 pb-5">
+<div class="wrapper">
+	<header id="home-concept-header">
+	<h2 class="ttl_img w100 maxw-640 center"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/home-concept-ttl.png" title="<?php echo get_option('profile_shop_name'); ?>のコンセプト" alt="CONCEPT"/></h2>
   </header>
-  <?php
-  $catnews = get_category_by_slug( 'news' ); //お知らせ　投稿がある場合のみ表示
-  ?>
-  <?php
-  $catnews_id = ( $catnews ) ? $catnews->term_id : 0;
-  $catnews_name = ( $catnews ) ? $catnews->name : 'News';
-  ?>
-  <?php query_posts('cat=' . $catnews_id . '&showposts=3'); ?>
-  <?php if (have_posts()) : ?>
-  <section id="home-news" class="clearfix home-content clearfix anchor">
-    <div class="wrapper"> 
-      <!--home-infoarea-event-->
-      <header class="home_content_header clearfix">
-        <h2 class="title">News</h2>
-      </header>
-      <div class="posts clearfix">
-        <?php while (have_posts()) : the_post(); ?>
-        <?php get_template_part('looppart', 'headline'); ?>
-        <?php endwhile; ?>
-      </div>
-      <p class="arrow btn"><a class="arrow" href="<?php echo get_category_link($catnews_id); ?>" title="<?php echo $catnews_name; ?>">一覧へ</a> </p>
-      <?php endif; //!empty $catnews?>
-      <?php wp_reset_query(); ?>
-    </div>
-  </section>
-  <!--home-news-->
-  
-  <article class="clearfix home-content" id="home-concept">
-    <div class="wrapper">
-      <header class="home_content_header clearfix">
-        <h2 class="title-image "> <span class="w100"> <img src="<?php print( get_template_directory_uri()) ?>/images/sample-image.png" alt="コンセプト"> </span> </h2>
-      </header>
-      <div class="center">
-        <p> 想像してみて下さい。<br>
-          3世代住み継ぐことで子や孫の住居費が軽減し、ゼロエネルギー住宅で光熱費がかからず、高性能住宅で冬暖かく夏涼しい快適な空間ですごせて、ヒートショックなどの健康のリスクからも守られ、安心快適に暮らせる家が100年続くご家族を支えている未来を。 </p>
-        <ul class="list">
-          <li>「高性能で長持ちする家」をつくるために、スーパーウォール工法を標準仕様。</li>
-          <li>耐震等級3+制震を標準仕様とし、ゼロエネルギー住宅仕様の高性能住宅を実現。</li>
-        </ul>
-        <p> 次の世代が住み継ぎたいと思える家を残して行くことは、次の世代の住居費を軽減し、豊かなご家族をつくるための大切な要因と私たちは考えています。 </p>
-      </div>
-    </div>
-    <p class="btn arrow"> <a href="/concept">コンセプト</a> </p>
-  </article>
-  <article class="clearfix home-content" id="home-example-set">
-  <?php
-  query_posts( array(
-    'post_type' => 'reform', //カスタム投稿名
-    //            'event_type' => array('newhouse','renovation'),
-    'order' => 'ASC',
-    'orderby' => 'order',
-    'posts_per_page' => 9 //表示件数（ -1 = 全件 ）
-  ) );
-  ?>
-  <?php if (have_posts()) :?>
-  <section id="home-example-reform" class="home-content">
-    <div class="wrapper">
-      <header class="home_content_header clearfix">
-        <h2 class="title">リフォーム事例</h2>
-      </header>
-      <div class="posts archive category-example">
-        <?php while (have_posts()) : the_post(); ?>
-        <?php get_template_part('looppart', 'example'); ?>
-        <?php endwhile; ?>
-      </div>
-      <p class="arrow btn"><a class="arrow" href="/reform" title="リフォーム事例一覧へ">一覧へ</a> </p>
-    </div>
-  </section>
-  <!--home-example-reform-->
-  <?php wp_reset_query(); endif;?>
+		<div id="home-concept-img">
+  <figure class="w100 center">
+      <img src="<?php bloginfo('stylesheet_directory'); ?>/images/home-concept-img001.jpg" alt="<?php echo get_option('profile_shop_name'); ?>コンセプトイメージ"/>
+		</figure>
+	
+	<a class="w100 maxw-200 topage" href="/concept"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/home-concept-topage.png" alt="コンセプトイページはこちら"/></a>
+	</div>
+	
+  </div>
+	
+	<section id="concept-choice">
+		<div class="wrapper pt-5">
+		
+		<h2 class="ttl_img w100 maxw-640 center"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/concept_choice-ttl.png"  alt="おすすめ4つの暮らし方"/></h2>
+			
+			
+<p class="text-center">私たちと家づくりをしてくださった大切なオーナー様のお声をもとに<br>
+誕生した日々を彩る４つの暮らしをご紹介いたします!!</p>
+<ul class="flexbox">
+			<li class="choice01">
+				<figure class="w100">
+		    <img src="<?php bloginfo('stylesheet_directory'); ?>/images/concept_choice_img01.jpg" alt="コンセプト1のイメージ"/>
+				</figure>
+				
+				<div class="txtcell">
+					<span class="subttl">STYLE 01</span>
+					<h3 class="ttl">キッズHugスタイル</h3>
+					
+				</div>
+			</li>
+			<li class="choice02">
+				<figure class="w100">
+		    <img src="<?php bloginfo('stylesheet_directory'); ?>/images/concept_choice_img02.jpg" alt="コンセプト2のイメージ"/>
+				</figure>
+				
+				<div class="txtcell">
+					<span class="subttl">STYLE 02</span>
+					<h3 class="ttl">イキイキWithスタイル</h3>
+					
+				</div>
+			</li>
+			<li class="choice03">
+				<figure class="w100">
+		    <img src="<?php bloginfo('stylesheet_directory'); ?>/images/concept_choice_img03.jpg" alt="コンセプト3のイメージ"/>
+				</figure>
+				
+				<div class="txtcell">
+					<span class="subttl">STYLE 03</span>
+					<h3 class="ttl">おうちSalonスタイル</h3>
+					
+				</div>
+			</li>
+			<li class="choice04">
+				<figure class="w100">
+		    <img src="<?php bloginfo('stylesheet_directory'); ?>/images/concept_choice_img04.jpg" alt="コンセプト4のイメージ"/>
+				</figure>
+				
+				<div class="txtcell">
+					<span class="subttl">STYLE 04</span>
+					<h3 class="ttl">ZEROスマートスタイル</h3>
+					
+				</div>
+			</li>
+	
+		</ul>
+		</div>
+	</section>
+
+
+</section>
+<!--　home-concept　▲▲▲コンセプト▲▲▲-->
+	
+
+<!--▼▼▼施工事例▼▼▼-->
+<section id="home-example" class="pb-5 pt-5">
+	<div class="wrapper">
+    <header class="content_header">
+		
+		
+		<p class="center"><?php echo get_option('profile_shop_name'); ?>の施工実績</p>
+		<h2 class="ttl_img mb-4 center w100 maxw-640"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/home-example-ttl.png" title="<?php echo get_option('profile_shop_name'); ?>の施工事例" alt="WORKS"/></h2>
+		<div class="arrow btn toindex">
+<a href="/example/" title="施工事例一覧ページヘのリンク">一覧を見る</a>
+		</div>
+	</header>
+    
+    
+
+<script>
+$(function(){
+$('.posts .post.style-example').addClass('col-6 col-lg-4 mb-4'); 
+});
+</script>
+<div class="row posts flex-row justify-content-start">
   <?php
   query_posts( array(
     'post_type' => 'example', //カスタム投稿名
     //            'event_type' => array('newhouse','renovation'),
-    'order' => 'ASC',
+//    'order' => 'ASC',
     'orderby' => 'order',
     'posts_per_page' => 9 //表示件数（ -1 = 全件 ）
   ) );
   ?>
-  <?php if (have_posts()) :?>
-  <section id="home-example-order" class="home-content">
-  <div class="wrapper">
-    <header class="home_content_header clearfix">
-      <h2 class="title">注文住宅</h2>
-    </header>
-    <div class="posts archive category-example">
-      <?php while (have_posts()) : the_post(); ?>
-      <?php get_template_part('looppart', 'example'); ?>
-      <?php endwhile; ?>
-    </div>
-    <p class="btn arrow"><a class="arrow" href="/example" title="施工事例一覧へ">一覧へ</a> </p>
-    </section>
-    <!--home-example-order-->
-    <?php wp_reset_query(); endif;?>
-    </section>
-    </article>
-    <!--home-example-set-->
+
+<?php if(have_posts()): while(have_posts()):the_post(); ?>
+        <?php get_template_part('looppart', 'example'); ?>
+<?php endwhile; endif; ?>
+</div>    
     
-    <article id="home-infoarea" class="clearfix home-content">
-      <?php
-      $catnews = get_category_by_slug( 'event' ); //イベント情報　投稿がある場合のみ表示
-      ?>
-      <?php
-      $catnews_id = ( $catnews ) ? $catnews->term_id : 0;
-      $catnews_name = ( $catnews ) ? $catnews->name : 'Event';
-      ?>
-      <?php query_posts('cat=' . $catnews_id . '&showposts=4'); ?>
-      <?php if (have_posts()) : ?>
-      <section id="home-event" class="clearfix anchor clearfix">
-        <div class="wrapper"> 
-          
-          <!--home-infoarea-event-->
-          <header class="home_content_header clearfix">
-            <h2 class="title avenir">イベント情報</h2>
-          </header>
-          <div class="posts clearfix archive">
-            <?php while (have_posts()) : the_post(); ?>
-            <?php get_template_part('looppart', 'home-event'); ?>
-            <?php endwhile; ?>
-          </div>
-          <p class="btn arrow"><a class="arrow" href="<?php echo get_category_link($catnews_id); ?>" title="<?php echo $catnews_name; ?>">一覧へ</a> </p>
-          <?php endif; //!empty $catnews?>
-          <?php wp_reset_query(); ?>
-        </div>
-      </section>
-      <!--home-event--> 
-    </article>
-    </section>
-    <div class="wrapper home-content">
-      <div class="wrapper">
-        <?php get_template_part('include', 'shiryou'); //資料請求?>
-        <!--home-shiryou--> 
-      </div>
-    </div>
-    <?php
-    $catnews = get_category_by_slug( 'blog' ); //お知らせ　投稿がある場合のみ表示
-    ?>
-    <?php
-    $catnews_id = ( $catnews ) ? $catnews->term_id : 0;
-    $catnews_name = ( $catnews ) ? $catnews->name : 'ブログ';
-    ?>
-    <?php query_posts('cat=' . $catnews_id . '&showposts=3'); ?>
-    <?php if (have_posts()) : ?>
-    <section id="home-blog" class="clearfix home-content anchor">
-      <div class="wrapper">
-        <header class="home_content_header clearfix">
-          <h2 class="title">Blog</h2>
-        </header>
-        <div class="posts clearfix archive">
-          <?php while (have_posts()) : the_post(); ?>
-          <?php get_template_part('looppart', ''); ?>
-          <?php endwhile; ?>
-        </div>
-        <p class="btn arrow"><a class="arrow" href="<?php echo get_category_link($catnews_id); ?>" title="<?php echo $catnews_name; ?>">一覧へ</a> </p>
-        <?php endif; //!empty $catnews?>
-        <?php wp_reset_query(); ?>
-      </div>
-    </section>
-    <!--home-blog-->
+ 
+</div>
+	</section>
+<!--　home-example　▲▲▲施工事例▲▲▲-->
+
+	
+
+<!--▼▼▼インフォエリア▼▼▼-->
+<section id="home-infoarea" class="mb-5">
+	<div class="wrapper p-md-5">
+<!--▼▼▼ニュース＆トピックス▼▼▼-->
+	<section id="home-news">
+		<header class="content_header">
+			<p class="subttl center">ニュース＆トピックス</p>
+	    <h2 class="ttl w100 maxw-640 center"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/home-news-ttl.png"  alt="NEWS&TOPICS"/></h2>
+			
+		<div class="arrow btn toindex">
+<a href="/category/news" title="ニュース＆トピックス一覧ページヘのリンク">一覧を見る</a>
+		</div>
+			
+		</header>
+		
+<?php query_posts('category_name=news-topics&posts_per_page=3'); ?>    
     
-    <section id="home-zeh" class="clearfix wrapper home-content">
-      <div class="wrapper">
-        <div  class="clearfix">
-          <div class="l-box w66">
-            <h2 class="title"><?php echo get_option('profile_shop_name'); ?>はZEH<small>※</small>の普及に努めています！</h2>
+      <div class="posts clearfix mb-5">
+        <?php while (have_posts()) : the_post(); ?>
+        <?php get_template_part('looppart', 'headline'); ?>
+        <?php endwhile; ?>
+      </div>		
+		
+		</section>
+<!--　home-example　▲▲▲ニュース＆トピックス▲▲▲-->
+
+<!--▼▼▼イベント情報▼▼▼-->
+	<section id="home-event">
+		<header class="content_header">
+			<p class="subttl center">近日のイベントのご案内</p>
+	    <h2 class="ttl w100 maxw-640 center"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/home-event-ttl.png"  alt="NEWS&TOPICS"/></h2>
+			
+		<div class="arrow btn toindex">
+<a href="/category/event" title="ニュース＆トピックス一覧ページヘのリンク">一覧を見る</a>
+		</div>
+			
+			
+		</header>
+		
+<script>
+$(function(){
+$('.posts .post.style-event').addClass('col-12 col-lg-6 mb-4'); 
+});
+</script>
+<?php query_posts('category_name=events&posts_per_page=2'); ?>
+      <div class="posts row mb-5">
+        <?php while (have_posts()) : the_post(); ?>
+        <?php get_template_part('looppart', 'event'); ?>
+        <?php endwhile; ?>
+      </div>
+<?php wp_reset_query(); ?>	
+	
+		
+		</section>
+<!--　home-event　▲▲▲イベント情報▲▲▲-->
+	</div>
+	</section>
+<!--　home-infoarea　▲▲▲インフォエリア▲▲▲-->
+	
+
+<!--▼▼▼選ばれる理由▼▼▼-->
+<section id="home-reason" class="pt-5 pb-5 mb-5">
+	<div class="wrapper">
+		<header class="content_header mb-5">
+			
+			<h2 class="ttl_img w100 maxw-640 center"><img title="<?php echo get_option('profile_shop_name'); ?>が選ばれる理由" src="<?php bloginfo('stylesheet_directory'); ?>/images/home-reason-ttl.png" alt="REASON"/></h2>
+<p class="subttl text-center text-white"><?php echo get_option('profile_shop_name'); ?>が選ばれる理由</p>
+		</header>
+		
+		
+		<ul class="row">
+			<li class="col-lg-3 col-6 bm-2">
+  <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/reason_01_shinchiku.png">
+			</li><li class="col-lg-3 col-6 mb-4">
+  <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/reason_02_renovation.png">
+			</li><li class="col-lg-3 col-6 mb-4">			
+  <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/reason_03_reform.png">
+			</li><li class="col-lg-3 col-6 mb-4">			
+  <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/reason_04_after.png">
+			</li><li class="col-lg-3 col-6 mb-4">			
+  <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/reason_05_iezukuri_nagare.png">
+			</li><li class="col-lg-3 col-6 mb-4">			
+  <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/reason_06_keiyaku_nagare.png">
+			</li><li class="col-lg-3 col-6 mb-4">			
+  <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/reason_07_hikiwatashi_nagare.png">
+			</li><li class="col-lg-3 col-6 mb-4">			
+  <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/reason_08_okane.png">
+			</li>			
+		</ul>
+		
+	</div>
+</section>
+	
+<!--　home-infoarea　▲▲▲インフォエリア▲▲▲-->
+	
+
+
+	
+	
+
+<!--▼▼▼お客様の声▼▼▼-->
+<section id="home-voice" class="pb-5 pt-5">
+	<div class="wrapper">
+    <header class="content_header">
+		
+		
+		<p class="center"><?php echo get_option('profile_shop_name'); ?>で建てられたお客様の声</p>
+		<h2 class="ttl_img mb-4 center w100 maxw-640"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/home-voice-ttl.png" title="<?php echo get_option('profile_shop_name'); ?>で建てられたお客様の声" alt="WORKS"/></h2>
+		<div class="arrow btn toindex">
+<a href="/voice/" title="施工事例一覧ページヘのリンク">一覧を見る</a>
+		</div>
+	</header>
+    
+    
+
+<script>
+$(function(){
+$('.posts .post.style-voice').addClass('col-6 col-lg-4 mb-4'); 
+});
+</script>
+<div class="row posts flex-row justify-content-start">
+  <?php
+  query_posts( array(
+    'post_type' => 'voice', //カスタム投稿名
+    //            'event_type' => array('newhouse','renovation'),
+//    'order' => 'ASC',
+    'orderby' => 'order',
+    'posts_per_page' => 9 //表示件数（ -1 = 全件 ）
+  ) );
+  ?>
+
+<?php if(have_posts()): while(have_posts()):the_post(); ?>
+        <?php get_template_part('looppart', 'voice'); ?>
+<?php endwhile; endif; ?>
+</div>    
+    
+ 
+</div>
+	</section>
+<!--　home-voice　▲▲▲お客様の声▲▲▲-->
+	
+	
+	
+
+<!--▼▼▼代表あいさつとスタッフ紹介▼▼▼-->
+<section id="home-greeting">
+	<div class="wrapper">
+	
+<!--▼▼▼代表あいさつ▼▼▼-->
+		<section id="president">
+	<figure class="w100">
+		<img src="<?php bloginfo('stylesheet_directory'); ?>/images/president_banner.png"  alt="代表あいさつ"/>
+		</figure>
+		
+		</section>
+		
+		
+<!--　home-greeting　▲▲▲代表あいさつ▲▲▲-->
+<!--▼▼▼スタッフ紹介▼▼▼-->
+		
+		<section id="home-staff">
+		<ul class="flexbox">
+		<?php get_template_part('loop-authors'); ?>
+
+			
+		<div class="staff-list">
+		   <a href="#"><img class="pt-2 photo yamamoto.r" alt="" src="<?php echo get_stylesheet_directory_uri(); ?>/img/and-next-you.png"></a>
+		</div>
+		</ul>
+
+
+		
+		</section>
+<!--　home-staff　▲▲▲スタッフ紹介▲▲▲-->
+		
+	</div>
+	
+</section>
+<!--　home-greeting　▲▲▲代表あいさつとスタッフ紹介▲▲▲-->
+	
+
+	
+	
+
+<div class="greeting">
+<a href="/about/message"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/president_banner.png"></a>
+
+<div class="staff-ol">
+<div class="staff text-center">
+<div class="staff-description">
+<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/staff-t.png">
+</div>
+
+<div class="staff-list-i">
+
+<ul>
+<?php get_template_part('loop-authors'); ?>
+<div class="staff-list">
+<li class="text-center">
+   <a href="#"><img class="pt-2 photo yamamoto.r" alt="" src="<?php echo get_stylesheet_directory_uri(); ?>/img/and-next-you.png"></a>
+</li>
+</div>
+</ul>
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="about">
+<div class="about-description text-center">
+<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/about-us.png">
+</div>
+
+<div class="about-inner row">
+<div id="home-blog" class="col-12 col-lg-6">
+<a href="/category/blog/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/blog.png"></a>
+<div class="row posts">
+
+<?php query_posts('category_name=blog&posts_per_page=3'); ?>
+<?php if(have_posts()): while(have_posts()):the_post(); ?>
+        <?php get_template_part('looppart', 'blog'); ?>
+<?php endwhile; endif; ?>
+
+</div>
+</div>
+
+<div id="home-promotion" class="col-12 col-lg-6">
+<a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/blog_banner.png"></a>
+<img class="sns-ttl" src="<?php echo get_stylesheet_directory_uri(); ?>/img/sns-ttl.png">
+<div class="blog2-1">
+<a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/b-twitter.png"></a>
+<a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/b-instagram.png"></a>
+<a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/b-fb.png"></a>
+</div>
+</div>
+</div>
+</div>
+
+<div class="navi text-center mt-3">
+<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/ftn.png">
+<div class="ftnt">お客様の状況に応じてアクションをお選びください</div>
+<div class="navi-menu">
+<ul>
+  <li><a href="/free"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/navi_01_torikumi.png"></a></li>
+  <li><a href="/online"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/navi_02_original.png"></a></li>
+  <li><a href="/kenngakukai"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/navi_03_&+.png"></a></li>
+  <li><a href="/document-request"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/navi_04_online.png"></a></li>
+</ul>
+</div>
+</div>
+
+</main>
+
+
+        <?php get_template_part('include', 'shiryou'); ?>
+
+
+<?php if (get_option('profile_zeh_achievement')):?>
+
+<div id="zeh_achievement" class="zeh">
+<div class="zeh1">
+        <div  class="row">
+          <div class="col-lg-2 col-5 mx-auto d-block">
+              <span class="w100 mb-3"><img class="" src="<?php bloginfo('stylesheet_directory'); ?>/images/icon_zeh.png"  alt="ZEHビルダー"/></span> </div>
+          <!--L--> 
+          <div class="col-lg-10 col-12">
+            <h2 class="title lead"><?php echo get_option('profile_shop_name'); ?>はZEH<small>※</small>の普及に努めています！</h2>
             <p> ＺＥＨ（ゼッチ）とは、Net Zero Energy House（ネット・ゼロ・エネルギーハウス）の略。</p>
             <p>ネットゼロエネルギー住宅とは、建物の断熱化＋機器の高効率化により、使用エネルギーを削減し、さらに、太陽光発電などの創エネルギーを用いることで、エネルギー収支がゼロになる住宅のこと。</p>
           </div>
-          <!--L-->
-          <div class="r-box w33"> <span class="w100"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/icon_zeh.png"  alt="ZEHビルダー"/></span> </div>
-          <!--R--> 
           
         </div>
-        <div class="milestone clearfix">
-          <h3 class="title"><span><?php echo get_option('profile_shop_name'); ?>　ZEH普及実績と今後の目標</span></h3>
-          
-          <!--ul >
-            <li>
-              2016年度実績：12件
-            </li>
-            <li>
-              2017年度実績：17件
-            </li>
-            <li>
-              2018年度実績：16件
-            </li>
-            <li>
-              2019年度実績：100%
-            </li>
-            <li>
-              2020年度実績：100%
-            </li>
-          </ul-->
-          
-          <table>
-            <tr>
-              <th> 2016年度実績 </th>
-              <th> 2017年度実績 </th>
-              <th> 2018年度実績 </th>
-              <th> 2019年度実績 </th>
-              <th> 2020年度実績 </th>
-            </tr>
-            <tr>
-              <td> 12件 </td>
-              <td> 17件 </td>
-              <td> 16件 </td>
-              <td> 100% </td>
-              <td> 100% </td>
-            </tr>
-          </table>
-        </div>
-      </div>
-    </section>
-    <article id="home-about" class="clearfix">
-      <div class="wrapper">
-        <header class="home_content_header clearfix">
-          <h2 class="title"> 会社情報 </h2>
-        </header>
-      </div>
-      <div class="movie-wrap" style="padding-bottom: 30%; margin-bottom: 0;">
-        <?php if (get_option('profile_googlemap')) : ?>
-        <?php echo get_option('profile_googlemap'); ?>
-        <?php else: ?>
-        <iframe width="100%" height="360" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.co.jp/maps?q=<?php echo get_option('profile_address'); ?>&amp;z=17&output=embed&iwloc=B"></iframe>
-        <?php endif; ?>
-      </div>
-      <div class="wrapper">
-        <header class="home_content_header">
-          <h3 class="title">お問合せ</h3>
-        </header>
-        <?php
-        $form_inquiry = get_option( 'profile_form_inquiry' );
-        echo do_shortcode( "[contact-form-7 id=\"$form_inquiry\" title=\"お問合せ\"]" );
-        ?>
-      </div>
-    </article>
-    <!--home-about-->
     
-    </section>
-    </article>
-    <!--home-infoarea--> 
     
-  </div>
-  <!-- #content --> 
-  
 </div>
-<!--#container-->
-
+<div class="zeh2">
+<div class="zeh3">
+<?php echo get_option('profile_shop_name'); ?>のZEH普及実績と今後の目標
+</div>
+<div class="zeh4 zeh_achievement">
+<?php echo wpautop(get_option('profile_zeh_achievement'));?>
+</div>
+</div>
+</div>
+<?php endif;?>
 <?php get_footer(); ?>
-<?php //echo do_shortcode(‘[addtoany]’);?>
+
