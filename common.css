@@ -2276,26 +2276,37 @@ dl.gallery-item {
   margin-right: 1em;
 }
 
+
 #example-slider .flex-control-nav{
 	z-index: 5;
 }
-#example-slider .flex-info{
+
+@media screen and (max-width: 720px) {
+
+#galleryslider .flex-info{
 	position: fixed;
-	bottom: 0;
+	bottom: -200%;
+	transition: 0.3s ease;
 	left: 0;
 	right: 0;
 	width: 100vw !important;
-	min-height: 10%;
 	margin: 0;
 	opacity: 1;
 	background: rgba(0,0,0,0.75);
 	z-index: 20;
-	transition: 0.3s ease;
 }
-#example-slider .flexslider:hover #example-slider .flex-info{
+#galleryslider .flexslider:hover .flex-info{
+	bottom: 0;
 	transition: 0.3s ease;
+	min-height: 10Vh;
+	text-align: center;
+}
 }
 
+#example-slider .flex-info > p{
+	padding: 1em ;
+	min-height: 10%;
+}
 /*BEFOREAFTER*/
 #addcontent-reform #reform-meta, #addcontent-reform #gallery-set {
   float: none;

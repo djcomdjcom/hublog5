@@ -6,17 +6,13 @@
 
 ?>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" />
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
-<script>
+	<script>
 $(function(){
-  $('.rel_lb a[href$=".jpg"],.rel_lb a[href$=".jpeg"],.rel_lb a[href$=".JPG"],.rel_lb a[href$=".JPEG"],.rel_lb a[href$=".png"],.rel_lb a[href$=".PNG"],.rel_lb a[href$=".gif"],.rel_lb a[href$=".GIF"]').setAttribute({ "data-toggle","lightbox" });
-});
-</script>
+  $('.rel_lb a[href$=".jpg"],.rel_lb a[href$=".jpeg"],.rel_lb a[href$=".JPG"],.rel_lb a[href$=".JPEG"],.rel_lb a[href$=".png"],.rel_lb a[href$=".PNG"],.rel_lb a[href$=".gif"],.rel_lb a[href$=".GIF"]').attr('rel' ,'lightbox');
+});  
+</script> 
 
 <div id="container" class="single clearfix <?php if (!in_category(array('blog','genba','staff','shachou')) ):?> widecolumn<?php endif ;?>">
-
-
 	<div id="content" role="main">
 
 		<?php the_post(); ?>
