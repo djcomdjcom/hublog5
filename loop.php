@@ -26,6 +26,9 @@
 
     elseif ( is_tax() ): $page_title = sprintf( __( '%s', 'twentyten' ), '<span class="taxonomy">' . single_term_title( '', false ) . '一覧</span>' );
 
+	  
+    elseif (is_post_type_archive ( array('example','voice','reform'))): $page_title = sprintf( __( '%s', 'twentyten' ), '<span>' . get_post_type_object(get_post_type())->label . '</span>' );
+	
     elseif ( is_day() ): $page_title = sprintf( __( 'Daily Archives: <span>%s</span>', 'twentyten' ), get_the_date() );
     elseif ( is_month() ): $page_title = sprintf( __( 'Monthly Archives: <span>%s</span>', 'twentyten' ), get_the_date( 'F Y' ) );
     elseif ( is_year() ): $page_title = sprintf( __( 'Yearly Archives: <span>%s</span>', 'twentyten' ), get_the_date( 'Y' ) );

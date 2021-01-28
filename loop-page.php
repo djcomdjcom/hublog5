@@ -8,20 +8,10 @@
   <div id="content" role="main" <?php body_class( 'clearfix' ); ?>>
     <article id="post-<?php the_ID(); ?>" <?php post_class('hentry'); ?>>
       <header class="entry-header">
-        <?php
-        if ( has_post_thumbnail() ):
-          $args = array(
-            'alt' => get_the_title(),
-            'title' => get_the_title(),
-          );
-        $image = get_the_post_thumbnail( $page->ID, 'header-title', $args );
-        ?>
-        <h1 class="entry-title-image"><?php echo $image; ?></h1>
-        <?php else: ?>
+
         <h1 class="entry-title"><span>
           <?php the_title(); ?>
           </span></h1>
-        <?php endif; ?>
       </header>
       <div class="entry-content">
         <?php the_content(); ?>
