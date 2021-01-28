@@ -461,7 +461,17 @@ body {
 
 /*Header
 *************************************************************************/
+.top-contact {
+    top: 95px;
+    right: 0;
+    z-index: 99;
+}
 
+@media screen and (max-width: 1199px) {
+.top-contact {
+display: none;
+	}
+}
 .home-menu a:link{
   text-decoration: none;
   color: #707070;

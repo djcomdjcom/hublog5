@@ -2,104 +2,92 @@
 /**
  */
 
- get_header();
+get_header();
 
 ?>
-
-	<script>
+<script>
 $(function(){
   $('.rel_lb a[href$=".jpg"],.rel_lb a[href$=".jpeg"],.rel_lb a[href$=".JPG"],.rel_lb a[href$=".JPEG"],.rel_lb a[href$=".png"],.rel_lb a[href$=".PNG"],.rel_lb a[href$=".gif"],.rel_lb a[href$=".GIF"]').attr('rel' ,'lightbox');
 });  
-</script> 
+</script>
 
 <div id="container" class="single clearfix <?php if (!in_category(array('blog','genba','staff','shachou')) ):?> widecolumn<?php endif ;?>">
-	<div id="content" role="main">
-
-		<?php the_post(); ?>
-
-	  <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-			<header>
-				<h1 class="entry-title"><span><?php the_title(); ?></span></h1>
-			</header>
-
-			<div class="entry-content clearfix">
-
-				<?php get_template_part('addcontent_before', apply_filters('hublog_addcontent_before','') ); ?>
-
-				<?php get_template_part('addcontent', 'beforeafter'); ?>
-
-				<?php the_content(); ?>
-
-			<?php wp_reset_query(); ?>
-
-
-				<?php get_template_part('addcontent_after',  apply_filters('hublog_addcontent_after','')  ); ?>
-
-				<?php get_template_part('addcontent_after', $addcontent); ?>
-
-			</div><!-- .entry-content -->
-
-
-						<?php get_template_part('hublog-inquiry',''); //問い合わせフック ?>
-
-
-			<footer>
-				<div class="entry-utility　wrapper">
-					<?php edit_post_link( __( 'Edit', 'hublog' ), '<span class="edit-link">', '</span>' ); ?>
-					<?php wp_link_pages( array(
-							'before' => '<div class="page-link">' . __( 'Pages:' ),
-							'after' => '</div>',
-							'link_before' => '<span>',
-							'link_after' => '</span>',
-					)); ?>
-					<div class="entry-meta">
-
-						<?php
-							// Retrieves tag list of current post, separated by commas.
-							$tag_list = get_the_tag_list( '', ', ' );
-							if ( $tag_list ) {
-								$posted_in = __( 'This entry was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'hublog-lt' );
-							} elseif ( is_object_in_taxonomy( get_post_type(), 'category' ) ) {
-								$posted_in = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'hublog-lt' );
-							} else {
-								$posted_in = __( 'Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'hublog-lt' );
-							}
-							// Prints the string, replacing the placeholders.
-							printf(
-								$posted_in,
-								get_the_category_list( ', ' ),
-								$tag_list,
-								get_permalink(),
-								the_title_attribute( 'echo=0' )
-							);
-						?>
-					</div><!-- .entry-meta -->
-
-
-
-
-					<div class="entry-meta updated author">
-						<span class="date updated"><?php the_time('Y/n/j') ?></span>
-						<span class="author vcard">投稿者：<span class="fn"><?php the_author(); ?></span></span>
-					</div><!-- .entry-meta -->
-
-				</div><!-- .entry-utility -->
-
-
-			</footer>
-
-
-	  </article><!-- #post-## -->
-
-	</div><!-- #content -->
-</div><!-- #container -->
-
+  <div id="content" role="main">
+    <?php the_post(); ?>
+    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+      <header class="wrapper">
+        <h1 class="entry-title"><span>
+          <?php the_title(); ?>
+          </span></h1>
+      </header>
+      <div class="entry-content clearfix">
+        <?php get_template_part('addcontent_before', apply_filters('hublog_addcontent_before','') ); ?>
+        <?php get_template_part('addcontent', 'beforeafter'); ?>
+        <?php the_content(); ?>
+        <?php wp_reset_query(); ?>
+        <?php get_template_part('addcontent_after',  apply_filters('hublog_addcontent_after','')  ); ?>
+        <?php get_template_part('addcontent_after', $addcontent); ?>
+      </div>
+      <!-- .entry-content -->
+      
+      <?php get_template_part('hublog-inquiry',''); //問い合わせフック ?>
+      <footer>
+        <div class="entry-utility　wrapper">
+          <?php edit_post_link( __( 'Edit', 'hublog' ), '<span class="edit-link">', '</span>' ); ?>
+          <?php
+          wp_link_pages( array(
+            'before' => '<div class="page-link">' . __( 'Pages:' ),
+            'after' => '</div>',
+            'link_before' => '<span>',
+            'link_after' => '</span>',
+          ) );
+          ?>
+          <div class="entry-meta">
+            <?php
+            // Retrieves tag list of current post, separated by commas.
+            $tag_list = get_the_tag_list( '', ', ' );
+            if ( $tag_list ) {
+              $posted_in = __( 'This entry was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'hublog-lt' );
+            } elseif ( is_object_in_taxonomy( get_post_type(), 'category' ) ) {
+                $posted_in = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'hublog-lt' );
+              } else {
+                $posted_in = __( 'Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'hublog-lt' );
+              }
+              // Prints the string, replacing the placeholders.
+            printf(
+              $posted_in,
+              get_the_category_list( ', ' ),
+              $tag_list,
+              get_permalink(),
+              the_title_attribute( 'echo=0' )
+            );
+            ?>
+          </div>
+          <!-- .entry-meta -->
+          
+          <div class="entry-meta updated author"> <span class="date updated">
+            <?php the_time('Y/n/j') ?>
+            </span> <span class="author vcard">投稿者：<span class="fn">
+            <?php the_author(); ?>
+            </span></span> </div>
+          <!-- .entry-meta --> 
+          
+        </div>
+        <!-- .entry-utility --> 
+        
+      </footer>
+    </article>
+    <!-- #post-## --> 
+    
+  </div>
+  <!-- #content --> 
+</div>
+<!-- #container -->
 
 <?php
 /**
  */
 
- get_footer();
+get_footer();
 
 ?>
