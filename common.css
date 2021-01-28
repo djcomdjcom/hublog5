@@ -442,21 +442,19 @@ body {
   line-height: 1.8em;
 }
 
+@media screen and (max-width: 1199px) {
+
+.entry-content {
+	padding-left: 2%;
+	padding-right: 2%;
+	}
+}
 
 @media screen and (min-width: 1000px) {
   #header .menu-mobile-nav-container {
     display: none;
   }
-  #container {
-    width: 100%;
-  }
-  #content {
-  }
-.entry-content {
-	padding-left: 2%;
-	padding-right: 2%;
 
-}
 }
 
 

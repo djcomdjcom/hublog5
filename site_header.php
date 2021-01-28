@@ -19,7 +19,7 @@
     <div class="order-1 order-md-2 sitelogo col-3 col-md-2"><a class="w100" href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/favicon.png"></a></div>
 		  
 		  
-    <div id="header-sub" class="order-3 col-md-5 col-12 text-left text-md-right">
+    <div id="header-sub" class="order-3 col-md-5 col-12 text-center text-md-right">
       <?php if ( has_nav_menu( 'contact-link' ) ) :?>
       <div class="menu-header_link-container">
         <?php wp_nav_menu( array('theme_location'=>'contact-link', 'fallback_cb'=>'nothing_to_do') ); ?>
