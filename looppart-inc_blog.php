@@ -1,7 +1,7 @@
 <?php
 /**
  * looppart-home-blog.php
- * @テーマ名	hublog4
+ * @テーマ名	hublog5
  */
 ?>
 <article id="post-<?php the_ID(); ?>"  class="post clearfix style-inc_blog">
@@ -29,7 +29,7 @@
     <span class="event-closed cleartype"> このイベントは終了しました。ありがとうございました。 </span>
     <?php endif  ?>
     <div class="excerpt">
-      <?php the_excerpt(); ?>
+      <?php //the_excerpt(); ?>
     </div>
     <span class="todetail"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s'), the_title_attribute('echo=0')); ?>"> 詳細を見る</a></span> </div>
   <!--metabox--> 

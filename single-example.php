@@ -22,7 +22,7 @@ $(function(){
           </span></h1>
       </header>
       <div class="entry-content clearfix">
-        <?php get_template_part('addcontent_before', apply_filters('hublog_addcontent_before','') ); ?>
+        <?php //get_template_part('addcontent_before', apply_filters('hublog_addcontent_before','') ); ?>
         <?php get_template_part('addcontent', 'example'); ?>
         <?php the_content(); ?>
         <?php wp_reset_query(); ?>

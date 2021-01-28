@@ -2,10 +2,16 @@
 /**
  * hublog-lt/header.php
  */
-?>
-<!DOCTYPE html>
-<html lang="ja">
-<head>
+?><!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" <?php language_attributes(); ?>>
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" <?php language_attributes(); ?>>
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html <?php language_attributes(); ?>>
+<!--<![endif]--><head>
 
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,34 +31,32 @@
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
-
+<?php wp_head(); ?>
 <?php if ( file_exists(get_stylesheet_directory() . '/favicon.ico') ) : ?>
 <link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory'); ?>/favicon.ico" type="image/gif" />
 <link rel="icon" href="<?php bloginfo('stylesheet_directory'); ?>/favicon.ico" type="image/gif" />
 <?php endif; //favicon.ico ?>
 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
-
+<script type="text/javascript">
+    $(function(){
+        $(".globNav-toggle").on("click", function() {
+            $(this).next().slideToggle();
+        });
+    });
+</script>
 
 <?php $print_css = (file_exists(get_stylesheet_directory() . '/print.css')) ? get_stylesheet_directory_uri() . '/print.css' : get_template_directory_uri() . '/print.css';?>
 <link rel="stylesheet" href="<?php echo $print_css; ?>" type="text/css" media="print" />
-<link rel="stylesheet" media="(max-width: 999px)" href="<?php print( get_template_directory_uri()) ?>/responsive.css">
-
+	
+	
 <!-- css -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css">
 
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<!-- jQuery -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/style.css">
 	
-	
-<!-- Bootstrap js -->
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<?php wp_head(); ?>
-
 </head>
 <?php if (is_singular(array('lp','tnx') )): ?>
 <?php get_template_part('code', 'fbpixel'); ?>
@@ -90,4 +94,4 @@ if ( is_home() || is_front_page() ){
   </div>
 </div>
 
-<main role="main">
+<main role="main" id="main" class="<?php echo $page_class; ?>">

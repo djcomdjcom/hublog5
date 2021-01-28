@@ -23,6 +23,11 @@
     ?>
     </span> </a>
     <div class="metabox">
+		
+		
+	<?php get_template_part('icon_status');//ステイタスアイコン ?>
+		
+		
       <p class="title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s'), the_title_attribute('echo=0')); ?>">
         <?php if(post_custom('catchcopy')) :?>
         <?php echo nl2br ( post_custom('catchcopy') ); ?>
@@ -31,14 +36,36 @@
         <?php endif ;?>
         </a></p>
       <div class="event-meta">
-        <?php if (in_category('event-closed')) : ?>
-        <span class="event-closed cleartype"> このイベントは終了しました。<br />
-        ありがとうございました。 </span>
-        <?php endif  ?>
-        <span class="event-date"> <span>開催日：</span><?php echo post_custom('event-date'); ?> </span> <span class="event-hour"> <span>開催時間：</span><?php echo post_custom('event-hour'); ?> </span> <span class="event-at"> <span>開催場所：</span><?php echo post_custom('event-at'); ?> </span> </div>
+
+        <?php if (in_category('event-date')) : ?>
+		<span class="event-date"> <span>開催日：</span><?php echo post_custom('event-date'); ?> </span>
+		<?php endif  ?>
+        <?php if (in_category('event-hour')) : ?>
+		<span class="event-hour"> <span>開催時間：</span><?php echo post_custom('event-hour'); ?> </span>
+		<?php endif  ?>
+        <?php if (in_category('event-at')) : ?>
+		<span class="event-at"> <span>開催場所：</span><?php echo post_custom('event-at'); ?> </span>
+		<?php endif  ?>
+		</div>
       <!--event-nmeta--> 
       
-      <span class="todetail"> <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">詳細・参加方法</a> </span> </div>
+		
+        <?php if (in_category('event-closed')) : ?>
+        <a href="<?php the_permalink(); ?>" class="event-closed">
+			
+		<span>このイベントは終了しました。<br />
+        ありがとうございました。</span>
+		  </a>
+		
+		<?php else:?>
+		
+      <span class="todetail"> <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">詳細・参加方法</a> </span>
+		
+		<?php endif  ?>
+		
+	
+	
+	</div>
     <!--metabox--> 
   
   <?php edit_post_link(__('Edit'), ''); ?>
