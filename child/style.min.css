@@ -1,0 +1,269 @@
+@charset "utf-8";
+
+html body{
+  font-family: "M PLUS 1p";
+
+/*font-family: 'M PLUS 1p', sans-serif;*/
+color: #707070;
+}
+body.home #breadcrumb{
+display: none;
+}
+.telnum{
+font-family: 'Yantramanav', sans-serif;
+}
+
+
+/*HOME*/
+
+.maxw-960{
+    max-width: 960px;
+}
+.maxw-800{
+    max-width: 800px;
+}
+.maxw-640{
+    max-width: 640px;
+}
+.maxw-400{
+    max-width: 400px;
+}
+.maxw-480{
+    max-width: 480px;
+}
+.maxw-320{
+    max-width: 320px;
+}
+
+.maxw-360{
+    max-width: 360px;
+}
+.maxw-200{
+    max-width: 200px;
+}
+
+
+/*HOME*/
+
+
+#slideshow{
+	margin-bottom: 1em;
+}
+.nivo-controlNav{
+	display: none;
+}
+
+
+#slideshow:hover .nivo-directionNav a {
+}
+#slideshow .nivo-directionNav a {
+    display: block;
+    width: 30px;
+    height: 30px;	
+    background: url("images/arrows.png");
+	text-indent: 110%;
+	white-space: nowrap;
+	overflow: hidden;
+	transition: all 200ms ease-in-out;
+}
+#slideshow  a.nivo-nextNav {
+    background-position: -30px 0;
+    right: -45px;
+}
+
+#slideshow  a.nivo-prevNav {
+    left: -45px;
+}
+#slideshow:hover  a.nivo-nextNav {
+    background-position: -30px 0;
+    right: 15px;
+}
+
+#slideshow:hover  a.nivo-prevNav {
+    left: 15px;
+}
+
+
+#home-about-header{
+    background: url("images/home-about-title-bg.jpg")
+}
+
+
+
+#home-slider{
+  max-width: 1200px;
+  height: auto;
+  margin: 0 auto;
+}
+
+
+#home-concept{
+background:linear-gradient(180deg,#fff 0%,#fff 40%,#E6E3DB 40%,#E6E3DB 100%);
+}
+
+#home-concept-img{
+	position: relative;
+}
+
+#home-concept-img a.topage{
+	position: absolute;
+	right: 3%;
+	bottom: -40%;
+}
+
+#concept-choice ul{
+}
+
+#concept-choice li{
+	background: #fff;
+position: relative;
+}
+
+#concept-choice li .txtcell{
+	padding: 0.2em 0.7em 1.5em;
+	text-align: center;
+}
+#concept-choice li .subttl{
+	display: block;
+	margin-bottom: 1em;
+}
+#concept-choice li .ttl{
+	font-size: 17px;
+}
+
+#concept-choice li figure{
+	position: relative;
+}
+#concept-choice li figure:after{
+	content: "";
+	display: block;
+	width: 49px;
+	height: 49px;
+	top: 88%;
+	left: 0;
+	position: absolute;
+}
+#concept-choice li.choice01 .subttl{
+	color: #df4e73;
+}
+#concept-choice li.choice02 .subttl{
+	color: #cd933e;
+}
+#concept-choice li.choice03 .subttl{
+	color: #497db6;
+}
+#concept-choice li.choice04 .subttl{
+	color: #679d4d;
+}
+#concept-choice li.choice01 figure:after{
+	background: url("images/concept_choice_icon01.png");
+	background-size: contain;
+}
+#concept-choice li.choice02 figure:after{
+	background: url("images/concept_choice_icon02.png");
+	background-size: contain;
+}
+#concept-choice li.choice03 figure:after{
+	background: url("images/concept_choice_icon03.png");
+	background-size: contain;
+}
+#concept-choice li.choice04 figure:after{
+	background: url("images/concept_choice_icon04.png");
+	background-size: contain;
+}
+
+/*HOME-EXAMPLE*/
+
+
+/*HOME-INFOAREA*/
+#home-infoarea > .wrapper{
+	background: #FFEBBA
+;
+}
+
+/*HOME-EVENTS*/
+#home-event .posts .post.style-event{
+	background: #FDF5E7;
+	padding: 1.5em;
+	margin: 0 1%;
+	flex: 48%;
+}
+
+/*HOME-REASON*/
+#home-reason{
+	background: url("images/home-reason-bg.jpg") center no-repeat;
+	background-size: cover;
+}
+
+
+/*HOME-VOICE*/
+#home-voice{
+	background: url("images/bg_check.png");
+}
+#home-voice .posts.post.style-voice{}
+#home-voice .posts .post .thumbnail,
+#home-voice .posts .post .metabox{
+width: 100%;
+max-width: none;
+}
+
+#home-voice .posts .post .attachment{
+	position: relative;
+}
+#home-voice .posts .post.style-voice:before{
+	content:"";
+	display: block;
+	background: url( "images/voice-top.png") no-repeat #5f401d center;
+	background-size: contain;
+	padding-top: 30%;
+	height: 0;
+	position: relative;
+}
+
+#home-greeting{
+	background: #EAEAEA;
+}
+#home-staff .flexbox > *{
+	background: #fff;
+	width: 19%;
+	margin: 0 0.5% 2rem;
+}
+
+/*HOME-BOUT*/
+#home-blog{
+	padding-left: 0;
+	padding-right: 55px;
+}
+
+#home-blog .posts .post{
+	border-bottom: 1px solid #707070;
+}
+
+#home-promotion{
+	padding-left: 0;
+	padding-right: 0;
+}
+
+
+/*home_blog*/
+
+
+/*ZEH ACHIEVEMENT*/
+#zeh_achievement{}
+
+#zeh_achievement .zeh_achievement p{
+	margin: 0;
+}
+
+
+/*INCLUDE SHIRYOU*/
+.contact,
+.include-shiryou > .inbox{
+  clear: both;
+  max-width: 1200px;
+  margin: 60px auto;
+  border:12px solid #D9E7F0;
+  padding: 30px;
+  position: relative;
+  height: 245px;
+}
