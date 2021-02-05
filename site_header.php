@@ -27,7 +27,7 @@
       <!--menu-header_link-container-->
       
       <?php else: ?>
-		<div class="menu-header_link-container"><div class="menu-item"><a href="/about">会社案内</a><a href="/about#map">アクセス</a><a href="/inquiry">お問い合わせ</a> </div></div>
+		<div class="menu-header_link-container"><div class="menu-item"><a href="/about">会社案内</a><a href="/about#map">アクセス</a><a href="/inquiry?title=<?php if ( is_home() || is_front_page() ) {  echo ('トップページ');} else {echo get_the_title();}?>">お問い合わせ</a> </div></div>
       <?php endif; ?>
       <div class="contact-tel"> <span class="profile_inquiry_tel">
 		  
@@ -65,13 +65,16 @@
 
  <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/top-contact.png" class="position-fixed top-contact" usemap="#tc">
   <map name="tc">
-    <area shape="poly" coords="28,120,28,281,77,299,77,112" href="/document-request/">
-    <area shape="poly" coords="25,322,25,481,77,499,77,306" href="/inquiry/">
+    <area shape="poly" coords="28,120,28,281,77,299,77,112" href="/document-request?title=<?php if ( is_home() || is_front_page() ) {  echo ('トップページ');} else {echo get_the_title();}?>
+">
+    <area shape="poly" coords="25,322,25,481,77,499,77,306" href="/inquiry?title=<?php if ( is_home() || is_front_page() ) {  echo ('トップページ');} else {echo get_the_title();}?>
+">
   </map>
 	
 </header>
 <?php if (! is_home() ): ?>
-<nav id="globalnav">
+<nav id="headnav">
   <?php get_template_part( 'global-navi-menu' ); ?>
 </nav>
 <?php endif; ?>
+

@@ -14,16 +14,31 @@ wp_reset_query();
   </a>
   <nav id="global-navi">
     <div class="global-navi-inner">
-      <div id="global-navi-logo" class="wrapper center mb-4"> <a class="w100 center" href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-footer@2x.png"></a> </div>
-      <div class="contact-tel"> <span class="profile_inquiry_tel">
-        <?php
-        $profile_inquiry_tel = ( get_option( 'profile_inquiry_tel' ) ) ? get_option( 'profile_inquiry_tel' ) : get_option( 'profile_main_tel' );
-        if ( !empty( $profile_inquiry_tel ) ): ?>
-        &nbsp;<span class="telnum"><?php echo $profile_inquiry_tel; ?>&nbsp;</span>
-        <?php
-        endif;
-        ?>
-        </span> </div>
+      <div id="global-navi-logo" class="wrapper center mb-0 mb-md-4">
+		  <a class="w100 center" href="/"><?php echo get_option('profile_shop_name'); ?></a>
+		</div><div class="gtn-contgact">
+			<div class="contact-tel ">
+				<span class="profile_inquiry_tel">
+				<?php
+				$profile_inquiry_tel = ( get_option( 'profile_inquiry_tel' ) ) ? get_option( 'profile_inquiry_tel' ) : get_option( 'profile_main_tel' );
+				if ( !empty( $profile_inquiry_tel ) ): ?>
+				&nbsp;<span class="telnum"><?php echo $profile_inquiry_tel; ?>&nbsp;</span>
+				<?php
+				endif;
+				?>
+				</span>
+			</div>
+
+			<div class="inc_contact-btn">
+				<ul class="btn_set row py-2 mx-auto px-0">
+				<li class="to_shiryou col-6 btn"> <a class="" href="/document-request/?title=<?php echo get_the_title();?>">資料請求</a> </li>
+				<li class="to_inquiry col-6 btn"> <a class="" href="/inquiry/?title=<?php echo get_the_title();?>">お問い合わせ</a> </li>
+				</ul>
+			</div>
+		</div>
+		
+		
+		
       <div class="gni-address mt-3">
         <nav id="access">
           <?php get_template_part( 'global-navi-menu' ); ?>
@@ -37,7 +52,7 @@ wp_reset_query();
 		  </div>
 			  
       <div class="global-navi-menu text-left mt-4">
-        <div class="d-inline-block f1">
+        <div class=" f1">
           <?php
           if ( has_nav_menu( 'f1' ) ) {
             wp_nav_menu( array(
@@ -46,7 +61,7 @@ wp_reset_query();
           }
           ?>
         </div>
-        <div class="d-inline-block f2">
+        <div class=" f2">
           <?php
           if ( has_nav_menu( 'f2' ) ) {
             wp_nav_menu( array(
@@ -55,7 +70,7 @@ wp_reset_query();
           }
           ?>
         </div>
-        <div class="d-inline-block f3">
+        <div class=" f3">
           <?php
           if ( has_nav_menu( 'f3' ) ) {
             wp_nav_menu( array(
@@ -64,7 +79,7 @@ wp_reset_query();
           }
           ?>
         </div>
-        <div class="d-inline-block f4">
+        <div class=" f4">
           <?php
           if ( has_nav_menu( 'f4' ) ) {
             wp_nav_menu( array(
@@ -73,7 +88,7 @@ wp_reset_query();
           }
           ?>
         </div>
-        <div class="d-inline-block f5">
+        <div class=" f5">
           <?php
           if ( has_nav_menu( 'f5' ) ) {
             wp_nav_menu( array(
@@ -99,7 +114,7 @@ wp_reset_query();
   <div id="footer_inbox">
     <div class="wrapper pt-5 pb-5">
       <div class="footer-navi-menu text-left mt-5">
-        <div class="d-inline-block f1">
+        <div class=" f1">
           <?php
           if ( has_nav_menu( 'f1' ) ) {
             wp_nav_menu( array(
@@ -108,7 +123,7 @@ wp_reset_query();
           }
           ?>
         </div>
-        <div class="d-inline-block f2">
+        <div class=" f2">
           <?php
           if ( has_nav_menu( 'f2' ) ) {
             wp_nav_menu( array(
@@ -117,7 +132,7 @@ wp_reset_query();
           }
           ?>
         </div>
-        <div class="d-inline-block f3">
+        <div class=" f3">
           <?php
           if ( has_nav_menu( 'f3' ) ) {
             wp_nav_menu( array(
@@ -126,7 +141,7 @@ wp_reset_query();
           }
           ?>
         </div>
-        <div class="d-inline-block f4">
+        <div class=" f4">
           <?php
           if ( has_nav_menu( 'f4' ) ) {
             wp_nav_menu( array(
@@ -135,7 +150,7 @@ wp_reset_query();
           }
           ?>
         </div>
-        <div class="d-inline-block f5">
+        <div class=" f5">
           <?php
           if ( has_nav_menu( 'f5' ) ) {
             wp_nav_menu( array(
@@ -165,7 +180,7 @@ wp_reset_query();
           </div>
         </div>
       </div>
-      <div class="cr"> Copyright&copy; <?php echo get_option('profile_shop_name'); ?> All Rights Reserved. </div>
+      <div class="cr"> Copyright&copy; <?php echo get_option('profile_corporate_name'); ?> All Rights Reserved. </div>
     </div>
   </div>
 </footer>

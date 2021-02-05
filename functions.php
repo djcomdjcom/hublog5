@@ -169,9 +169,6 @@ class Theme_Settings{
 		register_nav_menu( 'contact-link' , __('Contact-Link') );
 		register_nav_menu( 'mobile-nav' , __('mobile-nav') );
 		register_nav_menu( 'about-nav' , __('about-nav') );
-		register_nav_menu( 'order-nav' , __('注文住宅') );
-		register_nav_menu( 'renov-nav' , __('リノベーション') );
-		register_nav_menu( 'reform-nav' , __('リフォーム') );
 	}
 
 	function hublog_widgets_init_sidebar(){

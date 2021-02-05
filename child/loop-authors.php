@@ -32,11 +32,11 @@ http://wpdocs.sourceforge.jp/%E9%96%A2%E6%95%B0%E3%83%AA%E3%83%95%E3%82%A1%E3%83
 <div class="user_info clearfix profil">
   <div class="inbox">
     <figure class="photobox"> <img class="photo <?php echo $user_info->nickname; ?>" alt="<?php echo $user_info->post; ?>/<?php echo $user_info->division; ?>/<?php echo $user_info->last_name; ?>&nbsp;<?php echo $user_info->first_name; ?>" src="/wp-content/uploads/userphoto/<?php echo $user_info->id; ?>.jpg"> </figure>
-    <div class="staff-t">
-      <div class="staff-t1"><?php echo $user_info->post; ?></div>
-      <div class="staff-t2"><?php echo $user_info->division; ?></div>
-      <div class="staff-t3"><?php echo $user_info->last_name; ?>&nbsp;<?php echo $user_info->first_name; ?></div>
-      <div class="staff-t4"><?php echo $user_info->kana; ?></div>
+    <div class="staff-meta">
+      <div class="staff-post"><?php echo $user_info->post; ?></div>
+      <div class="staff-division"><?php echo $user_info->division; ?></div>
+      <div class="staff-name"><?php echo $user_info->last_name; ?>&nbsp;<?php echo $user_info->first_name; ?></div>
+      <div class="staff-kana"><?php echo $user_info->kana; ?></div>
     </div>
     <label>
     <input type="checkbox" name="checkbox">

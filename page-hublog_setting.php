@@ -280,6 +280,8 @@ FAX：[sc_get_option key=profile_fax]
 <b class="required">電話番号（携帯電話可）</b>
 [text c-tel 20/][honeypot hublog_hoihoi]
 
+<div class="d-none"><b>問い合わせ元ページ</b>[text title default:get readonly]</div>
+
 <div class="submit_area">
 <p class="caution">※確認画面はございません。今一度、入力内容をご確認ください。</p>
 <p>[acceptance acceptance] 確認しました </p>
@@ -329,8 +331,8 @@ Bcc: <?php echo get_option('profile_inquiry_mail'); ?>,info@djcom.jp</textarea>
 [detail]
 
 ■お問合せページ
-　[_post_title]
-　[_post_url]
+[title]　＞　[_post_title]
+[_post_url]
 
 --------------------------------------------------------------------------------------
 
@@ -460,6 +462,8 @@ Email: <?php echo get_option('profile_inquiry_mail'); ?>
 <b>備考・気になることなど</b>
 [textarea note placeholder "お車で越しの場合は台数など、小さなお子様連れで越しの場合はご年齢などをお書きいただけるとご対応がスムーズです。 ご質問やご要望なども何なりとご記入ください。"][honeypot hublog_hoihoi]
 
+<div class="d-none"><b>問い合わせ元ページ</b>[text title default:get readonly]</div>
+
 <div class="submit_area">
 <p class="caution">※確認画面はございません。今一度、入力内容をご確認ください。</p>
 <p>[acceptance acceptance] 確認しました </p>
@@ -499,9 +503,9 @@ Email: <?php echo get_option('profile_inquiry_mail'); ?>
 ■備考・気になることなど：
 [note]
 
-■お問合せ元ページ
-　[_post_title]
-　[_post_url]
+■お問合せページ
+[title]　＞　[_post_title]
+[_post_url]
 
 --------------------------------------------------------------------------------------
 当日はお気をつけてご来場下さい。
@@ -553,6 +557,8 @@ Email: <?php echo get_option('profile_inquiry_mail'); ?>
 <b class="required">電話番号（携帯電話可）</b>
 [text* c-tel 20/]
 
+<div class="d-none"><b>問い合わせ元ページ</b>[text title default:get readonly]</div>
+
 <b>備考</b>
 [textarea note 42x3 placeholder "ご要望、ご質問などあれば具体的にお聞かせください。"][honeypot hublog_hoihoi]
 
@@ -588,8 +594,8 @@ Email: <?php echo get_option('profile_inquiry_mail'); ?>
 [note]
 
 ■お問合せページ
-　[_post_title]
-　[_post_url]
+[title]　＞　[_post_title]
+[_post_url]
 
 --------------------------------------------------------------------------------------
 --

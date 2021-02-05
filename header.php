@@ -39,14 +39,6 @@
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
-<script type="text/javascript">
-    $(function(){
-        $(".globNav-toggle").on("click", function() {
-            $(this).next().slideToggle();
-        });
-    });
-</script>
-
 <?php $print_css = (file_exists(get_stylesheet_directory() . '/print.css')) ? get_stylesheet_directory_uri() . '/print.css' : get_template_directory_uri() . '/print.css';?>
 <link rel="stylesheet" href="<?php echo $print_css; ?>" type="text/css" media="print" />
 	
@@ -93,5 +85,6 @@ if ( is_home() || is_front_page() ){
     ?>
   </div>
 </div>
+<?php get_template_part('topinfo', $topinfo_template); ?>
 
 <main role="main" id="main" class="<?php echo $page_class; ?>">
