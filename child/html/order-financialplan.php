@@ -5,7 +5,14 @@
   <?php wp_nav_menu(array('theme_location'=>'order-nav', 'fallback_cb'=>'nothing_to_do')); ?>
 </div>
 
-<article id="fp_points" class="clearfix anchor">
+<?php if( post_custom('anchor_link')) :?>
+<nav class="anchor_link_set">
+<?php echo post_custom('anchor_link') ;?>
+</nav>
+<?php endif;?>
+
+
+<section id="fp_points" class="clearfix anchor">
 
 <div class="clearfix" >
   <h2 class="title ">資金計画6つのポイント</h2>
@@ -44,7 +51,7 @@
 
 </div><!--fp_point_intro-->
 
-<article id="fp_point_kazokunomirai" class="clearfix anchor">
+<section id="fp_point_kazokunomirai" class="clearfix anchor">
 
 <h3 class="title point">
   <span>Point<span class="number">1</span></span>
@@ -71,11 +78,11 @@
 <img src="<?php bloginfo('stylesheet_directory'); ?>/images/builder/financialplan001.jpg" alt="住宅資金計画のイメージ">
 </p>
 
-</article><!--fp_point_kazokunomirai-->
+</section><!--fp_point_kazokunomirai-->
 
 
 
-<article id="fp_point_fuan_kadai" class="clearfix anchor">
+<section id="fp_point_fuan_kadai" class="clearfix anchor">
 
   <h3 class="title point">
     <span>Point<span class="number">2</span></span>
@@ -94,10 +101,10 @@
 </p>
 
 
-</article><!--fp_point_fuan_kadai-->
+</section><!--fp_point_fuan_kadai-->
 
 
-  <article id="fp_point_lifecost" class="clearfix anchor">
+  <section id="fp_point_lifecost" class="clearfix anchor">
 
     <h3 class="title point">
       <span>Point<span class="number">3</span></span>
@@ -113,11 +120,11 @@
 <img src="<?php bloginfo('stylesheet_directory'); ?>/images/builder/financialplan003.jpg" alt="生涯コストのイメージ">
 </p>
 
-</article><!--fp_point_lifecost-->
+</section><!--fp_point_lifecost-->
 
 
 
-<article id="fp_point_mitsumori" class="clearfix anchor">
+<section id="fp_point_mitsumori" class="clearfix anchor">
   <h3 class="title point">
     <span>Point<span class="number">4</span></span>
 お見積り金額にはすべての費用が含まれます。
@@ -136,10 +143,10 @@
   <img src="<?php bloginfo('stylesheet_directory'); ?>/images/builder/financialplan004ig.png" alt="全部込みのお見積書">
   </p>
 
-</article><!--fp_point_mitsumori-->
+</section><!--fp_point_mitsumori-->
 
 
-<article id="fp_point_keikakusho" class="clearfix anchor">
+<section id="fp_point_keikakusho" class="clearfix anchor">
 
   <h3 class="title point">
     <span>Point<span class="number">5</span></span>
@@ -156,10 +163,10 @@
 <img src="<?php bloginfo('stylesheet_directory'); ?>/images/builder/financialplan005.jpg" alt="マイホーム資金計画書のイメージ">
 </p>
 
-</article><!--fp_point_keikakusho-->
+</section><!--fp_point_keikakusho-->
 
 
-<article id="fp_point_loan" class="clearfix anchor">
+<section id="fp_point_loan" class="clearfix anchor">
   <h3 class="title point">
     <span>Point<span class="number">6</span></span>
     住宅ローン
@@ -176,11 +183,11 @@
 </p>
 
 
-</article><!--fp_point_loan-->
+</section><!--fp_point_loan-->
 
 
 
-<article id="fp_point_saigaihoken" class="clearfix anchor">
+<section id="fp_point_saigaihoken" class="clearfix anchor">
   <h3 class="title point">
     <span>Point<span class="number">7</span></span>
     災害保険
@@ -195,10 +202,10 @@
 </p>
 
 
-</article><!--fp_point_saigaihoken-->
+</section><!--fp_point_saigaihoken-->
 
 
-<article id="fp_point_kashihoken" class="clearfix anchor">
+<section id="fp_point_kashihoken" class="clearfix anchor">
   <h3 class="title point">
     <span>Point<span class="number">6</span></span>
     瑕疵保険
@@ -213,11 +220,11 @@
 </p>
 
 
-</article><!--fp_point_kashihoken-->
+</section><!--fp_point_kashihoken-->
 
 
 
-</article><!--fp_points-->
+</section><!--fp_points-->
 
 
 

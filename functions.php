@@ -365,8 +365,16 @@ add_action('admin_print_styles', 'admin_css_custom'); //admin_css_customは好�
 function admin_css_custom() {
 echo '<style>.media-upload-form .media-item {padding-bottom:10px;}</style>';
 }
-//リンク機能復帰
-//add_filter('pre_option_link_manager_enabled', '__return_true');
+
+// bodyタグにページスラッグを追加 
+function pagename_class($classes = '') { 
+	if (is_page()) { $page = get_post(get_the_ID()); $classes[] = 'page-' . $page->post_name; 
+					if ($page->post_parent) { $classes[] = 'page-' . get_page_uri($page->post_parent) . '-child'; } 
+				   } 
+	return $classes; } 
+add_filter('body_class', 'pagename_class')
+;
+
 
 /* add comment..メタボックスにチェックポイントを追加
 * ---------------------------------------- */

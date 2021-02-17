@@ -4,6 +4,11 @@
 <div class="pagetab pagetab-main">
   <?php wp_nav_menu(array('theme_location'=>'renov-nav', 'fallback_cb'=>'nothing_to_do')); ?>
 </div>
+<?php if( post_custom('anchor_link')) :?>
+<nav class="anchor_link_set">
+<?php echo post_custom('anchor_link') ;?>
+</nav>
+<?php endif;?>
 
 
 <p>

@@ -50,7 +50,17 @@ main ul {
 .entry-content .maxw-190{max-width:190px;}.entry-content .maxw-180{max-width:180px;}.entry-content .maxw-170{max-width:170px;}.entry-content .maxw-160{max-width:160px;}.entry-content .maxw-150{max-width:150px;}.entry-content .maxw-140{max-width:140px;}.entry-content .maxw-130{max-width:130px;}.entry-content .maxw-120{max-width:120px;}.entry-content .maxw-110{max-width:110px;}.entry-content .maxw-100{max-width:100px;}
 .entry-content .maxw-90{max-width:90px;}.entry-content .maxw-80{max-width:80px;}.entry-content .maxw-70{max-width:70px;}.entry-content .maxw-60{max-width:60px;}.entry-content .maxw-50{max-width:50px;}.entry-content .maxw-40{max-width:40px;}.entry-content .maxw-30{max-width:30px;}.entry-content .maxw-20{max-width:120px;}.entry-content .maxw-10{max-width:10px;}
 
-
+.entry-header .entry-title,
+.entry-header .index-title,
+.entry-header .page-title,
+.entry-header #post-title,
+.entry-content,
+.hublog-inquiry
+{
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 .flexbox {
   width: 100%;
@@ -443,8 +453,9 @@ body {
 @media screen and (max-width: 1199px) {
 
 .entry-content {
-	padding-left: 2%;
-	padding-right: 2%;
+	margin-left: 15px;
+	margin-right: 15px;
+	
 	}
 }
 
@@ -1436,17 +1447,6 @@ a.down:before {
   opacity: 0.7;
 }
 
-.entry-header .entry-title,
-.entry-header .index-title,
-.entry-header .page-title,
-.entry-header #post-title,
-.entry-content,
-.hublog-inquiry
-{
-	max-width: 1200px;
-	margin-left: auto;
-	margin-right: auto;
-}
 
 .entry-title, .index-title, .page-title, #post-title {
   font-size: 1.4em;

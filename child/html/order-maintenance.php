@@ -4,34 +4,40 @@
   <?php wp_nav_menu( array('theme_location'=>'order-nav', 'fallback_cb'=>'nothing_to_do') ); ?>
 </div>
 
+<?php if( post_custom('anchor_link')) :?>
+<nav class="anchor_link_set">
+<?php echo post_custom('anchor_link') ;?>
+</nav>
+<?php endif;?>
 
-<article id="maintenability" class="clearfix anchor">
+
+<section id="maintenability" class="clearfix anchor">
 <h2 class="title ">維持管理（メンテナンス性）</h2>
 
+<div class="row">
 
-  <div class="clearfix">
-<div class="l-box w50">
+	<div class="col-sm-7">
+	<h3>メンテナンスとは？</h3>
 
-  メンテナンスとは、住宅の点検、維持、管理、修理のことを言います。住宅の耐用年数を延ばし、快適な住み心地を維持するために、定期的なメンテナンスを行います。
-  経年劣化する部分に対して定期的に修繕を施すことは、長く住むためにはとても重要です。
-  給排水管やガス管の設備配管の定期的な点検や工事が簡単にできるように、適切に点検口を設置し維持管理しやすい家づくりをしています。
-  住宅性能表示基準の維持管理対策3等級相当が標準仕様の家づくりをしています。
+	<p>メンテナンスとは、住宅の点検、維持、管理、修理のことを言います。住宅の耐用年数を延ばし、快適な住み心地を維持するために、定期的なメンテナンスを行います。</p>
+	<p>経年劣化する部分に対して定期的に修繕を施すことは、長く住むためにはとても重要です。</p>
+	<p>給排水管やガス管の設備配管の定期的な点検や工事が簡単にできるように、適切に点検口を設置し維持管理しやすい家づくりをしています。</p>
+	<p>住宅性能表示基準の維持管理対策3等級相当が標準仕様の家づくりをしています。</p>
 
 
+	</div>
+	<div class="col-sm-5 pl-sm-5">
+	  <figure class="w100">
+	<img src="<?php bloginfo('stylesheet_directory'); ?>/images/builder/maintenability001.png" alt="住宅性能表示基準の維持管理対策等級">
+	</figure>
 
-</div><!--L-->
-
-<div class="r-box w50">
-  <span class="w100">
-  <img src="<?php bloginfo('stylesheet_directory'); ?>/images/builder/maintenability001.png" alt="住宅性能表示基準の維持管理対策等級">
-</span>
-</div><!--R-->
+	</div>
 </div>
 
-<div class="clearfix">
-<div class="l-box w50">
+<div class="row">
 
-  <p class="txt-ll">具体的な維持管理対策基準として
+	<div class="col-sm-7">
+<p class="ttl brackets2">具体的な維持管理対策基準として</p>
     <ol>
       <li>
   コンクリート内に配管を埋設しない。
@@ -47,52 +53,43 @@
   </li>
   </ol>
   <p>などがあります。</p>
-</div><!--L-->
 
-<div class="r-box w50">
-  <span class="w100">
+	</div>
+	<div class="col-sm-5 pl-sm-5">
+  <figure class="w100">
   <img src="<?php bloginfo('stylesheet_directory'); ?>/images/builder/maintenability002.png" alt="維持管理対策等級の比較グラフ">
-</span>
-</div><!--R-->
+</figure>
 
+	</div>
 </div>
-
-
 
 <p>住宅設備の清掃や点検のしやすい、維持管理が容易にできるように配慮することで<br>
 <span class="bold txt-l">「定期的な点検で、永く快適にすごせる家」＝「メンテナンスしやすい家」</span>を可能にしています。</p>
 
+	<hr>
 <h3 class="title ">メンテナンス性の高い家づくりとは？</h3>
 
-<ul>
+<ol>
   <li>
-<p class="txt-ll">給排水管の点検、補修のしやすさ！</p>
-
-
-<p class="rerated">
-<span>詳しくはこちら</span>
-<a href="#kyuuhaisuikan">「給排水管」</a>
-</p>
+<p class="">給排水管の点検、補修のしやすさ！</p>
 </li>
 <li>
 
-<p class="txt-ll">点検口から、床下・天井の状況を把握！</p>
-
-<p class="rerated">
-<span>詳しくはこちら</span>
-<a href="#tenkenkou">「点検口」</a>
-</p>
+<p class="">点検口から、床下・天井の状況を把握！</p>
 </li>
 
-</ul>
+</ol>
 
-</article><!--maintenance-->
+</section><!--maintenance-->
 
 
 
-<article id="tenkenkou" class="clearfix anchor">
+<section id="tenkenkou" class="clearfix anchor">
 
 <h2 class="title ">点検口</h2>
+	
+<h3>点検口とは</h3>
+	
 <p>
   点検口とは、天井や床下などの配線や配管を見るための入口のことです。<br>
   建物の維持管理において重要であり、点検口があると経年劣化による漏水事故などの防止や、建物の傷み具合を定期的に点検することができます。<br>
@@ -100,97 +97,90 @@
   点検口は、主に天井点検口と床下点検口があります。
 </p>
 
-<div class="clearfix">
-
-<div class="l-box w66">
-
-<h3 class="title checked">天井点検口</h3>
+<div class="row">
+	<div class="col-sm-8">
+<h4 class="ttl checked">天井点検口</h4>
 
   <p>
     天井点検口は、主に電気系統の配線が通っています。<br>
     天井点検口があれば、換気ダクトの取り付け状態、電気配線の整理状況や断熱材の有無と施工状態などか定期的に確認できます。<br>
     また、将来のライフスタイルの変化に伴う間取りの変更で、配線などがフレキシブルに対応できます。
   </p>
-
-</div><!--L-->
-
-
-<div class="r-box w33">
-
-  <p class="w100">
+</div>
+	<div class="col-sm-4">
+  <figure class="w100">
   <img src="<?php bloginfo('stylesheet_directory'); ?>/images/builder/tenkenkou002.jpg" alt="天井点検口">
-</p>
-</div><!--R-->
+</figure>
+</div>
+	
 </div>
 
-<div class="clearfix">
 
-<div class="l-box w66">
-  <h3 class="title checked">床下点検口</h3>
-<p>
+<div class="row">
+	<div class="col-sm-8">
+<h4 class="ttl checked">床下点検口</h4>
+
+  <p>
   床下点検口は、主に排水系のパイプが通っています。<br>
     床下点検口は、床下収納庫を兼ねていることが非常に多いです。床下のスペースを有効活用できる床下収納庫ですが、収納の蓋を開けて中のボックスを取り出せば、点検口になります。<br>
     給排水管などが劣化した場合や、白アリ被害が出た場合も床下点検口があれば、すばやく被害状況をチェックし、修繕、対応することが可能になります。
-</p>
-
-</div><!--L-->
-
-
-  <div class="r-box w33">
-
-    <p class="w100">
-    <img src="<?php bloginfo('stylesheet_directory'); ?>/images/builder/tenkenkou001.jpg" alt="床下点検口">
   </p>
-  </div><!--R-->
-
-
 </div>
-</article><!--tenkenkou-->
+	<div class="col-sm-4">
+  <figure class="w100">
+  <img src="<?php bloginfo('stylesheet_directory'); ?>/images/builder/tenkenkou001.jpg" alt="床下点検口">
+</figure>
+</div>
+	
+</div>
+</section><!--tenkenkou-->
 
 
 
-<article id="kyuuhaisuikan" class="clearfix anchor">
-  <h2 class="title ">排水管</h2>
 
+<section id="kyuuhaisuikan" class="clearfix anchor">
+  <h2 class="title ">給排水管</h2>
+<h3>給排水管とは</h3>
 <p>
   給水管や排水管は、水や排泄物などが通過するため、配管の経年劣化は避けては通れない問題です。そのため、定期的なメンテナンスが必要であり、メンテナンスのしやすさが重要となります。
 </p>
 
 
-<p class="w100 w890">
+<figure class="w100 maxw-890 mx-auto">
 <img src="<?php bloginfo('stylesheet_directory'); ?>/images/builder/kyuuhaisuikan001.png" alt="排水管のイメージ">
-</p>
+</figure>
 
 
-<div class="clearfix">
-<div class="l-box w50">
-  <p>
+	
+<div class="row">
+<div class="col-sm-7">
+	  <p>
     配管を基礎コンクリートの上に配置することで、簡単に修理、取り替えができます。長期優良住宅の場合、給湯・給水工事は「ヘッダー方式」が指定されています。従来の「分配配管工法」に比べてメンテナンスも容易になります。</p>
     <p>
     中の給水管も樹脂製なので錆びることがなく、軟らかくて曲げやすく、鋼管のように継ぎ手がいらないので、水漏れの危険性が少なくなります。また、中の給水管が劣化した場合、抜き出して簡単に交換できるので、壁や天井などを壊す必要がありません。
   </p>
 
-</div><!--L-->
-
-
-<div class="r-box w50">
-
-  <p class="w100">
+</div>
+	<div class="col-sm-5">
+		  <figure class="w100">
   <img src="<?php bloginfo('stylesheet_directory'); ?>/images/builder/kyuuhaisuikan002.jpg" alt="ヘッダー方式の排水管">
-</p>
-</div><!--R-->
+</figure>
 
 </div>
+	
+	</div>	
 
-</article><!--kyuuhaisuikan-->
 
 
-<article id="teikitenken" class="clearfix anchor">
+</section><!--kyuuhaisuikan-->
+
+
+<section id="teikitenken" class="clearfix anchor">
 <h2 class="title ">定期点検</h2>
 
-<p class="txt-lll">
-  建築後も定期点検を行なっております。
-</p>
+
+<h3>建築後も定期点検を行なっております。</h3>
+	
 <p>
   劣化が拡大する前に修繕できるように定期点検を行なっております。<br>
   定期点検の際に発見された不具合をその都度修繕できれば、メンテナンス費用は抑えられ、建物の性能が維持されるため、結果的に資産価値を高く保つことができます。
@@ -202,25 +192,22 @@
 </p>
 
 
-<p class="w100 w890">
-<img src="<?php bloginfo('stylesheet_directory'); ?>/images/builder/teikitenken.png" alt="定期点検のイメージ">
-</p>
+<figure class="w100 maxw-890 mx-auto"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/builder/teikitenken.png" alt="定期点検のイメージ">
+	</figure>
 
-</article><!--teikitenken-->
+</section><!--teikitenken-->
 
 
-<article id="rirekikanri" class="clearfix anchor">
+<section id="rirekikanri" class="clearfix anchor">
 <h2 class="title ">住宅履歴管理</h2>
-
-<p class="txt-lll">住宅履歴情報を管理・蓄積し、維持管理に役立てています。
+<h3>住宅履歴情報を管理・蓄積し、維持管理に役立てています。</h3>
 <p>
-  当社では、住宅がどのようなつくりで、どのような性能があるか、<br>
-    また建築後に行われた点検・修繕・リフォーム等の記録を蓄積しています。
+  当社では、住宅がどのようなつくりで、どのような性能があるか、また建築後に行われた点検・修繕・リフォーム等の記録を蓄積しています。
 </p>
 
-  <p class="w100 w890">
+<figure class="w100 maxw-890 mx-auto">
   <img src="<?php bloginfo('stylesheet_directory'); ?>/images/builder/rirekikanri001.png" alt="住宅履歴管理">
-  </p>
+	</figure>
 <p>
   当社では、住宅がどのようなつくりで、どのような性能があるか、また建築後に行われた点検・修繕・リフォーム等の記録を蓄積しています。<br>
   住宅履歴情報を蓄積することで、建物について詳細に把握し、維持管理に役立てています。
@@ -253,12 +240,14 @@
   「住宅履歴情報が管理された住宅」だから「快適な環境で永く住める住宅」を実現できます。
 </p>
 
-</article><!--rirekikanri-->
+</section><!--rirekikanri-->
 
 
 
-<article id="yane_gaiheki" class="clearfix anchor">
+<section id="yane_gaiheki" class="clearfix anchor">
 <h2 class="title ">屋根・外壁塗装</h2>
+	
+<h3>断外壁塗装のメンテナンスも重要です。</h3>
 <p>
   外壁・屋根は、風雨や雪・紫外線・熱などの自然環境が発生させるダメージから住宅を守るという重要な役割を担っています。また、耐熱などの効果も含まれているので、室内の環境を保つ役割も担っています。<br>
   外壁のメンテナンスにより、快適な暮らしを永く実現することができます。<br>
@@ -267,11 +256,11 @@
 </p>
 
 
-<p class="w100 w890">
+<figure class="w100 maxw-890 mx-auto">
 <img src="<?php bloginfo('stylesheet_directory'); ?>/images/builder/yane_gaiheki001.jpg" alt="外壁塗装のイメージ">
-</p>
+	</figure>
 
-<h3 class="title ">外壁・屋根塗装のメンテナンスポイント</h3>
+<h4 class="ttl brackets2 ">外壁・屋根塗装のメンテナンスポイント</h4>
 <ul>
 <li>
 建物の美観を保つ！
@@ -284,9 +273,11 @@
 </li>
 </ul>
 
-<div class="clearfix">
-<div class="l-box w50">
-  <p class="title txt-ll" >メンテナンスを怠ると・・・</p>
+	<div class="row">
+
+	<div class="col-sm-7">
+		
+	  <h4 class="ttl brackets2" >メンテナンスを怠ると・・・</h4>
 
   <p>「建物の外観が美しくなくなる」というみた目だけでなく、</p>
   <ul>
@@ -295,36 +286,41 @@
   </ul>
 
   <p>私たちは、建物の寿命が短くなってしまうことがないように、定期点検により事前に外壁・屋根塗装の時期をご案内いたします。</p>
-
-</div><!--L-->
-<div class="r-box w50">
-  <span class="w100">
+	
+</div>
+		
+		<div class="col-sm-5">
+			
+	  <figure class="w100">
   <img src="<?php bloginfo('stylesheet_directory'); ?>/images/builder/yane_gaiheki002.jpg" alt="メンテナンス前のひびが入っている外壁">
   <small>メンテナンス前のひびが入っている外壁</small>
-</span>
-
-</div><!--R-->
+	</figure>
+			
 </div>
-</article><!--yane_gaiheki-->
+	</div>
 
 
-<article id="barrierfree" class="clearfix anchor">
+	
+</section><!--yane_gaiheki-->
+
+
+<section id="barrierfree" class="clearfix anchor">
 
 <h2 class="title ">バリアフリー対応</h2>
 
-<p class="txt-lll">バリアフリー対応もお任せください。</p>
+<h3>バリアフリー対応もお任せください。</h3>
 <p>
   生活スタイルは、日々変化していくものです。<br>
   介護が必要な状況になった場合、日々の暮らしの負担を軽減する為のバリアフリー対応もお任せください。<br>
   介護保険の補助金を利用した工事にもご対応いたします。
 </p>
 
-<p class="w100 w890">
+<figure class="w100 maxw-890 mx-auto">
 <img src="<?php bloginfo('stylesheet_directory'); ?>/images/builder/barrierfree001.png" alt="バリアフリーの住宅イメージ">
-</p>
+	</figure>
 
 
-<h3 class="title ">バリアフリー対応例</h3>
+<h4 class="ttl brackets2 ">バリアフリー対応例</h4>
 <p>
 玄関・廊下の段差解消・手すりの取り付け<br>
 トイレの手すり取り付け・スペース確保、拡張<br>
@@ -332,29 +328,29 @@
 </p>
 
 
-</article><!--barrierfree-->
+</section><!--barrierfree-->
 
 
 
 
-<article id="reform" class="clearfix anchor">
+<section id="reform" class="clearfix anchor">
 
 
 <h2 class="title ">暮らしを良くするリフォーム</h2>
 
-<p class="txt-lll">日々の暮らしをより良くする</p>
+<h3>日々の暮らしをより良くする</h3>
 <p>
   気になっているけど我慢していること、ちょっと不便と感じたこと、小さな破損などは、月日が経つにつれて起こります。<br>
   「暮らしをより良くするリフォーム」を建てた後も気軽に依頼できるのも私たちの家づくりにご満足いただける理由です。
 </p>
 
 
-<p class="w100 w890">
+<figure class="w100 maxw-890 mx-auto">
 <img src="<?php bloginfo('stylesheet_directory'); ?>/images/builder/reform001.jpg" alt="暮らしを良くするリフォーム">
-</p>
+	</figure>
 
 
-<h3 class="title ">暮らしをより良くするリフォーム例</h3>
+<h4 class="ttl brackets2 ">暮らしをより良くするリフォーム例</h4>
 
 <ul class="check">
   <li>
@@ -373,7 +369,7 @@
 </p>
 
 
-</article><!--reform-->
+</section><!--reform-->
 
 
 

@@ -1,15 +1,20 @@
 
-
-
-
-
-
 <article id="example-slider" class="clearfix">
-	<section id="galleryslider" class="clearfix rel_lb">
-	<?php echo (do_shortcode('[gallery link="file" title="false" caption="true" description="true" size="large"  type="flexslider"]')); ?>
-	</section><!--　-->
+
+<?php if ( post_custom( 'renov-gallery' ) == 'gallery_off' ):  ?>
+	
+<?php else:?>
+	
+<section id="galleryslider" class="clearfix rel_lb">
+<?php echo (do_shortcode('[gallery link="file" title="false" caption="true" description="true" size="large"  type="flexslider"]')); ?>
+</section><!--　-->
 </article><!--example-slider-->
 
+<?php endif ?>
+<?php
+if ( post_custom( 'renov-gallery' ) == 'gallery_off' ):
+  ?>
+<?php else:?>
 
 <article id="example-header" class="clearfix rel_lb">
 	<h2 class="title">
@@ -77,3 +82,5 @@
 <?php endif ;?>
 
 </article>
+	<?php endif ?>
+

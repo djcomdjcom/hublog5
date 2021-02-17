@@ -26,16 +26,12 @@
 	
 	<span class="title">
         
-    <?php //if(post_custom('catchcopy')) :?>
-    <?php //echo nl2br ( post_custom('catchcopy') ); ?>
-        <?php //else :?>
-        
-    <?php if(post_custom('reform-youbou')) :?>
-	<p class=""><?php echo wpautop(post_custom('reform-youbou')); ?></p>
+    <?php if(post_custom('catchcopy')) :?>
+    <?php echo nl2br ( post_custom('catchcopy') ); ?>
         <?php else :?>
-		<p class=""><?php the_title(); ?></p>
+       
+		<?php the_title(); ?>
     <?php endif ;?>
-    <?php //endif ;?>
 		
 <span class="todetail">
 <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( array( 'before' => '施工事例「', 'after' => '」詳細ページへ' ) ); ?>" rel="bookmark">詳細はこちら</a>
