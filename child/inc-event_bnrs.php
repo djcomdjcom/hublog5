@@ -32,7 +32,7 @@ jQuery(function($){
 							lazyLoad: true,
 							autoplay: true,
 							autoplayHoverPause: true,
-							autoplayTimeout: 1200,
+							autoplayTimeout: 3000,
 							autoplaySpeed:  800,
 							margin: 1,
 							stagePadding: 0,

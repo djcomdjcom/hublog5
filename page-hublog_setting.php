@@ -74,6 +74,7 @@ textarea.line{
 		<il><a href="#privacy">プライバシーポリシー</a></il>
 		<il><a href="#inquiry">お問合せテンプレート</a></il>
 		<il><a href="#staff">スタッフ紹介</a></il>
+		<il><a href="#favicon">ファビコン</a></il>
 		</ul>
 
 		</nav>
@@ -1099,6 +1100,31 @@ echo '[sc_the_profile user_login='.$user->user_login.']
 endforeach; ?>
 </textarea>
 </section><!--staff-->
+	
+	
+	
+<section id="favicon" class="clearfix anchor">
+<h2>ファビコン</h2>
+<p>このサイトのファビコン</p>
+	<br>
+<figure class="w100 maxw-200">
+<img src="<?php bloginfo('stylesheet_directory'); ?>/images/favicon.png">
+</figure>
+	
+	<p> </p>
+	
+	<p>ファビコンのURL
+	</p>
+	
+<p>	<?php bloginfo('stylesheet_directory'); ?>/images/favicon.png
+</p>	
+	
+	
+	「RealFaviconGenerator」の使い方・設定方法はこちら<br>
+	<a href="https://requlog.com/self-branding/wordpress/favicon-generator/" target="_blank">https://requlog.com/self-branding/wordpress/favicon-generator/</a>
+	</section><!--favicon-->
+	
+	<hr>
 
 
 				<?php if (have_posts()) : the_post(); ?>
