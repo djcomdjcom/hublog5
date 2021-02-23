@@ -11,7 +11,9 @@
 	 </div>
     <?php get_template_part('inc', 'event_bnrs'); ?>
   </div>
+<nav id="headnav">
   <?php get_template_part( 'global-navi-menu' ); ?>
+</nav>
   
   <!--▼▼▼コンセプト▼▼▼-->
   <section id="home-concept" class="pt-5">
