@@ -31,7 +31,7 @@ wp_reset_query();
 
 			<div class="inc_contact-btn">
 				<ul class="btn_set row py-2 mx-auto px-0">
-				<li class="to_shiryou col-6 btn"> <a class="" href="/document-request/?title=<?php echo get_the_title();?>">資料請求</a> </li>
+				<li class="to_shiryou col-6 btn"> <a class="" href="/offer/?title=<?php echo get_the_title();?>">資料請求</a> </li>
 				<li class="to_inquiry col-6 btn"> <a class="" href="/inquiry/?title=<?php echo get_the_title();?>">お問い合わせ</a> </li>
 				</ul>
 			</div>

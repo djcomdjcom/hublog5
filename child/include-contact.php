@@ -1,48 +1,246 @@
-<article class="include-contact wrapper pb-5 container-fluid">
-	
-  <div class="inbox p-2 px-md-4 pt-md-3 pb-md-0 ">
-	  
-    <div class=" row no-gutters align-item-end text-center justify-content-around" >
-      <div class="inc_contact-ttl col-lg-4 col-8 order-lg-1">
-        <div class="w100"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/inc_contact-ttl@2x.png" alt="CONTACT US"/></div>
-      </div>
-		
-      <div class="inc_contact-img01 col-lg-3 col-3 order-lg-3">
-		  
-        <div class="w100 center"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/inc_contact-img01@2x.png" alt=""/> </div>
-		  
-      </div>
-    <div class="inc_contact-btn col-lg-5 col-12 order-lg-2"> <span class="profile_inquiry_tel">
-      <?php
-      $profile_inquiry_tel = ( get_option( 'profile_inquiry_tel' ) ) ? get_option( 'profile_inquiry_tel' ) : get_option( 'profile_main_tel' );
-      if ( !empty( $profile_inquiry_tel ) ): ?>
-      &nbsp;<span class="telnum "><?php echo $profile_inquiry_tel; ?>&nbsp;</span>
-      <?php
-      endif;
+<?php
+/**
+* hublog-inquiry-page.php
+*
+* @テーマ名	hublog4
+*
+*/
+$form_inquiry = get_option('profile_form_inquiry');//一般
+$form_event = get_option('profile_form_event');//イベント
+$form_modelhouse = get_option('profile_form_modelhouse');//モデルハウス
+$form_shiryou = get_option('profile_form_shiryou');//資料請求
+$form_recruit = get_option('profile_form_recruit');//求人
+$form_recruit_shain = get_option('profile_form_recruit_shain');//求人（社員）
+$form_recruit_part = get_option('profile_form_recruit_part');//求人（パート）
+
+
+
+
+
+$profile_inquiry_tel = (get_option('profile_inquiry_tel')) ? get_option('profile_inquiry_tel') : get_option('profile_main_tel');
+
+
+?>
+
+<?php wp_reset_query(); ?>
+<?php if (post_custom('disappear-form')) : ?>
+
+<?php else :?>
+
+
+
+<?php if ( is_page(array('inquiry')) ) : //お問合せページ ?>
+<div id="form" class="hublog-inquiry page clearfix wide anchor">
+	<span class="title">お問合せ</span>
+	<div class="inbox">
+		<div class="hublog-inquiry-tel clearfix">
+		<div class="beforeform row">
+			<div class="message text-center col-md-6"> <span class="title">お電話でのお問合わせも承ります。</span>
+				<p>※電話に出たスタッフにご用件をお伝えください。</p>
+			</div>
+			<!--message-->
+			<div class="hublog-inquiry-tel text-center col-md-6"> <span class="profile_inquiry_tel"> 電話：
+				<?php
+					$profile_inquiry_tel = (get_option('profile_inquiry_tel')) ? get_option('profile_inquiry_tel') : get_option('profile_main_tel');
+					if (!empty($profile_inquiry_tel)) : ?>
+				<span class="telnum"><?php echo $profile_inquiry_tel; ?></span>
+				<?php endif; ?>
+				</span>
+				<div class="opning-hour-day"> <span class="profile_opening_hours"><span class="title">営業時間：</span><?php echo (get_option('profile_opening_hours')) ?></span>
+				<?php if (get_option('profile_holiday')) : ?>
+				  <span class="profile_holiday"><span class="title">定休日：</span><?php echo (get_option('profile_holiday')) ?></span>
+				<?php endif; ?>
+				</div>
+				<!--opning-houry-day-->
+			</div>
+			<!--hublog-inquiry-tel-->
+		</div>
+
+		<!--brforeform-->
+		</div>
+		<!--hublog-inquiry-tel-->
+		<div class="clearfix">
+
+			<?php
+      echo do_shortcode("[contact-form-7 id=\"$form_inquiry\" title=\"お問い合わせ\"]");
       ?>
-      </span>
-      <div>
-        <?php if (get_option('profile_opening_hours')) :?>
-        <div class="profile_opening_hours  px-1" > 営業時間 <?php echo (get_option('profile_opening_hours')) ;?> </div>
-        <?php endif;?>
-        <?php if (get_option('profile_holiday')) :?>
-        <div class="profile_holiday px-1"> 定休日 <?php echo (get_option('profile_holiday')) ;?> </div>
-        <?php endif;?>
-      </div>
-		
-        <ul class="btn_set row py-2 mx-auto">
-          <li class="to_shiryou col-12 col-md-6 btn">
-			  <a class="" href="/document-request?title=<?php if ( is_home() || is_front_page() ) {  echo ('トップページ');} else {echo get_the_title();}?>
-">資料請求</a> </li>
-          <li class="to_inquiry  col-12 col-md-6 btn">
-			  <a class="" href="/inquiry?title=<?php if ( is_home() || is_front_page() ) {  echo ('トップページ');} else {echo get_the_title();}?>
-">お問い合わせ</a> </li>
-        </ul>
-    </div>
-		
-    
-    <!--contact-tel--> 
-    </div>
-  </div>
-</article>
-<!--include-contact--> 
+	</div><!--inbox-->
+</div>
+<!--hublog-inquiry-->
+
+
+<?php elseif ( in_category(array('event','event-recent')) ) : //イベント申込 ?>
+<div id="form" class="hublog-inquiry page clearfix wide anchor">
+	<span class="title">イベントのお申込み</span>
+	<div class="inbox">
+		<div class="hublog-inquiry-tel clearfix">
+			<div class="profile_inquiry_info"> <span class="profile_inquiry_tel"> <span class="title">お電話でのお申込みも承ります。</span>
+				<?php	if (!empty($profile_inquiry_tel)) : ?>
+				<span class="telnum"><?php echo $profile_inquiry_tel; ?></span>
+				<?php endif; ?>
+				</span>
+				<div class="opning-hour-day"> <span class="profile_opening_hours"><span class="title">営業時間：</span><?php echo (get_option('profile_opening_hours')) ?></span>
+				<?php if (get_option('profile_holiday')) : ?>
+				  <span class="profile_holiday"><span class="title">定休日：</span><?php echo (get_option('profile_holiday')) ?></span>
+				<?php endif; ?>
+				</div>
+				<!--opning-hour-day-->
+			</div>
+			<!--profile_inquiry_info-->
+		</div>
+		<!--hublog-inquiry-tel-->
+		<div class="clearfix">
+
+			<?php
+      echo do_shortcode("[contact-form-7 id=\"$form_event\" title=\"イベント申し込み\"]");
+      ?>
+
+		</div>
+	</div><!--inbox-->
+</div>
+<!--hublog-inquiry-->
+
+
+
+<?php elseif ( is_page(array('shiryou','offer')) ) : //資料請求ページ ?>
+<div id="form" class="hublog-inquiry page clearfix wide anchor">
+	<span class="title">資料請求フォーム</span>
+		<div class="beforeform row">
+			<div class="message text-center col-md-6"> <span class="title">お電話での資料請求も承ります。</span>
+				<p>※電話に出たスタッフに<br />
+					<strong>「<?php if(get_option('profile_shop_name')) echo (get_option('profile_shop_name')) ;else echo(get_option('profile_corporate_name')); ?>の資料がほしい」</strong>とお伝えください。</p>
+			</div>
+
+
+			<!--message-->
+			<div class="hublog-inquiry-tel col-md-6"> <span class="profile_inquiry_tel"> 電話：
+				<?php
+					$profile_inquiry_tel = (get_option('profile_inquiry_tel')) ? get_option('profile_inquiry_tel') : get_option('profile_main_tel');
+					if (!empty($profile_inquiry_tel)) : ?>
+				<span class="telnum"><?php echo $profile_inquiry_tel; ?></span>
+				<?php endif; ?>
+				</span>
+				<div class="opning-hour-day"> <span class="profile_opening_hours"><span class="title">営業時間：</span><?php echo (get_option('profile_opening_hours')) ?></span>
+
+				<?php if (get_option('profile_holiday')) : ?>
+				  <span class="profile_holiday"><span class="title">定休日：</span><?php echo (get_option('profile_holiday')) ?></span>
+				<?php endif; ?>
+				</div>
+				<!--opning-houry-day-->
+			</div>
+			<!--hublog-inquiry-tel-->
+		</div>
+		<!--brforeform-->
+	<div class="inbox">
+
+		<?php
+		echo do_shortcode("[contact-form-7 id=\"$form_shiryou\" title=\"資料請求\"]");
+		?>
+
+	</div><!--inbox-->
+</div><!--hubloginqury page -->
+
+
+
+<?php elseif ( is_page(array('modelhouse')) ) : //モデルハウス ?>
+<div id="form" class="hublog-inquiry page clearfix wide anchor">
+	<span class="title">モデルハウス見学申込フォーム</span>
+		<div class="beforeform row">
+			<div class="message text-center col-md-6"> <span class="title">お電話でのお申込も承ります</span>
+				<p>※電話に出たスタッフに<br />
+					<strong>「モデルハウスの見学希望」</strong>とお伝えください。</p>
+			</div>
+			<!--message-->
+			<div class="hublog-inquiry-tel  text-center col-md-6"> <span class="profile_inquiry_tel"> 電話：
+				<?php
+					$profile_inquiry_tel = (get_option('profile_inquiry_tel')) ? get_option('profile_inquiry_tel') : get_option('profile_main_tel');
+					if (!empty($profile_inquiry_tel)) : ?>
+				<span class="telnum"><?php echo $profile_inquiry_tel; ?></span>
+				<?php endif; ?>
+				</span>
+				<div class="opning-hour-day"> <span class="profile_opening_hours"><span class="title">営業時間：</span><?php echo (get_option('profile_opening_hours')) ?></span>
+
+				<?php if (get_option('profile_holiday')) : ?>
+				  <span class="profile_holiday"><span class="title">定休日：</span><?php echo (get_option('profile_holiday')) ?></span>
+				<?php endif; ?>
+				</div>
+				<!--opning-houry-day-->
+			</div>
+			<!--hublog-inquiry-tel-->
+		</div>
+		<!--brforeform-->
+	<div class="inbox">
+
+		<?php
+		echo do_shortcode("[contact-form-7 id=\"$form_modelhouse\" title=\"モデルハウス見学\"]");
+		?>
+
+
+
+	</div><!--inbox-->
+</div><!--hubloginqury page -->
+
+
+<?php elseif ( is_page(array('recruit','recruit-shain','recruit-part')) ) : //求人 ?>
+<div id="form" class="hublog-inquiry page clearfix wide anchor">
+	<span class="title">求人申込みフォーム</span>
+		<div class="beforeform row">
+			<div class="message text-center col-md-6"> <span class="title">お電話でのお問い合わせ</span>
+				<p>※電話に出たスタッフに<br />
+					<strong>「求人についてのお問い合わせ」</strong>とお伝えください。</p>
+			</div>
+			<!--message-->
+			<div class="hublog-inquiry-tel text-center col-md-6"> <span class="profile_inquiry_tel"> 電話：
+				<?php
+					$profile_inquiry_tel = (get_option('profile_inquiry_tel')) ? get_option('profile_inquiry_tel') : get_option('profile_main_tel');
+					if (!empty($profile_inquiry_tel)) : ?>
+				<span class="telnum"><?php echo $profile_inquiry_tel; ?></span>
+				<?php endif; ?>
+				</span>
+				<div class="opning-hour-day"> <span class="profile_opening_hours"><span class="title">営業時間：</span><?php echo (get_option('profile_opening_hours')) ?></span>
+
+				<?php if (get_option('profile_holiday')) : ?>
+				  <span class="profile_holiday"><span class="title">定休日：</span><?php echo (get_option('profile_holiday')) ?></span>
+				<?php endif; ?>
+				</div>
+				<!--opning-houry-day-->
+			</div>
+			<!--hublog-inquiry-tel-->
+		</div>
+		<!--brforeform-->
+	<div class="inbox">
+
+
+		<?php if ( is_page(array('recruit-shain',)) ) : //求人 ?>
+
+			<?php
+      echo do_shortcode("[contact-form-7 id=\"$form_recruit_shain\" title=\"求人お問い合わせ（正社員）\"]");
+      ?>
+
+	<?php elseif ( is_page(array('recruit-part',)) ) : //求人 ?>
+
+		<?php
+		echo do_shortcode("[contact-form-7 id=\"$form_recruit_part\" title=\"求人お問い合わせ（パート）\"]");
+		?>
+
+	<?php else: ?>
+
+		<?php
+		echo do_shortcode("[contact-form-7 id=\"$form_recruit\" title=\"求人お問い合わせ（パート）\"]");
+		?>
+
+<?php endif ; ?>
+	</div><!--inbox-->
+</div><!--hubloginqury page -->
+
+
+
+<?php elseif ( in_category(array('staff')) ) : //フック無し ?>
+
+<?php else: ?>
+<?php get_template_part('include', 'contact'); ?>
+<?php get_template_part('include', 'zeh'); ?>
+<!--hublog-inquiry-->
+<?php endif; ?>
+
+<?php endif; //disappear-form?>

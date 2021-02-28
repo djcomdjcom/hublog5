@@ -102,7 +102,7 @@ $profile_inquiry_tel = (get_option('profile_inquiry_tel')) ? get_option('profile
 
 
 
-<?php elseif ( is_page(array('shiryou')) ) : //資料請求ページ ?>
+<?php elseif ( is_page(array('shiryou','offer')) ) : //資料請求ページ ?>
 <div id="form" class="hublog-inquiry page clearfix wide anchor">
 	<span class="title">資料請求フォーム</span>
 		<div class="beforeform clearfix">

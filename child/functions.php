@@ -207,8 +207,7 @@ function cptui_register_my_cpts() {
     "menu_position" => 7,
     "menu_icon" => "dashicons-admin-multisite",
     "supports" => array( "title", "editor", "thumbnail", "excerpt", "custom-fields", "author" ),
-//    "taxonomies" => array( "ex_cat","category" ),
-    "taxonomies" => array( "ex_cat"),
+    "taxonomies" => array( "ex_cat","category" ),
   );
 
   register_post_type( "example", $args );
@@ -255,8 +254,7 @@ function cptui_register_my_cpts() {
     "menu_position" => 8,
     "menu_icon" => "dashicons-hammer",
     "supports" => array( "title", "editor", "thumbnail", "custom-fields", "author" ),
-//    "taxonomies" => array( "reform_cat","category" ),
-    "taxonomies" => array( "reform_cat" ),
+    "taxonomies" => array( "reform_cat","category" ),
   );
 
   register_post_type( "reform", $args );
@@ -308,8 +306,7 @@ function cptui_register_my_cpts() {
     "menu_position" => 9,
     "menu_icon" => "dashicons-format-chat",
     "supports" => array( "title", "editor", "thumbnail", "custom-fields", "author" ),
-//    "taxonomies" => array( "voice_cat","category" ),
-    "taxonomies" => array( "voice_cat" ),
+    "taxonomies" => array( "voice_cat","category" ),
   );
 
   register_post_type( "voice", $args );
@@ -465,20 +462,9 @@ function add_custom_fields2() {
 function my_custom_fields2() {
   global $post;
   $event_bnr_url = get_post_meta($post->ID,'event_bnr_url',true);
-	
-  $event_bnr_target = get_post_meta( $post->ID, 'event_bnr_target', true );
-  if ( $event_bnr_target == 1 ) {
-    $event_bnr_target_c = "checked";
-  } else {
-    $event_bnr_target_c = "/";
-  }
-	
 
   echo '<p>バナーのリンク先URL<br />';
   echo '<input type="text" name="event_bnr_url" value="'.esc_html($event_bnr_url).'" size="40" /></p>';
-  echo '<p>新規ウィンドウで開く場合はチェック<br />';
-  echo '<input type="checkbox" name="event_bnr_target" value="1" ' . $event_bnr_target_c . '>新規ウィンドウで開く</p>';
-	
 }
 
 // カスタムフィールドの値を保存
@@ -486,19 +472,10 @@ function save_custom_fields2( $post_id ) {
   if(!empty($_POST['event_bnr_url']))
     update_post_meta($post_id, 'event_bnr_url', $_POST['event_bnr_url'] );
   else delete_post_meta($post_id, 'event_bnr_url');
-	
-  if ( !empty( $_POST[ 'event_bnr_target' ] ) )
-    update_post_meta( $post_id, 'event_bnr_target', $_POST[ 'event_bnr_target' ] );
-  else delete_post_meta( $post_id, 'event_bnr_target' );
 
 }
-
-
-
-
-
-
 add_action( 'init', 'cptui_register_my_cpts' );
+
 
 
 function menu_setup() {
@@ -510,47 +487,12 @@ function menu_setup() {
     'f4' => 'フッターメニュー4',
     'f5' => 'フッターメニュー5',
     'f6' => 'フッターメニュー6',
-    'concept-nav' => 'コンセプト',
-	'order-nav' => '注文住宅',
-	'renov-nav' => 'リノベーション',
-	'reform-nav' => 'リフォーム',
   ) );
 }
 add_action( 'after_setup_theme', 'menu_setup' );
 
 add_filter( 'emoji_svg_url', '__return_false' );
 
-//親ページを持つ子ページの場合、親ページのスラッグを取得
-function is_parent_slug() {
-    global $post;
-    if ($post->post_parent) {
-        $post_data = get_post($post->post_parent);
-        return $post_data->post_name;
-    }
-}
-//親ページ判別
-function is_child( $slug = "" ) {
-  if(is_singular())://投稿ページのとき（固定ページ含）
-    global $post;
-    if ( $post->post_parent ) {//現在のページに親がいる場合
-      $post_data = get_post($post->post_parent);//親ページの取得
-      if($slug != "") {//$slugが空じゃないとき
-        if(is_array($slug)) {//$slugが配列のとき
-          for($i = 0 ; $i <= count($slug); $i++) {
-            if($slug[$i] == $post_data->post_name || $slug[$i] == $post_data->ID || $slug[$i] == $post_data->post_title) {//$slugの中のどれかが親ページのスラッグ、ID、投稿タイトルと同じのとき
-              return true;
-            }
-          }
-        } elseif($slug == $post_data->post_name || $slug == $post_data->ID || $slug == $post_data->post_title) {//$slugが配列ではなく、$slugが親ページのスラッグ、ID、投稿タイトルと同じのとき
-          return true;
-        } else {
-          return false;
-        }
-      } else {//親ページは存在するけど$slugが空のとき
-        return true;
-      }
-    }else {//親ページがいない
-      return false;
-    }
-  endif;
-}
+
+/*galleryCSS無効*/
+

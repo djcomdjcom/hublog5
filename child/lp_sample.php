@@ -1,4 +1,4 @@
-<?php 
+<?php
 //LP追加の際は、カスタム投稿タイプ「LP」で新規追加
 //スラッグ名は「lp年月」とする　（例「pl201801」）　
 
@@ -14,10 +14,11 @@
 
 
 <?php $slug_name = $post->post_name; ?>
+
 <!--削除禁止ここから-->
 <script>
 document.addEventListener( 'wpcf7mailsent', function( event ) {
-    location = 'http://www.miyagi-kensetsu.com/tnx/<?php echo( $slug_name) ;?>-tnx';
+    location = '<?php echo home_url(); ?>/tnx/<?php echo( $slug_name) ;?>-tnx';
 }, false );
 </script>
 
@@ -25,12 +26,13 @@ document.addEventListener( 'wpcf7mailsent', function( event ) {
 
 <p>
 サンクスページ<br>
-http://www.miyagi-kensetsu.com/tnx/<?php echo( $slug_name) ;?>-tnx
+<?php echo home_url(); ?>/tnx/<?php echo( $slug_name) ;?>-tnx
 </p>
 <?php endif; ?>
 
+
 <h1 class="w100">
-<img src="<?php bloginfo('stylesheet_directory'); ?>/images/lp/lp-201801/sec01-title01.png" alt="落差8mのすごい擁壁お見せします！地盤、擁壁、耐震が心配な人集まれ！"/> 
+<img src="<?php bloginfo('stylesheet_directory'); ?>/images/lp/lp-201801/sec01-title01.png" alt="落差8mのすごい擁壁お見せします！地盤、擁壁、耐震が心配な人集まれ！"/>
 </h1>
 
 <div class="inbox">
@@ -60,7 +62,7 @@ http://www.miyagi-kensetsu.com/tnx/<?php echo( $slug_name) ;?>-tnx
 	<li>今、住居で問題になっていることは解決します。</li>
 	<li>さらに、20年後の未来も視野にいれたご提案をします。</li>
 </ul>
-	
+
 
 
 
@@ -135,21 +137,21 @@ http://www.miyagi-kensetsu.com/tnx/<?php echo( $slug_name) ;?>-tnx
 <span class="w100">
 <img src="<?php bloginfo('stylesheet_directory'); ?>/images/lp/lp-201801/yoyakuannai.png" alt="ご予約は不要です。 構造見学会現地に直接お越しください。お電話でご予約頂きますとよりスムーズにご案内できます。"/>
 </span>
-	
+
 	<a class="w100" href="tel:0120-14-2292"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/lp/lp-201801/freedial.png" alt="0120-14-2292"/></a>
-	
+
 <p>
 ※電話口の担当者に構造見学会の予約とお話しください。<br>
 ※フォームからのご予約も承ります。<a href="#form">予約フォームはこちら。</a> </p>
 
 
-	
-	
+
+
 	</div>
 
-	
-	
-	
+
+
+
 <ul>
   <li>構造見学会は30分程でご案内できます。</li>
 	<li>お出かけついでにお立ち寄りください。</li>

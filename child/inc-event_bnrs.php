@@ -5,7 +5,7 @@
     'post_type' => 'event_bnr', //カスタム投稿名
 		'order'=>'ASC',
 		'orderby'=>'menu_order',
-    'posts_per_page' => '8'
+    'posts_per_page' => '4'
 )); ?>
 <?php if(have_posts()): ?>
 
@@ -38,7 +38,7 @@ jQuery(function($){
 							stagePadding: 0,
 							margin:10,
 							freeDrag: false,
-							mouseDrag: false,
+							mouseDrag: true,
 							touchDrag: true,
 							slideBy: 1,
 							fallbackEasing: "linear",
@@ -52,16 +52,14 @@ jQuery(function($){
                             },
                             autoHeight: false
                         });
-//                        $('.owl-carousel').on("mousewheel", ".owl-stage", function(e) {
-//                if (e.deltaY > 0) {
- //                   $('.owl-carousel').trigger("next.owl");
-//                } else {
-//                    $('.owl-carousel').trigger("prev.owl");
-//                }
-//                e.preventDefault();
-//            });
-	
-	
+                        $('.owl-carousel').on("mousewheel", ".owl-stage", function(e) {
+                if (e.deltaY > 0) {
+                    $('.owl-carousel').trigger("next.owl");
+                } else {
+                    $('.owl-carousel').trigger("prev.owl");
+                }
+                e.preventDefault();
+            });
                     });
                 
 </script>

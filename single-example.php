@@ -31,6 +31,12 @@ $(function(){
       </div>
       <!-- .entry-content -->
       
+		
+		
+
+<?php get_template_part('include', 'example');//選ばれる理由 ?>
+		
+		
       <?php get_template_part('hublog-inquiry',''); //問い合わせフック ?>
       <footer>
         <div class="entry-utility wrapper">

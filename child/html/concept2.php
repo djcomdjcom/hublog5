@@ -1,86 +1,74 @@
 
-<header id="pg-cpt2-header" class="concept_item_header pb-md-5">
-  <h1><span>2世帯スタイル</span></h1>
-  <figure class="w100"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/pg-cpt2-00-img001" alt="2世帯スタイル"/> </figure>
+<header id="page_towa00" class="concept_item_header">
+	<h1><span>towa 〜永遠〜</span></h1>
+  <figure class="w100"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/towa_img000.jpg" alt="towa　～永遠～"/> </figure>
 </header>
-<section id="pg-cpt2-concept" class=" concept_style_concept">
-  <div class="row pb-md-5 container-fluid">
+<section id="page_towa-concept" class="my-5 concept_style_concept">
+  <h2 class="ttl_ribbon">スタイルコンセプト</h2>
+  <figure class="w100 mb-0"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/towa_img001.jpg"  alt="「towa　～永遠～」の外観イメージ"/> </figure>
+  <span>■ 外観イメージ</span>
+  <div class="row pt-5">
     <div class="col-12 col-md-8">
-      <h3>同居のパターンに合わせてアイディアやプランをご提案いたします</h3>
+      <h3>子育てもひと段落。人生100年時代を<br>
+        健康でゆっくりと幸せに暮らせる家</h3>
       <div class="lead pr-md-5">
-<p>大型ダイニングテーブルやアイランドキッチンにすることで、世帯間の交流も楽しく、自分たち流の間取りで、自分たち流の快適な暮らしを見つけましょう。</p>
-<p>孫と一緒に暮らす楽しさと、将来介護にもプラスとなる動線をプランニングいたします。<br>
-三世代の暮らしをもっと豊かに、もっと自由に。</p>
+        <p>「今日は夫婦ふたりでゆっくりと過ごせる休日。俺は少しだけ早起きをして妻の好きなアメリカンコーヒーとバターたっぷりの厚切りトーストを準備中。今朝は喫茶店のマスターのように妻をおもてなししよう。」<br>
+          人生のご褒美時間ともいえる時を好きな街に暮らし、お子様やお孫様たちが楽しく集う。<br>
+          健康で心地よい暮らしを＆＋の家よりご提案いたします。</p>
       </div>
     </div>
-    <div class="col-12 col-md-4 row">
-      <figure class="w100 col-md-12 col-6"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/pg-cpt2-01-img001@2x.jpg" alt="「2世帯スタイル」のイメージ"/> </figure>
-      <figure class="w100 col-md-12 col-6"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/pg-cpt2-01-img002@2x.jpg" alt="「2世帯スタイル」のイメージ"/> </figure>
+    <div class="col-12 col-md-4 container-fluid">
+      <div class="row">
+        <figure class="w100 col-md-12 col-6"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/towa_img002@2x.jpg" alt="「towa　～永遠～」のイメージ"/> </figure>
+        <figure class="w100 col-md-12 col-6"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/towa_img003@2x.jpg" alt="「towa　～永遠～」のイメージ"/> </figure>
+      </div>
     </div>
   </div>
 </section>
-<section id="pg-cpt2-plan">
-<h2 class="ttl_ribbon">参考プラン</h2>
-<figure class="w100 pb-md-5"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/pg-cpt2-02-img001@2x.jpg" alt="「2世帯スタイル」の内観イメージ"/> 内観イメージ </figure>
-<div class="row pb-md-5 container-fluid">
-  <div class="col-12 col-md-8">
-    <div class="lead pr-md-5">
-		
-<p>大型ダイニングテーブルやアイランドキッチンにすることで、世帯間の交流も楽しく、自分たち流の間取りで、自分たち流の快適な暮らしを見つけましょう。</p>
-<p>孫と一緒に暮らす楽しさと、将来介護にもプラスとなる動線をプランニングいたします。<br>
-
-三世代の暮らしをもっと豊かに、もっと自由に。</p>		
+<section id="page_towa-plan">
+  <h2 class="ttl_ribbon">参考プラン</h2>
+  <ul class="list">
+    <li>段差のないユニバーサルデザイン</li>
+    <li> 車椅子でも安心の引戸で乗降車もゆったりとできる広々玄関</li>
+    <li> 大人二人が並んでも安心の廊下幅</li>
+    <li> 廊下側からとセカンドリビング側からと二方向から出入りできる生活動線を考えた洗面室</li>
+    <li> 開放感と寛ぎに満ちたどこからでも目が届く安心の中庭ウッドデッキ</li>
+    <li> 洋服、お布団、日用品と必要なものをたっぷり収納できるウォークインクローゼット</li>
+    <li> 独立した書斎として、寝室と繋げてごろ寝スペースとして、LDKと繋げてホームパーティーにと使えるセカンドリビング</li>
+  </ul>
+  <div class="row my-5">
+    <div class="col-12 col-md-6"><span class="maxw-300 w100 center"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/towa_img004@2x.jpg" alt=""/> </div>
+    <div class="col-12 col-md-6"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/towa_img005@2x.jpg" alt=""/> </div>
+  </div>
+  <section class="spec_price my-3">
+    <div class="">
+      <table>
+        <tbody>
+          <tr>
+            <th>延床面積</th>
+            <td>26坪</td>
+          </tr>
+          <tr>
+            <th>１階床面積</th>
+            <td>26坪</td>
+          </tr>
+          <tr>
+            <th>　</th>
+            <td>　</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-  </div>
-  <div class="col-12 col-md-4 container-fluid">
-      <figure class="w100"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/pg-cpt2-02-img002@2x.jpg" alt="「2世帯スタイル」の外観イメージ"/> 外観イメージ</figure>
-  </div>
-</div>
-<div class="row pb-md-5 container-fluid">
-  <div class="col-4 px-1 px-md-3">
-    <figure class="w100"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/pg-cpt2-02-img003@2x.jpg" alt="「2世帯スタイル」の生活イメージ"/> </figure>
-  </div>
-  <div class="col-4 px-1 px-md-3">
-    <figure class="w100"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/pg-cpt2-02-img004@2x.jpg" alt="「2世帯スタイル」の生活イメージ"/> </figure>
-  </div>
-  <div class="col-4 px-1 px-md-3">
-    <figure class="w100"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/pg-cpt2-02-img005@2x.jpg" alt="「2世帯スタイル」の生活イメージ"/> </figure>
-  </div>
-</div>
-</div>
-<div class="row pb-md-5 container-fluid my-3">
-  <div class="col-md-6 ">
-    <figure class="w100 mx-5">
-    <img src="<?php bloginfo('stylesheet_directory'); ?>/images/pg-cpt2-madori@2x.jpg" alt="「2世帯スタイル」の間取り"/> </div>
-  <div class="spec_price col-md-6 ">
-    <table>
-      <tbody>
-        <tr>
-          <th>延床面積</th>
-          <td>43.21坪</td>
-        </tr>
-        <tr>
-          <th>１階床面積</th>
-          <td>22.10坪</td>
-        </tr>
-        <tr>
-          <th>２階床面積</th>
-          <td>21.11坪</td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="price-box">
-      <p class="ttl">参考プラン本体価格</p>
-      <p class="price"><span class="text-nowrap"><span class="number">2,980</span> 万円（税抜）</span></p>
+    <div class="">
+      <p class="price">参考プラン本体価格<span class="text-nowrap"><span class="number">2,100</span> 万円（税抜）</span></p>
     </div>
-  </div>
-</div>
+  </section>
+</section>
 </article>
 <div class="pagetab concept-nav pb-md-5">
   <?php wp_nav_menu(array('theme_location'=>'concept-nav', 'fallback_cb'=>'nothing_to_do')); ?>
 </div>
-  <!--▼▼▼施工事例▼▼▼-->
-  <?php get_template_part('include', 'example');//施工事例 ?>
-  <!--　home-example　▲▲▲施工事例▲▲▲-->
-
+<div class="wide btn arrow maxw-600 py-2 mb-4">
+	<a href="/ex_cat/shinchiku">注文住宅施工事例へ</a>
+</div>
 <article class="entry-content">

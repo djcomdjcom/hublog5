@@ -22,6 +22,9 @@ main ul {
   margin: 0 0;
 }
 
+img{
+	-webkit-backface-visibility: hidden !important;
+}
 
 .maxw-1190{max-width:1190px;}.maxw-1180{max-width:1180px;}.maxw-1170{max-width:1170px;}.maxw-1160{max-width:1160px;}.maxw-1150{max-width:1150px;}.maxw-1140{max-width:1140px;}.maxw-1130{max-width:1130px;}.maxw-1120{max-width:1120px;}.maxw-1110{max-width:1110px;}.maxw-1100{max-width:1100px;}
 .maxw-1090{max-width:1090px;}.maxw-1080{max-width:1080px;}.maxw-1070{max-width:1070px;}.maxw-1060{max-width:1060px;}.maxw-1050{max-width:1050px;}.maxw-1040{max-width:1040px;}.maxw-1030{max-width:1030px;}.maxw-1020{max-width:1020px;}.maxw-1010{max-width:1010px;}.maxw-1000{max-width:1000px;}
@@ -452,13 +455,18 @@ body {
 
 @media screen and (max-width: 1199px) {
 
-.entry-content {
+.entry-content,
+.entry-header{
 	margin-left: 15px;
 	margin-right: 15px;
 	
 	}
-}
+	.entry-content .entry-header{
+		margin-left: 0;
+		margin-right: 0;
+	}
 
+}
 @media screen and (min-width: 1000px) {
   #header .menu-mobile-nav-container {
     display: none;
@@ -1873,6 +1881,46 @@ ol.numbering .number {
   display: inline-block;
   text-indent: -2em;
 }
+dl.flow {
+	counter-reset: number;
+}
+dl.flow dt{
+	border: none;
+	color: #5F401D;
+	font-size: 1.2em;
+	font-weight: normal;
+}
+dl.flow dt::before {
+	counter-increment: number;
+	content: counter(number,decimal-leading-zero); 
+	padding-right: 5px;
+	display: inline-block;
+	background: #5F401D;
+	color: #fff;
+	border-radius: 3px;
+	padding: 0.2em 1em;
+	margin-right: 0.8em;
+}
+dl.flow dd {
+	border-bottom: 1px solid #707070;
+	margin-bottom: 4em;
+	padding: 1em 0;
+	position: relative;
+}
+
+dl.flow dd:after {
+  content: "\f0d7";
+  font-family: FontAwesome;
+	display: block;
+	font-size: 4em;
+	position: absolute;
+	bottom: -0.5em;
+	left: 0;
+	right: 0;
+	text-align: center;
+	transform: scale(1.5, 1);
+	color: #E6CFB2;
+}
 
 .center ul.list, .center ol.list {
   display: inline-block;
@@ -1993,9 +2041,9 @@ ol.numbering .number {
     background: rgba(0, 0, 0, 0.40);
     padding: 0.2em 1em;
     border-radius: 5px 0 0 5px;
-    text-align: right;
+    text-align: left;
     margin: 0 auto 0.3em;
-    width: 100%;
+    width: 100vw;
     top: 50%;
     left: 0;
     right: 0;
@@ -3310,7 +3358,7 @@ body.single .category-voice .entry-content {
 
 .pagetab li a {
 	display: block;
-  background: #033373;
+  background: #5F401D;
   color: #fff;
   width: 100%;
   box-sizing: border-box;
@@ -3323,8 +3371,8 @@ body.single .category-voice .entry-content {
 	margin-bottom: 1px
 }
 .pagetab li a:hover, .pagetab li.current-menu-item a {
-  background: transparent;
-  color: #333;
+  background: #c19558;
+  color: #fff;
 }
 .pagetab li a:before {
   content: ">";
@@ -3915,16 +3963,6 @@ table.gaiyou tr.profile_shop_name {
   box-sizing: border-box;
 }
 .beforeform .hublog-inquiry-tel {
-  width: 38%;
-  border-left: 1px dotted #ddd;
-}
-.beforeform > .message {
-  width: 60%;
-}
-.beforeform > .message .title {
-  margin-bottom: 1em;
-}
-.beforeform .hublog-inquiry-tel {
   padding: 0.5em;
   background: #fff;
 }
@@ -3964,6 +4002,22 @@ table.gaiyou tr.profile_shop_name {
 .hublog-inquiry > .message {
   margin: 1.5em auto;
 }
+
+@media screen and (min-width:769px) {
+
+.beforeform .hublog-inquiry-tel {
+  width: 38%;
+  border-left: 1px dotted #ddd;
+}
+.beforeform > .message {
+  width: 60%;
+}
+	.beforeform > .message .title {
+  margin-bottom: 1em;
+}
+
+}
+
 /*wpcf7*/
 #popupform7 > .post-info {
   display: none;
@@ -4087,6 +4141,8 @@ table.gaiyou tr.profile_shop_name {
 .wpcf7-form .submit_area {
   text-align: center;
 }
+
+
 /*wp_social_bookmarking_light*/
 .wp_social_bookmarking_light {
   clear: both;
@@ -4140,7 +4196,7 @@ table.gaiyou tr.profile_shop_name {
   font-size: 16px;
   box-sizing: border-box;
   z-index: 400;
-  background-color:rgba(100,51,12,0.8);
+  background-color:rgba(100,51,12,0.95);
   overflow: scroll;
 }
 

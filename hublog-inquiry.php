@@ -29,17 +29,17 @@ $profile_inquiry_tel = (get_option('profile_inquiry_tel')) ? get_option('profile
 
 
 
-<?php if ( is_page(array('about','inquiry')) ) : //お問合せページ ?>
+<?php if ( is_page(array('inquiry')) ) : //お問合せページ ?>
 <div id="form" class="hublog-inquiry page clearfix wide anchor">
 	<span class="title">お問合せ</span>
 	<div class="inbox">
 		<div class="hublog-inquiry-tel clearfix">
-		<div class="beforeform clearfix">
-			<div class="message"> <span class="title">お電話でのお問合わせも承ります。</span>
+		<div class="beforeform row">
+			<div class="message text-center col-md-6"> <span class="title">お電話でのお問合わせも承ります。</span>
 				<p>※電話に出たスタッフにご用件をお伝えください。</p>
 			</div>
 			<!--message-->
-			<div class="hublog-inquiry-tel"> <span class="profile_inquiry_tel"> 電話：
+			<div class="hublog-inquiry-tel text-center col-md-6"> <span class="profile_inquiry_tel"> 電話：
 				<?php
 					$profile_inquiry_tel = (get_option('profile_inquiry_tel')) ? get_option('profile_inquiry_tel') : get_option('profile_main_tel');
 					if (!empty($profile_inquiry_tel)) : ?>
@@ -69,34 +69,6 @@ $profile_inquiry_tel = (get_option('profile_inquiry_tel')) ? get_option('profile
 <!--hublog-inquiry-->
 
 
-<?php elseif ( in_category(array('example','newhouse','renovation')) ) : //施工事例 ?>
-<div id="form" class="hublog-inquiry single clearfix cleartype popup"> <span class="title">資料請求</span>
-	<div class="inbox">
-		<div class="hublog-inquiry-btn">
-			<div class="for-re">
-				<?php
-	      echo do_shortcode("[popup-contact-form-7 id=\"$form_shiryou\" title=\"資料請求\"]");
-	      ?>
-
-			</div>
-		</div>
-		<div class="hublog-inquiry-tel"> <span class="profile_inquiry_tel"><span class="title">お電話での資料請求も承ります。</span>
-			<?php	if (!empty($profile_inquiry_tel)) : ?>
-			<span class="telnum"><?php echo $profile_inquiry_tel; ?></span>
-			<?php endif; ?>
-			</span>
-			<div class="opning-hour-day"> <span class="profile_opening_hours"><span class="title">営業時間：</span><?php echo (get_option('profile_opening_hours')) ?></span>
-
-			<?php if (get_option('profile_holiday')) : ?>
-			  <span class="profile_holiday"><span class="title">定休日：</span><?php echo (get_option('profile_holiday')) ?></span>
-			<?php endif; ?>
-			</div>
-			<!--opning-houry-day-->
-		</div>
-		<!--hublog-inquiry-tel-->
-	</div><!--inbox-->
-</div>
-<!--hublog-inquiry-->
 <?php elseif ( in_category(array('event','event-recent')) ) : //イベント申込 ?>
 <div id="form" class="hublog-inquiry page clearfix wide anchor">
 	<span class="title">イベントのお申込み</span>
@@ -130,18 +102,18 @@ $profile_inquiry_tel = (get_option('profile_inquiry_tel')) ? get_option('profile
 
 
 
-<?php elseif ( is_page(array('shiryou','concept')) ) : //資料請求ページ ?>
+<?php elseif ( is_page(array('shiryou','offer')) ) : //資料請求ページ ?>
 <div id="form" class="hublog-inquiry page clearfix wide anchor">
 	<span class="title">資料請求フォーム</span>
-		<div class="beforeform clearfix">
-			<div class="message"> <span class="title">お電話での資料請求も承ります。</span>
+		<div class="beforeform row">
+			<div class="message text-center col-md-6"> <span class="title">お電話での資料請求も承ります。</span>
 				<p>※電話に出たスタッフに<br />
 					<strong>「<?php if(get_option('profile_shop_name')) echo (get_option('profile_shop_name')) ;else echo(get_option('profile_corporate_name')); ?>の資料がほしい」</strong>とお伝えください。</p>
 			</div>
 
 
 			<!--message-->
-			<div class="hublog-inquiry-tel"> <span class="profile_inquiry_tel"> 電話：
+			<div class="hublog-inquiry-tel col-md-6"> <span class="profile_inquiry_tel"> 電話：
 				<?php
 					$profile_inquiry_tel = (get_option('profile_inquiry_tel')) ? get_option('profile_inquiry_tel') : get_option('profile_main_tel');
 					if (!empty($profile_inquiry_tel)) : ?>
@@ -173,13 +145,13 @@ $profile_inquiry_tel = (get_option('profile_inquiry_tel')) ? get_option('profile
 <?php elseif ( is_page(array('modelhouse')) ) : //モデルハウス ?>
 <div id="form" class="hublog-inquiry page clearfix wide anchor">
 	<span class="title">モデルハウス見学申込フォーム</span>
-		<div class="beforeform clearfix">
-			<div class="message"> <span class="title">お電話でのお申込も承ります</span>
+		<div class="beforeform row">
+			<div class="message text-center col-md-6"> <span class="title">お電話でのお申込も承ります</span>
 				<p>※電話に出たスタッフに<br />
 					<strong>「モデルハウスの見学希望」</strong>とお伝えください。</p>
 			</div>
 			<!--message-->
-			<div class="hublog-inquiry-tel"> <span class="profile_inquiry_tel"> 電話：
+			<div class="hublog-inquiry-tel  text-center col-md-6"> <span class="profile_inquiry_tel"> 電話：
 				<?php
 					$profile_inquiry_tel = (get_option('profile_inquiry_tel')) ? get_option('profile_inquiry_tel') : get_option('profile_main_tel');
 					if (!empty($profile_inquiry_tel)) : ?>
@@ -212,13 +184,13 @@ $profile_inquiry_tel = (get_option('profile_inquiry_tel')) ? get_option('profile
 <?php elseif ( is_page(array('recruit','recruit-shain','recruit-part')) ) : //求人 ?>
 <div id="form" class="hublog-inquiry page clearfix wide anchor">
 	<span class="title">求人申込みフォーム</span>
-		<div class="beforeform clearfix">
-			<div class="message"> <span class="title">お電話でのお問い合わせ</span>
+		<div class="beforeform row">
+			<div class="message text-center col-md-6"> <span class="title">お電話でのお問い合わせ</span>
 				<p>※電話に出たスタッフに<br />
 					<strong>「求人についてのお問い合わせ」</strong>とお伝えください。</p>
 			</div>
 			<!--message-->
-			<div class="hublog-inquiry-tel"> <span class="profile_inquiry_tel"> 電話：
+			<div class="hublog-inquiry-tel text-center col-md-6"> <span class="profile_inquiry_tel"> 電話：
 				<?php
 					$profile_inquiry_tel = (get_option('profile_inquiry_tel')) ? get_option('profile_inquiry_tel') : get_option('profile_main_tel');
 					if (!empty($profile_inquiry_tel)) : ?>
@@ -266,35 +238,8 @@ $profile_inquiry_tel = (get_option('profile_inquiry_tel')) ? get_option('profile
 <?php elseif ( in_category(array('staff')) ) : //フック無し ?>
 
 <?php else: ?>
-<div id="form" class="hublog-inquiry single clearfix cleartype popup">
-	<span class="title">お問合せ</span>
-	<div class="inbox">
-		<div class="hublog-inquiry-btn">
-			<div class="for-re">
-
-				<?php
-	      echo do_shortcode("[popup-contact-form-7 id=\"$form_shiryou\" title=\"資料請求\"]");
-	      ?>
-
-			</div>
-		</div>
-		<div class="hublog-inquiry-tel"> <span class="profile_inquiry_tel"> <span>お問い合せ電話番号</span>
-			<?php	if (!empty($profile_inquiry_tel)) : ?>
-			<span class="telnum"><?php echo $profile_inquiry_tel; ?></span>
-			<?php endif; ?>
-			</span>
-			<div class="opning-hour-day">
-			<span class="profile_opening_hours"><span class="title">営業時間：</span><?php echo (get_option('profile_opening_hours')) ?></span>
-
-			<?php if (get_option('profile_holiday')) : ?>
-			  <span class="profile_holiday"><span class="title">定休日：</span><?php echo (get_option('profile_holiday')) ?></span>
-			<?php endif; ?>
-			</div>
-			<!--opning-hourinquiry-day-->
-		</div>
-		<!--hublog--tel-->
-	</div><!--inbox-->
-</div>
+<?php get_template_part('include', 'contact'); ?>
+<?php get_template_part('include', 'zeh'); ?>
 <!--hublog-inquiry-->
 <?php endif; ?>
 

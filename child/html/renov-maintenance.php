@@ -110,7 +110,3 @@
 <div class="pagetab pagetab-bottom">
   <?php wp_nav_menu(array('theme_location'=>'renov-nav', 'fallback_cb'=>'nothing_to_do')); ?>
 </div>
-
-</article>
-<?php get_template_part('include', 'reason');//選ばれる理由 ?>
-<article class="entry-content">
