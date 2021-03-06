@@ -19,7 +19,7 @@
 
 <header class="entry-header wrapper">
 <span class="entry-title border-top-0"><span class="">
-新築注文住宅 デジコム工務店の家づくり<?//php echo get_the_excerpt(); ?>
+新築注文住宅 <?php echo get_option('profile_shop_name'); ?>の家づくり<?//php echo get_the_excerpt(); ?>
 </span></span>
 </header>
 
@@ -40,7 +40,7 @@
 </header>
 <header class="entry-header wrapper">
 <span class="entry-title border-top-0"><span class="">
-小さな工事でもデジコム工務店にお任せください<?//php echo get_the_excerpt(); ?>
+小さな工事でも<?php echo get_option('profile_shop_name'); ?>にお任せください<?//php echo get_the_excerpt(); ?>
 </span></span>
 </header>
 

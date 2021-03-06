@@ -63,11 +63,9 @@
 	  </div>
   </section>
 
- <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/top-contact.png" class="position-fixed top-contact" usemap="#tc">
-  <map name="tc">
-    <area shape="poly" coords="28,120,28,281,77,299,77,112" href="/offer?title=<?php if ( is_home() || is_front_page() ) {  echo ('トップページ');} else {echo get_the_title();}?>">
-    <area shape="poly" coords="25,322,25,481,77,499,77,306" href="/inquiry?title=<?php if ( is_home() || is_front_page() ) {  echo ('トップページ');} else {echo get_the_title();}?>">
-  </map>
+  <div id="top-contact" class="position-fixed top-contact">
+    <div class="inbox"> <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/top-contact.png" class="tc-img"> <a class="to_offer" href="/offer?title=<?php if ( is_home() || is_front_page() ) {  echo ('トップページ');} else {echo get_the_title();}?>">資料請求</a> <a class="to_inquiry" href="/inquiry?title=<?php if ( is_home() || is_front_page() ) {  echo ('トップページ');} else {echo get_the_title();}?>">お問い合わせ</a> </div>
+  </div>
 	
 </header>
 <?php if (! is_home() ): ?>

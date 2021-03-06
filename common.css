@@ -478,14 +478,33 @@ body {
 
 /*Header
 *************************************************************************/
-.top-contact {
+#top-contact {
     top: 95px;
     right: 0;
     z-index: 99;
 }
+#top-contact > div{
+	position: relative;
+}
+#top-contact > div > a{
+	position: absolute;
+	right: 0;
+	width: 0;
+	display: block;
+	padding-left: 50px;
+}
+#top-contact a.to_offer{
+	height: 292px;
+	top: 0;
+}
+
+#top-contact a.to_inquiry{
+	height: 200px;
+	top: 292px;
+}
 
 @media screen and (max-width: 1199px) {
-.top-contact {
+#top-contact {
 display: none;
 	}
 }

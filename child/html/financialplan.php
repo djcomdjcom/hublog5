@@ -56,6 +56,8 @@
 <!--fp-loan-->
 
 <section id="fp-reform" class="clearfix anchor">
+	
+<h2>リフォーム費用の捻出</h2>
   <p>いくら構造体が丈夫な建物でも、何もメンテナンスをせずに放っておくと、劣化が早まります。</p>
   <p>特に建物の構造体に直接影響しやすい屋根や外壁のメンテナンスを怠ってしまうと、建物寿命が短くなってしまいます。</p>
   <p>定期的に外壁修繕と水廻り設備のリフォームは必要になりますので、予め資金計画に組み込んでおかなければなりません。</p>
@@ -64,7 +66,10 @@
     今までの月々支払金額と変わらずに、外壁もメンテナンスされ、水廻りも最新にすることができます。住宅ローンですからリフォームローンよりも金利が安く、団体信用保険もつきますから、もしもの事があっても安心です。</p>
   <p>このように長期的な視点で生涯の資金計画をすることが大切です。<br>
     建築費用や住宅ローン金利も大切ですが、長期的に見ればもっと大切なことが沢山あるので、私たちと資金計画をすることはとても有意義な時間になるはずです。 </p>
-  <figure class="w100 maxw-890 mx-auto"> </figure>
+<figure class="w100 mb-5 maxw-890 mx-auto"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/builder/financialplan005.jpg" alt="資金計画のイメージ"/> </figure>
+
+	
+	
 </section>
 <!--fp-reform-->
 
@@ -74,10 +79,10 @@
     <div class="col-sm-6">
       <p>最近では、低炭素社会に向けた補助金や地震や台風などの災害対策に向けた補助金が住宅向けに交付されるケースが多くなりました。</p>
       <p>長期優良住宅や認定低炭素住宅になると金利や税金の優遇なども受けることができます。</p>
-      <p>これら国策として行なっている恩恵を十分に活用し、建物の性能を向上させ、ご家族の家計に余裕を生むことができます。 </p
+		<p>これら国策として行なっている恩恵を十分に活用し、建物の性能を向上させ、ご家族の家計に余裕を生むことができます。 </p>
     </div>
     <div class="col-sm-6">
-      <figure class="w100"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/builder/financialplan005.jpg" alt="ライフサイクルコスト"/> </figure>
+      <figure class="w100"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/builder/financialplan006.jpg" alt="補助金・金利優遇"/> </figure>
     </div>
   </div>
 </section>
@@ -87,7 +92,7 @@
   <h2>ライフサイクルコスト</h2>
   <p>水道光熱費、医療費、家電、家具など、住み続けていると必ずかかる費用があります。<br>
     特に水道光熱費は大きな出費ですので、ライフサイクルコストが上がらない家づくりが必要です。</p>
-  <figure class="w100 maxw-890 mx-auto"> ここにイメージ </figure>
+      <figure class="w100 maxw-890 mx-auto"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/builder/financialplan007.jpg" alt="ライフサイクルコスト"/> </figure>
   <ul>
     <li>高気密高断熱住宅で冷暖房の光熱費を節約する。</li>
     <li> 快適な温熱環境で疾病リスクから身体を守る</li>
@@ -100,7 +105,6 @@
     ここで長期的な視野を持ち、上手な資金計画をするか、目先の問題解決のために安易な資金計画をしてしまうかでは、人生の豊かさに大きな差が生まれるでしょう。</p>
   <p>まずは、資金計画のご相談からお声がけください。</p>
 	
-      <figure class="w100 maxw-890 mx-auto"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/builder/financialplan005.jpg" alt="ライフサイクルコスト"/> </figure>
 	
 </section>
 <!--fp-lcc-->
