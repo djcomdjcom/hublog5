@@ -167,7 +167,7 @@
     <h4 class="ttl brackets2" >スーパーストロング構造体バリュー」の安心ポイント！</h4>
     <div class="row">
       <div class="col-sm-3">
-        <figure class="w100 maxw-300 mx-auto"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/sskozou002.jpg" alt="設計検査報告書"/> </figure>
+        <figure class="w100 maxw-300 mx-auto"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/builder/sskozou002.jpg" alt="設計検査報告書"/> </figure>
       </div>
       <div class="col-sm-9">
         <h5 class="ttl brackets2" >工事前の設計検査体制の徹底</h5>
@@ -275,3 +275,9 @@
 <div class="pagetab pagetab-bottom">
   <?php wp_nav_menu( array('theme_location'=>'order-nav', 'fallback_cb'=>'nothing_to_do') ); ?>
 </div>
+
+</article>
+<?php get_template_part('include', 'reason');//選ばれる理由 ?>
+<article class="entry-content">
+
+
