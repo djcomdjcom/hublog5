@@ -16,7 +16,6 @@
 </header>
 
 
-<p><?php echo get_option('profile_shop_name'); ?>の住まいづくりは、「 <?php echo get_option('profile_product_order'); //注文住宅商品名?>」のコンセプトをもとにつくられています。</p>
 
 <p>経済性と住み心地を兼ね備えた世界に一つだけの家を実現するために、<?php echo get_option('profile_shop_name');//屋号 ?>は標準仕様に則って家づくりをしています。</p>
 
@@ -30,7 +29,7 @@
 </p>
 
 <figure class="w100">
-<img src="<?php bloginfo('stylesheet_directory'); ?>/images/order000.jpg" alt=""/> </figure>
+<img src="<?php bloginfo('stylesheet_directory'); ?>/images/builder/order000.jpg" alt=""/> </figure>
 
 <div class="pagetab pagetab-bottom">
   <?php wp_nav_menu(array('theme_location'=>'order-nav', 'fallback_cb'=>'nothing_to_do')); ?>
