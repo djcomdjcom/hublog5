@@ -14,8 +14,8 @@
   <h3>定期的な維持メンテナンスで建物を守ります</h3>
   <div class="row">
     <div class="col-sm-6">
-      <p>配管設備などをメンテナンスしやすい様に点検口を適切に設置し、定期点検によって建物を維持します。点検内容や補修内容は住宅履歴管理に保管しますので、建物の状況がしっかりと把握できています。</p>
-      </div>
+      <p>配管設備などをメンテナンスしやすい様に点検口を適切に設置し、定期点検によって建物を維持します。点検内容や補修内容は住宅履歴管理に保管しますので、建物の状況がしっかりと把握できています</p>
+      。 </div>
     <div class="col-sm-6">
       <figure class="w100"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/builder/ijikanri001.jpg" alt="建物の維持管理"> </figure>
     </div>
@@ -110,3 +110,7 @@
 <div class="pagetab pagetab-bottom">
   <?php wp_nav_menu(array('theme_location'=>'renov-nav', 'fallback_cb'=>'nothing_to_do')); ?>
 </div>
+
+</article>
+<?php get_template_part('include', 'reason');//選ばれる理由 ?>
+<article class="entry-content">
