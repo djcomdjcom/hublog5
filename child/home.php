@@ -202,11 +202,10 @@ $('.posts .post.style-voice').addClass('col-6 col-lg-4 mb-4');
         <div class="col-12 col-md-6 pt-5 ">
           <div class="sns-link maxw-500 center"> <a href="/torikumi" class="w100 mt-5 mb-4"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/about-bnr-sdgs@2x.jpg" alt="SDGS"/> </a>
             <p class="w100 center maxw-400"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/snsicon-followme@2x.png" alt="follow me"/></p>
-            <ul class="row">
-              <li class="col-4"> <a class="w100" href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/snsicon-tw@2x.png" alt="twitter"></a> </li>
-              <li class="col-4"> <a class="w100" href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/snsicon-ig@2x.png" alt="Instagram"></a> </li>
-              <li class="col-4"> <a class="w100" href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/snsicon-fb@2x.png" alt="facebook"></a> </li>
-            </ul>
+			  
+			  
+		  <?php get_template_part('include', 'sns');//SNSボタン ?>
+			  
           </div>
         </div>
       </div>
@@ -222,7 +221,7 @@ $('.posts .post.style-voice').addClass('col-6 col-lg-4 mb-4');
         <li class="col-6 col-md-3" ><a class="w100" href="/#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/hajimete_bnr-001@2x.jpg" alt="住まいの無料相談会"></a></li>
         <li class="col-6 col-md-3" ><a class="w100" href="/#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/hajimete_bnr-002@2x.jpg" alt="オンライン打ち合わせ"></a></li>
         <li class="col-6 col-md-3" ><a class="w100" href="/#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/hajimete_bnr-003@2x.jpg" alt="構造完成見学会"></a></li>
-        <li class="col-6 col-md-3" ><a class="w100" href="/document-request?title=<?php if ( is_home() || is_front_page() ) {  echo ('トップページ');} else {echo get_the_title();}?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/hajimete_bnr-004@2x.jpg" alt="資料請求"></a></li>
+        <li class="col-6 col-md-3" ><a class="w100" href="/offer?title=<?php if ( is_home() || is_front_page() ) {  echo ('トップページ');} else {echo get_the_title();}?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/hajimete_bnr-004@2x.jpg" alt="資料請求"></a></li>
       </ul>
     </div>
   </section>
