@@ -4493,42 +4493,6 @@ width: 70%;
 .posts .post .excerpt{
 display: none;
 }
-
-
-.hublog-inquiry,
-.inquiry-single
-	{
-	width:100%;
-}
-
-.wpcf7-form > p > b,
-.wpcf7-form > p > b + br + span,
-.wpcf7-form > p > b + br + span.input-area{
-	width: 100%;
-	text-align: left;
-	margin: 0;
-}
-.wpcf7-form .clearfix .input-area > span,
-.wpcf7-form .clearfix .input-area > div,
-.wpcf7-form .clearfix .input-area > form{
-margin-left:0;
-	}
-
-	.wpcf7-form > p > b{
-		border-bottom: 1px solid #ccc;
-	margin-bottom: 0.5em;
-
-	}
-	.wpcf7-form > p > b:before{
-	content: "■";
-	margin-right: 0.5em;
-}
-.wpcf7-form .clearfix .input-area .wpcf7-form-control-wrap,
-.wpcf7-form > p > b + br + span.wpcf7-form-control-wrap{
-	display: inline-block;
-}
-
-	
 	
 .w50{
 		width:100%;
@@ -4570,4 +4534,42 @@ margin-left:0;
 .l-img{
 		text-align:center;
 }
+	}
+@media screen and (max-width: 639px) {
+
+.hublog-inquiry,
+.inquiry-single
+	{
+	width:100%;
+}
+
+.wpcf7-form > p > b,
+.wpcf7-form > p > b + br + span,
+.wpcf7-form > p > b + br + span.input-area{
+	width: 100%;
+	text-align: left;
+	margin: 0;
+}
+.wpcf7-form .clearfix .input-area > span,
+.wpcf7-form .clearfix .input-area > div,
+.wpcf7-form .clearfix .input-area > form{
+margin-left:0;
+	}
+
+	.wpcf7-form > p > b{
+		border-bottom: 1px solid #ccc;
+	margin-bottom: 0.5em;
+
+	}
+	.wpcf7-form > p > b:before{
+	content: "■";
+	margin-right: 0.5em;
+}
+.wpcf7-form .clearfix .input-area .wpcf7-form-control-wrap,
+.wpcf7-form > p > b + br + span.wpcf7-form-control-wrap{
+	display: inline-block;
+}
+
+	
+
 }
