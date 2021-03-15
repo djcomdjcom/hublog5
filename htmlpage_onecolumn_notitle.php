@@ -34,37 +34,11 @@ get_header();
       <?php wp_list_pages('depth=1&hide_empty=0&title_li=&child_of=' . $parent_page_id); ?>
     </ul>
     <?php endif; ?>
-    <?php
-    $inc_ID = ( post_custom( 'inc_ID' ) ) ? post_custom( 'inc_ID' ) : post_custom( 'Cat_ID' );
-    if ( ctype_digit( $inc_ID ) && $inc_ID > 0 ):
-      //init for Post in Page
-      $inc_description = ( post_custom( 'inc_description' ) ) ? post_custom( 'inc_description' ) : post_custom( 'Cat_description' );
-    $inc_looppart = ( post_custom( 'inc_looppart' ) && ctype_alnum( post_custom( 'inc_looppart' ) ) ) ? post_custom( 'inc_looppart' ) : '';
-    $inc_showposts = ( post_custom( 'inc_showposts' ) ) ? ( int )post_custom( 'inc_showposts' ) : ( int )post_custom( 'showposts' );
-    $pip_args[ 'showposts' ] = ( empty( $inc_showposts ) ) ? 10 : $inc_showposts;
-    ?>
-    <div class="related-posts related-posts01 clearfix"> <?php echo $inc_description; ?>
-      <div class="posts archive clearfix">
-        <?php
-        switch ( post_custom( 'inc_type' ) ):
-        case 'author':
-          $pip_args[ 'author' ] = $inc_ID;
-          break;
-        case 'tag_id':
-          $pip_args[ 'tag_id' ] = $inc_ID;
-          break;
-        default: //カテゴリーを選択したとみなす
-          $pip_args[ 'cat' ] = $inc_ID;
-          endswitch;
+	  
+	  
+      <?php get_template_part('releated-posts');// posts_in_page ?>
 
-          query_posts( $pip_args );
-          while ( have_posts() ): the_post();
-          get_template_part( 'looppart', $inc_looppart );
-          endwhile;
-          ?>
-      </div>
-    </div>
-    <?php endif; wp_reset_query(); //init for Post in Page?>
+	  
     
     <!--商品ページ共通-->
     <?php

@@ -38,7 +38,7 @@ if ( is_numeric($inc_ID) && (int)$inc_ID > 0 ) :
 	?>
 
 
-		<section class="releated-posts">
+		<section class="releated-posts entry-content">
 
 		<?php echo $inc_description; ?>
 		
