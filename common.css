@@ -4471,7 +4471,7 @@ option[value="Hublog"], option[value="Twenty Eleven"], option[value="Twenty Ten"
 
 /*RESPONSIVE*/
 
-@media screen and (max-width: 479px) {
+@media screen and (max-width: 319px) {
 .posts .post .title{
 	line-height: 1.55em;
 	font-size: 1em;

@@ -204,7 +204,7 @@ $('.posts .post.style-voice').addClass('col-6 col-lg-4 mb-4');
             <p class="w100 center maxw-400"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/snsicon-followme@2x.png" alt="follow me"/></p>
 			  
 			  
-		  <?php get_template_part('include', 'sns');//SNSボタン ?>
+		  <?php get_template_part('include', 'snslink');//SNSボタン ?>
 			  
           </div>
         </div>
