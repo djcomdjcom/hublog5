@@ -38,11 +38,11 @@ if ( is_numeric($inc_ID) && (int)$inc_ID > 0 ) :
 	?>
 
 
-		<section class="releated-posts entry-content">
+		<section class="releated-posts wrapper">
 
 		<?php echo $inc_description; ?>
 		
-		<div class="posts archive clearfix">
+		<div class="posts archive clearfix px-3">
 		<?php 
 			query_posts($pip_args);
 			while ( have_posts() ) : the_post();
