@@ -26,14 +26,14 @@
 
 <p>新築建替えありきのハウスメーカーとは違い、プロの建築家から見て、既存建物が構造的に問題なければ、リノベーションで経済的で快適な住まいを実現します。</p>
 
-<p>耐震、耐久、省エネ、維持メンテナンスは、「<?php echo get_option('profile_product_renov'); //リノベーション商品名?>」のコンセプトでリノベーションいたします。</p>
+<p>耐震、耐久、省エネ、維持メンテナンスは、注文住宅と同様のコンセプトでリノベーションいたします。</p>
 
 <p>建替えかリノベーションか迷ったら、まずは<?php echo get_option('profile_shop_name'); ?>にご相談ください。</p>
 <p>
 今お住まいの建物を見させていただき、適切なご提案をいたします。</p>
 
 <figure class="w100">
-<img src="<?php bloginfo('stylesheet_directory'); ?>/images/renovation000.jpg" alt=""/> </figure>
+<img src="<?php bloginfo('stylesheet_directory'); ?>/images/builder/renovation000.jpg" alt=""/> </figure>
 
 
 <div class="pagetab pagetab-bottom">
