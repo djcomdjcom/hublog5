@@ -884,15 +884,6 @@ opacity: 1;
   display: block;
   clear: both;
 }
-* html #content, * + html #content {
-  zoom: 100%;
-}
-* html #content {
-  zoom: 1;
-} /* IE6 */
-*:first-child + html #content {
-  zoom: 1;
-} /* IE7 */
 #sidebar {
   float: right;
   width: 260px;
@@ -970,8 +961,6 @@ body.page-template-htmlpage_full #main .entry-content {}
 .flex-control-nav li {
   display: inline-block;
   padding: 0.3em;
-  * display: inline;
-  zoom: 1;
 }
 .flex-control-nav li a {
   display: block;
@@ -1451,8 +1440,6 @@ a.down:before {
 .narabikae-item .title {}
 .narabikae-item form, .narabikae-item {
   display: inline-block;
-  * display: inline;
-  zoom: 1;
 }
 .narabikae-item form input:hover {
   cursor: pointer;
@@ -1514,7 +1501,6 @@ a.down:before {
   text-indent: 110%;
   white-space: nowrap;
   overflow: hidden;
-  * text-indent: 999px;
 }
 .entry-title.title-image img {
   margin-top: -20px;
@@ -1597,8 +1583,6 @@ a.down:before {
   display: inline-block;
   padding: 1%;
   vertical-align: top;
-  * display: inline;
-  zoom: 1;
 }
 /* Entry Single Page　記事　ページ本文
 *****************************************************************************/
@@ -2018,8 +2002,6 @@ dl.flow dd:after {
 .page-link span {
   border: 2px solid #ccc;
   display: inline-block;
-  * display: inline;
-  zoom: 1;
   padding: 5px 10px;
 }
 .page-link > span {
@@ -2286,8 +2268,6 @@ dl.gallery-item {
 }
 .targetable-gallery-target .gallery-target > img {
   display: inline-block;
-  * display: inline;
-  zoom: 1;
 }
 #gallery-set .gallery-target img {
   /*	width:100%;*/
@@ -2374,8 +2354,6 @@ dl.gallery-item {
   text-align: center;
   border: 1px solid #ddd;
   margin-right: 5px;
-  * display: inline;
-  zoom: 1;
 }
 .example-meta .gallery-entry-title {
   font-weight: bold;
@@ -2758,7 +2736,6 @@ vertical-align: top;
   border: none;
 }
 #single-right .hublog-inquiry-btn a, #single-left .hublog-inquiry-btn a, .hublog-inquiry .hublog-inquiry-btn a, #single-right .inquiry-single-btn a, #single-left .inquiry-single-btn a, .inquiry-single .inquiry-single-btn a {
-  * text-indent: -500px;
 }
 #single-left .hublog-inquiry-btn a {
   background: url(images/single-left-inquiry.png) center no-repeat;
@@ -2890,7 +2867,9 @@ font-weight: normal;
 .posts .post.style-inc_blog .metabox{
 	width: 60%;
 }
-
+.posts .post.style-inc_blog .metabox .date{
+	vertical-align: top;
+}
 .posts .post.style-inc_blog .thumbnail .attachment {
 display: block;
 background: #ccc;
@@ -2959,7 +2938,7 @@ padding-top: 100%;/*　トリミングしたい枠の高さ　*/
 
 .posts .post.style-voice .thumbnail,
 .posts .post.style-example .thumbnail {
-  max-width: none;padding-right: 0;
+	padding-right: 0;
 	max-width: none;
 }
 
@@ -3591,8 +3570,6 @@ main .pagetab ul{
 }
 #side-shopinfo > span span {
   display: inline-block;
-  * display: inline;
-  zoom: 1;
 }
 #side-shopinfo .shopname {
   font-weight: bold;
@@ -3601,8 +3578,6 @@ main .pagetab ul{
 }
 #side-shopinfo .profile_address span {
   display: inline-block;
-  * display: inline;
-  zoom: 1;
 }
 #side-shopinfo .tel .number, #side-shopinfo .fax .number {
   font-size: 1.3em;
@@ -3946,13 +3921,9 @@ table.gaiyou tr.profile_shop_name {
   width: 48%;
   min-width: 250px;
   display: inline-block;
-  * display: inline;
-  zoom: 1;
 }
 .hublog-inquiry-tel .profile_inquiry_tel > span, .inquiry-single-tel .profile_inquiry_tel > span {
   display: inline-block;
-  * display: inline;
-  zoom: 1;
 }
 .hublog-inquiry .popup-wpcf7 a {
   text-indent: 0;
@@ -4048,14 +4019,10 @@ table.gaiyou tr.profile_shop_name {
   width: 90px;
   display: inline-block;
   vertical-align: top;
-  * display: inline;
-  zoom: 1;
 }
 .nyroModalDom h3 {
   display: inline-block;
   vertical-align: top;
-  * display: inline;
-  zoom: 1;
 }
 /*popupの場合*/
 .nyroModalDom .clearfix {}

@@ -37,12 +37,15 @@ wp_reset_query();
 			</div>
 		</div>
 		
+	<?php get_template_part('include', 'snslink');//SNSボタン ?>
 		
 		
       <div class="gni-address mt-3">
         <nav id="access">
           <?php get_template_part( 'global-navi-menu' ); ?>
         </nav>
+		  
+		  
 		  
 		  <div class="gtm-address">
         <p class="profile_address"><?php echo '' . get_option('profile_postcode'); ?> <?php echo get_option('profile_address'); ?></p>
@@ -113,7 +116,7 @@ wp_reset_query();
   <div id="footer_img"></div>
   <div id="footer_inbox">
     <div class="wrapper pt-5 pb-5">
-      <div class="footer-navi-menu text-left mt-5">
+      <div class="footer-navi-menu text-left my-4">
         <div class=" f1">
           <?php
           if ( has_nav_menu( 'f1' ) ) {
@@ -160,7 +163,11 @@ wp_reset_query();
           ?>
         </div>
       </div>
-      <div class="footer-contact mt-5 container-fluid">
+		
+            <?php get_template_part('include', 'snslink');//SNSボタン ?>
+		
+		
+      <div class="footer-contact mt-4 container-fluid">
         <div class="row mb-5 mt-5">
           <div class="footer-contact-inner1 col-md-4 mb-4"> <a href="/" class="w100"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-footer@2x.png"></a> </div>
           <div class="footer-contact-inner2 col-md-4  mb-4"> <?php echo '' . get_option('profile_postcode'); ?> <?php echo get_option('profile_address'); ?> <br>

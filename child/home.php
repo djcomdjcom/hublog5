@@ -1,7 +1,6 @@
 <?php get_header(); ?>
-<main role="main">
-  <div id="home-slider"> 
-    
+<article id="container">
+  <div id="home-slider">
     <?php get_template_part('nivoslides'); ?>
   </div>
   <div id="home-carousel" class="mb-3">
@@ -20,8 +19,8 @@
       </header>
       <div class="w100 wrapper bm-0"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/hm-cpt-img01@2x.jpg" alt="家族みんなの笑顔が溢れる自然素材に囲まれた人にやさしくてあたたかな家づくり"/> </div>
     </div>
-    <section id="concept_choice" class="pb-5 row justify-content-start no-gutters">
-      <div class="wrapper pt-5 order-md-2">
+    <section id="concept_choice" class="pb-5 row justify-content-center no-gutters">
+      <div class="wrapper pt-5 order-md-2 col-12">
         <h2 class="ttl_img w100 maxw-640 center"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/cpt_choice-ttl@2x.png"  alt="すべてはお客様のために　おすすめ4つの暮らし方"/></h2>
         <p class="text-center">私たちと家づくりをしてくださった大切なオーナー様のお声をもとに<br>
           誕生した日々を彩る４つの暮らしをご紹介いたします!!</p>
@@ -52,22 +51,15 @@
           </li>
         </ul>
       </div>
-    <div id="concept-topage" class="wrapper col-12 order-md-1"> <a  class="w100 maxw-200 mx-auto" href="/concept"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/hm-cpt-topage@2x.png" alt="コンセプトページはこちら"/></a> </div>
+      <div id="concept-topage" class="wrapper col-12 order-md-1"> <a  class="w100 maxw-200 mx-auto" href="/concept"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/hm-cpt-topage@2x.png" alt="コンセプトページはこちら"/></a> </div>
     </section>
-	  
-	  
   </section>
   <!--　home-concept　▲▲▲コンセプト▲▲▲--> 
   
   <!--▼▼▼施工事例▼▼▼-->
   <?php get_template_part('include', 'example');//施工事例 ?>
-  <!--　home-example　▲▲▲施工事例▲▲▲-->
+  <!--　home-example　▲▲▲施工事例▲▲▲--> 
   
-	
-	
-	
-	
-	
   <!--▼▼▼インフォエリア▼▼▼-->
   <section id="home-infoarea" class="mb-5 wrapper">
     <div class="wrapper p-3 mx-3 my-5 p-md-5 mx-md-0"> 
@@ -91,9 +83,7 @@
       <!--▼▼▼イベント情報▼▼▼-->
       <section id="home-event" class="mt-5 home-posts">
         <header class="content_header">
-			
           <p class="subttl center">近日イベントのご案内</p>
-			
           <h2 class="ttl w100 center"><img class="maxw-480" src="<?php bloginfo('stylesheet_directory'); ?>/images/hm-event-ttl@2x.png"  alt="NEWS&TOPICS"/></h2>
         </header>
         <script>
@@ -147,7 +137,7 @@ $('.posts .post.style-voice').addClass('col-6 col-lg-4 mb-4');
         <?php get_template_part('looppart', 'voice'); ?>
         <?php endwhile; endif; ?>
       </div>
-    <div class="arrow btn toindex"> <a href="/voice/" title="お客様の声一覧ページヘのリンク">一覧を見る</a> </div>
+      <div class="arrow btn toindex"> <a href="/voice/" title="お客様の声一覧ページヘのリンク">一覧を見る</a> </div>
     </div>
   </section>
   <!--　home-voice　▲▲▲お客様の声▲▲▲--> 
@@ -164,7 +154,6 @@ $('.posts .post.style-voice').addClass('col-6 col-lg-4 mb-4');
       
       <section id="home-staff" class="mt-5 container-fluid home-posts">
         <header class="content_header">
-
           <h2 class="ttl_img mb-4 center w100"> <img class="maxw-480" src="<?php bloginfo('stylesheet_directory'); ?>/images/hm-staff-ttl@2x.png" alt="STAFF"/></h2>
         </header>
         <div class="flexbox">
@@ -200,12 +189,9 @@ $('.posts .post.style-voice').addClass('col-6 col-lg-4 mb-4');
           <?php wp_reset_query(); ?>
         </div>
         <div class="col-12 col-md-6 pt-5 ">
-          <div class="sns-link maxw-500 center"> <a href="/torikumi" class="w100 mt-5 mb-4"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/about-bnr-sdgs@2x.jpg" alt="SDGS"/> </a>
+          <div class="sns-link container-fluid"> <a href="/torikumi" class="w100 mt-5 mb-4"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/about-bnr-sdgs@2x.jpg" alt="SDGS"/> </a>
             <p class="w100 center maxw-400"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/snsicon-followme@2x.png" alt="follow me"/></p>
-			  
-			  
-		  <?php get_template_part('include', 'snslink');//SNSボタン ?>
-			  
+            <?php get_template_part('include', 'snslink');//SNSボタン ?>
           </div>
         </div>
       </div>
@@ -214,7 +200,8 @@ $('.posts .post.style-voice').addClass('col-6 col-lg-4 mb-4');
   <section id="hajimetenavi" class="navi text-center mt-5 mb-5">
     <header class="wrapper">
       <h2 class="ttl_img center w100 maxw-800"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/hajimete-ttl@2x.png" alt="<?php echo get_option('profile_shop_name');//屋号 ?>のはじめてナビ"/> </h2>
-      <p class="center lead">お客様の状況に応じてアクションをお選びください</p>
+      <p class="center lead">お客様の状況に応じて
+		  <span class="text-nowrap">アクションをお選びください</span></p>
     </header>
     <div class="wrapper container-fluid">
       <ul class="row maxw-1000 mx-auto">
@@ -225,7 +212,7 @@ $('.posts .post.style-voice').addClass('col-6 col-lg-4 mb-4');
       </ul>
     </div>
   </section>
-</main>
+</article>
 <?php get_template_part('include', 'contact'); ?>
 <?php get_template_part('include', 'zeh'); ?>
 <?php get_footer(); ?>
