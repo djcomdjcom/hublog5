@@ -502,6 +502,10 @@ body {
 	height: 200px;
 	top: 292px;
 }
+#top-contact .tc-img{
+	width: 74px;
+	height: auto;
+}
 
 @media screen and (max-width: 1199px) {
 #top-contact {

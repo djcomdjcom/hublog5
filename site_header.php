@@ -13,10 +13,10 @@
 	
   <section id="globalheader">
 	  <div class="row wrapper mx-auto">
-    <div class="order-2 order-md-1 sitetitle col-9 col-md-5 align-self-center"><a class="w100 maxw-360 mx-auto mx-md-0" href="/" ><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/sitetitle.png"></a></div>
+    <div class="order-2 order-md-1 sitetitle col-9 col-md-5 align-self-center"><a class="w100 maxw-360 mx-auto mx-md-0" href="/" ><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/sitetitle@2x.png"></a></div>
 	  
 	  
-    <div class="order-1 order-md-2 sitelogo col-3 col-md-2"><a class="w100" href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/favicon.png"></a></div>
+    <div class="order-1 order-md-2 sitelogo col-3 col-md-2"><a class="w100" href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/favicon@2x.png"></a></div>
 		  
 		  
     <div id="header-sub" class="order-3 col-md-5 col-12 text-center text-md-right">
@@ -64,7 +64,7 @@
   </section>
 
   <div id="top-contact" class="position-fixed top-contact">
-    <div class="inbox"> <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/top-contact.png" class="tc-img"> <a class="to_offer" href="/offer?title=<?php if ( is_home() || is_front_page() ) {  echo ('トップページ');} else {echo get_the_title();}?>">資料請求</a> <a class="to_inquiry" href="/inquiry?title=<?php if ( is_home() || is_front_page() ) {  echo ('トップページ');} else {echo get_the_title();}?>">お問い合わせ</a> </div>
+    <div class="inbox"> <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/top-contact@2x.png" class="tc-img"> <a class="to_offer" href="/offer?title=<?php if ( is_home() || is_front_page() ) {  echo ('トップページ');} else {echo get_the_title();}?>">資料請求</a> <a class="to_inquiry" href="/inquiry?title=<?php if ( is_home() || is_front_page() ) {  echo ('トップページ');} else {echo get_the_title();}?>">お問い合わせ</a> </div>
   </div>
 	
 </header>
