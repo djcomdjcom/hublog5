@@ -1,7 +1,13 @@
 </article>
 
 <section id="page_concept00">
-  <div class="w100 maxw-600 mx-auto"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/pg-concept00-ttl@2x.png" alt="<?php echo get_option('profile_shop_name');//屋号 ?>のいえづくりとは世界にたった一つの私たしらしい暮らしを演出する"/> </div>
+  <div>
+	  <span class="w100 maxw-800 mx-auto my-4"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/pg-concept00-ttl@2x.png" alt="<?php echo get_option('profile_shop_name');//屋号 ?>のいえづくりとは"/></span>
+	  <span class="w100 maxw-800 mx-auto"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/pg-concept00-description@2x.png" alt="世界にたった一つの私たしらしい暮らしを演出する"/></span>
+	
+	</div>
+	
+	
   <div class="page_concept01-img01 w100 maxw-1000 mx-auto row">
 	  
 	  <figure class="w100 col-4">
