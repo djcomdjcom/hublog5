@@ -179,7 +179,7 @@ $('.posts .post.style-voice').addClass('col-6 col-lg-4 mb-4');
           <header class="mb-3 ">
             <h3 class="ttl_img w100"> <img class="maxw-450" src="<?php echo get_stylesheet_directory_uri(); ?>/images/hm-blog-ttl@2x.png" alt="BLOG"> </h3>
           </header>
-          <?php query_posts('category_name=news&posts_per_page=3'); ?>
+          <?php query_posts('category_name=blog&posts_per_page=3'); ?>
           <div class="posts clearfix">
             <?php while (have_posts()) : the_post(); ?>
             <?php get_template_part('looppart', 'inc_blog'); ?>

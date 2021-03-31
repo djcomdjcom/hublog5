@@ -34,7 +34,6 @@
     <span class="todetail"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s'), the_title_attribute('echo=0')); ?>"> 詳細を見る</a></span> </div>
   <!--metabox--> 
   	<?php edit_post_link(__('Edit'), ''); ?>
-
 </article>
 <!-- #post --> 
 
