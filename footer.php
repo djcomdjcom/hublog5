@@ -17,7 +17,7 @@ wp_reset_query();
       <div id="global-navi-logo" class="wrapper center mb-0 mb-md-4">
 		  <a class="w100 center" href="/"><?php echo get_option('profile_shop_name'); ?></a>
 		</div><div class="gtn-contgact">
-			<div class="contact-tel ">
+			<div class="contact-tel">
 				<span class="profile_inquiry_tel">
 				<?php
 				$profile_inquiry_tel = ( get_option( 'profile_inquiry_tel' ) ) ? get_option( 'profile_inquiry_tel' ) : get_option( 'profile_main_tel' );

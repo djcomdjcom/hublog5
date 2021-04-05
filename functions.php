@@ -358,8 +358,6 @@ add_action( 'admin_footer-post-new.php', 'media_uploader_default_view' );
 add_action( 'admin_footer-post.php', 'media_uploader_default_view' );
 
 
-
-
 // bodyタグにページスラッグを追加 
 function pagename_class($classes = '') { 
 	if (is_page()) { $page = get_post(get_the_ID()); $classes[] = 'page-' . $page->post_name; 
