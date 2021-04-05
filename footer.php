@@ -45,14 +45,31 @@ wp_reset_query();
           <?php get_template_part( 'global-navi-menu' ); ?>
         </nav>
 		  
-		  
+
 		  
 		  <div class="gtm-address">
-        <p class="profile_address"><?php echo '' . get_option('profile_postcode'); ?> <?php echo get_option('profile_address'); ?></p>
-        <span class="text-nowrap px-1">TEL： <?php echo get_option('profile_main_tel'); ?> </span> <span class="text-nowrap px-1">FAX： <?php echo get_option('profile_fax'); ?> </span>
-        <div class="gni-time" class="m-4">
-        <span class="text-nowrap px-1">営業時間 <?php echo (get_option('profile_opening_hours')) ?></span><span class="text-nowrap px-1">定休日　<?php echo (get_option('profile_holiday')) ?></span> </div>
-		  </div>
+			<?php if (get_option('profile_address')) : ?>
+			<p class="profile_address"><?php echo '' . get_option('profile_postcode'); ?> <?php echo get_option('profile_address'); ?></p>
+			<?php endif ;//addrss?>
+			<?php if (get_option('profile_main_tel')) : ?>
+			<span class="text-nowrap px-1">TEL： <?php echo get_option('profile_main_tel'); ?> </span>
+			<?php endif ;?>
+			<?php if (get_option('profile_fax')) : ?>
+			<span class="text-nowrap px-1">FAX： <?php echo get_option('profile_fax'); ?> </span>
+			<?php endif ;?>
+
+			<?php if (get_option('profile_opening_hours')|| get_option('profile_holiday')) : ?>
+			<div class="gni-time" class="m-4">
+				<?php if (get_option('profile_opening_hours')) : ?>
+				<span class="text-nowrap px-1">営業時間 <?php echo (get_option('profile_opening_hours')) ?></span>
+				<?php endif ;//profile_opening_hours?>
+				
+				<?php if (get_option('profile_holiday')) : ?>
+				<span class="text-nowrap px-1">定休日　<?php echo (get_option('profile_holiday')) ?></span>
+				<?php endif ;//profile_holiday?>
+			  </div>
+		<?php endif ;//profile_opening_hours||profile_holiday?>
+		  </div>		  
 			  
       <div class="global-navi-menu text-left mt-4">
         <div class=" f1">
@@ -170,9 +187,20 @@ wp_reset_query();
       <div class="footer-contact mt-4 container-fluid">
         <div class="row mb-5 mt-5">
           <div class="footer-contact-inner1 col-md-4 mb-4"> <a href="/" class="w100"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-footer@2x.png"></a> </div>
-          <div class="footer-contact-inner2 col-md-4  mb-4"> <?php echo '' . get_option('profile_postcode'); ?> <?php echo get_option('profile_address'); ?> <br>
-            <span class="text-nowrap px-1">TEL： <?php echo get_option('profile_main_tel'); ?> </span> <span class="text-nowrap px-1">FAX： <?php echo get_option('profile_fax'); ?> </span><br>
-            <span class="text-nowrap px-1">営業時間 <?php echo (get_option('profile_opening_hours')) ?></span><span class="text-nowrap px-1">定休日　<?php echo (get_option('profile_holiday')) ?></span> </div>
+          <div class="footer-contact-inner2 col-md-4  mb-4">
+			  <?php if (get_option('profile_postcode') || get_option('profile_address')) : ?>
+			  <?php echo '' . get_option('profile_postcode'); ?> <?php echo get_option('profile_address'); ?> <br>
+			  <?php endif; ?>
+			  <?php if (get_option('profile_main_tel')) : ?>
+            <span class="text-nowrap px-1">TEL： <?php echo get_option('profile_main_tel'); ?> </span>
+			   <?php endif; ?>
+			  <?php if (get_option('profile_main_fax')) : ?>
+			  <span class="text-nowrap px-1">FAX： <?php echo get_option('profile_fax'); ?> </span><br>]
+			   <?php endif; ?>
+			   <?php if (get_option('profile_opening_hours') || get_option('profile_holiday')) : ?>
+            <span class="text-nowrap px-1">営業時間 <?php echo (get_option('profile_opening_hours')) ?></span><span class="text-nowrap px-1">定休日　<?php echo (get_option('profile_holiday')) ?></span>
+			<?php endif; ?>
+			</div>
           <div class=" col-md-4  mb-4">
             <div class="contact-tel"> <span class="profile_inquiry_tel">
               <?php

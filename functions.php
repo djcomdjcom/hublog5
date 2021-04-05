@@ -53,7 +53,7 @@ class Theme_Settings{
 	function set_template_env(){
 		add_filter('looppart', array(&$this, 'get_post_is_in'), 5 );
 	}
-
+/*
 	function setup_theme_supports() {
 		add_editor_style ( 'style-editor' );
 		add_theme_support( 'post-thumbnails' );
@@ -85,7 +85,7 @@ class Theme_Settings{
 		);
 		add_theme_support( 'custom-header', $custom_header_args );
 	}
-
+*/
 	function admin_custom_header_preview(){
 		?>
 		<div class="custom_header_preview" style="border:2px #ddd solid;padding:10px;">
@@ -200,6 +200,7 @@ class Theme_Settings{
 			 }
 		}
 	}
+	
 	function hublog_widgets_init_footer(){
 		//フッター部用
 		$this->register_sidebar( array(
@@ -227,7 +228,7 @@ class Theme_Settings{
 		$r = wp_parse_args( $args, $defaults );
 		register_sidebar( $r );
 	}
-
+/*
 	function wp_admin_favicon(){
 		if ( file_exists(get_stylesheet_directory() . '/favicon.ico' ) ) :
 			$favicon_url = get_stylesheet_directory() . '/favicon.ico';
@@ -235,7 +236,7 @@ class Theme_Settings{
 			echo '<link rel="icon" href="' . $favicon_url . '" type="image/gif" />';
 		endif; //favicon.ico
 	}
-
+*/
 	function get_post_is_in($partname){
 		global $post;
 		$output = '';
@@ -346,25 +347,18 @@ foreach ( $inc_dirs as $modules_dir ) {
 		}
 	}
 }
-/**
- * メディアを挿入の初期表示を「この投稿へのアップロード」にする
- */
-add_action( 'admin_footer-post-new.php', 'initial_view_of_media_uploader' );
-add_action( 'admin_footer-post.php', 'initial_view_of_media_uploader' );
-function initial_view_of_media_uploader() { ?>
-<script type="text/javascript">
-jQuery(function($) {
-        $('#wpcontent').ajaxSuccess(function() {
-                $('select.attachment-filters [value="uploaded"]').attr( 'selected', true ).parent().trigger('change');
-        });
-});
-</script>
-<?php
+
+//メディア追加の際、「この投稿へのアップロード」をデフォルトに設定する
+function media_uploader_default_view() {
+echo '<script type="text/javascript">jQuery(function( $ ){ ';
+echo 'wp.media.view.Modal.prototype.on( \'ready\', function( ){ $( \'select.attachment-filters\' ).find( \'[value="uploaded"]\').attr( \'selected\', true ).parent().trigger(\'change\'); });';
+echo '});</script>'."\n";
 }
-add_action('admin_print_styles', 'admin_css_custom'); //admin_css_customは好きな名前でOK
-function admin_css_custom() {
-echo '<style>.media-upload-form .media-item {padding-bottom:10px;}</style>';
-}
+add_action( 'admin_footer-post-new.php', 'media_uploader_default_view' );
+add_action( 'admin_footer-post.php', 'media_uploader_default_view' );
+
+
+
 
 // bodyタグにページスラッグを追加 
 function pagename_class($classes = '') { 
