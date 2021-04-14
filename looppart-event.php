@@ -21,11 +21,12 @@
     }
     }
     ?>
-    </span> </a>
+    </span>
+		
+	</a>
     <div class="metabox">
 		
-		
-	<?php get_template_part('icon_status');//ステイタスアイコン ?>
+	<?php get_template_part('cat_icon');//カテゴリーアイコン ?>
 		
 		
       <p class="title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s'), the_title_attribute('echo=0')); ?>">
@@ -67,6 +68,7 @@
 	
 	</div>
     <!--metabox--> 
+	<?php get_template_part('icon_status');//ステイタスアイコン ?>
   
   <?php edit_post_link(__('Edit'), ''); ?>
 </article>
