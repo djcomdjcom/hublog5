@@ -53,6 +53,7 @@ class Theme_Settings{
 	function set_template_env(){
 		add_filter('looppart', array(&$this, 'get_post_is_in'), 5 );
 	}
+	
 /*
 	function setup_theme_supports() {
 		add_editor_style ( 'style-editor' );
@@ -436,3 +437,4 @@ $wp_admin_bar->add_menu(array(
 ));
 }
 add_action('wp_before_admin_bar_render', 'analytics_in_admin_bar');
+add_theme_support( 'post-thumbnails' );	

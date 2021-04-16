@@ -1,18 +1,21 @@
 
 <?php
-if ( post_custom( 'event-status' ) == 'invitation_afewleft' ):
+
+
+
+if ( post_custom( 'event-status' ) == 'invitation_on' ):
   ?>
-<a href="<?php the_permalink(); ?>" class="event-status invitation_afewleft w100">
-<img src="<?php bloginfo('stylesheet_directory'); ?>/images/icon_invitation_afewleft@2x.png" alt=""/></a>
+<span class="event-status invitation_on w100 maxw-150 mx-auto">
+<img src="<?php bloginfo('stylesheet_directory'); ?>/images/icon_yoyaku.png" alt=""/></span>
 
 <?php
 elseif ( post_custom( 'sale-status' ) == 'invitation_off' ):
   ?>
-<a href="<?php the_permalink(); ?>"  class="event-status invitation_off w100 ">
-<img src="<?php bloginfo('stylesheet_directory'); ?>/images/icon_invitation_off@2x.png" alt=""/></a>
-
+<p class="event-status invitation_off">
+受付終了
+</p>
 <?php else:?>
-<a href="<?php the_permalink(); ?>"  class="event-status invitation_on w100 ">
-<img src="<?php bloginfo('stylesheet_directory'); ?>/images/icon_invitation_on@2x.png"  alt=""/></a>
-<?php endif; ?>
+<span class="event-status invitation_on w100 maxw-180 mx-auto">
+<img src="<?php bloginfo('stylesheet_directory'); ?>/images/icon_invitation_on@2x.png"  alt=""/></span>
 
+<?php endif; ?>
