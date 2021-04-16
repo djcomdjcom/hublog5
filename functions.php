@@ -151,9 +151,11 @@ class Theme_Settings{
 	function enqueue_scripts_styles(){
 		global $wp_styles;
 
-		wp_enqueue_style( 'style-common', get_template_directory_uri() . '/common.css' );
-		//wp_enqueue_style( 'hublog-style', get_stylesheet_uri() );
-		wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/style.min.css' );
+$child_theme = wp_get_theme();//子テーマ
+$parent_theme = wp_get_theme(get_template());//親テーマ
+		
+		wp_enqueue_style( 'style-common', get_template_directory_uri() . '/common.css?'. $parent_theme->get( 'Version' ) );
+		wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/style.min.css?'. $child_theme->get( 'Version' ) );
 
 		wp_enqueue_style(     'for-ie', get_template_directory_uri() . '/css/ie.css', array('hublog-style') );
 		$wp_styles->add_data( 'for-ie', 'conditional', 'lt IE 9' );
