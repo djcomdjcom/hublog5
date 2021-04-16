@@ -350,13 +350,10 @@ position: relative;
 }
 
 /*HOME-EVENTS*/
-#home-event .posts .post.style-event{
-	background: #FDF5E7;
-	padding: 2%;
-	margin: 0 1% 1em;
-	flex: 48%;
-	
-}
+
+
+
+
 @media screen and (max-width:720px) {
 #home-event .posts .post.style-event{
 flex: 100%;

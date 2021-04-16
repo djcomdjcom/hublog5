@@ -34,12 +34,12 @@ $profile_inquiry_tel = (get_option('profile_inquiry_tel')) ? get_option('profile
 	<span class="title">お問合せ</span>
 	<div class="inbox">
 		<div class="hublog-inquiry-tel clearfix">
-		<div class="beforeform clearfix">
-			<div class="message"> <span class="title">お電話でのお問合わせも承ります。</span>
+		<div class="beforeform row">
+			<div class="message text-center col-md-6"> <span class="title">お電話でのお問合わせも承ります。</span>
 				<p>※電話に出たスタッフにご用件をお伝えください。</p>
 			</div>
 			<!--message-->
-			<div class="hublog-inquiry-tel"> <span class="profile_inquiry_tel"> 電話：
+			<div class="hublog-inquiry-tel text-center col-md-6"> <span class="profile_inquiry_tel"> 電話：
 				<?php
 					$profile_inquiry_tel = (get_option('profile_inquiry_tel')) ? get_option('profile_inquiry_tel') : get_option('profile_main_tel');
 					if (!empty($profile_inquiry_tel)) : ?>
@@ -105,15 +105,15 @@ $profile_inquiry_tel = (get_option('profile_inquiry_tel')) ? get_option('profile
 <?php elseif ( is_page(array('shiryou','offer')) ) : //資料請求ページ ?>
 <div id="form" class="hublog-inquiry page clearfix wide anchor">
 	<span class="title">資料請求フォーム</span>
-		<div class="beforeform clearfix">
-			<div class="message"> <span class="title">お電話での資料請求も承ります。</span>
+		<div class="beforeform row">
+			<div class="message text-center col-md-6"> <span class="title">お電話での資料請求も承ります。</span>
 				<p>※電話に出たスタッフに<br />
 					<strong>「<?php if(get_option('profile_shop_name')) echo (get_option('profile_shop_name')) ;else echo(get_option('profile_corporate_name')); ?>の資料がほしい」</strong>とお伝えください。</p>
 			</div>
 
 
 			<!--message-->
-			<div class="hublog-inquiry-tel"> <span class="profile_inquiry_tel"> 電話：
+			<div class="hublog-inquiry-tel col-md-6"> <span class="profile_inquiry_tel"> 電話：
 				<?php
 					$profile_inquiry_tel = (get_option('profile_inquiry_tel')) ? get_option('profile_inquiry_tel') : get_option('profile_main_tel');
 					if (!empty($profile_inquiry_tel)) : ?>
@@ -145,13 +145,13 @@ $profile_inquiry_tel = (get_option('profile_inquiry_tel')) ? get_option('profile
 <?php elseif ( is_page(array('modelhouse')) ) : //モデルハウス ?>
 <div id="form" class="hublog-inquiry page clearfix wide anchor">
 	<span class="title">モデルハウス見学申込フォーム</span>
-		<div class="beforeform clearfix">
-			<div class="message"> <span class="title">お電話でのお申込も承ります</span>
+		<div class="beforeform row">
+			<div class="message text-center col-md-6"> <span class="title">お電話でのお申込も承ります</span>
 				<p>※電話に出たスタッフに<br />
 					<strong>「モデルハウスの見学希望」</strong>とお伝えください。</p>
 			</div>
 			<!--message-->
-			<div class="hublog-inquiry-tel"> <span class="profile_inquiry_tel"> 電話：
+			<div class="hublog-inquiry-tel  text-center col-md-6"> <span class="profile_inquiry_tel"> 電話：
 				<?php
 					$profile_inquiry_tel = (get_option('profile_inquiry_tel')) ? get_option('profile_inquiry_tel') : get_option('profile_main_tel');
 					if (!empty($profile_inquiry_tel)) : ?>
@@ -184,13 +184,13 @@ $profile_inquiry_tel = (get_option('profile_inquiry_tel')) ? get_option('profile
 <?php elseif ( is_page(array('recruit','recruit-shain','recruit-part')) ) : //求人 ?>
 <div id="form" class="hublog-inquiry page clearfix wide anchor">
 	<span class="title">求人申込みフォーム</span>
-		<div class="beforeform clearfix">
-			<div class="message"> <span class="title">お電話でのお問い合わせ</span>
+		<div class="beforeform row">
+			<div class="message text-center col-md-6"> <span class="title">お電話でのお問い合わせ</span>
 				<p>※電話に出たスタッフに<br />
 					<strong>「求人についてのお問い合わせ」</strong>とお伝えください。</p>
 			</div>
 			<!--message-->
-			<div class="hublog-inquiry-tel"> <span class="profile_inquiry_tel"> 電話：
+			<div class="hublog-inquiry-tel text-center col-md-6"> <span class="profile_inquiry_tel"> 電話：
 				<?php
 					$profile_inquiry_tel = (get_option('profile_inquiry_tel')) ? get_option('profile_inquiry_tel') : get_option('profile_main_tel');
 					if (!empty($profile_inquiry_tel)) : ?>

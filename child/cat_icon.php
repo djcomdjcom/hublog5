@@ -29,7 +29,23 @@
 	        }
 	    }
 	?>
+<?php elseif (is_category('event') || in_category('event')) :?>
 
-<?php elseif (is_category('event')) :?>
-<?php echo ( post_custom( 'event-type' ) );?>
+<?php if ( post_custom('event-type') == '見学会' ) {
+echo '<span class="kengakukai event_type_icon">','見学会','</span>' ;}
+
+elseif ( post_custom('event-type') == '勉強会' ) {
+echo '<span class="benkyoukai event_type_icon">','勉強会','</span>' ;}
+
+elseif ( post_custom('event-type') == '相談会' ) {
+echo '<span class="soudankai event_type_icon">','相談会','</span>' ;}
+
+elseif ( post_custom('event-type') == 'カルチャー教室' ) {
+echo '<span class="culture event_type_icon">','カルチャー教室','</span>' ;}
+
+elseif ( post_custom('event-type') == 'オーナー様イベント' ) {
+echo '<span class="owner event_type_icon">','オーナー様イベント','</span>' ;}
+
+?>
+
 <?php endif; ?>

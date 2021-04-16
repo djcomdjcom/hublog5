@@ -4,7 +4,7 @@
 	  
     <div class=" row no-gutters align-item-end text-center justify-content-around" >
       <div class="inc_contact-ttl col-lg-4 col-8 order-lg-1">
-        <div class="w100"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/inc_contact-ttl@2x.png" alt="CONTACT US"/></div>
+        <div class="w100 px-md-4 mt-md-2"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/inc_contact-ttl@2x.png" alt="CONTACT US"/></div>
       </div>
 		
       <div class="inc_contact-img01 col-lg-3 col-3 order-lg-3">
