@@ -3117,9 +3117,14 @@ padding-top: 66%;/*　トリミングしたい枠の高さ　*/
 	flex: 48%;
 }
 
-.posts .post.post.style-event{
+.posts .post.style-event{
 	position: relative;
 }
+.posts .post.style-event .tmb-icon.new{
+	display: none;
+}
+
+
 .posts .event-status{
 	position: absolute;
 	left: -1.4%;
@@ -3130,7 +3135,7 @@ padding-top: 66%;/*　トリミングしたい枠の高さ　*/
 	max-width: 27%;
 }
 
-.posts .post.post.style-event.closed .event-status{
+.posts .post.style-event.closed .event-status{
 	display: none;
 }
 
