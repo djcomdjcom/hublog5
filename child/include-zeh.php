@@ -2,7 +2,7 @@
 <div id="zeh_achievement" class="wrapper mt-5 mb-5 container-fluid">
   <div class="zeh1">
     <div  class="row">
-      <div class="col-lg-2 col-5 mx-auto d-block"> <span class="w100 mb-3"><img class="" src="<?php bloginfo('stylesheet_directory'); ?>/images/icon_zeh.png"  alt="ZEHビルダー"/></span> </div>
+      <div class="col-lg-2 col-5 mx-auto d-block"> <span class="w100 mb-3"><img class="" src="<?php bloginfo('stylesheet_directory'); ?>/images/icon_zeh@2x.png"  alt="ZEHビルダー"/></span> </div>
       <!--L-->
       <div class="col-lg-10 col-12">
         <h2 class="title lead text-center text-lg-left"><?php echo get_option('profile_shop_name'); ?>は
