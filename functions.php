@@ -43,7 +43,7 @@ class Theme_Settings{
 		add_action( 'widgets_init',		  array(&$this, 'hublog_widgets_init_footer'),  9 );
 		add_action( 'wp_enqueue_scripts', array(&$this, 'enqueue_scripts_styles') );
 		if ( is_admin() ){
-			add_action('admin_head', array(&$this, 'wp_admin_favicon') );
+//			add_action('admin_head', array(&$this, 'wp_admin_favicon') );
 		} else {
 			add_action('get_header', array(&$this, 'set_template_env') );
 			add_action('body_class', array(&$this, 'body_class_add_parent_term'), 10, 2 );
@@ -54,7 +54,7 @@ class Theme_Settings{
 		add_filter('looppart', array(&$this, 'get_post_is_in'), 5 );
 	}
 	
-/*
+
 	function setup_theme_supports() {
 		add_editor_style ( 'style-editor' );
 		add_theme_support( 'post-thumbnails' );
@@ -86,7 +86,7 @@ class Theme_Settings{
 		);
 		add_theme_support( 'custom-header', $custom_header_args );
 	}
-*/
+
 	function admin_custom_header_preview(){
 		?>
 		<div class="custom_header_preview" style="border:2px #ddd solid;padding:10px;">

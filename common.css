@@ -1928,7 +1928,9 @@ dl.flow dd:after {
 	transform: scale(1.5, 1);
 	color: #E6CFB2;
 }
-
+dl.flow dd:last-child:after {
+	content:none !important;
+}
 .center ul.list, .center ol.list {
   display: inline-block;
   text-align: left;
@@ -3133,6 +3135,7 @@ padding-top: 66%;/*　トリミングしたい枠の高さ　*/
 }
 #home-event .posts .event-status{
 	max-width: 27%;
+	pointer-events: none;
 }
 
 .posts .post.style-event.closed .event-status{

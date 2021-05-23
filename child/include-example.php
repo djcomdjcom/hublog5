@@ -2,7 +2,7 @@
 <section id="home-example" class="pb-5">
   <div class="wrapper home-posts">
     <header class="content_header mt-5 mb-3">
-      <p class="center subttl mb-4"><?php echo get_option('profile_shop_name'); ?>の施工実績</p>
+      <p class="center subttl mb-1"><?php echo get_option('profile_shop_name'); ?>の施工実績</p>
       <h2 class="ttl_img mb-4 center w100"><img class="maxw-480" src="<?php bloginfo('stylesheet_directory'); ?>/images/hm-ex-ttl@2x.png" title="<?php echo get_option('profile_shop_name'); ?>の施工事例" alt="WORKS"/></h2>
     </header>
     <div class="ttl_ribbon py-2 mb-4" >

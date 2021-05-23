@@ -19,6 +19,8 @@
     </div>
   </div>
 </section>
+
+
 <section id="pg-cpt2-plan">
 <h2 class="ttl_ribbon">参考プラン</h2>
 <figure class="w100 pb-md-5"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/pg-cpt2-02-img001@2x.jpg" alt="「2世帯スタイル」の内観イメージ"/> 内観イメージ </figure>
@@ -47,11 +49,11 @@
     <figure class="w100"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/pg-cpt2-02-img005@2x.jpg" alt="「2世帯スタイル」の生活イメージ"/> </figure>
   </div>
 </div>
-</div>
 <div class="row pb-md-5 container-fluid my-3">
   <div class="col-md-6 ">
     <figure class="w100 mx-5">
-    <img src="<?php bloginfo('stylesheet_directory'); ?>/images/pg-cpt2-madori@2x.jpg" alt="「2世帯スタイル」の間取り"/> </div>
+    <img src="<?php bloginfo('stylesheet_directory'); ?>/images/pg-cpt2-madori@2x.jpg" alt="「2世帯スタイル」の間取り"/> </figure>
+	</div>
   <div class="spec_price col-md-6 ">
     <table>
       <tbody>
@@ -75,6 +77,7 @@
     </div>
   </div>
 </div>
+</section>
 </article>
 <div class="pagetab concept-nav pb-md-5">
   <?php wp_nav_menu(array('theme_location'=>'concept-nav', 'fallback_cb'=>'nothing_to_do')); ?>

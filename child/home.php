@@ -30,24 +30,28 @@
             <div class="txtcell"> <span class="subttl">STYLE 01</span>
               <h3 class="ttl">ファミリア スタイル</h3>
             </div>
+			  <a href="/concept/concept1">「コンセント1」の詳細ページへ</a>
           </li>
           <li class="choice02">
             <figure class="w100"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/cpt_choice-02@2x.jpg" alt="コンセプト2のイメージ"/> </figure>
             <div class="txtcell"> <span class="subttl">STYLE 02</span>
               <h3 class="ttl">2世帯 スタイル</h3>
             </div>
+			  <a href="/concept/concept2">「コンセント2」の詳細ページへ</a>
           </li>
           <li class="choice03">
             <figure class="w100"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/cpt_choice-03@2x.jpg" alt="コンセプト3のイメージ"/> </figure>
             <div class="txtcell"> <span class="subttl">STYLE 03</span>
               <h3 class="ttl">アトリエサロンスタイル</h3>
             </div>
+			  <a href="/concept/concept3">「コンセント3」の詳細ページへ</a>
           </li>
           <li class="choice04">
             <figure class="w100"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/cpt_choice-04@2x.jpg" alt="コンセプト4のイメージ"/> </figure>
             <div class="txtcell"> <span class="subttl">STYLE 04</span>
               <h3 class="ttl">ゼロエネルギースタイル</h3>
             </div>
+			  <a href="/concept/concept4">「コンセント4」の詳細ページへ</a>
           </li>
         </ul>
       </div>
@@ -205,9 +209,9 @@ $('.posts .post.style-voice').addClass('col-6 col-lg-4 mb-4');
     </header>
     <div class="wrapper container-fluid">
       <ul class="row maxw-1000 mx-auto">
-        <li class="col-6 col-md-3" ><a class="w100" href="/#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/hajimete_bnr-001@2x.jpg" alt="住まいの無料相談会"></a></li>
-        <li class="col-6 col-md-3" ><a class="w100" href="/#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/hajimete_bnr-002@2x.jpg" alt="オンライン打ち合わせ"></a></li>
-        <li class="col-6 col-md-3" ><a class="w100" href="/#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/hajimete_bnr-003@2x.jpg" alt="構造完成見学会"></a></li>
+        <li class="col-6 col-md-3" ><a class="w100" href="/online_sumai"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/hajimete_bnr-001@2x.jpg" alt="住まいの無料相談会"></a></li>
+        <li class="col-6 col-md-3" ><a class="w100" href="/online_meeting"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/hajimete_bnr-002@2x.jpg" alt="オンライン打ち合わせ"></a></li>
+        <li class="col-6 col-md-3" ><a class="w100" href="/kenngakukai"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/hajimete_bnr-003@2x.jpg" alt="構造完成見学会"></a></li>
         <li class="col-6 col-md-3" ><a class="w100" href="/offer?title=<?php if ( is_home() || is_front_page() ) {  echo ('トップページ');} else {echo get_the_title();}?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/hajimete_bnr-004@2x.jpg" alt="資料請求"></a></li>
       </ul>
     </div>

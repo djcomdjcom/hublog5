@@ -1,6 +1,6 @@
 <?php if (is_page('concept') || is_parent_slug() === 'concept'):?>
 
-<header id="topinfo" class="page_header">
+<header id="topinfo" class="page_header concept">
   <h1> <span class="subttl">コンセプト</span> <span class="ttl_img maxw-480 w100"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/pg_hdr-concept-title@2x.png" alt="CONCEPT" title="<?php the_title(); ?>"/> </span> </h1>
 </header>
 

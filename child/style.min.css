@@ -900,9 +900,12 @@ body.page-template-htmlpage_onecolumn_notitle{}
 	background: url("images/pg_hdr-renovation-bg@2x.jpg") center no-repeat;
 	background-size: cover;
 }
-
 #topinfo.page_header.order{
 	background: url("images/pg_hdr-customhome-bg@2x.jpg") center no-repeat;
+	background-size: cover;
+}
+#topinfo.page_header.concept{
+	background: url("images/pg_hdr-concept-bg@2x.jpg") center no-repeat;
 	background-size: cover;
 }
 
@@ -1000,6 +1003,7 @@ padding-left: 0;
 background: none;
 vertical-align: middle;
 padding-left: 0;
+	border-bottom: 0;
 }
 
 .ttl.point > span{
@@ -1318,7 +1322,7 @@ main.page-kurashi .page_concept_content:after{
 width: calc( 100% / 4 ) ;
 }
 .pagetab .menu-order-nav-container li{
-width: calc( 100% / 5 ) ;
+width: calc( 100% / 6 ) ;
 }
 .pagetab .menu-reform-nav-container li{
 width: calc( 100% / 3 ) ;
