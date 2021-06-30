@@ -42,29 +42,64 @@ $(window).load(function() {
 });
 </script>
 	
-<style>
-</style>
-	
 
 
 <div class="nivoSlider posts" id="slideshow">
-
 <?php //スライドショー
      global $post;
      $my_posts= get_posts(array(
 			'post_type' => ('slideimage'),
-			'showposts' => 99,
-
-			'orderby' => date,
-			'order' => ASC
+			'showposts' => '99',
+			'orderby' => 'date',
+			'order' => 'ASC'
      ));
      foreach($my_posts as $post):setup_postdata($post);
 ?>
-<?php get_template_part('looppart', 'home-slider'); ?>
+	
+<?php if  (post_custom('slide_url')):?>
+
+		<a class="w100" href="<?php echo (post_custom('slide_url')) ;?>" title="<?php the_title(); ?>"<?php if(get_post_meta(get_the_ID(),'slide_target',true)==1){ ?> target="_blank"<?php } ?>>
+	<?php the_post_thumbnail(array(1200, 630, true)); ?>
+		</a>
+
+<?php else:?>
+	<span class="w100">
+	<?php the_post_thumbnail(array(1200, 630, true)); ?>
+	</span>
+
+<?php endif;?>
+
+	
+
 <?php endforeach; ?>
 <?php wp_reset_query(); ?>
-
+	
 
 </div>
 
+<?php if ( is_user_logged_in() ) :?>
+<div class="edit_slider nivo"><a target="_blank" href="/wp-admin/edit.php?post_type=slideimage">スライドショーを編集</a></div>
+
+<style>
+	
+	#home-slider{
+		position: relative;
+	}
+	#home-slider .edit_slider.nivo{
+		position: absolute;
+		right: 0;
+		top: 0;
+		display: inline-block;
+		padding: 0.5em ;
+		background: #fff;
+		border: 1px solid #ccc;
+		z-index: 999;
+	}
+	
+	#slideshow.nivoSlider.posts img.nivo-main-image{
+	z-index: -10;
+	}
+	
+</style>
+<?php endif;?>
 

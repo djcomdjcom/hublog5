@@ -336,14 +336,6 @@ $(function() {
         the_title_attribute( 'echo=0' )
       );
       ?>
-      <?php
-      print( '<p>Posted in：' );
-      $terms = get_the_terms( $post->ID, 'ex_cat' );
-      foreach ( $terms as $term ) {
-        echo '<a href="' . get_term_link( $term->slug, 'ex_cat' ) . '">' . $term->name . '</a>';
-      }
-      print( '</p>' );
-      ?>
     </div>
     <!-- .entry-meta -->
     
@@ -394,7 +386,7 @@ get_footer();
 		right: 0;
 		width: 100vw;
 		background: #5F401D;
-		z-index: 999;
+		z-index: 399;
 	}
 		#bunjo_content-nav ul{
 			font-size: 0;

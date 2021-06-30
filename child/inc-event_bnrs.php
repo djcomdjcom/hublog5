@@ -5,7 +5,7 @@
     'post_type' => 'event_bnr', //カスタム投稿名
 		'order'=>'ASC',
 		'orderby'=>'menu_order',
-    'posts_per_page' => '8'
+    'posts_per_page' => '12'
 )); ?>
 <?php if(have_posts()): ?>
 

@@ -3106,6 +3106,7 @@ padding-top: 66%;/*　トリミングしたい枠の高さ　*/
 	left: 50%;
 	transform: translate(-50%, -50%);
 	display: block;
+	width: 100%;
 		
 }
 .posts .post.style-event{

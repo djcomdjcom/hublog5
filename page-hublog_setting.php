@@ -121,7 +121,9 @@ url-php-rfi
 xss-try-1
 oscmd-16
 xss-style-8
-
+xss-tag-1
+xss-tagopen-1
+xss-tag-filter
 </textarea>
 
 <p>ペーストしたら「保存」</p>
