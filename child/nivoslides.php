@@ -16,8 +16,8 @@
 <script type="text/javascript">
 $(window).load(function() {
     $('#slideshow').nivoSlider({
-        effect: 'boxRandom,boxRain,boxRainReverse', // 画像切り替え時のアニメーション
-        slices: 15, // For slice animations
+        effect: 'sliceDown,sliceDownLeft,sliceUp,boxRandom,boxRain,boxRainReverse', // 画像切り替え時のアニメーション
+		slices: 15, // For slice animations
         boxCols: 8, // For box animations
         boxRows: 4, // For box animations
         animSpeed: 500, // アニメーション速度(ms)
