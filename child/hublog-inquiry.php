@@ -23,15 +23,18 @@ $profile_inquiry_tel = (get_option('profile_inquiry_tel')) ? get_option('profile
 ?>
 
 <?php wp_reset_query(); ?>
-<?php if (post_custom('disappear-form')) : ?>
 
-<?php elseif (post_custom('unique-form')) : ?>
+<?php if (post_custom('unique-form') || post_custom('unique-form-ttl')) : ?>
 <div class="entry-content">
 <?php echo  wpautop(post_custom('unique-form-ttl')) ;?>
 <?php echo do_shortcode(post_custom ('unique-form')) ;?>
 </div>
-<?php else :?>
+<?php endif ;?>
 
+
+<?php if (post_custom('disappear-form')) : ?>
+
+<?php else :?>
 
 
 <?php if ( is_page(array('inquiry')) ) : //お問合せページ ?>
