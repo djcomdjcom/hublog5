@@ -15,8 +15,6 @@ $form_recruit_part = get_option('profile_form_recruit_part');//求人（パー�
 
 
 
-
-
 $profile_inquiry_tel = (get_option('profile_inquiry_tel')) ? get_option('profile_inquiry_tel') : get_option('profile_main_tel');
 
 
