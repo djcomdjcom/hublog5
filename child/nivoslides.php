@@ -8,10 +8,6 @@
 ?>
 
 
-<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/js/nivo/nivo-slider.css" media="screen" />
-<script src="<?php bloginfo('stylesheet_directory'); ?>/js/nivo/jquery.nivo.slider.pack.js"></script>
-
-
 
 <script type="text/javascript">
 $(window).load(function() {
@@ -44,7 +40,7 @@ $(window).load(function() {
 	
 
 
-<div class="nivoSlider posts" id="slideshow">
+<div class="nivoSlider posts slidetest001" id="slideshow">
 <?php //スライドショー
      global $post;
      $my_posts= get_posts(array(
@@ -82,24 +78,38 @@ $(window).load(function() {
 
 <style>
 	
-	#home-slider{
-		position: relative;
-	}
-	#home-slider .edit_slider.nivo{
-		position: absolute;
-		right: 0;
-		top: 0;
-		display: inline-block;
-		padding: 0.5em ;
-		background: #fff;
-		border: 1px solid #ccc;
-		z-index: 999;
-	}
-	
-	#slideshow.nivoSlider.posts img.nivo-main-image{
-	z-index: -10;
-	}
+#home-slider{
+	position: relative;
+}
+#home-slider .edit_slider.nivo{
+	position: absolute;
+	right: 0;
+	top: 0;
+	display: inline-block;
+	padding: 0.5em ;
+	background: #fff;
+	border: 1px solid #ccc;
+	z-index: 999;
+}
 	
 </style>
-<?php endif;?>
 
+<?php endif;?>
+<style>
+#slideshow{
+display:none;
+}
+#slideshow.nivoSlider.posts img.nivo-main-image{
+z-index: -10;
+}
+
+</style>	
+
+<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/js/nivo/nivo-slider.css" media="screen" />
+<script src="<?php bloginfo('stylesheet_directory'); ?>/js/nivo/jquery.nivo.slider.pack.js"></script>
+<script type="text/javascript">
+    $(window).load(function() {
+		$('#slideshow').fadeIn(800); //★ここに追記（JavaScript）
+        $('#slideshow').nivoSlider();
+    });
+</script>
