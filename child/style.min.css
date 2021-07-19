@@ -1,5 +1,6 @@
 @charset "utf-8";
 
+
 html body{
 /*font-family:'M PLUS 1p', "sans-serif";*/
 font-family:'M PLUS 1p', YuGothic, "Yu Gothic medium", "Hiragino Sans", Meiryo, ;
@@ -953,6 +954,14 @@ header.entry-header span.entry-title{
 	padding-left: 45px;
 }
 
+h2[style="text-align: center;"],
+h3[style="text-align: center;"],
+h4[style="text-align: center;"],
+h5[style="text-align: center;"]{
+	background: none;
+	padding-left: 0;
+	padding-right: 0;
+}
 .renov_page_h1 h1,
 main.page-financialplan .entry-content h2,
 main#page-order .entry-content h2,
@@ -1080,8 +1089,8 @@ padding-left: 0;
 /*PAGE CONCEPT*/
 
 #main.page-concept #page_concept00{
-	background: url("images/pg_concept00-bg@2x.jpg") no-repeat top center #E6E3DB;
-	background-size: contain;
+	background: url("images/pg_concept00-bg@2x.jpg") no-repeat center #E6E3DB;
+	background-size: cover;
 	padding: 2% 0 2%;
 }
 
