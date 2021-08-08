@@ -5,10 +5,27 @@
 	
 <?php else:?>
 	
-<section id="galleryslider" class="clearfix rel_lb">
-<?php echo (do_shortcode('[gallery link="file" title="false" caption="true" description="true" size="large"  type="flexslider"]')); ?>
-</section><!--　-->
-</article><!--example-slider-->
+
+	
+          <?php
+
+          $id = intval( $id );
+
+          if ( empty( $exclude ) ) {
+              $eximages = get_children( array( 'post_parent' => $id, 'post_type' => 'attachment', 'post_mime_type' => 'image', 'numberposts' => -1 ) );
+              foreach ( $eximages as $eximage ) {
+                  $post_custom = get_post_custom( $eximage->ID );
+                  if ( isset( $post_custom[ 'exclude' ] ) ) {
+                      $excludes[] = $eximage->ID;
+                  }
+              }
+              if ( isset( $excludes ) && !empty( $excludes ) ) {
+                  $exclude = ( is_array( $excludes ) ) ? join( ',', $excludes ) : '';
+              }
+          };
+          ?>
+          <section id="galleryslider" class="clearfix rel_lb"> <?php echo (do_shortcode('[gallery link="file" title="false" caption="true" description="true" size="medium"  type="flexslider" exclude='.$exclude.']')); ?> </section>
+			</article><!--example-slider-->
 
 <?php endif ?>
 <?php
@@ -63,7 +80,7 @@ if ( post_custom( 'renov-gallery' ) == 'gallery_off' ):
 		<?php endif ; ?>
 
 	<?php endif ; ?>
-
+shoj
 
 
 
