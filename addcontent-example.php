@@ -9,7 +9,7 @@
 	
           <?php
 
-          $id = intval( $id );
+          $id = $post->ID;
 
           if ( empty( $exclude ) ) {
               $eximages = get_children( array( 'post_parent' => $id, 'post_type' => 'attachment', 'post_mime_type' => 'image', 'numberposts' => -1 ) );
