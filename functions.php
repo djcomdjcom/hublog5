@@ -3,24 +3,7 @@
  * hublog-lt/functions.php
  */
 
-if ( ! isset( $content_width ) )
-	$content_width = 620;
 
-if ( !function_exists('fallback_cb_access') ) :
-function fallback_cb_access(){
-	$args = array(
-		'sort_column' => 'menu_order, post_title',
-		'menu_class'  => 'menu-access-container',
-		'include'     => '',
-		'exclude'     => '',
-		'echo'        => true,
-		'show_home'   => true,
-		'link_before' => '',
-		'link_after'  => '',
-	);
-	wp_page_menu($args);
-}
-endif;
 
 if ( !function_exists('nothing_to_do') ) :
 function nothing_to_do(){
@@ -438,5 +421,17 @@ $wp_admin_bar->add_menu(array(
 ),
 ));
 }
+
+function my_editor_style_setup() {
+    add_theme_support( 'editor-styles' );
+    add_editor_style( 'admin_editor_style.css' );
+}
+add_action( 'after_setup_theme', 'my_editor_style_setup' );
+
+
+
 add_action('wp_before_admin_bar_render', 'analytics_in_admin_bar');
 add_theme_support( 'post-thumbnails' );	
+//本体ギャラリーCSS停止
+add_filter( 'use_default_gallery_style', '__return_false' );
+?>

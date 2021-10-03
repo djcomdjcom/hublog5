@@ -46,8 +46,6 @@
 <!-- css -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css">
-
-<!--link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/style.css"-->
 	
 	
 </head>

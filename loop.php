@@ -4,7 +4,7 @@
  */
 ?>
 <div id="container" class="index clearfix widecolumn">
-  <div id="content" role="main" <?php body_class( 'clearfix  container-fluid' ); ?>>
+  <div id="content" role="main" <?php body_class( 'clearfix  container-fluid ' ); ?>>
     <?php
     if ( !( is_home() ) ):
       $h1_class = '';
@@ -36,7 +36,7 @@
     else :$page_title = wp_title( '', false ) . __( ' の記事一覧' );
     endif;
     ?>
-    <header class="entry-header row">
+    <header class="entry-header mx-0">
       <h1 class="index-title entry-title col <?php echo $h1_class; ?>"><span><?php echo $page_title; ?></span></h1>
     </header>
     <?php endif; //!is_home ?>
@@ -51,7 +51,7 @@ $(function(){
 $('.posts .post.style-reform').addClass('col-12'); 
 });
 </script>
-    <div class="wrapper">
+    <div class="wrapper ">
       <div <?php body_class( 'posts archive row col' ); ?>>
         <?php
         if ( !have_posts() ):

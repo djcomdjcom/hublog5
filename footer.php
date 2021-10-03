@@ -9,14 +9,20 @@ wp_reset_query();
 <!-- #main-->
 
 <?php wp_reset_query(); ?>
-<div id="wrapper"> <a class="btn-gnavi"> <span></span> <span></span> <span></span>
+<div id="wrapper" class="gnavi_set">
+	<?php //if ( is_user_logged_in() ) :?>
+	<a class="btn-gnavi"> <span></span> <span></span> <span></span>
   <div class="btn-gnavi-menu">MENU</div>
   </a>
-  <nav id="global-navi">
+<?php //endif;?>
+
+
+  <nav id="global-navi" class="pt-3">
     <div class="global-navi-inner">
-      <div id="global-navi-logo" class="wrapper center mb-0 mb-md-4">
-		  <a class="w100 center" href="/"><?php echo get_option('profile_shop_name'); ?></a>
-		</div><div class="gtn-contgact">
+      <div id="global-navi-logo" class="wrapper mb-0 mb-md-4 px-2 pb-3" style="border-bottom: 1px solid #fff;">
+		  <a class="w100 maxw-600 mx-0 mx-md-auto" href="/"><?php echo get_option('profile_shop_name'); ?></a>
+		</div>
+		<div class="gtn-contgact d-none">
 			<div class="contact-tel">
 				<span class="profile_inquiry_tel">
 				<?php
@@ -31,13 +37,13 @@ wp_reset_query();
 
 			<div class="inc_contact-btn">
 				<ul class="btn_set row py-2 mx-auto px-0">
-				<li class="to_shiryou col-6 btn"> <a class="" href="/offer/?title=<?php echo get_the_title();?>">資料請求</a> </li>
-				<li class="to_inquiry col-6 btn"> <a class="" href="/inquiry/?title=<?php echo get_the_title();?>">お問い合わせ</a> </li>
+
+				<li class="to_inquiry col-12 btn"> <a class="" href="/inquiry/?title=<?php echo get_the_title();?>">お問い合わせ</a> </li>
 				</ul>
 			</div>
 		</div>
 		
-	<?php get_template_part('include', 'snslink');//SNSボタン ?>
+	<?php //get_template_part('include', 'snslink');//SNSボタン ?>
 		
 		
       <div class="gni-address mt-3">
@@ -61,7 +67,7 @@ wp_reset_query();
 			<?php if (get_option('profile_opening_hours')|| get_option('profile_holiday')) : ?>
 			<div class="gni-time" class="m-4">
 				<?php if (get_option('profile_opening_hours')) : ?>
-				<span class="text-nowrap px-1">営業時間 <?php echo (get_option('profile_opening_hours')) ?></span>
+				<span class="text-nowrap px-1">電話受付時間 <?php echo (get_option('profile_opening_hours')) ?></span>
 				<?php endif ;//profile_opening_hours?>
 				
 				<?php if (get_option('profile_holiday')) : ?>
@@ -119,13 +125,23 @@ wp_reset_query();
         </div>
       </div>
     </div>
-  </nav>
 </div>
+</nav>
+	
+	
+</div>	
 <?php if ( get_option( 'blog_public') ): ?>
 <?php else: ?>
+	
+	
+<?php if ( is_user_logged_in() ) :?>	
 <div class="wrapper" style="clear:both; border: 2px solid red; color:red; background:#fff; text-align:center; margin-top:1em;margin-bottom:1em; padding:0.5em 0;"> ※検索エンジンのインデックスを許可していません。<br />
   <a href="/wp-admin/options-reading.php">許可する</a> </div>
+<?php endif;?>
 <?php endif; ?>
+	
+	
+	
 <?php if ( is_user_logged_in() ) : ?>
 <p class="aligncenter"> <a href="/hublog_setting">→hublog設定</a></p>
 <?php endif; ?>
@@ -188,18 +204,7 @@ wp_reset_query();
         <div class="row mb-5 mt-5">
           <div class="footer-contact-inner1 col-md-4 mb-4"> <a href="/" class="w100"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-footer@2x.png"></a> </div>
           <div class="footer-contact-inner2 col-md-4  mb-4">
-			  <?php if (get_option('profile_postcode') || get_option('profile_address')) : ?>
-			  <?php echo '' . get_option('profile_postcode'); ?> <?php echo get_option('profile_address'); ?> <br>
-			  <?php endif; ?>
-			  <?php if (get_option('profile_main_tel')) : ?>
-            <span class="text-nowrap px-1">TEL： <?php echo get_option('profile_main_tel'); ?> </span>
-			   <?php endif; ?>
-			  <?php if (get_option('profile_main_fax')) : ?>
-			  <span class="text-nowrap px-1">FAX： <?php echo get_option('profile_fax'); ?> </span><br>]
-			   <?php endif; ?>
-			   <?php if (get_option('profile_opening_hours') || get_option('profile_holiday')) : ?>
-            <span class="text-nowrap px-1">営業時間 <?php echo (get_option('profile_opening_hours')) ?></span><span class="text-nowrap px-1">定休日　<?php echo (get_option('profile_holiday')) ?></span>
-			<?php endif; ?>
+
 			</div>
           <div class=" col-md-4  mb-4">
             <div class="contact-tel"> <span class="profile_inquiry_tel">
@@ -210,7 +215,10 @@ wp_reset_query();
               <?php
               endif;
               ?>
-              </span> </div>
+              </span>
+			  
+<span class="text-nowrap px-1">電話受付時間 <?php echo (get_option('profile_opening_hours')) ?></span><span class="text-nowrap px-1">定休日　<?php echo (get_option('profile_holiday')) ?></span>			  
+			  </div>
             <!--contact-tel--> 
           </div>
         </div>
@@ -220,22 +228,33 @@ wp_reset_query();
   </div>
 </footer>
 <script>
+	
+	$("#global-navi a").on("click", function() {
+//$("#global-navi").slideToggle();
+$(".btn-gnavi").removeClass("open");
+});
+	
 $(function(){
         $(".btn-gnavi").on("click", function(){
-                var rightVal = 0;
+//                var rightVal = 0;
                 if($(this).hasClass("open")) {
-                        rightVal = -10000;
+//                        rightVal = -10000;
                         $(this).removeClass("open");
                 } else {
                         $(this).addClass("open");
                 }
 
-                $("#global-navi").stop().animate({
-                        right: rightVal
-                }, 200);
+//                $("#global-navi").stop().animate({
+ //                       right: rightVal
+//                }, 200);
         });
 });
 </script>
+	
+	
+<script>
+	</script>	
+	
 <?php wp_footer(); ?>
 </body>
 <?php if ( is_user_logged_in() ) : ?>

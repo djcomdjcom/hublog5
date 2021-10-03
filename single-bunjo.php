@@ -143,13 +143,76 @@ $(function() {
 	
 	
 <?php elseif ( is_object_in_term($post->ID,'bunjo_role','bunjo-gallery') ): ?>
-<section id="galleryslider" class="clearfix rel_lb">
-  <?php echo (do_shortcode('[gallery link="file" title="false" caption="true" description="true" size="medium"  type="flexslider"]')); ?>
-</section>
+
+
+  <section id="galleryslider" class="sliderArea rel_lb">
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/js/slick/slick.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/js/slick/slick-theme.css" media="screen" />
+    <script src="<?php bloginfo('stylesheet_directory'); ?>/js/slick/slick.min.js"></script> 
+    <script>
+//タグにclass追加
+$(function(){
+$('#galleryslider .gallery-size-large').addClass('slider_thumb slider'); 
+});
+$(function(){
+$('#galleryslider .gallery-size-thumbnail').addClass('thumb'); 
+});
+		
+//slick設定
+$(document).on('ready', function() {
+  $('.slider_thumb').slick({
+      arrows:true,
+	  dots: true,
+      asNavFor:'.thumb',
+          responsive: [{
+               breakpoint: 800,
+                    settings: {
+      arrows:false,
+               }
+          }
+          ]	  
+  });
+  $('.thumb').slick({
+      asNavFor:'.slider_thumb',
+      focusOnSelect: true,
+      slidesToShow:12,
+      arrows:false,
+          responsive: [{
+               breakpoint: 800,
+                    settings: {
+      arrows:true,
+      slidesToShow:6,
+      slidesToScroll:1,
+               }
+          }
+          ]	  
+  });
+
+});
+</script>
+	  
+    <?php
+    $id = $post->ID;
+    if ( empty( $exclude ) ) {
+      $eximages = get_children( array( 'post_parent' => $id, 'post_type' => 'attachment', 'post_mime_type' => 'image', 'numberposts' => -1 ) );
+      foreach ( $eximages as $eximage ) {
+        $post_custom = get_post_custom( $eximage->ID );
+        if ( isset( $post_custom[ 'exclude' ] ) ) {
+          $excludes[] = $eximage->ID;
+        }
+      }
+      if ( isset( $excludes ) && !empty( $excludes ) ) {
+        $exclude = ( is_array( $excludes ) ) ? join( ',', $excludes ) : '';
+      }
+    };
+    ?>
+    <?php echo (do_shortcode('[gallery columns="0" link="file" title="true" caption="true" description="true" size="large"  exclude='.$exclude.']')); ?> <?php echo (do_shortcode('[gallery columns="0" link="none" title="false" caption="false" description="false" size="thumbnail"  exclude='.$exclude.']')); ?> </section>
+
+
 <!--　-->
 
 <?php elseif ( is_object_in_term($post->ID,'bunjo_role','bunjo-location') ): ?>
-<section id="galleryslider" class="clearfix rel_lb">
+<section id="" class="clearfix rel_lb">
   <?php echo (do_shortcode('[gallery link="file" title="false" caption="true" description="true" size="medium" ]')); ?>
 </section>
 <!--　-->
@@ -199,7 +262,7 @@ query_posts( array(
 	
 	
 <article id="post-<?php the_ID(); ?>" class="post clearfix style-popup_gallery parent-container">
-<?php echo (do_shortcode('[gallery size="medium" link="file"]')); ?>
+<?php echo (do_shortcode('[gallery size="medium" columns="0" link="file"]')); ?>
 <span class="title "><?php the_title(); ?></span>
 	    <?php edit_post_link(__('Edit'), ''); ?>
 
@@ -426,6 +489,14 @@ get_footer();
 	#bunjo_content-nav li a > span.small{
 		font-size: 0.6em;
 	}
+	
+	
+	#wrapper .btn-gnavi span{
+		background:rgba(255,255,255,.7);
+	}
+	.btn-gnavi-menu{
+		color:rgba(255,255,255,.7);
+	}
 	.entry-header .entry-title{
 		background: none;
 		font-size: 1rem;
@@ -600,12 +671,12 @@ get_footer();
   flex-wrap: wrap;
 }
 	.bunjo_role.role-bunjo-location .gallery > * {
-  box-sizing: border-box;
-  width: 24%;
-  margin:0.5em 0.5%;
-		padding: 0;
-  vertical-align: top;
-  position: relative;
+	box-sizing: border-box;
+	width: 24%;
+	margin:0.5%;
+	padding: 0;
+	vertical-align: top;
+	position: relative;
 }	
 
 	.bunjo_role.role-bunjo-location	#galleryslider{
@@ -619,9 +690,8 @@ get_footer();
 		line-height: 1.5em;
 	}	
 	
-.bunjo_role.role-bunjo-location .gallery dl dt a{
+.bunjo_role.role-bunjo-location .gallery dl dt{
 display: block;
-background: #ccc;
 position: relative;
 overflow: hidden;
 width: 100%;/*　トリミングしたい枠の幅　*/
@@ -704,6 +774,9 @@ padding-top: 65%;/*　トリミングしたい枠の高さ　*/
 	
 	
 	
+	#popup_gallery dl{
+		background: transparent;
+	}
 	#popup_gallery dl dt a{
 display: block;
 background: rgba(0,0,0,0.1);
@@ -714,6 +787,11 @@ padding-top: 100%;/*　トリミングしたい枠の高さ　*/
 		border-radius: 7px;
 
 }
+	#popup_gallery .gallery .gallery-icon{
+		padding-top: 0;
+	}
+	
+	
 	#popup_gallery dl dt a img{
 	display: block;
 	width: 100%;
@@ -766,7 +844,7 @@ padding-top: 100%;/*　トリミングしたい枠の高さ　*/
 	}
 	#bunjo_content-nav li a > span.small{
 		display: block;
-		font-size: 1.0rem;
+		font-size: 0.85rem;
 	}	
 	.bunjo_role.role-bunjo-location .gallery .title{
 		display: none;
@@ -778,6 +856,10 @@ padding-top: 100%;/*　トリミングしたい枠の高さ　*/
 	
 	#popup_gallery .style-popup_gallery .title{
 		display: none;
+	}
+	
+	.bunjo_role .to_form.btn a{
+		font-size: 1.1rem;
 	}
 		
 	}

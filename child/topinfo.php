@@ -5,19 +5,11 @@
 </header>
 
 
-<?php elseif (is_page('recruit')):?>
-<header id="topinfo" class="page_header">
-  <h1> <span class="subttl">採用情報</span> <span class="ttl_img maxw-480 w100"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/pg_hdr-recruit-title@2x.png" alt="ABOUTUS" title="<?php the_title(); ?>"/> </span> </h1>
-</header>
-<?php elseif (is_page('staff')):?>
-<header id="topinfo" class="page_header">
-  <h1> <span class="subttl">スタッフ紹介</span> <span class="ttl_img maxw-480 w100"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/pg_hdr-staff-title@2x.png" alt="ABOUTUS" title="<?php the_title(); ?>"/> </span> </h1>
-</header>
-
 <?php elseif (is_page('about') || is_parent_slug() === 'about'):?>
 <header id="topinfo" class="page_header">
   <h1> <span class="subttl">会社案内</span> <span class="ttl_img maxw-480 w100"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/pg_hdr-about-title@2x.png" alt="ABOUTUS" title="<?php the_title(); ?>"/> </span> </h1>
 </header>
+
 
 <?php elseif (is_page('order') || is_parent_slug() === 'order'):?>
 <header id="topinfo" class="page_header order">

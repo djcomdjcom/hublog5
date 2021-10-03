@@ -76,7 +76,7 @@ get_header();
 					<?php else : ?>
 
 				<tr class="profile_main_tel">
-				<th>電話番号(代表)</th>
+				<th>電話番号（代表）</th>
 				<td><?php echo get_option('profile_main_tel'); ?>
 				</td>
 				</tr>
@@ -86,7 +86,7 @@ get_header();
 					<?php if (get_option('profile_inquiry_tel_hide')) : ?>
 					<?php else : ?>
 				<tr class="profile_inquiry_tel">
-				<th>電話番号(問い合わせ窓口)</th>
+				<th>電話番号（問い合わせ窓口）</th>
 				<td><?php echo get_option('profile_inquiry_tel'); ?>
 				</td>
 				</tr>

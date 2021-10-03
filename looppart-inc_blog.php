@@ -1,7 +1,7 @@
 <?php
 /**
  * looppart-home-blog.php
- * @テーマ名	hublog5
+ * @テーマ名	hublog4
  */
 ?>
 <article id="post-<?php the_ID(); ?>"  class="post clearfix style-inc_blog">
@@ -33,7 +33,7 @@
     </div>
     <span class="todetail"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s'), the_title_attribute('echo=0')); ?>"> 詳細を見る</a></span> </div>
   <!--metabox--> 
-  	<?php edit_post_link(__('Edit'), ''); ?>
+    <?php edit_post_link(__('Edit'), ''); ?>
 </article>
 <!-- #post --> 
 

@@ -72,7 +72,7 @@ jQuery(function($){
 
 					<section class="wrapper" id="inc-eventposts">
 
-								<div class="owl-carousel owl-theme">
+								<div class="owl-carousel owl-theme posts">
 										<?php while (have_posts()) : the_post(); ?>
 
 											<div id="post-<?php the_ID(); ?>" class="clearfix post style-bnrs item">
