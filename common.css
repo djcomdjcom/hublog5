@@ -549,17 +549,21 @@ display: none;
 }
 
 #header #header-sub {
+	padding-right: 60px;
 }
 #header #header-sub .contact-tel{
 	display: inline-block;
 }
-
-
 #header #header-sub .profile_corporate_name{
 	display: block;
 	margin: 0;
 	padding: 0.5em 0 0.3em 0;
 	font-size: 15px;
+}
+@media screen and (min-width: 1320px) {
+#header #header-sub {
+	padding-right: 0;
+}
 }
 .hublog-inquiry .telnum,
 .profile_inquiry_tel .telnum {
