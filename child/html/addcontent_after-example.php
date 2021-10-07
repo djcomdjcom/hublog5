@@ -5,7 +5,7 @@
 
 <article id="ffc" class="clearfix anchor">
 
-<h2 class="title ">FFC加工の免疫住宅</h2>
+<h2 class="title " >FFC加工の免疫住宅</h2>
 
 <p>
   クロスにFFC加工を標準仕様にすることで、美味しい空気の吸える化学物質やアレルギーのない住まい造りを実現しています。<br>

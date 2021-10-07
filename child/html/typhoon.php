@@ -166,9 +166,6 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <style>
 
-.entry-content{
-overflow: hidden;
-}
 #main{
 	overflow: visible;
 	font-size: 1em;
@@ -207,14 +204,21 @@ h1.tweak01 {
     font-size: 1.3em;
     margin-bottom: 2em;
 }	
-	
-	
+@media screen and (max-width: 1199px) {
+.entry-content{
+overflow: hidden;
+}
+}
 @media screen and (min-width: 1200px) {
-/*	#topinfo.page_header.typhoon {
+	.entry-content{
+	overflow: inherit !important;
+	}
+
+	#topinfo.page_header.typhoon {
 	width: 100vw;
 	position: relative;
 	margin-left: calc(600px - 50vw);
-	}*/
+	}
 	}
 	
 .ttl.checked{

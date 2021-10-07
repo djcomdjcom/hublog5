@@ -180,7 +180,7 @@ $('.posts .post.style-voice').addClass('col-6 col-lg-4 mb-4');
     <section id="home-promotion" class="pt-5 container-fluid ">
       <div class="wrapper row pt-4 justify-content-start no-gutters">
         <div class="col-12 col-md-6 home-blog">
-          <header class="mb-3 px-4 px-lg-0">
+          <header class="mb-3 px-2 px-lg-0">
             <h3 class="ttl_img w100"> <img class="maxw-450" src="<?php echo get_stylesheet_directory_uri(); ?>/images/hm-blog-ttl@2x.png" alt="BLOG"> </h3>
           </header>
           <?php query_posts('category_name=blog&posts_per_page=3'); ?>
