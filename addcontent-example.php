@@ -126,7 +126,7 @@ if ( post_custom( 'renov-gallery' ) == 'gallery_off' ):
   </div>
   <?php endif ; ?>
   <?php endif ; ?>
-  shoj
+
   <?php if (post_custom ('example-C') || post_custom ('example-Q') || post_custom ('example-UA') )  :?>
   <div class="clearfix example-meta spec">
     <?php if (post_custom('example-C')) :?>
