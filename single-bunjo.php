@@ -670,9 +670,9 @@ get_footer();
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-	.bunjo_role.role-bunjo-location .gallery > * {
+body.bunjo-template-default .bunjo_role.role-bunjo-location .gallery > * {
 	box-sizing: border-box;
-	width: 24%;
+	width: 24% !important ;
 	margin:0.5%;
 	padding: 0;
 	vertical-align: top;
@@ -685,6 +685,7 @@ get_footer();
 	}
 	.bunjo_role.role-bunjo-location .gallery dl{
 		padding-bottom: 1em;
+		padding: 0;
 	}	
 	.bunjo_role.role-bunjo-location .gallery dl dd{
 		line-height: 1.5em;

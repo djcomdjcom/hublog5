@@ -101,7 +101,7 @@ font-family: 'Yantramanav', sans-serif;
 	z-index: 55;
 	position: relative;
 	margin-top: -5vh;
-	overflow: hidden;
+	overflow-x: hidden;
 }
 
 @media screen and (max-width:999px) {
@@ -362,6 +362,7 @@ position: relative;
 
 @media screen and (max-width:720px) {
 #home-event .posts .post.style-event{
+flex: 100%;
 }
 }
 
@@ -504,7 +505,9 @@ max-width: none;
 
 /*home_blog*/
 
-
+#home-about {
+	overflow-x: hidden;
+}
 #home-about .content_header{
     background: url("images/hm-about-bg@2x.jpg") center;
 	background-size: cover;
