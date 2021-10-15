@@ -67,11 +67,11 @@ wp_reset_query();
 			<?php if (get_option('profile_opening_hours')|| get_option('profile_holiday')) : ?>
 			<div class="gni-time" class="m-4">
 				<?php if (get_option('profile_opening_hours')) : ?>
-				<span class="text-nowrap px-1">電話受付時間 <?php echo (get_option('profile_opening_hours')) ?></span>
+				<span class="d-inline-block px-1">電話受付時間 <?php echo (get_option('profile_opening_hours')) ?></span>
 				<?php endif ;//profile_opening_hours?>
 				
 				<?php if (get_option('profile_holiday')) : ?>
-				<span class="text-nowrap px-1">定休日　<?php echo (get_option('profile_holiday')) ?></span>
+				<span class="d-block px-1">定休日　<?php echo (get_option('profile_holiday')) ?></span>
 				<?php endif ;//profile_holiday?>
 			  </div>
 		<?php endif ;//profile_opening_hours||profile_holiday?>
