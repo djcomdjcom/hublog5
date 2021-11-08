@@ -409,6 +409,19 @@ document.addEventListener( 'wpcf7mailsent', function( event ) {
 }
 add_action('admin_head', 'admin_files');
 
+
+// QRコード出力関数
+function get_qrcode_tag($atts) {
+	extract(shortcode_atts(array(
+		'url' => home_url('/'),
+		'size' => '150',
+	), $atts));
+	// イメージタグを返す
+	return '<img src="https://chart.googleapis.com/chart?chs=' . $size . 'x' . $size . '&cht=qr&chl=' . $url . '&choe=UTF-8 " alt="QR Code"/>';
+}
+// 呼び出しの指定
+add_shortcode('qrcode', 'get_qrcode_tag');
+
  //Analyticsリンク追加
 function analytics_in_admin_bar() {
 global $wp_admin_bar;

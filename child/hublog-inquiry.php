@@ -26,7 +26,9 @@ $profile_inquiry_tel = (get_option('profile_inquiry_tel')) ? get_option('profile
 
 <?php if (post_custom('unique-form') || post_custom('unique-form-ttl')) : ?>
 <div class="entry-content">
-<?php echo  wpautop(post_custom('unique-form-ttl')) ;?>
+<?php
+echo apply_filters('the_content', get_post_meta($post->ID, 'unique-form-ttl', true));
+?>	
 <?php echo do_shortcode(post_custom ('unique-form')) ;?>
 </div>
 <?php endif ;?>

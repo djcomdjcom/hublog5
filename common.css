@@ -548,9 +548,6 @@ display: none;
 	margin: 0 auto 1em;
 }
 
-#header #header-sub {
-	padding-right: 60px;
-}
 #header #header-sub .contact-tel{
 	display: inline-block;
 }
@@ -559,6 +556,11 @@ display: none;
 	margin: 0;
 	padding: 0.5em 0 0.3em 0;
 	font-size: 15px;
+}
+@media screen and (min-width: 768px) {
+#header #header-sub {
+	padding-right: 60px;
+}
 }
 @media screen and (min-width: 1320px) {
 #header #header-sub {
