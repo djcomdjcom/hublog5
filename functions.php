@@ -264,6 +264,11 @@ $parent_theme = wp_get_theme(get_template());//親テーマ
 		} elseif ( is_tax('voice_cat')) {
 			$output = 'voice';
 			
+		} elseif ( is_post_type_archive('video')) {
+			$output = 'video';
+		} elseif ( is_tax('video_cat')) {
+			$output = 'video';
+			
 			
 		} elseif ( $post_cats = wp_get_post_categories($post->ID) ) {
 			$c = get_category( array_shift($post_cats) );

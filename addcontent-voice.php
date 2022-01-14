@@ -92,7 +92,7 @@
                 <div class="voice04 voice-set clearfix">
     
     
-                    <div class="voice-image shadow">
+                    <div class="voice-image rel_lb">
 										<?php echo wp_get_attachment_link(post_custom('04voice-image'),array(500, 500));?>
 
                     </div><!--voive-image-->
@@ -110,7 +110,7 @@
 				<?php if (post_custom('05voice-image')) : ?>
                 <div class="voice05 voice-set clearfix">
     
-                    <div class="voice-image shadow">
+                    <div class="voice-image rel_lb">
 										<?php echo wp_get_attachment_link(post_custom('05voice-image'),array(500, 500));?>
 
 
