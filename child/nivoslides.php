@@ -6,9 +6,6 @@
  * 全てのサイドバーに表示されるパーツ
  */
 ?>
-
-
-
 <script type="text/javascript">
 $(window).load(function() {
     $('#slideshow').nivoSlider({
@@ -37,45 +34,50 @@ $(window).load(function() {
     });
 });
 </script>
-	
-
 
 <div class="nivoSlider posts slidetest001" id="slideshow">
-<?php //スライドショー
-     global $post;
-     $my_posts= get_posts(array(
-			'post_type' => ('slideimage'),
-			'showposts' => '99',
-			'orderby' => 'date',
-			'order' => 'ASC'
-     ));
-     foreach($my_posts as $post):setup_postdata($post);
-?>
-	
-<?php if  (post_custom('slide_url')):?>
-
-		<a class="w100" href="<?php echo (post_custom('slide_url')) ;?>" title="<?php the_title(); ?>"<?php if(get_post_meta(get_the_ID(),'slide_target',true)==1){ ?> target="_blank"<?php } ?>>
-	<?php the_post_thumbnail(array(1200, 630, true)); ?>
-		</a>
-
-<?php else:?>
-	<span class="w100">
-	<?php the_post_thumbnail(array(1200, 630, true)); ?>
-	</span>
-
-<?php endif;?>
-
-	
-
-<?php endforeach; ?>
-<?php wp_reset_query(); ?>
-	
-
+  <?php //スライドショー
+  global $post;
+  $my_posts = get_posts( array(
+    'post_type' => ( 'slideimage' ),
+    'showposts' => '99',
+    'orderby' => 'date',
+    'order' => 'ASC'
+  ) );
+  foreach ( $my_posts as $post ): setup_postdata( $post );
+  ?>
+  <?php if  (post_custom('slide_url')):?>
+  <a class="w100" href="<?php echo (post_custom('slide_url')) ;?>" title="<?php the_title(); ?>"<?php if(get_post_meta(get_the_ID(),'slide_target',true)==1){ ?> target="_blank"<?php } ?>>
+  <?php //the_post_thumbnail(array(1200, 630, true)); ?>
+  <?php
+  $post_title = get_the_title();
+  the_post_thumbnail( 'full',
+    array(
+      'alt' => $post_title, // altにページタイトルを指定
+      'title' => $post_title // titleにページタイトルを指定
+    )
+  );
+  ?>
+  </a>
+  <?php else:?>
+  <span class="w100">
+  <?php
+  $post_title = get_the_title();
+  the_post_thumbnail( 'full',
+    array(
+      'alt' => $post_title, // altにページタイトルを指定
+      'title' => $post_title // titleにページタイトルを指定
+    )
+  );
+  ?>
+  <?php// the_post_thumbnail(array(1200, 630, true)); ?>
+  </span>
+  <?php endif;?>
+  <?php endforeach; ?>
+  <?php wp_reset_query(); ?>
 </div>
-
 <?php if ( is_user_logged_in() ) :?>
 <div class="edit_slider nivo"><a target="_blank" href="/wp-admin/edit.php?post_type=slideimage">スライドショーを編集</a></div>
-
 <style>
 	
 #home-slider{
@@ -93,7 +95,6 @@ $(window).load(function() {
 }
 	
 </style>
-
 <?php endif;?>
 <style>
 #slideshow{
@@ -103,13 +104,12 @@ display:none;
 z-index: -10;
 }
 
-</style>	
-
+</style>
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/js/nivo/nivo-slider.css" media="screen" />
-<script src="<?php bloginfo('stylesheet_directory'); ?>/js/nivo/jquery.nivo.slider.pack.js"></script>
+<script src="<?php bloginfo('stylesheet_directory'); ?>/js/nivo/jquery.nivo.slider.pack.js"></script> 
 <script type="text/javascript">
     $(window).load(function() {
 		$('#slideshow').fadeIn(800); //★ここに追記（JavaScript）
         $('#slideshow').nivoSlider();
     });
-</script>
+</script> 

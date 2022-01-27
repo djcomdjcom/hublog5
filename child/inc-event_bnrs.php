@@ -82,7 +82,7 @@ jQuery(function($){
 											<a target="_blank" class=" w100" href="<?php echo(post_custom('event_bnr_url')) ;?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s'),the_title_attribute('echo=0')); ?>">
 
 											<?php if ( function_exists('the_post_image') ) {
-												if ( the_post_image(array(600,100)) === false ){
+												if ( the_post_image(array(300,100),array( 'alt' => $title_attr , 'title' => $title_attr )) === false ){
 													?><img src="<?php echo get_template_image('noimage');?>" alt="No Image" /><?php
 												}
 											} ?>
@@ -92,7 +92,7 @@ jQuery(function($){
 
 											<span class=" w100" title="<?php printf(__('Permanent Link to %s'),the_title_attribute('echo=0')); ?>">
 											<?php if ( function_exists('the_post_image') ) {
-												if ( the_post_image('large') === false ){
+												if ( the_post_image(array(300,100),array( 'alt' => $title_attr , 'title' => $title_attr )) === false ){
 													?><img src="<?php echo get_template_image('noimage');?>" alt="No Image" /><?php
 												}
 											} ?>
