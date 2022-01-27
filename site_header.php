@@ -19,6 +19,7 @@
     <div class="order-1 order-md-2 sitelogo col-3 col-md-2"><a class="w100" href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/favicon@2x.png" alt="アイコン「<?php echo get_option('profile_corporate_name'); ?>」"></a></div>
 		  
 		  
+		  
     <div id="header-sub" class="order-3 col-md-5 col-12 text-center text-md-right">
       <?php if ( has_nav_menu( 'contact-link' ) ) :?>
       <div class="menu-header_link-container">
