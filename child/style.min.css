@@ -54,7 +54,9 @@ font-family: 'Yantramanav', sans-serif;
 	position: relative;
 	overflow: hidden;
 }
-
+#home-slider .nivo-caption{
+	display: none !important;
+}
 
 .nivo-controlNav{
 	display: none;
