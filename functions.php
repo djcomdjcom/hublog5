@@ -358,6 +358,37 @@ function pagename_class($classes = '') {
 add_filter('body_class', 'pagename_class')
 ;
 
+// メタボックスの追加
+add_action( 'admin_menu', 'add_css_metabox' );
+function add_css_metabox() {
+    add_meta_box( 'custom_css', 'カスタムCSS', 'create_add_css', array('post', 'page'));
+}
+  
+// 管理画面にフィールドを出力
+function create_add_css() {
+    $keyname = 'custom_css';
+    global $post;
+    $get_value = get_post_meta( $post->ID, $keyname, true );
+    wp_nonce_field( 'action_' . $keyname, 'nonce_' . $keyname );
+    echo '<textarea name="' . $keyname . '" cols="100" rows="4" style="width:100%">' . $get_value . '</textarea>';
+}
+  
+// カスタムフィールドの保存
+add_action( 'save_post', 'save_custom_css' );
+function save_custom_css( $post_id ) {
+    $keyname = 'custom_css';
+    if ( isset( $_POST['nonce_' . $keyname] )) {
+        if( check_admin_referer( 'action_' . $keyname, 'nonce_' . $keyname ) ) {
+            if( isset( $_POST[$keyname] )) {
+                update_post_meta( $post_id, $keyname, $_POST[$keyname] );
+            } else {
+                delete_post_meta( $post_id, $keyname, get_post_meta( $post_id, $keyname, true ) );
+            }
+        }
+    }
+}
+
+
 
 /* add comment..メタボックスにチェックポイントを追加
 * ---------------------------------------- */

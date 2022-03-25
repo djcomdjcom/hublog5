@@ -4,6 +4,10 @@
  */
 wp_reset_query();
 ?>
+<style>
+<?php echo post_custom('custom_css'); ?>
+</style>
+
 </main>
 
 <!-- #main-->

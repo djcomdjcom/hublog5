@@ -267,7 +267,7 @@ function cptui_register_my_cpts() {
   register_post_type( "reform", $args );
 
 
-
+add_theme_support('post-thumbnails');
 
 	
   /**
