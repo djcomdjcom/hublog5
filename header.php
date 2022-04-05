@@ -25,7 +25,7 @@
 	}
 ?></title>
 
-<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="profile" href="https://gmpg.org/xfn/11" />
 
 <?php // Loads HTML5 JavaScript file to add support for HTML5 elements in older IE versions. ?>
 <!--[if lt IE 9]>
@@ -37,7 +37,7 @@
 <link rel="icon" href="<?php bloginfo('stylesheet_directory'); ?>/favicon.ico" type="image/gif" />
 <?php endif; //favicon.ico ?>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
 <?php $print_css = (file_exists(get_stylesheet_directory() . '/print.css')) ? get_stylesheet_directory_uri() . '/print.css' : get_template_directory_uri() . '/print.css';?>
 <link rel="stylesheet" href="<?php echo $print_css; ?>" type="text/css" media="print" />
@@ -75,7 +75,7 @@ if ( is_home() || is_front_page() ){
 
 <?php get_template_part( 'site_header' ); ?>
 	
-<div id="breadcrumb" class="breadcrumbs" vocab="http://schema.org/" typeof="BreadcrumbList">
+<div id="breadcrumb" class="breadcrumbs" vocab="https://schema.org/" typeof="BreadcrumbList">
   <div class="wrapper inbox">
     <?php
     if ( function_exists( 'bcn_display' ) ) {
