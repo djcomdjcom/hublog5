@@ -1,7 +1,7 @@
 
 <header id="pg-cpt3-header" class="concept_item_header pb-md-5">
   <h1><span>アトリエサロンスタイル</span></h1>
-  <figure class="w100"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/pg-cpt3-00-img001" alt="アトリエサロンスタイル"/> </figure>
+  <figure class="w100"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/pg-cpt3-00-img001@2x.jpg" alt="アトリエサロンスタイル"/> </figure>
 </header>
 <section id="pg-cpt3-concept" class=" concept_style_concept">
   <div class="row pb-md-5 container-fluid">

@@ -1,7 +1,7 @@
 
 <header id="pg-cpt4-header" class="concept_item_header pb-md-5">
   <h1><span>ゼロエネルギースタイル</span></h1>
-  <figure class="w100"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/pg-cpt4-00-img001" alt="ゼロエネルギースタイル"/> </figure>
+  <figure class="w100"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/pg-cpt4-00-img001@2x.jpg" alt="ゼロエネルギースタイル"/> </figure>
 </header>
 <section id="pg-cpt4-concept" class=" concept_style_concept">
   <div class="row pb-md-5 container-fluid">

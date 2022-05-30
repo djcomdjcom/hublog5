@@ -1,7 +1,7 @@
 
 <header id="pg-cpt1-header" class="concept_item_header pb-md-5">
   <h1><span>ファミリアスタイル</span></h1>
-  <figure class="w100"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/pg-cpt1-00-img001" alt="ファミリアスタイル"/> </figure>
+  <figure class="w100"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/pg-cpt1-00-img001@2x.jpg" alt="ファミリアスタイル"/> </figure>
 </header>
 <section id="pg-cpt1-concept" class=" concept_style_concept">
   <div class="row pb-md-5 container-fluid">

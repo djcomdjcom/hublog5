@@ -1,7 +1,7 @@
 
 <header id="pg-cpt2-header" class="concept_item_header pb-md-5">
   <h1><span>2世帯スタイル</span></h1>
-  <figure class="w100"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/pg-cpt2-00-img001" alt="2世帯スタイル"/> </figure>
+  <figure class="w100"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/pg-cpt2-00-img001@2x.jpg" alt="2世帯スタイル"/> </figure>
 </header>
 <section id="pg-cpt2-concept" class=" concept_style_concept">
   <div class="row pb-md-5 container-fluid">
