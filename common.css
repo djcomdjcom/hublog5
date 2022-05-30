@@ -2407,7 +2407,7 @@ object-fit: cover;
 
 
 #galleryslider .gallery.gallery-size-large .gallery-icon{
-	padding-top: 50vh;
+	padding-top: calc( 100vh - 180px);
 }
 #galleryslider .gallery.gallery-size-large dt{
 /*	max-height: 50vh;*/
@@ -2417,13 +2417,14 @@ object-fit: cover;
 	
 }
 #galleryslider .gallery.gallery-size-large dt a{
+	max-width: 1024px;
 }
 #galleryslider .gallery.gallery-size-large dt img{
 
 width: auto;
 object-fit: cover;	
 max-height: 100%;
-max-width: 100%;
+max-width: 1024px;
 position: absolute;
 /*object-fit: cover;*/
   top: 50%;

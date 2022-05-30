@@ -11,7 +11,7 @@
 
 	<?php if (post_custom('reform-gallery')) : ?>
 	<section id="galleryslider" class="clearfix rel_lb">
-	<?php echo (do_shortcode('[gallery link="file" title="false" caption="true" description="true" size="large"  type="flexslider"]')); ?>
+	<?php echo (do_shortcode('[gallery link="file" title="false" caption="true" description="true" size="large" type="flexslider"]')); ?>
 	</section><!--　-->
 	<?php endif ?>
 	
