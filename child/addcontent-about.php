@@ -15,11 +15,11 @@
 <article id="addcontent-about" class="wrapper">
 	<div id="about-filter">
 	<ul class="flexbox about-filter">
-		<li class="staff w33">
-			<span class="title">スタッフ紹介</span>
-		<p>弊社で働くスタッフを紹介しています。</p>
-		<a href="/about/staff">スタッフ</a>
-		</li>
+		<li class="gaiyou w33">
+			<span class="title">会社概要</span>
+		 <p>資本金や従業員数、関連会社などの基本的な情報をご覧いただけます。 </p>
+		<a href="/about#gaiyou">会社概要</a>
+		</li>		
 
 				<li class="rinen w33">
 		<span class="title">企業理念</span>
@@ -44,10 +44,10 @@
 		<a href="/about/enkaku">沿革</a>
 		</li>
 
-		<li class="gaiyou w33">
-			<span class="title">会社概要</span>
-		 <p>資本金や従業員数、関連会社などの基本的な情報をご覧いただけます。 </p>
-		<a href="/about#gaiyou">会社概要</a>
+		<li class="staff w33">
+			<span class="title">スタッフ紹介</span>
+		<p>弊社で働くスタッフを紹介しています。</p>
+		<a href="/about/staff">スタッフ</a>
 		</li>
 		<li class="recruit w33">
 			<span class="title">採用情報</span>

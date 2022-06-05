@@ -1,15 +1,15 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;900&display=swap');
 
-
-body {
-  font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
-  color: #444;
+body{
+font-family: 'Noto Sans JP', sans-serif;
+color: #707070;
 }
 
-.mincho {
-  font-family: "ヒラギノ明朝 ProN W3", "Hiragino Mincho Pro", "HiraMinProN-W3", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
-  letter-spacing: 0.1em;
-  line-height: normal;
+.mincho{
+font-family: 'Noto Serif JP', serif;
 }
+
 
 /*AddQuickTag*/
 .txt36{

@@ -435,7 +435,7 @@ body {
 }
 .mincho.bold, .mincho_b {
 	font-family: "游明朝", YuMincho, "Hiragino Mincho ProN W3", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
-  font-weight: 600;
+  font-weight: bold !important;
   letter-spacing: 0.1em;
 }
 .tahoma {
@@ -455,7 +455,7 @@ body {
   line-height: 1.8em;
 }
 
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 1199.98px) {
 
 	.entry-content,
 	.entry-header{
@@ -472,7 +472,7 @@ body {
 	}
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 992px) {
   #header .menu-mobile-nav-container {
     display: none;
   }
@@ -512,7 +512,7 @@ body {
 	height: auto;
 }
 
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 1199.98px) {
 #top-contact {
 display: none;
 	}
@@ -545,7 +545,7 @@ display: none;
 }
 #header .sitelogo{
 	display: block;
-	margin: 0 auto 1em;
+	margin: 0 auto 0;
 }
 
 #header #header-sub .contact-tel{
@@ -586,7 +586,7 @@ display: none;
 
 
 
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 768px) {
 .hublog-inquiry .telnum,
 .profile_inquiry_tel .telnum {
   font-size: 2.1em;
@@ -726,7 +726,11 @@ ul.sub-menu{
   display: inline-block;
 }
 
-
+@media screen and (max-width:767.98px) {
+#headnav{
+	display: none;
+	}
+}
 #headnav .home-menu .menu > li{
   border-left: 1px solid #333;
 }
@@ -793,7 +797,7 @@ background: rgba(0,0,0,0.85);
 	text-decoration: none;
 }
 
-@media screen and (max-width:719px) {
+@media screen and (max-width:767.98px) {
 	#headnav{
 		display: none;
 	}
@@ -1327,12 +1331,12 @@ width: 64%;
   transition: .2s;
 }
 
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 768px) {
 .posts .post .title {
 	font-size: 1.1em;
 }
 }
-@media screen and (max-width: 719px) {
+@media screen and (max-width: 767.98px) {
 .posts .post .title {
 	line-height: 1.5em;
 }
@@ -2046,7 +2050,7 @@ dl.flow dd:last-child:after {
 .entry-content .slide-table table {
   margin-top: 0;
 }
-@media screen and (max-width: 719px) {
+@media screen and (max-width: 767.98px) {
   .slide-table:before {
     content: "\f053\f053\f053　スライドできます";
     box-sizing: border-box;
@@ -2137,7 +2141,7 @@ table.nagare td, table.nagare th {
   line-height: 1.5em;
 }
 
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 768px) {
   .txt-cell > h2.title:first-child, .txt-cell > h3.title:first-child, .txt-cell > h4.title:first-child, .txt-cell > h5.title:first-child, .txt-cell > h6.title:first-child {
     margin-top: 0;
     padding-top: 0;
@@ -2286,7 +2290,7 @@ table.nagare td, table.nagare th {
 	transition: .3s;
 	pointer-events: none;
 }
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 768px) {
 
 .gallery > dl:hover dd.gallery-caption{
 	bottom: 0;
@@ -2434,7 +2438,7 @@ position: absolute;
   transform: translate(-50%, -50%) scale(100%);
 	
 }
-@media screen and (max-width: 719px) {
+@media screen and (max-width: 767.98px) {
 #galleryslider .gallery.gallery-size-large .gallery-icon{
 	padding-top: 40vh;
 }
@@ -2494,7 +2498,7 @@ max-width: 100%;
 	content: none;
 }
 
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 768px) {
 	#galleryslider .gallery.gallery-size-large dl{
 		position: relative;
 	}
@@ -2713,6 +2717,7 @@ max-width: 100%;
   float: none;
   margin: 2px;
   padding: 0;
+
   overflow: hidden;
 }
 #galleryslider .flex-control-thumbs li img {
@@ -2744,7 +2749,7 @@ max-width: 100%;
 	z-index: 5;
 }
 
-@media screen and (max-width: 719px) {
+@media screen and (max-width: 767.98px) {
 
 #galleryslider .flex-info{
 	position: fixed;
@@ -2913,11 +2918,12 @@ vertical-align: top;
   position: absolute;
   top: 0;
   left: 0;
+
   width: 100%;
   height: 100%;
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:767px) {
 .wp-block-embed__wrapper{
   position: relative;
   padding-bottom: 56.25%;
@@ -3096,7 +3102,7 @@ font-weight: normal;
 .posts .post.style-headline .date{
 	text-align: right;
 }
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 768px) {
 .posts .post.style-headline{
 	padding: 1em 1em 1.5em;
 	}
@@ -3135,7 +3141,7 @@ padding-top: 100%;/*　トリミングしたい枠の高さ　*/
 
 
 
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 768px) {
 .posts .post.style-headline .date{
     width: 12em;
     font-size: 1em;
@@ -3169,7 +3175,7 @@ padding-top: 100%;/*　トリミングしたい枠の高さ　*/
 	margin-top: 1em;
 	margin-bottom: 1em;
 }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 767.98px) {
 .posts .post.style-voice,
 .posts .post.style-example {
 
@@ -3700,7 +3706,7 @@ top: calc( 50% - 0.8rem );
   background: #4f7a9d;
   color: #fff;
 }
-@media screen and (max-width: 999px) {
+@media screen and (max-width: 991.98px) {
 main .pagetab ul{
 		margin-left: 0;
 	}
@@ -3713,7 +3719,7 @@ main .pagetab ul{
     text-align: left;
   }
 }
-@media screen and (max-width: 719px) {
+@media screen and (max-width: 767.98px) {
 .pagetab ul li,
 .pagetab .menu-renovation-container ul li 
 	{
@@ -3778,13 +3784,13 @@ main .pagetab ul{
 .entry-content .anchor_link_set a:hover{
 	text-decoration: underline;
 }
-@media screen and (max-width: 999px) {
+@media screen and (max-width: 991.98px) {
 	.entry-content .anchor_link_set ul li{
 	width: calc( 50% - 1px );
 	}
 }
 
-@media screen and (max-width: 719px) {
+@media screen and (max-width: 767.98px) {
 	.entry-content .anchor_link_set ul li{
 	width: calc( 100% - 1px );
 	}
@@ -3980,7 +3986,7 @@ width: 32%;
 	text-align: center;
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:767px) {
 	#about-filter .flexbox li{
 		width: 100%;
 		text-align: center;
@@ -4300,7 +4306,7 @@ table.gaiyou tr.profile_shop_name {
   margin: 1.5em auto;
 }
 
-@media screen and (min-width:769px) {
+@media screen and (min-width:768px) {
 
 .beforeform .hublog-inquiry-tel {
   width: 38%;
@@ -4528,6 +4534,13 @@ transition: .4s;
   -webkit-transition: all 400ms;
   transition: all 400ms
 }
+@media screen and (max-width:767px) {
+#wrapper .btn-gnavi {
+  right: none;
+	left: 10px;
+	top: 16px;
+	}
+}
 
 #wrapper .btn-gnavi span {
   position: absolute;
@@ -4628,19 +4641,19 @@ transition: .4s;
 }
 
 
-@media screen and (max-width:1024px) {
+@media screen and (max-width:991px) {
 .global-navi-inner {
   margin: 30px auto;
 }
 }
-@media screen and (max-width:1110px) {
+@media screen and (max-width:1199px) {
 
 .global-navi-menu ul{
   margin-bottom: 20px;
 }
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:767px) {
 
 .global-navi-inner {
   margin: 0px auto;
@@ -4808,7 +4821,7 @@ display: none;
 		text-align:center;
 }
 	}
-@media screen and (max-width: 639px) {
+@media screen and (max-width: 767.98px) {
 
 .hublog-inquiry,
 .inquiry-single
@@ -4884,7 +4897,7 @@ br.sponly{
 }
 
 	
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 768px) {
 
 .txt36{
 	font-size: 36pt;
@@ -4911,7 +4924,7 @@ br.sponly{
 		display: none;
 	}
 }
-@media screen and (max-width: 799px) {
+@media screen and (max-width: 767.98px) {
 
 br.pconly{
 	display: none;

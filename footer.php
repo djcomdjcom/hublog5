@@ -24,7 +24,7 @@ wp_reset_query();
   <nav id="global-navi" class="pt-3">
     <div class="global-navi-inner">
       <div id="global-navi-logo" class="wrapper mb-0 mb-md-4 px-2 pb-3" style="border-bottom: 1px solid #fff;">
-		  <a class="w100 maxw-600 mx-0 mx-md-auto" href="/"><?php echo get_option('profile_shop_name'); ?></a>
+		  <a class="w100 maxw-600 mx-0 mx-auto" href="/"><?php echo get_option('profile_shop_name'); ?></a>
 		</div>
 		<div class="gtn-contgact d-none">
 			<div class="contact-tel">
@@ -255,9 +255,18 @@ $(function(){
 });
 </script>
 	
-	
-<script>
-	</script>	
+<?php if ( is_user_logged_in() ) :?>
+
+<div style="left: 0;bottom: 0;" class="position-fixed bg-light px-2">
+<p class="my-0"><span class="d-inline-block d-sm-none">●</span>sm未満：-575.98px</p>
+<p class="my-0"><span class="d-sm-inline-block d-none d-md-none">●</span>sm：576px-767.98px</p>
+<p class="my-0"><span class="d-md-inline-block d-none d-lg-none">●</span>md：768px-991.98px</p>
+<p class="my-0"><span class="d-lg-inline-block d-none d-xl-none">●</span>lg：992px-1199.98px</p>
+<p class="my-0"><span class="d-xl-inline-block d-none d-xxl-none">●</span>xl：1200px-</p>
+</div>
+<?php endif;?>
+
+
 	
 <?php wp_footer(); ?>
 </body>

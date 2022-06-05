@@ -14,6 +14,7 @@ unset($menu[10]);
 add_action( 'admin_menu', 'customize_menus' );
 
 //webフォント
+/*
 function add_google_fonts() {
 wp_register_style( 'googleFonts',
 'https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;300;400;500;700;800;900&family=Yantramanav:wght@100;300;400;500;700;900&display=swap'
@@ -21,6 +22,7 @@ wp_register_style( 'googleFonts',
 wp_enqueue_style( 'googleFonts');
 }
 add_action( 'wp_enqueue_scripts', 'add_google_fonts' );
+*/
 
 /*CSS追加*/
 $child_theme = wp_get_theme();//子テーマから読み込み
@@ -267,7 +269,7 @@ function cptui_register_my_cpts() {
   register_post_type( "reform", $args );
 
 
-add_theme_support('post-thumbnails');
+
 
 	
   /**
@@ -558,4 +560,43 @@ function is_child( $slug = "" ) {
       return false;
     }
   endif;
+}
+//管理画面記事一覧でサムネイル表示
+
+add_theme_support( 'post-thumbnails', array( 'post','example','reform' ) );
+    set_post_thumbnail_size( 50, 50, true );
+ 
+    function manage_posts_columns($columns) {
+    $columns['thumbnail'] = __('Thumbnail');
+    return $columns;
+    }
+    function add_column($column_name, $post_id) {
+    
+    //アイキャッチ取得 array(サイズ,サイズ)
+        if ( 'thumbnail' == $column_name) {
+    $thum = get_the_post_thumbnail($post_id, array(150,150), 'thumbnail');
+    }
+    
+    //使用していない場合「なし」を表示
+    if ( isset($thum) && $thum ) {
+    echo $thum;
+    } else {
+    echo __('None');
+    }
+    }
+    add_filter( 'manage_posts_columns', 'manage_posts_columns' );
+  add_action( 'manage_posts_custom_column', 'add_column', 10, 2 );
+
+// 文字制御
+add_filter('wpcf7_validate_text',  'wpcf7_validate_kana', 11, 2);  add_filter('wpcf7_validate_text*', 'wpcf7_validate_kana', 11, 2);   function wpcf7_validate_kana($result,$tag){ $tag = new WPCF7_Shortcode($tag); $name = $tag->name;
+  $value = isset($_POST[$name]) ? trim(wp_unslash(strtr((string) $_POST[$name], "\n", " "))) : "";
+ 
+  // 'c-kana' または 'kana' の場合
+  if ( $name === "c-kana" || $name === "kana" ) {
+    // ひらがな以外だった場合
+    if (!preg_match("/^[ぁ-ゞー]+$/u",$value)) {
+      $result->invalidate($tag, "全角ひらがなで入力してください。");
+    }
+  }
+  return $result;
 }

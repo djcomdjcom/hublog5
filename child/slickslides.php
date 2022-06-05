@@ -15,7 +15,7 @@
 
 
 
-<span style="display: none">
+<script style="display: none">
 $(function() {
     $('.center-item').slick({
           infinite: true,
@@ -59,7 +59,7 @@ $(function() {
 });
 
 
-</span>
+</script>
 
 
 

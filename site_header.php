@@ -6,21 +6,21 @@
  */
 ?>
 <header id="header">
-  <div class="wrapper description"> <em>
+  <div class="wrapper description pl-5 pl-md-0 d-none d-sm-block"> <em class="px-3 px-xl-0">
     <?php bloginfo( 'description' ); ?>
     </em> </div>
 	
 	
   <section id="globalheader">
 	  <div class="row wrapper mx-auto">
-    <div class="order-2 order-md-1 sitetitle col-9 col-md-5 align-self-center"><a class="w100 maxw-360 mx-auto mx-md-0" href="/" ><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/sitetitle@2x.png" alt="<?php echo get_option('profile_corporate_name'); ?>"></a></div>
+    <div class="order-2 order-md-1 sitetitle col-8 col-sm-8 col-md-5 align-self-center"><a class="w100 maxw-360 mx-auto mx-md-0" href="/" ><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/sitetitle@2x.png" alt="<?php echo get_option('profile_corporate_name'); ?>"></a></div>
 	  
 	  
-    <div class="order-1 order-md-2 sitelogo col-3 col-md-2"><a class="w100" href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/favicon@2x.png" alt="アイコン「<?php echo get_option('profile_corporate_name'); ?>」"></a></div>
+    <div class="order-1 order-md-2 sitelogo col-4 col-sm-3 col-md-2 pl-5 pr-0 pl-md-0 mb-0 "><a class="w100" href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/favicon@2x.png" alt="アイコン「<?php echo get_option('profile_corporate_name'); ?>」"></a></div>
 		  
 		  
 		  
-    <div id="header-sub" class="order-3 col-md-5 col-12 text-center text-md-right">
+    <div id="header-sub" class="order-3 col-sm-5 col-12 text-center text-md-right d-none d-md-block">
       <?php if ( has_nav_menu( 'contact-link' ) ) :?>
       <div class="menu-header_link-container">
         <?php wp_nav_menu( array('theme_location'=>'contact-link', 'fallback_cb'=>'nothing_to_do') ); ?>
@@ -28,7 +28,7 @@
       <!--menu-header_link-container-->
       
       <?php else: ?>
-		<div class="menu-header_link-container"><div class="menu-item"><a href="/about">会社案内</a><a href="/about#map">アクセス</a><a href="/inquiry?title=<?php if ( is_home() || is_front_page() ) {  echo ('トップページ');} else {echo get_the_title();}?>">お問い合わせ</a> </div></div>
+		<div class="menu-header_link-container d-none d-lg-block"><div class="menu-item"><a href="/about">会社案内</a><a href="/about#map">アクセス</a><a href="/inquiry?title=<?php if ( is_home() || is_front_page() ) {  echo ('トップページ');} else {echo get_the_title();}?>">お問い合わせ</a> </div></div>
       <?php endif; ?>
       <div class="contact-tel"> <span class="profile_inquiry_tel">
 		  
@@ -65,7 +65,7 @@
   </section>
 
   <div id="top-contact" class="position-fixed top-contact">
-    <div class="inbox"> <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/top-contact@2x.png" class="tc-img"> <a class="to_offer" href="/offer?title=<?php if ( is_home() || is_front_page() ) {  echo ('トップページ');} else {echo get_the_title();}?>">資料請求</a> <a class="to_inquiry" href="/inquiry?title=<?php if ( is_home() || is_front_page() ) {  echo ('トップページ');} else {echo get_the_title();}?>">お問い合わせ</a> </div>
+    <div class="inbox"> <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/top-contact@2x.png" class="tc-img" alt="問合せはこちら"> <a class="to_offer" href="/offer?title=<?php if ( is_home() || is_front_page() ) {  echo ('トップページ');} else {echo get_the_title();}?>">資料請求</a> <a class="to_inquiry" href="/inquiry?title=<?php if ( is_home() || is_front_page() ) {  echo ('トップページ');} else {echo get_the_title();}?>">お問い合わせ</a> </div>
   </div>
 	
 </header>

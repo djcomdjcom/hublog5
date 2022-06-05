@@ -25,24 +25,24 @@ $(document).on('ready', function() {
 	  dots: true,
       asNavFor:'.thumb',
           responsive: [{
-               breakpoint: 800,
+               breakpoint: 768,
                     settings: {
 //      arrows:false,
                }
           }
           ]	  
-  });
+  })
+	;
   $('.thumb').slick({
       asNavFor:'.slider_thumb',
       focusOnSelect: true,
-      slidesToShow:12,
+//      slidesToShow:12,
       arrows:false,
-//      slidesToScroll:6,
           responsive: [{
-               breakpoint: 800,
+               breakpoint: 767,
                     settings: {
       arrows:true,
-      slidesToShow:6,
+//      slidesToShow:6,
       slidesToScroll:1,
                }
           }
@@ -52,9 +52,48 @@ $(document).on('ready', function() {
 });
 
 		
-		
-</script>
-	  
+//サムネイル表示の調整	
+	
+var windowWidth = $(window).width();
+var windowSm = 768;
+if (windowWidth <= windowSm) {
+$(function () {
+let slidesToShowNum = 6; //slidesToShowに設定したい値を挿入
+ /* slidesToShowより投稿が少ない場合の処理▽ */
+let item = $('#galleryslider .gallery-size-thumbnail dl').length; //dlの個数を取得
+if (item <= slidesToShowNum) {
+for ( i = 0 ; i <= slidesToShowNum + 1 - item ; i++) { //足りていない要素数分、後ろに複製
+$('#galleryslider .gallery-size-thumbnail dl:nth-child(' + i + ')').clone().appendTo('#galleryslider .gallery-size-thumbnail');
+  }
+ } /* slidesToShowより投稿が少ない場合の処理△ */
+
+ $('#galleryslider .gallery-size-thumbnail').slick({
+  slidesToShow: slidesToShowNum, //slidesToShowNumに設定した値が入る
+ });
+});
+	
+} else {
+//横幅768px以上（PC、タブレット）に適用させるJavaScriptを記述
+$(function () {
+let slidesToShowNum = 12; //slidesToShowに設定したい値を挿入
+ /* slidesToShowより投稿が少ない場合の処理▽ */
+let item = $('#galleryslider .gallery-size-thumbnail dl').length; //liの個数を取得
+if (item <= slidesToShowNum) {
+for ( i = 0 ; i <= slidesToShowNum + 1 - item ; i++) { //足りていない要素数分、後ろに複製
+$('#galleryslider .gallery-size-thumbnail dl:nth-child(' + i + ')').clone().appendTo('#galleryslider .gallery-size-thumbnail');
+  }
+ }
+ /* slidesToShowより投稿が少ない場合の処理△ */
+ $('#galleryslider .gallery-size-thumbnail').slick({
+  slidesToShow: slidesToShowNum, //slidesToShowNumに設定した値が入る
+ });
+});}	
+
+
+
+	
+	
+</script>	  
 	  
 	  
     <?php
