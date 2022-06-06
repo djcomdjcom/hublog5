@@ -1,7 +1,7 @@
 @charset "utf-8";
 	
 @import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
-@import url(http://fonts.googleapis.com/earlyaccess/notoserifjp.css);
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;900&display=swap');
 
 
 html body{
@@ -44,7 +44,7 @@ font-family: 'Yantramanav', sans-serif;
 	z-index: 99;
 }
 
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 1199.98px) {
 .top-contact,
 .top-dr{
   display: none;
@@ -112,7 +112,7 @@ font-family: 'Yantramanav', sans-serif;
 	overflow-x: hidden;
 }
 
-@media screen and (max-width:999px) {
+@media screen and (max-width:991.98px) {
 #home-carousel{
 	margin-top: 0;
 	}
@@ -212,7 +212,7 @@ background: linear-gradient(180deg,#fff 0%,#fff 40%,#E6E3DB 40%,#E6E3DB 100%);
 	max-width: 1200px !important;
 }
 
-@media screen and (min-width:720px) {
+@media screen and (min-width:768px) {
 #concept-topage a{
 position: absolute;
 right: 3%;
@@ -276,7 +276,7 @@ position: relative;
 	max-width: 49px;
 	height: 3.5em;
 	max-height: 49%;
-	top: 88%;
+	top: calc( 100% - 25px);
 	left: 0;
 	position: absolute;
 }
@@ -311,7 +311,7 @@ position: relative;
 	background: url("images/cpt_choice-04-icon.png") no-repeat center top;
 	background-size: contain;
 }
-@media screen and (max-width:720px) {
+@media screen and (max-width:767.98px) {
 	#concept_choice li{
 		width: 48%;
 		margin: 0 1% 1em;
@@ -368,7 +368,7 @@ position: relative;
 
 
 
-@media screen and (max-width:720px) {
+@media screen and (max-width:767.98px) {
 #home-event .posts .post.style-event{
 flex: 100%;
 }
@@ -456,7 +456,7 @@ max-width: none;
 #home-staff .user_info{
 	position: relative;
 }
-@media screen and (max-width:720px) {
+@media screen and (max-width:767.98px) {
 #home-staff .flexbox > *{
 	width: calc( 94% / 3 );
 	}
@@ -465,7 +465,7 @@ max-width: none;
 	
 }
 }
-@media screen and (max-width:575px) {
+@media screen and (max-width:575.98px) {
 	#home-staff .user_info,
 	#home-staff .staff-list{
 		width: 100%;
@@ -636,7 +636,7 @@ max-width: none;
 #zeh_achievement .zeh_achievement p{
 	margin: 0;
 }
-@media screen and (max-width:720px) {
+@media screen and (max-width:767.98px) {
 	.zeh2,
 	.zeh3,
 	.zeh4{
@@ -700,7 +700,7 @@ content: "\f0e0";
 }
 
 
-@media screen and (min-width:720px) {
+@media screen and (min-width:768px) {
 .inc_contact-img01 img{
 	margin-top: -4em;
 }
@@ -892,7 +892,7 @@ body.home .user_info input[type="checkbox"]:checked + .staffpopup{
 .entry-content .anchor{
 	margin-bottom: 7em;
 }
-@media screen and (min-width:720px) {
+@media screen and (min-width:768px) {
 .entry-content .anchor{
 	margin-bottom: 4em;
 }
@@ -1192,12 +1192,12 @@ padding-left: 0;
 	color: #fff;
 	opacity: 1;
 }
-@media screen and (min-width:1000px) {
+@media screen and (min-width:992px) {
 .pagetab.concept-nav li{
 	width: 25%;
 }
 }
-@media screen and (min-width:720px) {
+@media screen and (min-width:768px) {
 }
 
 .concept_item_header h1:before{
@@ -1210,7 +1210,7 @@ padding-left: 0;
 .concept_item_header h1 > span{
 	white-space: nowrap;
 }
-@media screen and (max-width:768px) {
+@media screen and (max-width:767.98px) {
 	.concept_item_header h1{
 		font-size: 1.8em;
 	}
@@ -1350,7 +1350,7 @@ main.page-kurashi .page_concept_content:after{
 	left: calc( 600px - 50vw);
 }
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 992px) {
 .pagetab .menu-renov-nav-container li{
 width: calc( 100% / 4 ) ;
 }
@@ -1423,13 +1423,13 @@ text-align: center;
 	padding: 0.2em
 }
 
-@media screen and (max-width:400px) {
+@media screen and (max-width:575.98px) {
 	.gtn-contgact .inc_contact-btn .btn {
 		width: 100%;
 	}
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:767.98px) {
 #wrapper #global-navi{
 padding-top: 0;
 }	

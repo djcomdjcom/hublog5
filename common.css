@@ -512,7 +512,7 @@ body {
 	height: auto;
 }
 
-@media screen and (max-width: 1199.98px) {
+@media screen and (max-width: 1350px) {
 #top-contact {
 display: none;
 	}
@@ -4486,18 +4486,18 @@ table.gaiyou tr.profile_shop_name {
 	overflow: hidden;
 }
 #wrapper #global-navi {
-  position: fixed;
-  top: 0;
-  right: -100vw;
-  width: 100vw;
-  height: 100vh;
-  padding-top: 50px;
-	box-sizing: border-box;
-  font-size: 16px;
-  z-index: 400;
-  background-color:rgba(100,51,12,0.95);
-  overflow: scroll;
+position: fixed;
+top: 0;
+right: -100vw;
+width: 100vw;
+height: 100vh;
+padding-top: 50px;
+box-sizing: border-box;
+font-size: 16px;
+z-index: 400;
+background-color:rgba(100,51,12,0.95);
 transition: .4s;
+overflow-x: hidden;
 }
 
 .btn-gnavi.open + #global-navi{
