@@ -221,6 +221,7 @@ ul.flexbox, .entry-content ul.flexbox {
   border-radius: 50%;
   overflow: hidden;
 }
+
 /*  Image
 ******************************************************************************/
 .image-attachment div.attachment {
@@ -455,7 +456,7 @@ body {
   line-height: 1.8em;
 }
 
-@media screen and (max-width: 1199.98px) {
+@media screen and (max-width:1199.98px) {
 
 	.entry-content,
 	.entry-header{
@@ -472,7 +473,7 @@ body {
 	}
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width:992px) {
   #header .menu-mobile-nav-container {
     display: none;
   }
@@ -512,7 +513,7 @@ body {
 	height: auto;
 }
 
-@media screen and (max-width: 1350px) {
+@media screen and (max-width:1350px) {
 #top-contact {
 display: none;
 	}
@@ -557,12 +558,12 @@ display: none;
 	padding: 0.5em 0 0.3em 0;
 	font-size: 15px;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width:768px) {
 #header #header-sub {
 	padding-right: 60px;
 }
 }
-@media screen and (min-width: 1320px) {
+@media screen and (min-width:1320px) {
 #header #header-sub {
 	padding-right: 0;
 }
@@ -586,7 +587,7 @@ display: none;
 
 
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width:768px) {
 .hublog-inquiry .telnum,
 .profile_inquiry_tel .telnum {
   font-size: 2.1em;
@@ -731,6 +732,7 @@ ul.sub-menu{
 	display: none;
 	}
 }
+@media screen and (min-width:768px) {
 #headnav .home-menu .menu > li{
   border-left: 1px solid #333;
 }
@@ -742,6 +744,7 @@ ul.sub-menu{
 }
 #access .home-menu .menu > li:last-child{
   border-right: 1px solid #eee;
+}
 }
 .home-menu li li{
 	display: block;
@@ -816,7 +819,8 @@ background: rgba(0,0,0,0.85);
 	
 
 	#global-navi .menu  .menu-item-has-children > a:before{
-		content: ">";
+	  content: "\f054";
+	  font-family: FontAwesome;
 		display: inline-block;
 		margin-right: 0.5em;
 	}
@@ -1311,6 +1315,7 @@ width: 64%;
   opacity: 1;
   font-size: 12px;
   transition: .2s;
+white-space: nowrap;
 }
 .posts .post .todetail a[rel="bookmark"]:after,
 .posts .post .todetail[rel="bookmark"]:after {
@@ -1331,12 +1336,12 @@ width: 64%;
   transition: .2s;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width:768px) {
 .posts .post .title {
 	font-size: 1.1em;
 }
 }
-@media screen and (max-width: 767.98px) {
+@media screen and (max-width:767.98px) {
 .posts .post .title {
 	line-height: 1.5em;
 }
@@ -2050,7 +2055,7 @@ dl.flow dd:last-child:after {
 .entry-content .slide-table table {
   margin-top: 0;
 }
-@media screen and (max-width: 767.98px) {
+@media screen and (max-width:767.98px) {
   .slide-table:before {
     content: "\f053\f053\f053　スライドできます";
     box-sizing: border-box;
@@ -2141,7 +2146,7 @@ table.nagare td, table.nagare th {
   line-height: 1.5em;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width:768px) {
   .txt-cell > h2.title:first-child, .txt-cell > h3.title:first-child, .txt-cell > h4.title:first-child, .txt-cell > h5.title:first-child, .txt-cell > h6.title:first-child {
     margin-top: 0;
     padding-top: 0;
@@ -2290,7 +2295,7 @@ table.nagare td, table.nagare th {
 	transition: .3s;
 	pointer-events: none;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width:768px) {
 
 .gallery > dl:hover dd.gallery-caption{
 	bottom: 0;
@@ -2438,7 +2443,7 @@ position: absolute;
   transform: translate(-50%, -50%) scale(100%);
 	
 }
-@media screen and (max-width: 767.98px) {
+@media screen and (max-width:767.98px) {
 #galleryslider .gallery.gallery-size-large .gallery-icon{
 	padding-top: 40vh;
 }
@@ -2498,7 +2503,7 @@ max-width: 100%;
 	content: none;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width:768px) {
 	#galleryslider .gallery.gallery-size-large dl{
 		position: relative;
 	}
@@ -2749,7 +2754,7 @@ max-width: 100%;
 	z-index: 5;
 }
 
-@media screen and (max-width: 767.98px) {
+@media screen and (max-width:767.98px) {
 
 #galleryslider .flex-info{
 	position: fixed;
@@ -2923,7 +2928,7 @@ vertical-align: top;
   height: 100%;
 }
 
-@media screen and (max-width:767px) {
+@media screen and (max-width:767.98px) {
 .wp-block-embed__wrapper{
   position: relative;
   padding-bottom: 56.25%;
@@ -3102,7 +3107,7 @@ font-weight: normal;
 .posts .post.style-headline .date{
 	text-align: right;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width:768px) {
 .posts .post.style-headline{
 	padding: 1em 1em 1.5em;
 	}
@@ -3141,7 +3146,7 @@ padding-top: 100%;/*　トリミングしたい枠の高さ　*/
 
 
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width:768px) {
 .posts .post.style-headline .date{
     width: 12em;
     font-size: 1em;
@@ -3175,7 +3180,7 @@ padding-top: 100%;/*　トリミングしたい枠の高さ　*/
 	margin-top: 1em;
 	margin-bottom: 1em;
 }
-@media screen and (max-width: 767.98px) {
+@media screen and (max-width:767.98px) {
 .posts .post.style-voice,
 .posts .post.style-example {
 
@@ -3706,7 +3711,7 @@ top: calc( 50% - 0.8rem );
   background: #4f7a9d;
   color: #fff;
 }
-@media screen and (max-width: 991.98px) {
+@media screen and (max-width:991.98px) {
 main .pagetab ul{
 		margin-left: 0;
 	}
@@ -3719,7 +3724,7 @@ main .pagetab ul{
     text-align: left;
   }
 }
-@media screen and (max-width: 767.98px) {
+@media screen and (max-width:767.98px) {
 .pagetab ul li,
 .pagetab .menu-renovation-container ul li 
 	{
@@ -3784,13 +3789,13 @@ main .pagetab ul{
 .entry-content .anchor_link_set a:hover{
 	text-decoration: underline;
 }
-@media screen and (max-width: 991.98px) {
+@media screen and (max-width:991.98px) {
 	.entry-content .anchor_link_set ul li{
 	width: calc( 50% - 1px );
 	}
 }
 
-@media screen and (max-width: 767.98px) {
+@media screen and (max-width:767.98px) {
 	.entry-content .anchor_link_set ul li{
 	width: calc( 100% - 1px );
 	}
@@ -3986,7 +3991,7 @@ width: 32%;
 	text-align: center;
 }
 
-@media screen and (max-width:767px) {
+@media screen and (max-width:767.98px) {
 	#about-filter .flexbox li{
 		width: 100%;
 		text-align: center;
@@ -4534,7 +4539,7 @@ overflow-x: hidden;
   -webkit-transition: all 400ms;
   transition: all 400ms
 }
-@media screen and (max-width:767px) {
+@media screen and (max-width:767.98px) {
 #wrapper .btn-gnavi {
   right: none;
 	left: 10px;
@@ -4641,19 +4646,19 @@ overflow-x: hidden;
 }
 
 
-@media screen and (max-width:991px) {
+@media screen and (max-width:991.98px) {
 .global-navi-inner {
   margin: 30px auto;
 }
 }
-@media screen and (max-width:1199px) {
+@media screen and (max-width:1199.98px) {
 
 .global-navi-menu ul{
   margin-bottom: 20px;
 }
 }
 
-@media screen and (max-width:767px) {
+@media screen and (max-width:767.98px) {
 
 .global-navi-inner {
   margin: 0px auto;
@@ -4679,7 +4684,6 @@ footer-widget-area:after {
 #footer .cr {
   text-align: center;
 	position: absolute;
-	bottom: 0.5em;
 	left: 0;
 	right: 0;
 }
@@ -4757,7 +4761,7 @@ option[value="Hublog"], option[value="Twenty Eleven"], option[value="Twenty Ten"
 
 /*RESPONSIVE*/
 
-@media screen and (max-width: 319px) {
+@media screen and (max-width:319px) {
 .posts .post .title{
 	line-height: 1.55em;
 	font-size: 1em;
@@ -4821,7 +4825,7 @@ display: none;
 		text-align:center;
 }
 	}
-@media screen and (max-width: 767.98px) {
+@media screen and (max-width:767.98px) {
 
 .hublog-inquiry,
 .inquiry-single
@@ -4897,7 +4901,7 @@ br.sponly{
 }
 
 	
-@media screen and (min-width: 768px) {
+@media screen and (min-width:768px) {
 
 .txt36{
 	font-size: 36pt;
@@ -4924,9 +4928,15 @@ br.sponly{
 		display: none;
 	}
 }
-@media screen and (max-width: 767.98px) {
+@media screen and (max-width:767.98px) {
 
 br.pconly{
+	display: none;
+}
+}
+
+@media screen and (max-width:575.98px) {
+.d-sp-none{
 	display: none;
 }
 }
