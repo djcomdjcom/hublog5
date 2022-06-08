@@ -22,7 +22,7 @@ wp_reset_query();
 
 
   <nav id="global-navi" class="pt-3">
-    <div class="global-navi-inner">
+    <div class="global-navi-inner container">
       <div id="global-navi-logo" class="wrapper mb-0 mb-md-4 px-2 pb-3" style="border-bottom: 1px solid #fff;">
 		  <a class="w100 maxw-600 mx-0 mx-auto" href="/"><?php echo get_option('profile_shop_name'); ?></a>
 		</div>
@@ -204,14 +204,16 @@ wp_reset_query();
             <?php get_template_part('include', 'snslink');//SNSボタン ?>
 		
 		
-      <div class="footer-contact mt-4 container-fluid">
+      <div class="footer-contact mt-4 mb-2 container-fluid">
         <div class="row mb-5 mt-5">
-          <div class="footer-contact-inner1 col-md-4 mb-4"> <a href="/" class="w100"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-footer@2x.png" alt="<?php echo get_option('profile_corporate_name'); ?> ロゴ"></a> </div>
-          <div class="footer-contact-inner2 col-md-4  mb-4">
+          <div class="footer-contact-inner1 col-md-4 mb-4"> <a href="/" class="w100 maxw-300 mx-auto"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-footer@2x.png" alt="<?php echo get_option('profile_corporate_name'); ?> ロゴ"></a> </div>
+          <div class="footer-contact-inner2 col-md-3  mb-4">
 
 			</div>
-          <div class=" col-md-4  mb-4">
-            <div class="contact-tel"> <span class="profile_inquiry_tel">
+          <div class=" col-md-5  mb-4">
+            <div class="contact-tel">
+				
+				<span class="profile_inquiry_tel d-block">
               <?php
               $profile_inquiry_tel = ( get_option( 'profile_inquiry_tel' ) ) ? get_option( 'profile_inquiry_tel' ) : get_option( 'profile_main_tel' );
               if ( !empty( $profile_inquiry_tel ) ): ?>
@@ -221,7 +223,8 @@ wp_reset_query();
               ?>
               </span>
 			  
-<span class="text-nowrap px-1">電話受付時間 <?php echo (get_option('profile_opening_hours')) ?></span><span class="text-nowrap px-1">定休日　<?php echo (get_option('profile_holiday')) ?></span>			  
+<span class=" px-1 d-block">電話受付時間 <?php echo (get_option('profile_opening_hours')) ?></span>
+<span class=" px-1 d-block">定休日　<?php echo (get_option('profile_holiday')) ?></span>			  
 			  </div>
             <!--contact-tel--> 
           </div>
