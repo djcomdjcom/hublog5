@@ -166,8 +166,13 @@ $('#galleryslider .gallery-size-thumbnail dl:nth-child(' + i + ')').clone().appe
   ?>
   <div class="row container mx-auto p-0 ba-item py-3 mb-5 border-bottom">
     <div class="col-12 p-0">
+		
+<?php   if ( $fields['ba_title']):?>		
       <h3 class="noicon ttl"><?php echo  $fields['ba_title']; ?></h3>
+<?php endif;?>
+<?php   if ( $fields['ba_description']):?>		
       <div class="description pb-4" id="description_01"> <?php echo nl2br( $fields['ba_description']); ?> </div>
+<?php endif;?>
     </div>
     <div class="col-4 px-0 before-image">
       <figure class="w100"> <span class="ttl">施工前</span> <a href="<?php echo wp_get_attachment_url($ba_before,'large'); ?>"><img src="<?php echo wp_get_attachment_url($ba_before,'thumbnail'); ?>"></a> </figure>
