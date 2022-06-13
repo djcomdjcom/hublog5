@@ -2735,9 +2735,60 @@ max-width: 100%;
   font-family: FontAwesome;
   margin-right: 0.5em;
 }
+
+#before-after .ba-item{
+}
+.ba-item figure {
+	background: rgba(0,0,0,0.05);
+}
+.ba-item figure a{
+	position: relative;
+	display: block;
+	width: 100%;
+	overflow: hidden;
+}
+
+.ba-item .after-image figure a{
+	padding-top: 75%;
+}
+.ba-item .before-image figure a{
+	padding-top: 130%;
+}
+
+.ba-item figure a img{
+	position: absolute;
+	width: 100%;
+	height: auto;
+	top: 50%;
+	left: 50%;
+	transform: translate( -50%, -50%);
+}
+
+#before-after .w100{
+	
+}
+.ba-item figure .ttl{
+	text-align: center;
+	display: block;
+	color: #111;
+}
+#before-after .arrow i{
+	position: relative;
+	top: 40%;
+	font-size: 5vw;
+	color: #CCC;
+}
+@media screen and (min-width:768px) {
+#before-after .arrow i{
+	font-size: 44px;
+}
+}
 #before-after > table {
   width: 100%;
 }
+
+
+
 #before-after > table td, #before-after > table th {
   border: none;
 }

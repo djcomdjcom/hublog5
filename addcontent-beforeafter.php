@@ -1,204 +1,183 @@
 <?php
 /**
-* addcontent-reform.php
-*
-* @テーマ名	hublog-c
-* @更新日付	2012.02.15
-*
-*/
+ * addcontent-reform.php
+ *
+ * @テーマ名	hublog-c
+ * @更新日付	2012.02.15
+ *
+ */
 ?>
 <div id="addcontent-reform" class="clearfix">
-
-	<?php if (post_custom('reform-gallery')) : ?>
-	<section id="galleryslider" class="clearfix rel_lb">
-	<?php echo (do_shortcode('[gallery link="file" title="false" caption="true" description="true" size="large" type="flexslider"]')); ?>
-	</section><!--　-->
-	<?php endif ?>
-	
-	
-	<div id="reform-meta">
-		<div class="inbox">
+  <?php if (post_custom('reform-gallery')) : ?>
+  <section id="galleryslider" class="clearfix rel_lb">
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/js/slick/slick.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/js/slick/slick-theme.css" media="screen" />
+    <script src="<?php bloginfo('stylesheet_directory'); ?>/js/slick/slick.min.js"></script> 
+    <script>
+//タグにclass追加
+$(function(){
+$('#galleryslider .gallery-size-large').addClass('slider_thumb slider'); 
+});
+$(function(){
+$('#galleryslider .gallery-size-thumbnail').addClass('thumb'); 
+});
 		
-			<?php if (post_custom('feature')) : ?>
-			<div class="icon-features clearfix"><?php get_template_part('icon-features'); ?></div>
-			<?php endif ?>
+//slick設定
+$(document).on('ready', function() {
+  $('.slider_thumb').slick({
+      arrows:true,
+	  dots: true,
+      asNavFor:'.thumb',
+          responsive: [{
+               breakpoint: 768,
+                    settings: {
+//      arrows:false,
+               }
+          }
+          ]	  
+  })
+	;
+  $('.thumb').slick({
+      asNavFor:'.slider_thumb',
+      focusOnSelect: true,
+//      slidesToShow:12,
+      arrows:false,
+          responsive: [{
+               breakpoint: 767,
+                    settings: {
+      arrows:true,
+//      slidesToShow:6,
+      slidesToScroll:1,
+               }
+          }
+          ]	  
+  });
 
-			
-			<?php if (post_custom('reform-name')) : ?>
-			<span class="example-area_name">[
-			<span class="example-area"><?php echo post_custom('reform-area'); ?></span>&nbsp;&nbsp; 
-			<span class="example-name"><?php echo post_custom('reform-name'); ?></span>
-			]
-			</span>
-			
-			<?php endif ?>
-			
-			<?php if (post_custom('reform-madori')) : ?>
-			<span class="example-yuka">間取：<?php echo post_custom('reform-madori'); ?></span>
-			<?php endif ?>
-			
-			<?php if (post_custom('reform-yuka')) : ?>
-			<span class="example-yuka">総工事床面積：<?php echo post_custom('reform-yuka'); ?></span>
-			<?php endif ?>
-			
-			
-			<?php if (post_custom('reform-kasho')) : ?>
-			<span class="reform-kasho">施工個所：<?php echo post_custom('reform-kasho'); ?></span>
-			<?php endif ?>
-			
-			<?php if (post_custom('reform-yosan')) : ?>
-			<span class="example-yosan">工事予算：<?php echo post_custom('reform-yosan'); ?>万円</span>
-			<?php endif ?>
-		</div><!--inbox-->
-	
-	
-		<dl class="reform-youbou">
-			<dt class="title">お客様のご要望・お悩み</dt>
-			<dd class="postcustom">
-			<?php echo wpautop(post_custom('reform-youbou')); ?>
-			</dd>
-		</dl><!--reform-youbou-->
+});
+
 		
-		<dl class="reform-kaiketsusaku">
-			<dt class="title"><?php echo get_option('profile_shop_name'); ?>からの解決策</dt>
-			<dd><?php echo wpautop(post_custom('reform-kaiketsusaku')); ?>
-			</dd>
-		</dl>
+//サムネイル表示の調整	
+	
+var windowWidth = $(window).width();
+var windowSm = 768;
+if (windowWidth <= windowSm) {
+$(function () {
+let slidesToShowNum = 6; //slidesToShowに設定したい値を挿入
+ /* slidesToShowより投稿が少ない場合の処理▽ */
+let item = $('#galleryslider .gallery-size-thumbnail dl').length; //dlの個数を取得
+if (item <= slidesToShowNum) {
+for ( i = 0 ; i <= slidesToShowNum + 1 - item ; i++) { //足りていない要素数分、後ろに複製
+$('#galleryslider .gallery-size-thumbnail dl:nth-child(' + i + ')').clone().appendTo('#galleryslider .gallery-size-thumbnail');
+  }
+ } /* slidesToShowより投稿が少ない場合の処理△ */
 
-	</div><!--reform-meta-->
+ $('#galleryslider .gallery-size-thumbnail').slick({
+  slidesToShow: slidesToShowNum, //slidesToShowNumに設定した値が入る
+ });
+});
 	
-	
-</div><!--addcontent-reform-->
-	
-	
+} else {
+//横幅768px以上（PC、タブレット）に適用させるJavaScriptを記述
+$(function () {
+let slidesToShowNum = 12; //slidesToShowに設定したい値を挿入
+ /* slidesToShowより投稿が少ない場合の処理▽ */
+let item = $('#galleryslider .gallery-size-thumbnail dl').length; //liの個数を取得
+if (item <= slidesToShowNum) {
+for ( i = 0 ; i <= slidesToShowNum + 1 - item ; i++) { //足りていない要素数分、後ろに複製
+$('#galleryslider .gallery-size-thumbnail dl:nth-child(' + i + ')').clone().appendTo('#galleryslider .gallery-size-thumbnail');
+  }
+ }
+ /* slidesToShowより投稿が少ない場合の処理△ */
+ $('#galleryslider .gallery-size-thumbnail').slick({
+  slidesToShow: slidesToShowNum, //slidesToShowNumに設定した値が入る
+ });
+});}	
+</script>
+    <?php
+    $id = $post->ID;
+    if ( empty( $exclude ) ) {
+      $eximages = get_children( array( 'post_parent' => $id, 'post_type' => 'attachment', 'post_mime_type' => 'image', 'numberposts' => -1 ) );
+      foreach ( $eximages as $eximage ) {
+        $post_custom = get_post_custom( $eximage->ID );
+        if ( isset( $post_custom[ 'exclude' ] ) ) {
+          $excludes[] = $eximage->ID;
+        }
+      }
+      if ( isset( $excludes ) && !empty( $excludes ) ) {
+        $exclude = ( is_array( $excludes ) ) ? join( ',', $excludes ) : '';
+      }
+    };
+    ?>
+    <?php echo (do_shortcode('[gallery columns="0" link="file" title="true" caption="true" description="true" size="large"  exclude='.$exclude.']')); ?> <?php echo (do_shortcode('[gallery columns="0" link="none" title="false" caption="false" description="false" size="thumbnail"  exclude='.$exclude.']')); ?> </section>
+  <!--　-->
+  <?php endif ?>
+  <div id="reform-meta">
+    <div class="inbox">
+      <?php if (post_custom('feature')) : ?>
+      <div class="icon-features clearfix">
+        <?php get_template_part('icon-features'); ?>
+      </div>
+      <?php endif ?>
+      <?php if (post_custom('reform-name')) : ?>
+      <span class="example-area_name">[ <span class="example-area"><?php echo post_custom('reform-area'); ?></span>&nbsp;&nbsp; <span class="example-name"><?php echo post_custom('reform-name'); ?></span> ] </span>
+      <?php endif ?>
+      <?php if (post_custom('reform-madori')) : ?>
+      <span class="example-yuka">間取：<?php echo post_custom('reform-madori'); ?></span>
+      <?php endif ?>
+      <?php if (post_custom('reform-yuka')) : ?>
+      <span class="example-yuka">総工事床面積：<?php echo post_custom('reform-yuka'); ?></span>
+      <?php endif ?>
+      <?php if (post_custom('reform-kasho')) : ?>
+      <span class="reform-kasho">施工個所：<?php echo post_custom('reform-kasho'); ?></span>
+      <?php endif ?>
+      <?php if (post_custom('reform-yosan')) : ?>
+      <span class="example-yosan">工事予算：<?php echo post_custom('reform-yosan'); ?>万円</span>
+      <?php endif ?>
+    </div>
+    <!--inbox-->
+    
+    <dl class="reform-youbou">
+      <dt class="title">お客様のご要望・お悩み</dt>
+      <dd class="postcustom"> <?php echo wpautop(post_custom('reform-youbou')); ?> </dd>
+    </dl>
+    <!--reform-youbou-->
+    
+    <dl class="reform-kaiketsusaku">
+      <dt class="title"><?php echo get_option('profile_shop_name'); ?>からの解決策</dt>
+      <dd><?php echo wpautop(post_custom('reform-kaiketsusaku')); ?> </dd>
+    </dl>
+  </div>
+  <!--reform-meta--> 
+  
+</div>
+<!--addcontent-reform--> 
+
 <!--　beforeafter表示-->
-<div id="before-after" class="rel_lb">
-	<table>
-		<tbody>
-		<?php if (post_custom('01after-image')) : ?>
-		<tr class="title">
-			<th class="before">施工前</th>
-			<th>&nbsp;</th>
-			<th class="after">施工後</th>
-		</tr>
-
-		<tr id="before-after_01">
-			<td class="before-image" id="before-image_01">
-
-				<?php echo wp_get_attachment_link(post_custom('01before-image'),'medium');?>
-				<div class="description" id="description_01">
-				<?php echo wpautop(post_custom('01description')); ?>
-				</div>					
-
-			</td>
-			<td class="arrow">
-			<span><img src="<?php bloginfo('template_directory'); ?>/images/beforeafter-arrow.png" alt="→"/></span>
-			</td>
-
-			<td class="after-image" id="after-image_01">
-				<?php echo wp_get_attachment_link(post_custom('01after-image'),'large');?>
-			<?php //echo wp_get_attachment_link(get_field('01after-image'),array(500, 500));?>
-			</td>
-		</tr>
-		
-		<?php endif //01before-after ?>
-
-
-
-		<?php if (post_custom('02after-image')) : ?>
-
-		<tr id="before-after_02">
-			<td class="before-image" id="before-image_02">
-
-				<?php echo wp_get_attachment_link(post_custom('02before-image'),'medium');?>
-				<div class="description" id="description_02">
-				<?php echo wpautop(post_custom('02description')); ?>
-				</div>					
-
-			</td>
-			<td class="arrow">
-			<span><img src="<?php bloginfo('template_directory'); ?>/images/beforeafter-arrow.png" alt="→"/></span>
-			</td>
-
-			<td class="after-image" id="after-image_02">
-				<?php echo wp_get_attachment_link(post_custom('02after-image'),'large');?>
-			</td>
-		</tr>
-		
-		<?php endif //02before-after ?>
-
-
-		<?php if (post_custom('03after-image')) : ?>
-
-		<tr id="before-after_03">
-			<td class="before-image" id="before-image_03">
-
-				<?php echo wp_get_attachment_link(post_custom('03before-image'),'medium');?>
-				<div class="description" id="description_03">
-				<?php echo wpautop(post_custom('03description')); ?>
-				</div>					
-
-			</td>
-			<td class="arrow">
-			<span><img src="<?php bloginfo('template_directory'); ?>/images/beforeafter-arrow.png" alt="→"/></span>
-			</td>
-
-			<td class="after-image" id="after-image_03">
-				<?php echo wp_get_attachment_link(post_custom('03after-image'),'large');?>
-			</td>
-		</tr>
-		
-		<?php endif //03before-after ?>
-
-
-
-		<?php if (post_custom('04after-image')) : ?>
-
-		<tr id="before-after_04">
-			<td class="before-image" id="before-image_04">
-
-				<?php echo wp_get_attachment_link(post_custom('04before-image'),'medium');?>
-				<div class="description" id="description_04">
-				<?php echo wpautop(post_custom('04description')); ?>
-				</div>					
-
-			</td>
-			<td class="arrow">
-			<span><img src="<?php bloginfo('template_directory'); ?>/images/beforeafter-arrow.png" alt="→"/></span>
-			</td>
-
-			<td class="after-image" id="after-image_04">
-				<?php echo wp_get_attachment_link(post_custom('04after-image'),'large');?>
-			</td>
-		</tr>
-		
-		<?php endif //04before-after ?>
-		
-		
-		<?php if (post_custom('05after-image')) : ?>
-
-		<tr id="before-after_05">
-			<td class="before-image" id="before-image_05">
-
-				<?php echo wp_get_attachment_link(post_custom('05before-image'),'medium');?>
-				<div class="description" id="description_05">
-				<?php echo wpautop(post_custom('05description')); ?>
-				</div>					
-
-			</td>
-			<td class="arrow">
-			<span><img src="<?php bloginfo('template_directory'); ?>/images/beforeafter-arrow.png" alt="→"/></span>
-			</td>
-
-			<td class="after-image" id="after-image_05">
-				<?php echo wp_get_attachment_link(post_custom('05after-image'),'large');?>
-			</td>
-		</tr>
-		
-		<?php endif //05before-after ?>		
-		
-		</tbody>
-	</table>
-
-</div>			
+<div id="before-after" class="rel_lb py-5">
+  <?php
+  $ba = SCF::get( 'ba' );
+  foreach ( $ba as $fields ): ?>
+  <?php
+  if ( $fields[ 'ba_before' ] !== ""
+    and $fields[ 'add_contents' ] !== "" ): __COMPILER_HALT_OFFSET__ ?>
+  <?php
+  $ba_before = $fields[ 'ba_before' ];
+  $ba_after = $fields[ 'ba_after' ];
+  ?>
+  <div class="row container mx-auto p-0 ba-item py-3 mb-5 border-bottom">
+    <div class="col-12 p-0">
+      <h3 class="noicon ttl"><?php echo  $fields['ba_title']; ?></h3>
+      <div class="description pb-4" id="description_01"> <?php echo nl2br( $fields['ba_description']); ?> </div>
+    </div>
+    <div class="col-4 px-0 before-image">
+      <figure class="w100"> <span class="ttl">施工前</span> <a href="<?php echo wp_get_attachment_url($ba_before,'large'); ?>"><img src="<?php echo wp_get_attachment_url($ba_before,'thumbnail'); ?>"></a> </figure>
+    </div>
+    <div class="col-1 px-0 arrow text-center"> <i class="fa-solid fa-circle-right"></i> </div>
+    <div class="col-7 px-0 after-image">
+      <figure class="w100"> <span class="ttl">施工後</span> <a href="<?php echo wp_get_attachment_url($ba_after,'large'); ?>"><img src="<?php echo wp_get_attachment_url($ba_after,'laege'); ?>"></a> </figure>
+    </div>
+  </div>
+  <?php endif;?>
+  <?php endforeach;?>
+</div>
 <!--beforeafterここまで-->
