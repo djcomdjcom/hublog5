@@ -457,6 +457,7 @@ padding: 0.75rem 1vw;
 transition: .15s;
 z-index: 999999;
 position: relative;
+text-decoration: none;
 }
 #bunjo_content-nav li a.current{
 text-decoration: none;
