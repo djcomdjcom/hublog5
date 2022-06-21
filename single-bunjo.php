@@ -458,12 +458,18 @@ transition: .15s;
 z-index: 999999;
 position: relative;
 }
-#bunjo_content-nav li a.current,
-#bunjo_content-nav li a:hover{
+#bunjo_content-nav li a.current{
 text-decoration: none;
 background: #C9A063;
 }
 
+	
+@media screen and (min-width:992px) {
+#bunjo_content-nav li a:hover{
+text-decoration: none;
+background: #C9A063;
+	}
+	}
 #bunjo_content-nav li a > span{
 display: block;
 padding: 0 0.5em;
