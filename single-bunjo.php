@@ -35,6 +35,9 @@ $post_id = get_the_ID();
     <?php $i++;endforeach; ?>
     <li><a href="#popup_gallery"><span>OTHER WORKS</span><span class="small">施工事例</span></a></li>
   </ul>
+	
+	
+	
   <?php endif;  wp_reset_postdata();?>
 </nav>
 <script>
@@ -159,8 +162,6 @@ $(function() {
     return false;
   });
 });	
-	
-				
 </script>
 <?php elseif ( is_object_in_term($post->ID,'bunjo_role','bunjo-gallery') ): ?>
 <div id="galleryslider" class="sliderArea rel_lb">
@@ -301,7 +302,8 @@ query_posts( array(
 	
 	
 $(function() {
-    // ナビゲーションのリンクを指定
+//var set = 300;//ウインドウ上部からどれぐらいの位置で変化させるか
+	// ナビゲーションのリンクを指定
    var navLink = $('#bunjo_content-nav li a'); 
     // 各コンテンツのページ上部からの開始位置と終了位置を配列に格納しておく
    var contentsArr = new Array();
@@ -402,352 +404,352 @@ get_footer();
 @media screen and (max-width:575.98px) {
 }
 #jp-relatedposts{
-		display: none !important;
-	}
-	#globalheader{
-		visibility: hidden;
-		height: 30px;
-		overflow: hidden;
-	}
-	#headnav{
-		display: none;
-	}
-	.anchor{
-		margin-top: -6.5em;
-		padding-top: 6.0em;
-	}
-	
-	#bunjo_content-nav{
-		position: fixed;
-		box-sizing: border-box;
-		left: 0;
-		top: 0;
-		right: 0;
-		width: 100%;
-		padding-right: 60px;
-		background: #5F401D;
-		z-index: 399;
-	}
-	
-		#bunjo_content-nav ul{
-			font-size: 0;
-			letter-spacing: 0;
-			padding: 0;
-			margin: 0;
-			color: #fff;
+display: none !important;
+}
+#globalheader{
+visibility: hidden;
+height: 30px;
+overflow: hidden;
+}
+#headnav{
+display: none;
+}
+.anchor{
+margin-top: -6.5em;
+padding-top: 6.0em;
+}
 
-			margin: 0 auto;
-			
-	}
-		#bunjo_content-nav li{
-			padding: 0;
-			margin: 0;
-			width:calc( (100% - 60px) / 6 );
-			text-align: center;
-	}
-	#bunjo_content-nav li *{
-		font-size: 1.5vw;
-	}
-	#bunjo_content-nav li a{
-		color: #fff;
-		display: block;
-		padding: 0.75rem 1vw;
-		transition: .15s;
-			z-index: 999999;
-			position: relative;
-	}
-	#bunjo_content-nav li a.current,
-	#bunjo_content-nav li a:hover{
-		text-decoration: none;
-		background: #C9A063;
-	}
-	
-	#bunjo_content-nav li a > span{
-		display: block;
-		padding: 0 0.5em;
-		white-space: nowrap;
-	}
-	#bunjo_content-nav li a > span.small{
-		font-size: 0.8vw;
-	}
-	
-	
-	#wrapper .btn-gnavi span{
-		background:rgba(255,255,255,.7);
-	}
-	
-	.btn-gnavi-menu{
-		color:rgba(255,255,255,.7);
-	}
-	
-	
-	
+#bunjo_content-nav{
+position: fixed;
+box-sizing: border-box;
+left: 0;
+top: 0;
+right: 0;
+width: 100%;
+padding-right: 60px;
+background: #5F401D;
+z-index: 399;
+}
+
+#bunjo_content-nav ul{
+font-size: 0;
+letter-spacing: 0;
+padding: 0;
+margin: 0;
+color: #fff;
+
+margin: 0 auto;
+
+}
+#bunjo_content-nav li{
+padding: 0;
+margin: 0;
+width:calc( (100% - 60px) / 6 );
+text-align: center;
+}
+#bunjo_content-nav li *{
+font-size: 1.5vw;
+}
+#bunjo_content-nav li a{
+color: #fff;
+display: block;
+padding: 0.75rem 1vw;
+transition: .15s;
+z-index: 999999;
+position: relative;
+}
+#bunjo_content-nav li a.current,
+#bunjo_content-nav li a:hover{
+text-decoration: none;
+background: #C9A063;
+}
+
+#bunjo_content-nav li a > span{
+display: block;
+padding: 0 0.5em;
+white-space: nowrap;
+}
+#bunjo_content-nav li a > span.small{
+font-size: 0.8vw;
+}
+
+
+#wrapper .btn-gnavi span{
+background:rgba(255,255,255,.7);
+}
+
+.btn-gnavi-menu{
+color:rgba(255,255,255,.7);
+}
+
+
+
 @media screen and (min-width:1260px) {
-	#bunjo_content-nav li *{
-		font-size: 1.2rem;
-	}
-	#bunjo_content-nav{
-		padding-right: 0;
-	}
-	
-		#bunjo_content-nav li{
-			width:calc( 100% / 6 );
-	}
-	}
-	
+#bunjo_content-nav li *{
+font-size: 1.2rem;
+}
+#bunjo_content-nav{
+padding-right: 0;
+}
+
+#bunjo_content-nav li{
+width:calc( 100% / 6 );
+}
+}
+
 @media screen and (max-width:767.98px) {
-	#bunjo_content-nav{
-		width: 100%;
-		padding-right: 0;
-		padding-left: 50px;
-	}
-	#bunjo_content-nav li a {
-		padding: 0.4vw 0;
-		font-size: 2vw;
-	}
-	
-	#bunjo_content-nav li{
-		width: 50%;
-		text-align: left;
-		font-size: 1.5rem;
-	}
-	#bunjo_content-nav li a span:before{
-		  content: "\f054";
-		  font-family: FontAwesome;
-		margin-right: 0.5em;
-		display: inline-block;
-	}
-	#bunjo_content-nav li a > span{
-		display: none;
-	}
-	#bunjo_content-nav li a > span.small{
-		display: block;
-		font-size: 3.0vw;
-	}	
-	
-	
-	}
-	
+#bunjo_content-nav{
+width: 100%;
+padding-right: 0;
+padding-left: 50px;
+}
+#bunjo_content-nav li a {
+padding: 0.4vw 0;
+font-size: 2vw;
+}
+
+#bunjo_content-nav li{
+width: 50%;
+text-align: left;
+font-size: 1.5rem;
+}
+#bunjo_content-nav li a span:before{
+content: "\f054";
+font-family: FontAwesome;
+margin-right: 0.5em;
+display: inline-block;
+}
+#bunjo_content-nav li a > span{
+display: none;
+}
+#bunjo_content-nav li a > span.small{
+display: block;
+font-size: 3.0vw;
+}	
+
+
+}
+
 @media screen and (max-width:575.98px) {
-	#bunjo_content-nav li a > span.small{
-		display: block;
-		font-size: 3.3vw;
-	}	
-	}
-	
-	.entry-header .entry-title{
-		background: none;
-		font-size: 1rem;
-		text-align: center;
-		padding-top: 3em;
-		margin-bottom: -3em;
-		padding: 0;
-		margin-top: 3em;
-		margin-bottom: -3em;
-	}
+#bunjo_content-nav li a > span.small{
+display: block;
+font-size: 3.3vw;
+}	
+}
+
+.entry-header .entry-title{
+background: none;
+font-size: 1rem;
+text-align: center;
+padding-top: 3em;
+margin-bottom: -3em;
+padding: 0;
+margin-top: 3em;
+margin-bottom: -3em;
+}
 .bunjo_role	.entry-content{
-	position: relative;
-	}
+position: relative;
+}
 .bunjo_role	.entry-content .post-edit-link{
-	position: absolute;
-	right: 3px;
-	top: 5em;
-	display: inline-block;
-	padding: 0.2em 1em;
-	background: #fff;
-		
-	}
+position: absolute;
+right: 3px;
+top: 5em;
+display: inline-block;
+padding: 0.2em 1em;
+background: #fff;
+
+}
 .bunjo_role	.entry-content h1,
 .bunjo_role	.entry-content h2,
 .bunjo_role	.entry-content h3,
 .bunjo_role	.entry-content h4,
 .bunjo_role	.entry-content h5{
-		border: none;
-		padding-left: 0;
-		padding-right: 0;
-		background: none;
-	font-weight: bold;
-	}
-	
-	.bunjo_role-header {
-		background: #5F401D;
-	}
-	.bunjo_role-header h2{
-		text-align: center;
-		color: #fff;
-		line-height: 1.6em;
-		margin-bottom: 0;
-	}
-	.bunjo_role-header h2 span{
-		display: block;
-		font-size: 1.8rem;
-		line-height: 1.7em;
-	}
-	.bunjo_role-header h2 span.small{
-		font-size: 0.8rem;
-	}
+border: none;
+padding-left: 0;
+padding-right: 0;
+background: none;
+font-weight: bold;
+}
 
-	#bunjo_role-1{
-		background: url("<?php bloginfo('stylesheet_directory'); ?>/images/bg_check.png");
-	}
-	
-	.bunjo_role	.the_content{
-		padding-top: 2em;
-		margin-top: 0;
-	}
-	
+.bunjo_role-header {
+background: #5F401D;
+}
+.bunjo_role-header h2{
+text-align: center;
+color: #fff;
+line-height: 1.6em;
+margin-bottom: 0;
+}
+.bunjo_role-header h2 span{
+display: block;
+font-size: 1.8rem;
+line-height: 1.7em;
+}
+.bunjo_role-header h2 span.small{
+font-size: 0.8rem;
+}
+
+#bunjo_role-1{
+background: url("<?php bloginfo('stylesheet_directory'); ?>/images/bg_check.png");
+}
+
+.bunjo_role	.the_content{
+padding-top: 2em;
+margin-top: 0;
+}
+
 /*concept*/	
-	.bunjo_role.role-bunjo-concept{
-		margin-bottom: 3em;
-	}
+.bunjo_role.role-bunjo-concept{
+margin-bottom: 3em;
+}
 /*PERFORMANCE*/
-	.bunjo_role.role-bunjo-performance{}
-	.bunjo_role.role-bunjo-performance .the_content{
-		padding-top: 0;
-	}
-	.bunjo_role.role-bunjo-performance .the_content >  .inbox{
-		border-left:2px solid #5F401D;
-		border-right:2px solid #5F401D;
-		
-		
-		border-bottom:2px solid #5F401D;
-		padding: 3em 2em 2em ;
-	}
-	
-	.bunjo_role.role-bunjo-performance .tab{
-	}	
-	.bunjo_role.role-bunjo-performance .tab,
-	.bunjo_role.role-bunjo-performance .tab > li{
-		padding: 0;
-		font-size: 0;
-		letter-spacing: 0;
-	}
-	.bunjo_role.role-bunjo-performance .tab > li{
-		display: block;
-		margin: 0;
-	}
-	.bunjo_role.role-bunjo-performance .tab.tab-col3 > li{
-		width: calc( 100% / 3);
-	}
-	.bunjo_role.role-bunjo-performance .tab.tab-col2 > li{
-		width: calc( 100% / 2);
-	}
-	.bunjo_role.role-bunjo-performance .tab > li a{
-		display: block;
-		text-align: center;
-		padding:0.8em  0 ;
-		background:  #fff;
-		color: #5F401D;
-		font-size: 1.2rem;
-		border-left: 1px solid #5F401D;
-		border-right: 1px solid #5F401D;
-		border-bottom: 2px solid #5F401D;
-		text-decoration: none;
-	}
-	.bunjo_role.role-bunjo-performance .tab > li a:after{
-		  content: "\f054";
-		  font-family: FontAwesome;
-		display: inline-block;
-		margin-left: 0.5em;
-	}
-	
-	.bunjo_role.role-bunjo-performance .tab > li:first-child a{
-		border-left: 2px solid #5F401D;
-	}
-	.bunjo_role.role-bunjo-performance .tab > li:ladt-child a{
-		border-right: 2px solid #5F401D;
-	}
-	.bunjo_role.role-bunjo-performance .tab > li.active a{
-		background: #5F401D;
-		color: #fff;
-	}
-	.tab_ttl{
-		text-align: center;
-		margin-top: 1.5em;
-	}
-	.tab_ttl:before{
-		content: "";
-		display: block;
-		border-top: 1px solid #ccc;
-		position: relative;
-		text-align: center;
-	}
-	.tab_ttl span{
-		display: inline-block ;
-		padding: 0 1em; 
-		background: #fff;
-		position: relative;
-		top: -1em;
-	}
-	.tabContents {
-  display: none;
+.bunjo_role.role-bunjo-performance{}
+.bunjo_role.role-bunjo-performance .the_content{
+padding-top: 0;
+}
+.bunjo_role.role-bunjo-performance .the_content >  .inbox{
+border-left:2px solid #5F401D;
+border-right:2px solid #5F401D;
+
+
+border-bottom:2px solid #5F401D;
+padding: 3em 2em 2em ;
+}
+
+.bunjo_role.role-bunjo-performance .tab{
+}	
+.bunjo_role.role-bunjo-performance .tab,
+.bunjo_role.role-bunjo-performance .tab > li{
+padding: 0;
+font-size: 0;
+letter-spacing: 0;
+}
+.bunjo_role.role-bunjo-performance .tab > li{
+display: block;
+margin: 0;
+}
+.bunjo_role.role-bunjo-performance .tab.tab-col3 > li{
+width: calc( 100% / 3);
+}
+.bunjo_role.role-bunjo-performance .tab.tab-col2 > li{
+width: calc( 100% / 2);
+}
+.bunjo_role.role-bunjo-performance .tab > li a{
+display: block;
+text-align: center;
+padding:0.8em  0 ;
+background:  #fff;
+color: #5F401D;
+font-size: 1.2rem;
+border-left: 1px solid #5F401D;
+border-right: 1px solid #5F401D;
+border-bottom: 2px solid #5F401D;
+text-decoration: none;
+}
+.bunjo_role.role-bunjo-performance .tab > li a:after{
+content: "\f054";
+font-family: FontAwesome;
+display: inline-block;
+margin-left: 0.5em;
+}
+
+.bunjo_role.role-bunjo-performance .tab > li:first-child a{
+border-left: 2px solid #5F401D;
+}
+.bunjo_role.role-bunjo-performance .tab > li:ladt-child a{
+border-right: 2px solid #5F401D;
+}
+.bunjo_role.role-bunjo-performance .tab > li.active a{
+background: #5F401D;
+color: #fff;
+}
+.tab_ttl{
+text-align: center;
+margin-top: 1.5em;
+}
+.tab_ttl:before{
+content: "";
+display: block;
+border-top: 1px solid #ccc;
+position: relative;
+text-align: center;
+}
+.tab_ttl span{
+display: inline-block ;
+padding: 0 1em; 
+background: #fff;
+position: relative;
+top: -1em;
+}
+.tabContents {
+display: none;
 }
 .tabContents.active {
-  display: block;
+display: block;
 }
-	
-	.role-bunjo-performance .tabContents.anchor{
-			padding-top: 8em;
-		}
 
-	
-	/*EQUIPMENT*/
-	.bunjo_role.role-bunjo-equipment .the_content{
-		border:2px solid #5F401D;
-		padding: 2em;
-		margin-top: 0;
-
-	}
-	
-	/*LOCATION*/
-	.bunjo_role.role-bunjo-location .gallery dl + br {
-		display: none;
-	}
-	
-	.bunjo_role.role-bunjo-location .gallery {
-  width: 100%;
-  max-width: 1200px;
-  margin: auto;
-  padding-left: 0;
-  display: -webkit-box;
-  display: -moz-box;
+.role-bunjo-performance .tabContents.anchor{
+padding-top: 8em;
+}
 
 
-  display: -ms-box;
-  display: -webkit-flexbox;
-  display: -moz-flexbox;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: flex;
-  -webkit-box-lines: multiple;
-  -moz-box-lines: multiple;
-  -webkit-flex-wrap: wrap;
-  -moz-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+/*EQUIPMENT*/
+.bunjo_role.role-bunjo-equipment .the_content{
+border:2px solid #5F401D;
+padding: 2em;
+margin-top: 0;
+
+}
+
+/*LOCATION*/
+.bunjo_role.role-bunjo-location .gallery dl + br {
+display: none;
+}
+
+.bunjo_role.role-bunjo-location .gallery {
+width: 100%;
+max-width: 1200px;
+margin: auto;
+padding-left: 0;
+display: -webkit-box;
+display: -moz-box;
+
+
+display: -ms-box;
+display: -webkit-flexbox;
+display: -moz-flexbox;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: -moz-flex;
+display: -ms-flex;
+display: flex;
+-webkit-box-lines: multiple;
+-moz-box-lines: multiple;
+-webkit-flex-wrap: wrap;
+-moz-flex-wrap: wrap;
+-ms-flex-wrap: wrap;
+flex-wrap: wrap;
 }
 body.bunjo-template-default .bunjo_role.role-bunjo-location .gallery > * {
-	box-sizing: border-box;
-	width: 24% !important ;
-	margin:0.5%;
-	padding: 0;
-	vertical-align: top;
-	position: relative;
+box-sizing: border-box;
+width: 24% !important ;
+margin:0.5%;
+padding: 0;
+vertical-align: top;
+position: relative;
 }	
 
-	.bunjo_role.role-bunjo-location	#galleryslider{
-		padding: 0;
-		background:transparent;
-	}
-	.bunjo_role.role-bunjo-location .gallery dl{
-		padding:0 0 1em 0 !important;
-	}	
-	.bunjo_role.role-bunjo-location .gallery dl dd{
-		line-height: 1.5em;
-	}	
-	
+.bunjo_role.role-bunjo-location	#galleryslider{
+padding: 0;
+background:transparent;
+}
+.bunjo_role.role-bunjo-location .gallery dl{
+padding:0 0 1em 0 !important;
+}	
+.bunjo_role.role-bunjo-location .gallery dl dd{
+line-height: 1.5em;
+}	
+
 .bunjo_role.role-bunjo-location .gallery dl dt{
 display: block;
 position: relative;
@@ -758,161 +760,161 @@ padding-top: 65%;/*　トリミングしたい枠の高さ　*/
 }
 
 .bunjo_role.role-bunjo-location .gallery dl dt a img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  display: block;
+position: absolute;
+top: 50%;
+left: 50%;
+-webkit-transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+transform: translate(-50%, -50%);
+display: block;
 }
-	
-	
-/*FORM*/	
-	.bunjo_role.role-bunjo-concept  .to_form.btn a{
-		margin-bottom: 0;
-	}
 
-		.bunjo_role .to_form.btn a{
-		padding: 0.7em;
-		font-size: 1.3rem;
-		border-radius: 0.5em;
-		background: #22AC38;
-		color: #fff;
-		max-width: 25em;
-		margin: 0 auto 4em;
-		display: block;
-	}
-	.bunjo_role .to_form.btn a:before{
-  content: "\f0e0";
-  font-family: FontAwesome;
-		margin-right: 1em;
-		
-	}
-	.bunjo_role .to_form.btn a:after{
-  content: "\f0da";
-  font-family: FontAwesome;
-		margin-left: 1em;
-	}
-	
-	#form header h2{
-		font-size: 1.5em;
-	}
-	
+
+/*FORM*/	
+.bunjo_role.role-bunjo-concept  .to_form.btn a{
+margin-bottom: 0;
+}
+
+.bunjo_role .to_form.btn a{
+padding: 0.7em;
+font-size: 1.3rem;
+border-radius: 0.5em;
+background: #22AC38;
+color: #fff;
+max-width: 25em;
+margin: 0 auto 4em;
+display: block;
+}
+.bunjo_role .to_form.btn a:before{
+content: "\f0e0";
+font-family: FontAwesome;
+margin-right: 1em;
+
+}
+.bunjo_role .to_form.btn a:after{
+content: "\f0da";
+font-family: FontAwesome;
+margin-left: 1em;
+}
+
+#form header h2{
+font-size: 1.5em;
+}
+
 /*POPUP GALLERY EXAMPEL*/
-	
-	#popup_gallery{
-		color: #fff;
-		margin-bottom: 3em;
-	}
-	#popup_gallery header{
-		text-align: center;
-	}
-	#popup_gallery > .inbox{
-		background: #C9A063;
-	}
-	#popup_gallery .content-header{
-		color: #fff;
-		padding: 1em 0;
-	}
-	#popup_gallery.posts{
-		text-align: center;
-	}	
-	#popup_gallery dl.gallery-item,
-	#popup_gallery dl + br{
-		display: none;
-	}
-	#popup_gallery dl.gallery-item:first-child{
-		display: block;
-		float: none;
-	}
-	
+
+#popup_gallery{
+color: #fff;
+margin-bottom: 3em;
+}
+#popup_gallery header{
+text-align: center;
+}
+#popup_gallery > .inbox{
+background: #C9A063;
+}
+#popup_gallery .content-header{
+color: #fff;
+padding: 1em 0;
+}
+#popup_gallery.posts{
+text-align: center;
+}	
+#popup_gallery dl.gallery-item,
+#popup_gallery dl + br{
+display: none;
+}
+#popup_gallery dl.gallery-item:first-child{
+display: block;
+float: none;
+}
+
 .posts .post.style-popup_gallery{
-		display: inline-block;
-		width: 17%;
-	margin: 0 1%;
-	vertical-align:top;
-	text-align: center;
-	}
-	
+display: inline-block;
+width: 17%;
+margin: 0 1%;
+vertical-align:top;
+text-align: center;
+}
+
 @media screen and (max-width: 767.98px) {
 .posts .post.style-popup_gallery{
-		width: 47%;
-	}
-	}
-	#popup_gallery dl{
-		background: transparent;
-	}
-	#popup_gallery dl dt a{
+width: 47%;
+}
+}
+#popup_gallery dl{
+background: transparent;
+}
+#popup_gallery dl dt a{
 display: block;
 background: rgba(0,0,0,0.1);
 position: relative;
 overflow: hidden;
 width: 100%;/*　トリミングしたい枠の幅　*/
 padding-top: 100%;/*　トリミングしたい枠の高さ　*/
-		border-radius: 7px;
+border-radius: 7px;
 
 }
-	#popup_gallery .gallery .gallery-icon{
-		padding-top: 0;
-	}
-	
-	
-	#popup_gallery dl dt a img{
-	display: block;
-	width: 100%;
-	height: auto;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	-webkit-transform: translate(-50%, -50%);
-	-ms-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
-	display: block;
+#popup_gallery .gallery .gallery-icon{
+padding-top: 0;
 }
-	
-	
-	.bunjo_role.role-bunjo-performance .tab li{
-		width: 100% !important;
-	}	
-	.bunjo_role.role-bunjo-performance .tab li a{
-		padding: 0.2em 0;
-		border-bottom: 2px solid #5F401D;
-		border-left: 2px solid #5F401D;
-		border-right: 2px solid #5F401D;
-	}
-	}
-	
+
+
+#popup_gallery dl dt a img{
+display: block;
+width: 100%;
+height: auto;
+position: absolute;
+top: 50%;
+left: 50%;
+-webkit-transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+transform: translate(-50%, -50%);
+display: block;
+}
+
+
+.bunjo_role.role-bunjo-performance .tab li{
+width: 100% !important;
+}	
+.bunjo_role.role-bunjo-performance .tab li a{
+padding: 0.2em 0;
+border-bottom: 2px solid #5F401D;
+border-left: 2px solid #5F401D;
+border-right: 2px solid #5F401D;
+}
+}
+
 @media screen and (max-width: 767.98px) {
-	.bunjo_role.role-bunjo-location .gallery .title{
-		display: none;
-	}
-	
-	.bunjo_role.role-bunjo-location .gallery dl{
-		padding-bottom: 0;
-	}
-	
-	#popup_gallery .style-popup_gallery .title{
-		display: none;
-	}
-	
-	.bunjo_role .to_form.btn a{
-		font-size: 1.1rem;
-	}
-		
-	}
-	
-	#galleryslider .slider_thumb .gallery-item:not(.slick-current){
-		height: 0;
-		overflow: hidden;
-		transition: .3s;
-	}
-	#galleryslider{
-		min-height: 80vh;
-	}
+.bunjo_role.role-bunjo-location .gallery .title{
+display: none;
+}
+
+.bunjo_role.role-bunjo-location .gallery dl{
+padding-bottom: 0;
+}
+
+#popup_gallery .style-popup_gallery .title{
+display: none;
+}
+
+.bunjo_role .to_form.btn a{
+font-size: 1.1rem;
+}
+
+}
+
+#galleryslider .slider_thumb .gallery-item:not(.slick-current){
+height: 0;
+overflow: hidden;
+transition: .3s;
+}
+#galleryslider{
+min-height: 80vh;
+}
 @media screen and (max-width:767.98px) {
-	#galleryslider{
-		min-height: 40vh;
+#galleryslider{
+min-height: 40vh;
 }
 	
 </style>
