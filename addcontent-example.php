@@ -1,11 +1,8 @@
 
-<article id="" class="clearfix section">
+<div id="" class="clearfix section">
   <?php if ( post_custom( 'renov-gallery' ) == 'gallery_off' ):  ?>
   <?php else:?>
-	
-	
-
-  <section id="galleryslider" class="sliderArea rel_lb">
+  <div id="galleryslider" class="sliderArea rel_lb">
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/js/slick/slick.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/js/slick/slick-theme.css" media="screen" />
     <script src="<?php bloginfo('stylesheet_directory'); ?>/js/slick/slick.min.js"></script> 
@@ -22,33 +19,10 @@ $('#galleryslider .gallery-size-thumbnail').addClass('thumb');
 $(document).on('ready', function() {
   $('.slider_thumb').slick({
       arrows:true,
-	  dots: true,
+	  dots:false,
       asNavFor:'.thumb',
-          responsive: [{
-               breakpoint: 768,
-                    settings: {
-//      arrows:false,
-               }
-          }
-          ]	  
   })
 	;
-  $('.thumb').slick({
-      asNavFor:'.slider_thumb',
-      focusOnSelect: true,
-//      slidesToShow:12,
-      arrows:false,
-          responsive: [{
-               breakpoint: 767,
-                    settings: {
-      arrows:true,
-//      slidesToShow:6,
-      slidesToScroll:1,
-               }
-          }
-          ]	  
-  });
-
 });
 
 		
@@ -89,13 +63,7 @@ $('#galleryslider .gallery-size-thumbnail dl:nth-child(' + i + ')').clone().appe
  });
 });}	
 
-
-
-	
-	
-</script>	  
-	  
-	  
+</script>
     <?php
     $id = $post->ID;
     if ( empty( $exclude ) ) {
@@ -111,14 +79,8 @@ $('#galleryslider .gallery-size-thumbnail dl:nth-child(' + i + ')').clone().appe
       }
     };
     ?>
-    <?php echo (do_shortcode('[gallery columns="0" link="file" title="true" caption="true" description="true" size="large"  exclude='.$exclude.']')); ?> <?php echo (do_shortcode('[gallery columns="0" link="none" title="false" caption="false" description="false" size="thumbnail"  exclude='.$exclude.']')); ?> </section>
-</article>
-
-
-
-
-
-
+    <?php echo (do_shortcode('[gallery columns="0" link="file" title="true" caption="true" description="true" size="large"  exclude='.$exclude.']')); ?> <?php echo (do_shortcode('[gallery columns="0" link="none" title="false" caption="false" description="false" size="thumbnail"  exclude='.$exclude.']')); ?> </div>
+</div>
 
 <!--example-slider-->
 
@@ -165,7 +127,6 @@ if ( post_custom( 'renov-gallery' ) == 'gallery_off' ):
   </div>
   <?php endif ; ?>
   <?php endif ; ?>
-
   <?php if (post_custom ('example-C') || post_custom ('example-Q') || post_custom ('example-UA') )  :?>
   <div class="clearfix example-meta spec">
     <?php if (post_custom('example-C')) :?>

@@ -28,30 +28,7 @@ $(document).on('ready', function() {
       arrows:true,
 	  dots: true,
       asNavFor:'.thumb',
-          responsive: [{
-               breakpoint: 768,
-                    settings: {
-//      arrows:false,
-               }
-          }
-          ]	  
   })
-	;
-  $('.thumb').slick({
-      asNavFor:'.slider_thumb',
-      focusOnSelect: true,
-//      slidesToShow:12,
-      arrows:false,
-          responsive: [{
-               breakpoint: 767,
-                    settings: {
-      arrows:true,
-//      slidesToShow:6,
-      slidesToScroll:1,
-               }
-          }
-          ]	  
-  });
 
 });
 
@@ -154,6 +131,10 @@ $('#galleryslider .gallery-size-thumbnail dl:nth-child(' + i + ')').clone().appe
 
 <!--　beforeafter表示-->
 <div id="before-after" class="rel_lb py-5">
+	
+<?php $customfield = SCF::get('ba'); ?>
+<?php if(!empty($customfield)): ?>
+	
   <?php
   $ba = SCF::get( 'ba' );
   foreach ( $ba as $fields ): ?>
@@ -184,5 +165,7 @@ $('#galleryslider .gallery-size-thumbnail dl:nth-child(' + i + ')').clone().appe
   </div>
   <?php endif;?>
   <?php endforeach;?>
+<?php endif; ?> 
+	
 </div>
 <!--beforeafterここまで-->
