@@ -13,10 +13,10 @@
 	
   <section id="globalheader">
 	  <div class="row wrapper mx-auto">
-    <div class="order-2 order-md-1 sitetitle col-8 col-sm-8 col-md-5 align-self-center"><a class="w100 maxw-360 mx-auto mx-md-0" href="/" ><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/sitetitle@2x.png" alt="<?php echo get_option('profile_corporate_name'); ?>"></a></div>
+    <div class="sitetitle order-2 order-md-1 col-6 col-sm-8 col-md-5 mx-0 mx-sm-auto align-self-center"><a class="w100 maxw-360 mx-auto mx-md-0" href="/" ><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/sitetitle@2x.png" alt="<?php echo get_option('profile_corporate_name'); ?>"></a></div>
 	  
 	  
-    <div class="order-1 order-md-2 sitelogo col-4 col-sm-3 col-md-2 pl-5 pr-0 pl-md-0 mb-0 "><a class="w100" href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/favicon@2x.png" alt="アイコン「<?php echo get_option('profile_corporate_name'); ?>」"></a></div>
+    <div class="sitelogo order-1 order-md-2 col-3 col-sm-3 col-md-2 mx-0 max-sm-auto pl-5 pr-0 pl-md-0 mb-0 "><a class="w100" href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/favicon@2x.png" alt="アイコン「<?php echo get_option('profile_corporate_name'); ?>」"></a></div>
 		  
 		  
 		  
