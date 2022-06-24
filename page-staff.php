@@ -4,6 +4,8 @@
  */
 get_header();
 ?>
+
+
 <?php the_post(); ?>
 
 <div id="container" class="single widecolumn clearfix">

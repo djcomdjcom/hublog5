@@ -3,6 +3,12 @@
  * hublog-lt/functions.php
  */
 
+require 'plugin-update-checker/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+ 'http://demobuilder.hublog.info/wp-content/themes/hublog5/hublog_update.json',
+ __FILE__,
+ 'hublog5' //テーマ名
+);
 
 
 if ( !function_exists('nothing_to_do') ) :
