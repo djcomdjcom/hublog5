@@ -79,7 +79,7 @@ $('#galleryslider .gallery-size-thumbnail dl:nth-child(' + i + ')').clone().appe
       }
     };
     ?>
-    <?php echo (do_shortcode('[gallery columns="0" link="file" title="true" caption="true" description="true" size="large"  exclude='.$exclude.']')); ?> <?php echo (do_shortcode('[gallery columns="0" link="none" title="false" caption="false" description="false" size="thumbnail"  exclude='.$exclude.']')); ?> </div>
+    <?php echo (do_shortcode('[gallery columns="0" link="file" title="true" caption="true" description="true" size="large"  exclude='.$exclude.']')); ?> <?php echo (do_shortcode('[gallery columns="0" link="file" title="false" caption="false" description="false" size="thumbnail"  exclude='.$exclude.']')); ?> </div>
 </div>
 
 <!--example-slider-->

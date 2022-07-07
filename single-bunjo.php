@@ -59,6 +59,10 @@ $post_id = get_the_ID();
     <?php the_title(); ?>
   </h1>
 </header>
+	
+  <?php echo apply_filters('the_content', get_post_meta($post->ID, 'unique-form-ttl', true)); ;?>
+	
+	
 <section id="bunjo_role-1" class="bunjo_role role-concept clearfix anchor">
   <div class="entry-content">
     <header class="bunjo_role-header">
@@ -242,7 +246,7 @@ $('#galleryslider .thumb dl:nth-child(' + i + ')').clone().appendTo('#gallerysli
   };
   ?>
 <?php echo (do_shortcode('[gallery columns="0" link="file" title="true" caption="true" description="true" size="large" exclude='.$exclude.']')); ?>
-<?php echo (do_shortcode('[gallery columns="0" link="none" title="false" caption="false" description="false" size="thumbnail"  exclude='.$exclude.']')); ?>
+<?php echo (do_shortcode('[gallery columns="0" link="file" title="false" caption="false" description="false" size="thumbnail"  exclude='.$exclude.']')); ?>
 </div>
 
 <!--　-->
@@ -296,7 +300,7 @@ query_posts( array(
   <header class="text-center mt-5 py-4">
     <h2>資料請求のお申し込み</h2>
   </header>
-  <?php echo apply_filters('the_content', get_post_meta($post->ID, 'unique-form-ttl', true)); ;?> </section>
+  <?php echo apply_filters('the_content', get_post_meta($post_id, 'unique-form-ttl', true)); ;?> </section>
 <!--form--> 
 <script>
 	
@@ -858,7 +862,7 @@ background: rgba(0,0,0,0.1);
 position: relative;
 overflow: hidden;
 width: 100%;/*　トリミングしたい枠の幅　*/
-padding-top: 100%;/*　トリミングしたい枠の高さ　*/
+padding-top: 66%;/*　トリミングしたい枠の高さ　*/
 border-radius: 7px;
 
 }
