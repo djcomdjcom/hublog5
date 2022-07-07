@@ -50,9 +50,13 @@ $('.posts .post.style-voice').addClass('col-6 col-lg-4');
 $(function(){
 $('.posts .post.style-reform').addClass('col-12'); 
 });
+$(function(){
+$('.posts .post.style-event').addClass('my-5'); 
+$('.posts .post.style-event .thumbnail').addClass('pr-sm-3 pr-md-5'); 
+});
 </script>
     <div class="wrapper ">
-      <div <?php body_class( 'posts archive row col' ); ?>>
+      <div <?php body_class( 'posts archive row container px-0 mx-auto' ); ?>>
         <?php
         if ( !have_posts() ):
           /* 記事が見つからなかった場合の表示 */

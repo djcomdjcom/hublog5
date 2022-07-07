@@ -41,6 +41,8 @@ get_header();
 
 
 
+                    <?php the_content(); ?>
+
 
 <?php //インクルードセクション
 $the_page = get_page(get_the_ID());
@@ -52,8 +54,6 @@ if (file_exists($include_html_file . '.php')) {
     include $include_html_file . '.html';
 }
 ?>
-
-                    <?php the_content(); ?>
 
 
 

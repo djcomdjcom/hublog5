@@ -7,11 +7,13 @@
  *
  */
 ?>
-<article id="post-<?php the_ID(); ?>" class="post clearfix style-event  <?php if (in_category('event-closed')) echo 'closed'; ?>">
+<article id="post-<?php the_ID(); ?>" class="post style-event row mx-auto p-0 <?php if (in_category('event-closed')) echo 'closed'; ?>">
+	
+	
     <?php if ( is_new( WHATSNEW_TTL ) ) : ?>
     <span class="tmb-icon new">新着</span>
     <?php endif; ?>
-    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="thumbnail"> <span class="attachment">
+    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="col-sm-5 p-0 mb-3 mb-sm-0 thumbnail"> <span class="attachment">
     <?php
     if ( function_exists( 'the_post_image' ) ) {
       if ( the_post_image( 'medium' ) === false ) {
@@ -24,7 +26,9 @@
     </span>
 		
 	</a>
-    <div class="metabox">
+	
+	
+    <div class="metabox col-sm-7 align-self-stretch">
 		
 	<?php get_template_part('cat_icon');//カテゴリーアイコン ?>
 		
@@ -51,24 +55,19 @@
       <!--event-nmeta--> 
       
 		
-        <?php if (in_category('event-closed')) : ?>
-        <a href="<?php the_permalink(); ?>" class="event-closed">
-			
-		<span>このイベントは終了しました。<br />
-        ありがとうございました。</span>
-		  </a>
-		
-		<?php else:?>
-		
-      <span class="todetail"> <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">詳細・参加方法</a> </span>
-		
-		<?php endif  ?>
-		
-	
+<?php if (! in_category('event-closed')) : ?>
+<span class="todetail col text-center text-sm-left"> <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">詳細・参加方法</a> </span>
+<?php endif  ?>	
 	
 	</div>
     <!--metabox--> 
 	<?php get_template_part('icon_status');//ステイタスアイコン ?>
   
   <?php edit_post_link(__('Edit'), ''); ?>
+	<?php if (in_category('event-closed')) : ?>
+	<a href="<?php the_permalink(); ?>" class="event-closed">
+	<span>このイベントは終了しました。<br />
+	ありがとうございました。</span>
+	</a>
+<?php endif;?>
 </article>

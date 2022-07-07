@@ -47,7 +47,6 @@ wp_reset_query();
 			</div>
 		</div>
 		
-	<?php //get_template_part('include', 'snslink');//SNSボタン ?>
 		
 		
       <div class="gni-address mt-3">
@@ -56,7 +55,8 @@ wp_reset_query();
         </nav>
 		  
 
-		  
+		              <?php get_template_part('include', 'snslink');//SNSボタン ?>
+
 		  <div class="gtm-address">
 			<?php if (get_option('profile_address')) : ?>
 			<p class="profile_address"><?php echo '' . get_option('profile_postcode'); ?> <?php echo get_option('profile_address'); ?></p>
@@ -201,7 +201,6 @@ wp_reset_query();
         </div>
       </div>
 		
-            <?php get_template_part('include', 'snslink');//SNSボタン ?>
 		
 		
       <div class="footer-contact mt-4 mb-2 container-fluid">

@@ -24,7 +24,6 @@
 	<?php get_template_part('cat_icon');//カテゴリーアイコン ?>
 	</a>
 	
-	<span class="title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( array( 'before' => '施工事例「', 'after' => '」詳細ページへ' ) ); ?>"><?php the_title(); ?></a></span>
 	
 
 	<?php edit_post_link(__('Edit'), ''); ?>

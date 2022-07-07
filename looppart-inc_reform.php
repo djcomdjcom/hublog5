@@ -32,7 +32,7 @@
     </div>
     <!--event-nmeta--> 
     
-    <span class="todetail"> <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">詳しく見る</a> </span> </div>
+  </div>
   <!--metabox-->
   <?php edit_post_link(__('Edit'), ''); ?>
 </article>

@@ -26,7 +26,10 @@ get_header();
 		  
 		  
       </header>
+		
+		
       <article class="entry-content">
+        <?php the_content(); ?>
         <?php if ( current_user_can( 'administrator' ) ) :?>
         <p class="edit_theme"><a target="_blank" href="/wp-admin/theme-editor.php?file=html%2F<?php echo $slug_name = $post->post_name; ?>.php&theme=<?php echo get_stylesheet('name'); ?>" title="/wp-admin/theme-editor.php?file=html%2F<?php echo $slug_name = $post->post_name; ?>.php&theme=<?php echo get_stylesheet('name'); ?>"> このincludeテーマを編集 </a></p>
         <?php endif;?>
@@ -40,7 +43,6 @@ get_header();
           include $include_html_file . '.html';
         }
         ?>
-        <?php the_content(); ?>
         <?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'twentyten' ), 'after' => '</div>' ) ); ?>
       </article>
       <!-- .entry-content -->
