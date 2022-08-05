@@ -197,11 +197,11 @@ overflow: hidden;
 	#topinfo.page_header.storage {
 	width: 100vw;
 	position: relative;
-	margin-left: calc(600px - 50vw);
+	margin-left: calc(50% - 50vw);
 	}
 	
 	.outer-wrap:after{
-	margin-left: calc(600px - 50vw);
+	margin-left: calc(50% - 50vw);
 		width: 100vw;
 	}
 	

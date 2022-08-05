@@ -186,7 +186,7 @@ h1.tweak03 {
 @media screen and (min-width: 1200px) {
 /*	#topinfo.page_header.eakon {
 	width: 100vw;
-	margin-left: calc(600px - 50vw);
+	margin-left: calc(50% - 50vw);
 	}*/
 	}
 	

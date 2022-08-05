@@ -217,7 +217,7 @@ overflow: hidden;
 	#topinfo.page_header.typhoon {
 	width: 100vw;
 	position: relative;
-	margin-left: calc(600px - 50vw);
+	margin-left: calc(50% - 50vw);
 	}
 	}
 	

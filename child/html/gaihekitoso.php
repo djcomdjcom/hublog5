@@ -1,5 +1,5 @@
 <header id="topinfo" class="page_header gaihekitoso mb-5">
-  <h1> <span class="subttl">外壁塗装の経年劣化</span> <span class="ttl_img maxw-900 w100 mx-auto"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/gaihekitoso/pg_hdr-gaihekitoso-title@2x.png" alt="AIR CONDITIONER+REFORM" title="外壁塗装の経年劣化"> </span> </h1>
+  <h1> <span class="subttl">外壁塗装の経年劣化</span> <span class="ttl_img maxw-900 w100 mx-auto"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/gaihekitoso/pg_hdr-gaihekitoso-title@2x.png" alt="DEGRADATION IN OUTER WALLS" title="外壁塗装の経年劣化"> </span> </h1>
 </header>
 <h1 class="tweak01">外壁塗装の経年劣化</h1>
 <section id="gaihekitoso01" class="clearfix anchor">
@@ -217,11 +217,11 @@ overflow: hidden;
 	#topinfo.page_header.gaihekitoso {
 	width: 100vw;
 	position: relative;
-	margin-left: calc(600px - 50vw);
+	margin-left: calc(50% - 50vw);
 	}
 	
 	.outer-wrap:after{
-	margin-left: calc(600px - 50vw);
+	margin-left: calc(50% - 50vw);
 		width: 100vw;
 	}
 	
