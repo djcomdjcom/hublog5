@@ -17,7 +17,8 @@ add_action( 'admin_menu', 'customize_menus' );
 /*
 function add_google_fonts() {
 wp_register_style( 'googleFonts',
-'https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;300;400;500;700;800;900&family=Yantramanav:wght@100;300;400;500;700;900&display=swap'
+//'https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;300;400;500;700;800;900&family=Yantramanav:wght@100;300;400;500;700;900&display=swap'
+'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@;300;400;500;600;900&family=Noto+Serif+JP:wght@300;400;500;600;900&display=swap'
 );
 wp_enqueue_style( 'googleFonts');
 }
@@ -25,9 +26,9 @@ add_action( 'wp_enqueue_scripts', 'add_google_fonts' );
 */
 
 /*CSS追加*/
-$child_theme = wp_get_theme();//子テーマから読み込み
+//$child_theme = wp_get_theme();//子テーマから読み込み
 //tweak.css 追加
-wp_enqueue_style( 'tweak', get_stylesheet_directory_uri() . '/tweak.css?'. $child_theme->get( 'Version' ) );
+//wp_enqueue_style( 'tweak', get_stylesheet_directory_uri() . '/tweak.css?'. $child_theme->get( 'Version' ) );
 
 
 //スライドショー用投稿タイプ

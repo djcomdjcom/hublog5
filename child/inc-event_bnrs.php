@@ -5,7 +5,7 @@
     'post_type' => 'event_bnr', //カスタム投稿名
 		'order'=>'ASC',
 		'orderby'=>'menu_order',
-    'posts_per_page' => '8'
+    'posts_per_page' => '-1'
 )); ?>
 <?php if(have_posts()): ?>
 
@@ -79,12 +79,14 @@ jQuery(function($){
 
 
 											<?php if (post_custom('event_bnr_url')) :?>
-											<a target="_blank" class=" w100" href="<?php echo(post_custom('event_bnr_url')) ;?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s'),the_title_attribute('echo=0')); ?>">
+												
+											<a target="<?php if (post_custom('event_bnr_target')) :?>_blank<?php endif;?>" class=" w100" href="<?php echo(post_custom('event_bnr_url')) ;?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s'),the_title_attribute('echo=0')); ?>">
 
+												
 											<?php if ( function_exists('the_post_image') ) {
-												if ( the_post_image(array(300,100),array( 'alt' => $title_attr , 'title' => $title_attr )) === false ){
-													?><img src="<?php echo get_template_image('noimage');?>" alt="No Image" /><?php
-												}
+											if ( the_post_image(array(300, 100)) === false ){
+											?><img src="<?php echo get_template_image('noimage');?>" alt="No Image" /><?php
+											}
 											} ?>
 
 											</a>
@@ -92,9 +94,9 @@ jQuery(function($){
 
 											<span class=" w100" title="<?php printf(__('Permanent Link to %s'),the_title_attribute('echo=0')); ?>">
 											<?php if ( function_exists('the_post_image') ) {
-												if ( the_post_image(array(300,100),array( 'alt' => $title_attr , 'title' => $title_attr )) === false ){
-													?><img src="<?php echo get_template_image('noimage');?>" alt="No Image" /><?php
-												}
+											if ( the_post_image(array(300, 100)) === false ){
+											?><img src="<?php echo get_template_image('noimage');?>" alt="No Image" /><?php
+											}
 											} ?>
 
 											</span>

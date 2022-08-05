@@ -1,8 +1,23 @@
 @charset "utf-8";
 	
-@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yantramanav:wght@400&display=swap');
 
+@font-face {
+src: url("font/NotoSansJP-Regular.woff") format("woff");
+font-family: "Noto Sans JP Regular";
+}
+@font-face {
+src: url("font/NotoSansJP-Medium.woff") format("woff");
+font-family: "Noto Sans JP Medium";
+}
+@font-face {
+src: url("font/NotoSansJP-Bold.woff") format("woff");
+font-family: "Noto Sans JP Bold";
+}
+@font-face {
+src: url("font/NotoSerifJP-Medium.woff") format("woff");
+font-family: "Noto Serif JP";
+}
 
 html body{
 font-family: 'Noto Sans JP', sans-serif;
@@ -628,7 +643,7 @@ max-width: none;
 }
 
 .zeh4{
-  padding:10px 0 10px 60px;
+  padding:10px 30px 10px 40px;
 }
 
 #zeh_achievement{}
@@ -846,8 +861,12 @@ opacity: 0;
 	top: 0;
 	right: 0;
 	bottom: 0;
+}
+body.page-about .user_info label,
+body.page-staff .user_info label{
 	cursor:pointer;
 }
+
  .user_info label span{
 }
 .user_info label span:hover{
@@ -867,8 +886,9 @@ z-index: 400;
 }
 
 .userinfo_detail{
-    font-size: 0.85em;
+/*    font-size: 0.85em;*/
     line-height: 1.6;
+	font-size: 1em;;
 }
 .userinfo_detail .user_post_division{}
 
@@ -876,10 +896,13 @@ z-index: 400;
     display: inline-block;
     margin-right: 1em;
 }
-
+.userinfo_detail em{
+	font-style: normal;
+}
 .userinfo_detail .credential,
 .userinfo_detail .from{
-    font-size: 0.8em;
+    font-size: 0.9em;
+	margin-bottom: 0.5em;;
 }
 
 
