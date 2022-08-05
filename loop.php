@@ -85,15 +85,18 @@ $('.posts .post.style-event .thumbnail').addClass('pr-sm-3 pr-md-5');
       </div>
       <!--posts archive--> 
     </div>
+	  
+	  <div class="pagebar"><?php wp_pagenavi(); ?></div>
+	  
     <?php
-
+/*
     if ( function_exists( 'postbar' ) ) {
       postbar();
     } else {
       global $wp_query;
       if ( $wp_query->max_num_pages > 1 ) {
         ?>
-    <nav id="<?php echo esc_attr( 'nav-below' ); ?>">
+    <nav class="d-none" id="<?php echo esc_attr( 'nav-below' ); ?>">
       <h3 class="assistive-text">
         <?php _e( 'Post navigation', 'twentyeleven' ); ?>
       </h3>
@@ -108,6 +111,7 @@ $('.posts .post.style-event .thumbnail').addClass('pr-sm-3 pr-md-5');
     <?php
     }
     }
+	*/
     ?>
   </div>
   <!-- #content --> 

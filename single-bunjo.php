@@ -6,6 +6,9 @@ get_header();
 $post_id = get_the_ID();
 
 ?>
+
+
+
 <nav id="bunjo_content-nav">
   <ul class="flexbox">
     <li> <a href="#bunjo_role-1"> <span>CONCEPT</span><span class="small">コンセプト</span> </a> </li>
@@ -36,10 +39,10 @@ $post_id = get_the_ID();
     <li><a href="#popup_gallery"><span>OTHER WORKS</span><span class="small">施工事例</span></a></li>
   </ul>
 	
-	
-	
   <?php endif;  wp_reset_postdata();?>
 </nav>
+
+
 <script>
 	$(function(){
   $('.rel_lb a[href$=".jpg"],.rel_lb a[href$=".jpeg"],.rel_lb a[href$=".JPG"],.rel_lb a[href$=".JPEG"],.rel_lb a[href$=".png"],.rel_lb a[href$=".PNG"],.rel_lb a[href$=".gif"],.rel_lb a[href$=".GIF"]').attr('rel' ,'lightbox');
@@ -48,19 +51,23 @@ $post_id = get_the_ID();
 <div id="container" class="single clearfix">
 <div id="content" role="main">
 	
+	
+	
     <?php if ( is_object_in_term($post->ID,'bunjo_role','bunjo-gallery') || is_object_in_term($post->ID,'bunjo_role','bunjo-performance') || is_object_in_term($post->ID,'bunjo_role','bunjo-equipment') || is_object_in_term($post->ID,'bunjo_role','bunjo-location') ): ?>
     <div class="text-center"> <a href="/bunjo/<?php echo $parent_id = $post->post_parent;?>.html">親ページへ移動</a> </div>
     <?php endif;?>
 	
-<?php the_post(); ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	
+<?php //the_post(); ?>
+	
+	
+	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 <header class="entry-header wrapper">
   <h1 class="entry-title">
     <?php the_title(); ?>
   </h1>
 </header>
 	
-  <?php echo apply_filters('the_content', get_post_meta($post->ID, 'unique-form-ttl', true)); ;?>
 	
 	
 <section id="bunjo_role-1" class="bunjo_role role-concept clearfix anchor">
@@ -76,6 +83,9 @@ $post_id = get_the_ID();
   </div>
   <!-- .entry-content --> 
 </section>
+	
+
+	
 <?php wp_reset_query(); ?>
 <?php
 $arg = array(
@@ -294,13 +304,15 @@ query_posts( array(
   </section>
 </div>
 <?php wp_reset_query(); ?>
-
 <!--フォーム	-->
 <section id="form" class="clearfix anchor maxw-1200 mx-auto">
   <header class="text-center mt-5 py-4">
     <h2>資料請求のお申し込み</h2>
   </header>
-  <?php echo apply_filters('the_content', get_post_meta($post_id, 'unique-form-ttl', true)); ;?> </section>
+  <?php echo apply_filters('the_content', get_post_meta($post_id, 'unique-form-ttl', true)); ;?>
+	
+	
+	</section>
 <!--form--> 
 <script>
 	

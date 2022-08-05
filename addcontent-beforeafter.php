@@ -105,7 +105,10 @@ $('#galleryslider .gallery-size-thumbnail dl:nth-child(' + i + ')').clone().appe
       <span class="example-yuka">総工事床面積：<?php echo post_custom('reform-yuka'); ?></span>
       <?php endif ?>
       <?php if (post_custom('reform-kasho')) : ?>
-      <span class="reform-kasho">施工個所：<?php echo post_custom('reform-kasho'); ?></span>
+      <span class="reform-kasho">施工箇所：<?php echo post_custom('reform-kasho'); ?></span>
+      <?php endif ?>
+      <?php if (post_custom('reform-kikan')) : ?>
+      <span class="example-yosan">施工期間：<?php echo post_custom('reform-kikan'); ?></span>
       <?php endif ?>
       <?php if (post_custom('reform-yosan')) : ?>
       <span class="example-yosan">工事予算：<?php echo post_custom('reform-yosan'); ?>万円</span>
@@ -113,16 +116,20 @@ $('#galleryslider .gallery-size-thumbnail dl:nth-child(' + i + ')').clone().appe
     </div>
     <!--inbox-->
     
+      <?php if (post_custom('reform-youbou')) : ?>
     <dl class="reform-youbou">
       <dt class="title">お客様のご要望・お悩み</dt>
       <dd class="postcustom"> <?php echo wpautop(post_custom('reform-youbou')); ?> </dd>
     </dl>
+      <?php endif ?>
     <!--reform-youbou-->
     
+      <?php if (post_custom('reform-kaiketsusaku')) : ?>
     <dl class="reform-kaiketsusaku">
       <dt class="title"><?php echo get_option('profile_shop_name'); ?>からの解決策</dt>
       <dd><?php echo wpautop(post_custom('reform-kaiketsusaku')); ?> </dd>
     </dl>
+      <?php endif ?>
   </div>
   <!--reform-meta--> 
   
@@ -140,7 +147,7 @@ $('#galleryslider .gallery-size-thumbnail dl:nth-child(' + i + ')').clone().appe
   foreach ( $ba as $fields ): ?>
   <?php
   if ( $fields[ 'ba_before' ] !== ""
-    and $fields[ 'add_contents' ] !== "" ): __COMPILER_HALT_OFFSET__ ?>
+    and $fields[ 'add_contents' ] !== "" ): __COMPILER_HALT_OFFSET__ :?>
   <?php
   $ba_before = $fields[ 'ba_before' ];
   $ba_after = $fields[ 'ba_after' ];
