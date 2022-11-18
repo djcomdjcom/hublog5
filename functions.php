@@ -364,11 +364,6 @@ function pagename_class($classes = '') {
 add_filter('body_class', 'pagename_class')
 ;
 
-// メタボックスの追加
-add_action( 'admin_menu', 'add_css_metabox' );
-function add_css_metabox() {
-    add_meta_box( 'custom_css', 'カスタムCSS', 'create_add_css', array('post', 'page'));
-}
   
 // 管理画面にフィールドを出力
 function create_add_css() {

@@ -1,12 +1,10 @@
-
-<div id="" class="clearfix section">
-  <?php if ( post_custom( 'renov-gallery' ) == 'gallery_off' ):  ?>
-  <?php else:?>
-  <div id="galleryslider" class="sliderArea rel_lb">
-    <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/js/slick/slick.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/js/slick/slick-theme.css" media="screen" />
-    <script src="<?php bloginfo('stylesheet_directory'); ?>/js/slick/slick.min.js"></script> 
-    <script>
+<?php if ( post_custom( 'renov-gallery' ) == 'gallery_off' ):  ?>
+<?php else:?>
+<div id="galleryslider" class="sliderArea rel_lb">
+  <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/js/slick/slick.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/js/slick/slick-theme.css" media="screen" />
+  <script src="<?php bloginfo('stylesheet_directory'); ?>/js/slick/slick.min.js"></script> 
+  <script>
 //タグにclass追加
 $(function(){
 $('#galleryslider .gallery-size-large').addClass('slider_thumb slider'); 
@@ -21,124 +19,134 @@ $(document).on('ready', function() {
       arrows:true,
 	  dots:false,
       asNavFor:'.thumb',
-  })
-	;
+  });
+	
+	
+$('.thumb').slick({
+  slidesToScroll: 1,
+  asNavFor: '.slider_thumb',
+//  centerMode: true,
+  focusOnSelect: true,
+    slidesToShow: 12,
+    responsive: [
+      {
+        breakpoint: 768, // 576px以下のサイズに適用
+        settings: {
+        slidesToShow: 8,
+        },
+      },
+      {
+        breakpoint: 576, // 576px以下のサイズに適用
+        settings: {
+        slidesToShow: 6,
+        },
+      },
+    ],
+  });
 });
 
 		
 //サムネイル表示の調整	
-	
-var windowWidth = $(window).width();
-var windowSm = 768;
-if (windowWidth <= windowSm) {
-$(function () {
-let slidesToShowNum = 6; //slidesToShowに設定したい値を挿入
- /* slidesToShowより投稿が少ない場合の処理▽ */
-let item = $('#galleryslider .gallery-size-thumbnail dl').length; //dlの個数を取得
-if (item <= slidesToShowNum) {
-for ( i = 0 ; i <= slidesToShowNum + 1 - item ; i++) { //足りていない要素数分、後ろに複製
-$('#galleryslider .gallery-size-thumbnail dl:nth-child(' + i + ')').clone().appendTo('#galleryslider .gallery-size-thumbnail');
-  }
- } /* slidesToShowより投稿が少ない場合の処理△ */
 
- $('#galleryslider .gallery-size-thumbnail').slick({
-  slidesToShow: slidesToShowNum, //slidesToShowNumに設定した値が入る
- });
-});
-	
-} else {
-//横幅768px以上（PC、タブレット）に適用させるJavaScriptを記述
-$(function () {
-let slidesToShowNum = 12; //slidesToShowに設定したい値を挿入
- /* slidesToShowより投稿が少ない場合の処理▽ */
-let item = $('#galleryslider .gallery-size-thumbnail dl').length; //liの個数を取得
-if (item <= slidesToShowNum) {
-for ( i = 0 ; i <= slidesToShowNum + 1 - item ; i++) { //足りていない要素数分、後ろに複製
-$('#galleryslider .gallery-size-thumbnail dl:nth-child(' + i + ')').clone().appendTo('#galleryslider .gallery-size-thumbnail');
-  }
- }
- /* slidesToShowより投稿が少ない場合の処理△ */
- $('#galleryslider .gallery-size-thumbnail').slick({
-  slidesToShow: slidesToShowNum, //slidesToShowNumに設定した値が入る
- });
-});}	
 
 </script>
-    <?php
-    $id = $post->ID;
-    if ( empty( $exclude ) ) {
-      $eximages = get_children( array( 'post_parent' => $id, 'post_type' => 'attachment', 'post_mime_type' => 'image', 'numberposts' => -1 ) );
-      foreach ( $eximages as $eximage ) {
-        $post_custom = get_post_custom( $eximage->ID );
-        if ( isset( $post_custom[ 'exclude' ] ) ) {
-          $excludes[] = $eximage->ID;
-        }
+  <?php
+  $id = $post->ID;
+  if ( empty( $exclude ) ) {
+    $eximages = get_children( array( 'post_parent' => $id, 'post_type' => 'attachment', 'post_mime_type' => 'image', 'numberposts' => -1 ) );
+    foreach ( $eximages as $eximage ) {
+      $post_custom = get_post_custom( $eximage->ID );
+      if ( isset( $post_custom[ 'exclude' ] ) ) {
+        $excludes[] = $eximage->ID;
       }
-      if ( isset( $excludes ) && !empty( $excludes ) ) {
-        $exclude = ( is_array( $excludes ) ) ? join( ',', $excludes ) : '';
-      }
-    };
-    ?>
-    <?php echo (do_shortcode('[gallery columns="0" link="file" title="true" caption="true" description="true" size="large"  exclude='.$exclude.']')); ?> <?php echo (do_shortcode('[gallery columns="0" link="file" title="false" caption="false" description="false" size="thumbnail"  exclude='.$exclude.']')); ?> </div>
-</div>
-
+    }
+    if ( isset( $excludes ) && !empty( $excludes ) ) {
+      $exclude = ( is_array( $excludes ) ) ? join( ',', $excludes ) : '';
+    }
+  };
+  ?>
+  <?php echo (do_shortcode('[gallery columns="0" link="file" title="true" caption="true" description="true" size="large"  exclude='.$exclude.']')); ?> <?php echo (do_shortcode('[gallery columns="0" link="none" title="false" caption="false" description="false" size="thumbnail"  exclude='.$exclude.']')); ?> </div>
 <!--example-slider-->
 
-<?php endif ?>
-<?php
-if ( post_custom( 'renov-gallery' ) == 'gallery_off' ):
-  ?>
-<?php else:?>
 <article id="example-header" class="clearfix rel_lb">
-  <h2 class="title">
-    <?php if(post_custom('catchcopy')) :?>
-    <span class="catchcopy"> <?php echo nl2br ( post_custom('catchcopy') ); ?> </span>
-    <?php else :?>
-    <?php the_title(); ?>
-    <?php endif ;?>
-  </h2>
-  <?php if (post_custom('example-area') || post_custom('example-name') || post_custom('example-family') || post_custom('example-kouhou') || post_custom('example-shikichi') || post_custom('example-yuka') ) : ?>
-  <div class="example-family">
-    <?php if (post_custom('example-area') || post_custom('example-name')) : ?>
-    <p class="example-area_name"> <span>
-      <?php if (post_custom('example-area')) :?>
-      <?php echo post_custom('example-area'); ?>
-      <?php endif ; ?>
-      </span> <span>
-      <?php if (post_custom('example-name')) :?>
-      <?php echo post_custom('example-name'); ?>様邸
-      <?php endif ; ?>
-      </span> </p>
-    <?php endif ; ?>
-    <?php if (post_custom('example-family')) :?>
-    <span class="title">家族構成</span> <?php echo wpautop(post_custom('example-family')); ?> </div>
-  <?php endif ; ?>
-  <?php if (post_custom('example-kouhou') || post_custom('example-shikichi') || post_custom('example-yuka')) : ?>
-  <div class="example-plan">
-    <?php if (post_custom('example-kouhou')) :?>
-    <p><?php echo post_custom('example-kouhou'); ?></p>
-    <?php endif ; ?>
-    <?php if (post_custom('example-shikichi')) :?>
-    <p><span class="title">敷地面積</span>：<?php echo post_custom('example-shikichi'); ?></p>
-    <?php endif ; ?>
-    <?php if (post_custom('example-yuka')) :?>
-    <p><span class="title">床面積</span>：<?php echo post_custom('example-yuka'); ?></p>
-    <?php endif ; ?>
-  </div>
-  <?php endif ; ?>
-  <?php endif ; ?>
-  <?php if (post_custom ('example-C') || post_custom ('example-Q') || post_custom ('example-UA') )  :?>
-  <div class="clearfix example-meta spec">
-    <?php if (post_custom('example-C')) :?>
-    <span class="example-c"> <span class="title">C値：</span><span class="number"><?php echo post_custom('example-C'); ?></span> </span>
-    <?php endif ;?>
-    <?php if (post_custom('example-Q')) :?>
-    <span class="example-q"> <span class="title">Q値：</span><span class="number"><?php echo post_custom('example-Q'); ?></span> </span>
-    <?php endif ;?>
-    <?php if (post_custom('example-UA')) :?>
-    <span class="example-ua"> <span class="title">UA値：</span><span class="number"><?php echo post_custom('example-UA'); ?></span> </span>
-    <?php endif ;?>
-  </div>
+  <?php if(post_custom('catchcopy')) :?>
+  <h2 class="title"> <span class="catchcopy"> <?php echo nl2br ( post_custom('catchcopy') ); ?> </span> </h2>
   <?php endif ;?>
+  <?php if (post_custom('example-name') || post_custom('example-family') || post_custom('example-area') || post_custom('example-kouhou') || post_custom('example-shikichi') || post_custom('example-yuka') || post_custom ('example-C') || post_custom ('example-Q') || post_custom ('example-UA') ) : ?>
+  <div id="example-data">
+    <h3 class="ttl">Data</h3>
+    <table class="mt-0 ml-sm-3">
+      <p class="example-area_name">
+      <span>
+      
+      <?php if (post_custom('example-name')) :?>
+      <caption>
+      <?php echo post_custom('example-name'); ?>様邸
+      </caption>
+      <?php endif ; ?>
+      <?php if (post_custom('example-family')) :?>
+      <tr>
+        <th>家族構成</th>
+        <td><?php echo wpautop(post_custom('example-family')); ?></td>
+      </tr>
+      <?php endif ; ?>
+      <?php if (post_custom('example-area')) :?>
+      <tr>
+        <th>施工エリア</th>
+        <td><?php echo post_custom('example-area'); ?></td>
+      </tr>
+      <?php endif ; ?>
+      <?php if (post_custom('example-kouhou')) :?>
+      <tr>
+        <th>工法・構造</th>
+        <td><?php echo post_custom('example-kouhou'); ?></td>
+      </tr>
+      <?php endif ; ?>
+      <?php if (post_custom('example-taishin')) :?>
+      <tr>
+        <th>耐震等級</th>
+        <td><?php echo post_custom('example-taishin'); ?></td>
+      </tr>
+      <?php endif ; ?>
+      <?php if (post_custom('example-shikichi')) :?>
+      <tr>
+        <th>敷地面積</th>
+        <td><?php echo post_custom('example-shikichi'); ?></td>
+      </tr>
+      <?php endif ; ?>
+      <?php if (post_custom('example-yuka')) :?>
+      <tr>
+        <th>床面積</th>
+        <td><?php echo post_custom('example-yuka'); ?></td>
+      </tr>
+      <?php endif ; ?>
+      <?php if (post_custom('example-madori')) :?>
+      <tr>
+        <th>間取</th>
+        <td><?php echo post_custom('example-madori'); ?></td>
+      </tr>
+      <?php endif ; ?>
+      <?php if (post_custom('example-C')) :?>
+      <tr>
+        <th>C値</th>
+        <td><?php echo post_custom('example-C'); ?></td>
+      </tr>
+      <?php endif ;?>
+      <?php if (post_custom('example-Q')) :?>
+      <tr>
+        <th>Q値</th>
+        <td><?php echo post_custom('example-Q'); ?></td>
+      </tr>
+      <?php endif ;?>
+      <?php if (post_custom('example-UA')) :?>
+      <tr>
+        <th>UA値</th>
+        <td><?php echo post_custom('example-UA'); ?></td>
+      </tr>
+      <?php endif ;?>
+    </table>
+  </div>
+  <!--example-data-->
+  <?php endif ; ?>
 </article>
 <?php endif ?>

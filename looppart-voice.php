@@ -22,7 +22,7 @@
   }
   ?>
   </span> </a>
-  <div class="metabox">
+  <div class="">
     <p class="title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s'), the_title_attribute('echo=0')); ?>">
       <?php if(post_custom('catchcopy')) :?>
       <?php echo nl2br ( post_custom('catchcopy') ); ?>
