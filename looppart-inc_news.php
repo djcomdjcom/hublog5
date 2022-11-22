@@ -34,12 +34,6 @@
     <p class="title">
       <?php the_title(); ?>
       </p>
-    <?php if (in_category('event-closed')) : ?>
-    <span class="event-closed cleartype"> このイベントは終了しました。ありがとうございました。 </span>
-    <?php endif  ?>
-    <div class="excerpt d-none d-sm-block">
-      <?php the_excerpt(); ?>
-	  </div>
  </div>
   <!--metabox--> 
 <span class="todetail"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s'), the_title_attribute('echo=0')); ?>"> 詳細を見る</a></span>
