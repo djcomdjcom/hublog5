@@ -55,8 +55,8 @@ $('.posts .post.style-event').addClass('my-5');
 $('.posts .post.style-event .thumbnail').addClass('pr-sm-3 pr-md-5'); 
 });
 </script>
-    <div class="wrapper ">
-      <div <?php body_class( 'posts archive row container px-0 mx-auto' ); ?>>
+    <div class="wrapper">
+      <div <?php body_class( 'posts row justify-content-start' ); ?>>
         <?php
         if ( !have_posts() ):
           /* 記事が見つからなかった場合の表示 */

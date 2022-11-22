@@ -201,20 +201,20 @@ max-height: 9999px;
 opacity: 1;
 }
 .stack-box label:after {
-content: "を表示　\f0d7";
-font-family: FontAwesome;
+content: "を表示　\e5c5";
+font-family: 'Material Icons';
 }
 .stack-box label:before {
-content: "\f0d7　";
-font-family: FontAwesome;
+content: "\e5c5　";
+font-family: 'Material Icons';
 }
 .stack-box input:checked + label:after {
-content: "を閉じる　\f0d8";
-font-family: FontAwesome;
+content: "を閉じる　\e5c7";
+font-family: 'Material Icons';
 }
 .stack-box input:checked + label:before {
-content: "\f0d8　";
-font-family: FontAwesome;
+content: "\e5c7　";
+font-family: 'Material Icons';
 }
 .round {
 display: block;
@@ -605,14 +605,13 @@ padding-bottom: 0.5em;
 }
 
 .telnum:before {
-content: "\f2a0";
-font-family: FontAwesome;
+content: "\e61d";
+font-family: 'Material Icons';
 margin-right: 0.3em;
-transform: rotate(-27deg);
 display: inline-block;
 font-size: 0.8em;
 position: relative;
-top: -0.2em;
+	vertical-align: middle;
 
 }
 
@@ -642,13 +641,13 @@ padding-right: 0;
 }
 
 #foot-shopinfo-sub .menu-item a:before, #header-sub .menu-item a:before {
-content: ">";
-font-family: FontAwesome;
+content: "\e5cc";
+font-family: 'Material Icons';
 margin-right: 0.4em;
 }
 #foot-shopinfo-sub .telnum:before {
-content: "\f10b";
-font-family: FontAwesome;
+content: "\e325";
+font-family: 'Material Icons';
 margin-right: 0.3em;
 font-size: 0.8em;
 }
@@ -669,7 +668,7 @@ font-size: 12px;
 text-align: center;
 }
 .home-menu .menu > .menu-item {
-padding: 2px 1em;
+padding: 0;
 text-align: left;
 }
 .home-menu .menu-item {
@@ -706,12 +705,8 @@ ul.sub-menu{
 padding-left: 0;
 }
 
-
-.home-menu a:link{
-text-decoration: none;
-color: #707070;
-}
-
+.home-menu a,
+.home-menu a:link,
 .home-menu a:visited{
 text-decoration: none;
 color: #707070;
@@ -752,7 +747,8 @@ display: block;
 
 
 .home-menu  li li.menu-item-has-children > a:before{
-content: ">";
+content: "\e5cc";	
+font-family: 'Material Icons';
 display: inline-block;
 vertical-align: middle;
 margin-right: 0.5em;
@@ -819,8 +815,8 @@ padding-bottom: 0.5em;
 
 
 #global-navi .menu  .menu-item-has-children > a:before{
-content: "\f054";
-font-family: FontAwesome;
+content: "\e5cc";
+font-family: 'Material Icons';
 display: inline-block;
 margin-right: 0.5em;
 }
@@ -1091,8 +1087,8 @@ white-space: nowrap;
 vertical-align: middle;
 }
 .widget-container.widget_search .screen-reader-text:before {
-content: "\f002";
-font-family: FontAwesome;
+content: "\e8b6";
+font-family: 'Material Icons';
 margin-right: 2em;
 display: inline-block;
 vertical-align: middle;
@@ -1130,8 +1126,8 @@ padding: 0.3em 1em;
 background: #D6EBF5;
 }
 .search-refinement .reset-button form:before {
-content: "\f021";
-font-family: FontAwesome;
+content: "\e863";
+font-family: 'Material Icons';
 margin: auto;
 text-align: center;
 display: inline-block;
@@ -1312,9 +1308,8 @@ white-space: nowrap;
 }
 .posts .post .todetail a[rel="bookmark"]:after,
 .posts .post .todetail[rel="bookmark"]:after {
-content: "\f054";
-font-family: FontAwesome;
-font-size: 0.8em;
+font-family: 'Material Icons';
+content: '\e5e1';
 color: #333;
 padding-left: 1em;
 margin-left: 1em;
@@ -1367,8 +1362,9 @@ display: block;
 }
 
 .arrow a:after{
-content: " \f061";
-font-family: FontAwesome;
+font-family: 'Material Icons';
+content: '\e5c8';
+	vertical-align: middle;
 }
 
 .btn a, .entry-content .btn a {
@@ -1385,9 +1381,10 @@ margin-bottom: 0.5em;
 margin: auto;
 text-align: center;
 }
+
 .arrow.btn a:after {
-content: "\f054";
-font-family: FontAwesome;
+content: "\e5cc";
+font-family: 'Material Icons';
 font-size: 0.8em;
 padding-left: 1em;
 margin-left: 1em;
@@ -1396,8 +1393,8 @@ line-height: 1.2em;
 opacity: 1;
 }
 a.arrow:before {
-content: "\f054";
-font-family: FontAwesome;
+content: "\e5cc";
+font-family: 'Material Icons';
 font-size: 0.8em;
 padding-left: 1em;
 margin-left: 1em;
@@ -1409,8 +1406,8 @@ a.arrow {
 font-family: inherit;
 }
 a.down:before {
-content: "\f078";
-font-family: FontAwesome;
+content: "\e5db";
+font-family: 'Material Icons';
 font-size: 0.8em;
 margin-right: 0.5em;
 }
@@ -1739,8 +1736,8 @@ background: none !important;
 
 
 .entry-content span.check > span:before {
-content: "\f00c";
-font-family: FontAwesome;
+content: "\e5ca";
+font-family: 'Material Icons';
 display: inline;
 margin-right: 0.3em;
 }
@@ -1777,8 +1774,8 @@ content: '】';
 display: inline;
 }
 .ttl.checked:before {
-content: "\f00c";
-font-family: FontAwesome;
+content: "\e5ca";
+font-family: 'Material Icons';
 list-style: none !important;
 display: inline-block;
 margin-right: 0.5em;
@@ -1877,8 +1874,8 @@ padding-left: 1.1em;
 text-indent: -0.8em;
 }
 ul.check li:before {
-content: "\f00c";
-font-family: FontAwesome;
+content: "\e5ca";
+font-family: 'Material Icons';
 list-style: none !important;
 display: inline-block;
 margin-right: 0.3em;
@@ -1933,8 +1930,8 @@ position: relative;
 }
 
 dl.flow dd:after {
-content: "\f0d7";
-font-family: FontAwesome;
+content: "\e5c5";
+font-family: 'Material Icons';
 display: block;
 font-size: 4em;
 position: absolute;
@@ -2060,9 +2057,9 @@ margin-top: 0;
 }
 @media screen and (max-width:767.98px) {
 .slide-table:before {
-content: "\f053\f053\f053　スライドできます";
+content: "\e9ec　スライドできます";
 box-sizing: border-box;
-font-family: FontAwesome;
+font-family: 'Material Icons';
 display: inline-block;
 color: #fff;
 font-size: 0.8em;
@@ -2696,13 +2693,13 @@ padding-left: 0;
 }
 .entry-content .reform-youbou .title, .entry-content .reform-kaiketsusaku .title {}
 .entry-content .reform-youbou .title:before {
-content: "\f274";
-font-family: FontAwesome;
+content: "\e7f3";
+font-family: 'Material Icons';
 margin-right: 0.5em;
 }
 .entry-content .reform-kaiketsusaku .title:before {
-content: "\f164";
-font-family: FontAwesome;
+content: "\e8dc";
+font-family: 'Material Icons';
 margin-right: 0.5em;
 }
 
@@ -3067,10 +3064,6 @@ border-bottom: 0;
 .posts.archive.post-type-archive-voice,
 .posts.archive.tax-ex_cat,
 .posts.archive.post-type-archive-example{
-padding-left: 0;
-padding-right: 0;
-margin-left: 0;
-margin-right: 0;
 }
 .posts .post.style-voice,
 .posts .post.style-example {
@@ -3090,7 +3083,6 @@ padding: 0 0.5em 1em;
 .posts .post.style-example .thumbnail {
 padding-right: 0;
 max-width: none;
-	margin-bottom: 1em;
 }
 
 .posts .post.style-voice .thumbnail .attachment,
@@ -3630,15 +3622,14 @@ background: #c19558;
 color: #fff;
 }
 .pagetab li a:before {
-content: ">";
-font-size: 0.75rem;
+content: "\e5cc";	
+font-family: 'Material Icons';
 display: inline-block;
-vertical-align: middle;
 margin-bottom: 4px;
 width: 1.4em;
 background: rgba(255, 255, 255, 0.3);
-line-height: 1em;
-padding: 0.2em 0 0.3em;
+height: 1.6rem;
+padding: 0;
 text-align: center;
 margin-right: 0.8em;
 position: absolute;
@@ -3717,8 +3708,8 @@ text-decoration: none;
 text-decoration: underline;
 }
 .entry-content .anchor_link_set ul li a:after{
-content: "\f0da";
-font-family: FontAwesome;
+content: "\e5df";
+font-family: 'Material Icons';
 padding-left: 0.5em;
 display: inline-block;
 
@@ -3984,8 +3975,8 @@ display: inline-block;
 margin-right: 1em;
 }
 #main .menu-about-container .menu li a:before {
-content: "\f101";
-font-family: FontAwesome;
+content: "\ea50";
+font-family: 'Material Icons';
 margin-right: 0.5em;
 }
 #main .menu-about-container .menu li a {
@@ -4827,4 +4818,9 @@ display: none;
 .d-sp-none{
 display: none;
 }
+}
+
+
+#sbttBacktotop{
+	bottom: 5em;
 }
