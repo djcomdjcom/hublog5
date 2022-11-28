@@ -12,9 +12,6 @@
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/js/slick/slick-theme.css" media="screen" />
 <script src="<?php bloginfo('stylesheet_directory'); ?>/js/slick/slick.min.js"></script>
 
-
-
-
 <script style="display: none">
 $(function() {
     $('.center-item').slick({

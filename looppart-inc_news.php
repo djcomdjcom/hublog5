@@ -7,7 +7,7 @@
 
 
 
-<article id="post-<?php the_ID(); ?>"  class="post row mx-auto p-0  my-5 my-md-3 over_btn">
+<article id="post-<?php the_ID(); ?>"  class="post row mx-auto p-0  my-5 my-md-3 linkarea">
 	
   <figure href="<?php the_permalink(); ?>" title="<?php the_title_attribute( array( 'before' => 'Permalink to: ', 'after' => '' ) ); ?>" class=" m-0 col-4 p-0 mb-3 mb-sm-0 thumbnail py-0 pr-sm-4"> <span class="attachment">
   <?php

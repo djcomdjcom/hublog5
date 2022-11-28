@@ -8,12 +8,12 @@
 */
 ?>
 
-<article id="post-<?php the_ID(); ?>" class="clearfix style-example post p-3">
+<article id="post-<?php the_ID(); ?>" class="style-example post px-2 px-sm-3 py-0 pb-md-3 linkarea">
 	<?php if ( is_new( WHATSNEW_TTL ) ) : ?>
 	<span class="tmb-icon new">新着</span>
 	<?php endif; ?>
 
-	<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( array( 'before' => '施工事例「', 'after' => '」詳細ページへ' ) ); ?>" class="thumbnail">
+	<figure href="<?php the_permalink(); ?>" title="<?php the_title_attribute( array( 'before' => '施工事例「', 'after' => '」詳細ページへ' ) ); ?>" class="thumbnail">
 		<span class="attachment">
 			<?php if ( function_exists('the_post_image') ) {
 				if ( the_post_image(array(600, 600)) === false ){
@@ -21,19 +21,18 @@
 				}
 			} ?>
 		</span>
-	</a>
+	</figure>
 	<?php //get_template_part('cat_icon');//カテゴリーアイコン ?>
 	
 	<span class="title">
-		<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s'), the_title_attribute('echo=0')); ?>">
-		<?php if(post_custom('catchcopy')) :?>
-		<?php echo nl2br ( post_custom('catchcopy') ); ?>
-		<?php else :?>
 		<?php the_title(); ?>
-		<?php endif ;?>
-		</a>		
 </span>
 	
+		<?php if(post_custom('catchcopy')) :?>
+	<p class="d-none d-md-block catchcopy"><?php echo nl2br ( post_custom('catchcopy') ); ?></p>
+		<?php endif ;?>
+	
+      <span class="todetail"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s'), the_title_attribute('echo=0')); ?>"> 詳細を見る</a></span>
 
 	<?php edit_post_link(__('Edit'), ''); ?>
 

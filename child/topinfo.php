@@ -1,7 +1,7 @@
 <?php if (is_page('concept') || is_parent_slug() === 'concept'):?>
 
 <header id="topinfo" class="page_header concept">
-  <h1> <span class="subttl">コンセプト</span> <span class="ttl_img maxw-480 w100"> <img src="<?php bloginfo('stylesheet_directory'); ?>/images/pg_hdr-concept-title@2x.png" alt="CONCEPT" title="<?php the_title(); ?>"/> </span> </h1>
+  <h1><span class="nobr"><?php echo get_option('profile_shop_name');//屋号 ?>の</span><span class="nobr">家づくりとは</span><span class="subttl">コンセプト</span></h1>
 </header>
 
 

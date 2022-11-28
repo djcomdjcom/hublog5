@@ -43,7 +43,7 @@ $(function(){
 </script>
 
 
-<div id="container" class="single clearfix <?php if (!in_category(array('blog','presiden-blog','genba','staff','shachou')) ):?> widecolumn<?php endif ;?>">
+<div id="container" class="single clearfix ">
 
 
 	<div id="content" role="main">
@@ -161,6 +161,3 @@ $(function(){
 	</div><!-- #content -->
 </div><!-- #container -->
 
-<?php if ( in_category(array('blog','presiden-blog','genba','staff','shachou')) ):?>
-<?php get_sidebar(); ?>
-<?php endif;?>

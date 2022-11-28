@@ -584,9 +584,6 @@ color: #222;
 color: #fff;
 }
 
-
-
-
 @media screen and (min-width:768px) {
 .hublog-inquiry .telnum,
 .profile_inquiry_tel .telnum {
@@ -729,16 +726,12 @@ display: none;
 }
 @media screen and (min-width:768px) {
 #headnav .home-menu .menu > li{
-border-left: 1px solid #333;
 }
 #headnav .home-menu .menu > li:last-child{
-border-right: 1px solid #333;
 }
 #access .home-menu .menu > li{
-border-left: 1px solid #eee;
 }
 #access .home-menu .menu > li:last-child{
-border-right: 1px solid #eee;
 }
 }
 .home-menu li li{
@@ -1324,6 +1317,31 @@ opacity: 0.75;
 transition: .2s;
 }
 
+.linkarea{
+	position: relative;
+}
+.linkarea:hover{
+	opacity: 0.85;
+}
+
+.linkarea .todetail a{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	display: block;
+	padding: 0 !important;
+	overflow: hidden;
+	text-indent: -150%;
+	white-space: nowrap;
+	border: 0 !important;
+}
+
+.linkarea a:hover{
+	background:rgba(0,0,0,0.10) ;
+}
+
 @media screen and (min-width:768px) {
 .posts .post .title {
 font-size: 1.1em;
@@ -1385,9 +1403,8 @@ text-align: center;
 .arrow.btn a:after {
 content: "\e5cc";
 font-family: 'Material Icons';
-font-size: 0.8em;
+font-size: 1em;
 padding-left: 1em;
-margin-left: 1em;
 display: inline-block;
 line-height: 1.2em;
 opacity: 1;
@@ -1395,7 +1412,7 @@ opacity: 1;
 a.arrow:before {
 content: "\e5cc";
 font-family: 'Material Icons';
-font-size: 0.8em;
+font-size: 1em;
 padding-left: 1em;
 margin-left: 1em;
 display: inline-block;
@@ -1408,7 +1425,7 @@ font-family: inherit;
 a.down:before {
 content: "\e5db";
 font-family: 'Material Icons';
-font-size: 0.8em;
+font-size: 1em;
 margin-right: 0.5em;
 }
 .btn a:hover{
@@ -4403,7 +4420,9 @@ padding: 20px 28px
 
 #wrapper #global-navi ul li a {
 text-decoration: none;
-color: #ddd
+color: #ddd;
+	padding-left: 1em;
+	padding-right: 1em;
 }
 
 #wrapper #global-navi .global-navi-menu ul li {

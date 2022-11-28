@@ -87,4 +87,4 @@ if ( is_home() || is_front_page() ){
 </div>
 <?php get_template_part('topinfo', $topinfo_template); ?>
 
-<main role="main" id="main" class="<?php echo $page_class; ?>">
+<main role="main" id="main" class="<?php echo $page_class; ?>" ontouchstart="">

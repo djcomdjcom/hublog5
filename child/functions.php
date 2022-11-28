@@ -414,9 +414,41 @@ function cptui_register_my_taxes() {
     "rest_controller_class" => "WP_REST_Terms_Controller",
     "show_in_quick_edit" => true,
   );
-  register_taxonomy( "voice_cat", array( "voice" ), $args );	
+  register_taxonomy( "voice_cat", array( "voice" ), $args );
+	
+	
+  /**
+   * Taxonomy: バナー種別.
+   */
+
+  $labels = array(
+    "name" => __( "バナー種別", "custom-post-type-ui" ),
+    "singular_name" => __( "バナー種別", "custom-post-type-ui" ),
+  );
+
+  $args = array(
+    "label" => __( "バナー種別", "custom-post-type-ui" ),
+    "labels" => $labels,
+    "public" => true,
+    "publicly_queryable" => true,
+    "hierarchical" => true,
+    "show_ui" => true,
+    "show_in_menu" => true,
+    "show_in_nav_menus" => true,
+    "query_var" => true,
+    "rewrite" => array( 'slug' => 'bnr_type', 'with_front' => true, ),
+    "show_admin_column" => true,
+    "show_in_rest" => false,
+    "rest_base" => "bnr_type",
+    "rest_controller_class" => "WP_REST_Terms_Controller",
+    "show_in_quick_edit" => true,
+  );
+  register_taxonomy( "bnr_type", array( "event_bnr" ), $args );		
 	
 }
+
+
+
 add_action( 'init', 'cptui_register_my_taxes' );
 
 
@@ -474,6 +506,8 @@ function my_custom_fields2() {
   global $post;
   $event_bnr_url = get_post_meta($post->ID,'event_bnr_url',true);
 	
+  $footer_bnr_col = get_post_meta($post->ID,'footer_bnr_col',true);
+	
   $event_bnr_target = get_post_meta( $post->ID, 'event_bnr_target', true );
   if ( $event_bnr_target == 1 ) {
     $event_bnr_target_c = "checked";
@@ -487,6 +521,12 @@ function my_custom_fields2() {
   echo '<p>新規ウィンドウで開く場合はチェック<br />';
   echo '<input type="checkbox" name="event_bnr_target" value="1" ' . $event_bnr_target_c . '>新規ウィンドウで開く</p>';
 	
+	echo '<hr>以下フッターバナーのみの設定';
+
+  echo '<p>CSS class<br>';	
+  echo '<input type="text" name="footer_bnr_col" value="'.esc_html($footer_bnr_col).'" size="40" /></p>';	
+  echo '<p>入力なしの場合（ デフォ値）「col-12 col-sm-6 col-lg-3」<br>
+＝スマホで1行あたりの表示数 1 個、タブレットで1行あたりの表示数 2 個、PCで1行あたりの表示数 4 個<br />例）スマホで1行あたりの表示数 1 個、タブレット以上で 3 個表示の場合は「col-12 col-md-4」<br>';
 }
 
 // カスタムフィールドの値を保存
@@ -494,6 +534,10 @@ function save_custom_fields2( $post_id ) {
   if(!empty($_POST['event_bnr_url']))
     update_post_meta($post_id, 'event_bnr_url', $_POST['event_bnr_url'] );
   else delete_post_meta($post_id, 'event_bnr_url');
+
+  if(!empty($_POST['footer_bnr_col']))
+    update_post_meta($post_id, 'footer_bnr_col', $_POST['footer_bnr_col'] );
+  else delete_post_meta($post_id, 'footer_bnr_col');
 	
   if ( !empty( $_POST[ 'event_bnr_target' ] ) )
     update_post_meta( $post_id, 'event_bnr_target', $_POST[ 'event_bnr_target' ] );
@@ -501,12 +545,9 @@ function save_custom_fields2( $post_id ) {
 
 }
 
-
-
-
-
-
 add_action( 'init', 'cptui_register_my_cpts' );
+
+
 
 
 function menu_setup() {
@@ -600,4 +641,36 @@ add_filter('wpcf7_validate_text',  'wpcf7_validate_kana', 11, 2);  add_filter('w
     }
   }
   return $result;
+}
+
+//公開期限設定
+function shortcode_timelimit($atts, $content = null) {
+extract(shortcode_atts(array(
+'start' => null,
+'end' => null,
+), $atts));
+$starttime = strtotime($start);
+$endtime = strtotime($end);
+if ($starttime == null && $endtime == null) {
+return $content;
+} elseif ($starttime == null) {
+if(date_i18n("U") < $endtime) {
+return $content;
+}
+} elseif ($endtime == null) {
+if(date_i18n("U") > $starttime) {
+return $content;
+}
+} else {
+if(date_i18n("U") > $starttime && date_i18n("U") < $endtime) {
+return $content;
+}
+}
+}
+add_shortcode('timelimit', 'shortcode_timelimit');
+
+// メタボックスの追加
+add_action( 'admin_menu', 'add_css_metabox' );
+function add_css_metabox() {
+    add_meta_box( 'custom_css', 'カスタムCSS', 'create_add_css', array('post', 'page','voice','example'));
 }

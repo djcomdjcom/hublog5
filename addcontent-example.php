@@ -1,4 +1,4 @@
-<?php if ( post_custom( 'renov-gallery' ) == 'gallery_off' ):  ?>
+<?php if ( post_custom( 'remove-gallery' ) == 'gallery_off' ):  ?>
 <?php else:?>
 <div id="galleryslider" class="sliderArea rel_lb">
   <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/js/slick/slick.css" media="screen" />

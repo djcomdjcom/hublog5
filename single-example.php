@@ -11,7 +11,6 @@ $(function(){
 });  
 </script>
 
-
 <div id="container" class="single clearfix <?php if (!in_category(array('blog','genba','staff','shachou')) ):?> widecolumn<?php endif ;?>">
   <div id="content" role="main">
     <?php the_post(); ?>
@@ -31,12 +30,7 @@ $(function(){
       </div>
       <!-- .entry-content -->
       
-		
-		
-
-<?php get_template_part('include', 'example');//選ばれる理由 ?>
-		
-		
+      <?php get_template_part('include', 'example');//選ばれる理由 ?>
       <?php get_template_part('hublog-inquiry',''); //問い合わせフック ?>
       <footer>
         <div class="entry-utility wrapper">
@@ -60,11 +54,18 @@ $(function(){
             );
             ?>
             <?php
-            print( '<p>Posted in：' );
+
             $terms = get_the_terms( $post->ID, 'ex_cat' );
-            foreach ( $terms as $term ) {
-              echo '<a href="' . get_term_link( $term->slug, 'ex_cat' ) . '">' . $term->name . '</a>';
-            }
+            print( '<p>Posted in：' );
+
+            if ( empty( $terms ) ) {
+              echo '<a href=/example">施工事例一覧</a>';
+            } else {
+              foreach ( $terms as $term ) {
+                echo '<a href="' . get_term_link( $term->slug, 'ex_cat' ) . '">' . $term->name . '</a>';
+              }
+
+            };
             print( '</p>' );
             ?>
           </div>

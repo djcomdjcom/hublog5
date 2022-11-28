@@ -150,7 +150,6 @@ wp_reset_query();
 <p class="aligncenter"> <a href="/hublog_setting">→hublog設定</a></p>
 <?php endif; ?>
 <footer class="" id="footer">
-  <div id="footer_img"></div>
   <div id="footer_inbox">
     <div class="wrapper pt-5 pb-5">
       <div class="footer-navi-menu text-left my-4">
@@ -202,13 +201,17 @@ wp_reset_query();
       </div>
 		
 		
+		<div id="foot-offer" class="d-block d-lg-none">
+		<ul class="flexbox maxw-800 mx-auto">
+		<?php get_template_part( 'links-offer' ); ?>
+		</ul>
+		</div><!--FOOT_OFFER-->
+		
+		<?php get_template_part('inc', 'footer_bnrs'); ?>
 		
       <div class="footer-contact mt-4 mb-2 container-fluid">
         <div class="row mb-5 mt-5">
           <div class="footer-contact-inner1 col-md-4 mb-4"> <a href="/" class="w100 maxw-300 mx-auto"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-footer@2x.png" alt="<?php echo get_option('profile_corporate_name'); ?> ロゴ"></a> </div>
-          <div class="footer-contact-inner2 col-md-3  mb-4">
-
-			</div>
           <div class=" col-md-5  mb-4">
             <div class="contact-tel">
 				
@@ -233,6 +236,9 @@ wp_reset_query();
     </div>
   </div>
 </footer>
+<div id="backtotop">
+	<a href="#header">ページトップへ戻る</a>
+</div>
 <script>
 	
 	$("#global-navi a").on("click", function() {
@@ -259,7 +265,7 @@ $(function(){
 	
 <?php if ( is_user_logged_in() ) :?>
 
-<div style="left: 0;bottom: 0;" class="position-fixed bg-light px-2">
+<div style="left: 0;bottom: 0;z-index: 9999;background:  rgba(255,255,255,0.79)" class="position-fixed px-2">
 <p class="my-0"><span class="d-inline-block d-sm-none">●</span>sm未満：-575.98px</p>
 <p class="my-0"><span class="d-sm-inline-block d-none d-md-none">●</span>sm：576px-767.98px</p>
 <p class="my-0"><span class="d-md-inline-block d-none d-lg-none">●</span>md：768px-991.98px</p>
