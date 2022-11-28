@@ -82,15 +82,7 @@ wp_reset_query();
 		  </div>		  
 			  
       <div class="global-navi-menu text-left mt-4">
-        <div class=" f1">
-          <?php
-          if ( has_nav_menu( 'f1' ) ) {
-            wp_nav_menu( array(
-              'theme_location' => 'f1',
-            ) );
-          }
-          ?>
-        </div>
+
         <div class=" f2">
           <?php
           if ( has_nav_menu( 'f2' ) ) {
@@ -130,6 +122,18 @@ wp_reset_query();
       </div>
     </div>
 </div>
+	  
+	  
+<?php if ( is_user_logged_in() ) :?>
+<div style="background: rgba(255,255,255,0.79);font-size: 13px" class="px-5">
+<p class="my-0"><span class="d-inline-block d-sm-none">●</span>sm未満：-575.98px</p>
+<p class="my-0"><span class="d-sm-inline-block d-none d-md-none">●</span>sm：576px-767.98px</p>
+<p class="my-0"><span class="d-md-inline-block d-none d-lg-none">●</span>md：768px-991.98px</p>
+<p class="my-0"><span class="d-lg-inline-block d-none d-xl-none">●</span>lg：992px-1199.98px</p>
+<p class="my-0"><span class="d-xl-inline-block d-none d-xxl-none">●</span>xl：1200px-</p>
+</div>
+<?php endif;?>
+	  
 </nav>
 	
 	
@@ -212,7 +216,7 @@ wp_reset_query();
       <div class="footer-contact mt-4 mb-2 container-fluid">
         <div class="row mb-5 mt-5">
           <div class="footer-contact-inner1 col-md-4 mb-4"> <a href="/" class="w100 maxw-300 mx-auto"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-footer@2x.png" alt="<?php echo get_option('profile_corporate_name'); ?> ロゴ"></a> </div>
-          <div class=" col-md-5  mb-4">
+          <div class=" col-md-5  mb-4 text-center text-md-left">
             <div class="contact-tel">
 				
 				<span class="profile_inquiry_tel d-block">
@@ -236,9 +240,6 @@ wp_reset_query();
     </div>
   </div>
 </footer>
-<div id="backtotop">
-	<a href="#header">ページトップへ戻る</a>
-</div>
 <script>
 	
 	$("#global-navi a").on("click", function() {
@@ -263,16 +264,6 @@ $(function(){
 });
 </script>
 	
-<?php if ( is_user_logged_in() ) :?>
-
-<div style="left: 0;bottom: 0;z-index: 9999;background:  rgba(255,255,255,0.79)" class="position-fixed px-2">
-<p class="my-0"><span class="d-inline-block d-sm-none">●</span>sm未満：-575.98px</p>
-<p class="my-0"><span class="d-sm-inline-block d-none d-md-none">●</span>sm：576px-767.98px</p>
-<p class="my-0"><span class="d-md-inline-block d-none d-lg-none">●</span>md：768px-991.98px</p>
-<p class="my-0"><span class="d-lg-inline-block d-none d-xl-none">●</span>lg：992px-1199.98px</p>
-<p class="my-0"><span class="d-xl-inline-block d-none d-xxl-none">●</span>xl：1200px-</p>
-</div>
-<?php endif;?>
 
 
 	
