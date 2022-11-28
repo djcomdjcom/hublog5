@@ -39,9 +39,9 @@ if ( $the_query->have_posts() ):
     echo $term->name; //タームのリンク
   }
 ?></p>	
-  <div class="posts row justify-content-center px-4">
+  <div class="posts row justify-content-center px-0 mx-auto">
     <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-    <div id="post-<?php the_ID(); ?>" class="clearfix post p-2 <?php if (post_custom('footer_bnr_col')) :?><?php echo (post_custom('footer_bnr_col')) ;?><?php else :?> col-12 col-sm-6 col-lg-3<?php endif;?>">
+    <div id="post-<?php the_ID(); ?>" class="post p-2 <?php if (post_custom('footer_bnr_col')) :?><?php echo (post_custom('footer_bnr_col')) ;?><?php else :?> col-12 col-sm-6 col-lg-3<?php endif;?>">
       <?php if (post_custom('event_bnr_url')) :?>
       <a target="<?php if (post_custom('event_bnr_target')) :?>_blank<?php endif;?>" class=" w100" href="<?php echo(post_custom('event_bnr_url')) ;?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s'),the_title_attribute('echo=0')); ?>">
       <?php
