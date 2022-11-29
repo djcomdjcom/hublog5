@@ -221,6 +221,36 @@ display: block;
 border-radius: 50%;
 overflow: hidden;
 }
+.outer-wrap{
+	position: relative;
+	z-index: 1;
+}
+.outer-wrap:after{
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+	background: #eee;
+}
+@media screen and (min-width: 1200px) {
+	.outer-wrap:after{
+	margin-left: calc(50% - 50vw);
+	width: 100vw;
+	box-sizing: border-box;
+	}
+}
+@media screen and (max-width: 1199px) {
+	.outer-wrap{
+	margin-left: -15px;
+	margin-right: -15px;
+	padding-left: 15px;
+	padding-right: 15px;
+	}
+}
 
 /*  Image
 ******************************************************************************/
@@ -899,6 +929,7 @@ display: none;
 
 #global-navi #access .menu .sub-menu{
 background: rgba(0,0,0,0.60);
+	z-index: 99;
 }
 
 
@@ -1282,7 +1313,7 @@ right: 0;
 border: 1px solid #999;
 padding: 0 0.3em;
 background: #fff;
-z-index: 999;
+z-index: 399;
 }
 
 #slideshow .posts .post .post-edit-link {
@@ -4429,11 +4460,10 @@ display:block;
 padding: 20px 28px
 }
 
-#wrapper #global-navi ul li a {
+#wrapper #global-navi ul.menu li a {
 text-decoration: none;
-color: #ddd;
-	padding-left: 1em;
-	padding-right: 1em;
+padding-left: 1em;
+padding-right: 1em;
 }
 
 #wrapper #global-navi .global-navi-menu ul li {
@@ -4784,6 +4814,41 @@ display: inline-block;
 
 }
 
+
+
+/*SNSLINK*/
+
+#global-navi .snslink{
+padding: 2em 0 1em;
+}
+
+.snslink ul li {
+	width: 48px;
+}
+.snslink ul .w100 svg{
+	width: 100%;
+	height: auto;
+}
+.snslink ul .w100 svg path{
+	fill:#fff;
+}
+
+
+
+.snslink .flexbox{
+	justify-content: center;
+	padding: 0 1em;
+}
+.snslink .flexbox > li{
+	list-style: none;
+	margin: 0 0.7em;
+}
+.snslink .flexbox > li a{
+	margin: 0 auto;
+	padding: 0;
+}
+@media screen and (min-width:1200px) {
+}
 
 
 
